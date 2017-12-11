@@ -1,0 +1,1 @@
+C:\Users\rsgonzalez\Desktop\Asignaturas\DI\UWP-Apps\16-LayoutAndstateManager\16-LayoutAndstateManager\16-LayoutAndstateManager.csproj;x86

@@ -1,0 +1,48 @@
+﻿<Page
+    x:Class="GridPanelEjercicio2.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:GridPanelEjercicio2"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+ 
+    
+    <Grid Background = "Pink">
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height = "Auto"/>
+            <RowDefinition Height = "Auto"/>
+            <RowDefinition Height = "Auto"/>
+            <RowDefinition Height = "Auto"/>
+            <RowDefinition Height = "Auto"/>
+        </Grid.RowDefinitions>
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width = "Auto"/>
+        </Grid.ColumnDefinitions>
+
+        <TextBlock Text = "Rellene el formulario"  FontSize = "25"  FontWeight = "Bold"  Grid.Column = "0" Grid.Row = "0" TextAlignment="Center" Padding="9"/>
+
+        <StackPanel Grid.Column = "1" Grid.Row = "1" Orientation = "Horizontal">
+            <TextBlock Text = "Nombre" Margin="10"  VerticalAlignment = "Center" Width = "Auto"/>
+            <TextBox Name = "txtNombre" Margin="5" Width="250"   />
+        </StackPanel>
+
+        <StackPanel Grid.Column = "0" Grid.Row = "2" Orientation = "Horizontal"  >
+            <TextBlock Text = "ID" Margin="17,0,12,5" Padding="30,0,0,0"   VerticalAlignment = "Center"  Width = "50"/>
+            <TextBox Name = "txtID"  Margin="0"   VerticalAlignment = "Center" Width = "100"/>
+        </StackPanel>
+
+        <StackPanel Grid.Column = "0" Grid.Row = "3" Orientation = "Horizontal">
+            <TextBlock Text = "Edad"  Margin="4,0,0,4"  Padding="30,0,0,0"   VerticalAlignment = "Center" Width = "70"/>
+            <TextBox Name = "txt_Edad" Margin="5"  VerticalAlignment = "Center" Width = "50"/>
+                </StackPanel>
+
+        <StackPanel Grid.Column = "0" Grid.Row = "4" Orientation = "Horizontal">
+            <TextBlock Text = "Direccion"  Padding="4"  VerticalAlignment = "Center"   Width = "70"/>
+            <TextBox Name = "txt_Direccion"  Margin="9,0,0,0"   VerticalAlignment = "Center"  Width = "200"/>
+        </StackPanel>
+    </Grid>
+  
+</Page>

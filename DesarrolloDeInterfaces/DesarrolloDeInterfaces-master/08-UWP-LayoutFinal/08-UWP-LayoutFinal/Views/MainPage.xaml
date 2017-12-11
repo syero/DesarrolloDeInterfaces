@@ -1,0 +1,71 @@
+﻿<Page
+    x:Class="_08_UWP_LayoutFinal.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:_08_UWP_LayoutFinal"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <RelativePanel x:Name="relPanel1" Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
+        <Border BorderBrush="Black" x:Name="txt1"  BorderThickness="2" Margin="5" RelativePanel.AlignRightWithPanel="True" 
+                RelativePanel.AlignLeftWithPanel="True">
+            <TextBlock Text="Se viene el Lorem Ipsum chavales"  TextWrapping="Wrap"/>
+        </Border>
+
+        <Border BorderBrush="Black" x:Name="txt2" BorderThickness="2" Margin="5" MinHeight="100" 
+                MaxHeight="100" RelativePanel.AlignLeftWithPanel="True" RelativePanel.AlignRightWithPanel="True" 
+                RelativePanel.Below="txt1" >
+            <TextBlock Text="SE VIENEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE"  TextWrapping="Wrap"/>
+        </Border>
+        <Grid x:Name="grid4" BorderBrush="Black" BorderThickness="2" Margin="5" RelativePanel.Below="txt2"
+                       RelativePanel.AlignLeftWithPanel="True" RelativePanel.AlignRightWithPanel="True">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+
+            <VariableSizedWrapGrid Grid.Column="0" x:Name="varGrid" Orientation="Horizontal">
+                <Rectangle x:Name="rec1" MinWidth="100" MinHeight="100" Fill="Purple"/>
+                <Rectangle x:Name="rec2" MinWidth="100" MinHeight="100" Fill="red"/>
+                <Rectangle x:Name="rec3" MinWidth="100" MinHeight="100" Fill="blue"/>
+            </VariableSizedWrapGrid>
+
+            <RelativePanel Grid.Column="1" x:Name="relPanel3" Margin="5">
+
+                <Border BorderBrush="Black" BorderThickness="2" Grid.Row="0" Name="brd1" Margin="5" RelativePanel.AlignRightWithPanel="True" RelativePanel.AlignLeftWithPanel="True">
+                    <TextBlock x:Name="txb1"
+                               Text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras ac turpis euismod, eleifend erat in, fermentum augue. In finibus orci quis imperdiet mattis. "
+                               Padding="5" MinHeight="20" TextWrapping="Wrap" Margin="5"/>
+                </Border>
+
+                <Border Name ="brd2" BorderBrush="Black" BorderThickness="2" Grid.Row="1" 
+                        RelativePanel.Below="brd1" RelativePanel.AlignRightWithPanel="True" RelativePanel.AlignLeftWithPanel="True" Margin="5">
+                    <TextBlock x:Name="txb2"
+                               Padding="5" MinHeight="20" TextWrapping="Wrap" Margin="5"
+                               Text="Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Integer interdum urna sem, non sagittis orci euismod id."/>
+                </Border>
+
+                <Border Name="brd3" BorderBrush="Black" BorderThickness="2" Grid.Row="2" 
+                        RelativePanel.Below="brd2"  RelativePanel.AlignRightWithPanel="True" RelativePanel.AlignLeftWithPanel="True" Margin="5">
+                    <TextBlock x:Name="txb3"
+                               Padding="5" MinHeight="20" TextWrapping="Wrap" Margin="5" 
+                               Text ="Aenean tellus est, rhoncus vitae fermentum sed, auctor gravida augue. Cras molestie, neque rutrum mattis tempus, nibh quam interdum odio, vel varius magna nulla dictum neque."/>
+                </Border>
+
+                <Border Name="brd4" BorderBrush="Black" BorderThickness="2" Grid.Row="3"
+                        RelativePanel.Below="brd3" RelativePanel.AlignRightWithPanel="True" RelativePanel.AlignLeftWithPanel="True" Margin="5">
+                    <TextBlock x:Name="txb4"
+                               Padding="5" MinHeight="20" TextWrapping="Wrap" Margin="5"
+                               Text ="Aenean tellus est, rhoncus vitae fermentum sed, auctor gravida augue. Cras molestie, neque rutrum mattis tempus, nibh quam interdum odio, vel varius magna nulla dictum neque." />
+                </Border>
+
+            </RelativePanel>
+        </Grid>
+        <Border BorderBrush="Black" BorderThickness="2" RelativePanel.Below="grid4"
+                RelativePanel.AlignLeftWithPanel="True" RelativePanel.AlignRightWithPanel="True"  Margin="5">
+            <TextBlock Text="SE FUE EL LOREEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEM"/>
+        </Border>
+    </RelativePanel>
+</Page>

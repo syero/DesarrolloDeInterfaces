@@ -1,0 +1,125 @@
+﻿<Page
+    x:Class="_16_LayoutAndstateManager.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:_16_LayoutAndstateManager"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <RelativePanel Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
+        <VisualStateManager.VisualStateGroups>
+            <VisualStateGroup x:Name="VisualStateGroup">
+                <VisualState x:Name="Tablet">
+                    <!--Tamaño limite minimo-->
+                    <VisualState.StateTriggers>
+                        <AdaptiveTrigger MinWindowWidth="850"/>
+                    </VisualState.StateTriggers>
+                    <!--Los cambios-->
+                    <VisualState.Setters>
+                        <Setter Target="menu.(Orientation)" Value="Vertical"></Setter>
+                        <Setter Target="menu.(Grid.Column)" Value="0"></Setter>
+
+                        <Setter Target="galeria.(RelativePanel.Below)" Value=""></Setter>
+                        <Setter Target="galeria.(RelativePanel.RightOf)" Value="menu"></Setter>
+                        <!--Los hago tomar el tamaño de un solo grid-->
+                        <Setter Target="img1.(Grid.ColumnSpan)" Value="1"></Setter>
+                        <Setter Target="img2.(Grid.ColumnSpan)" Value="1"></Setter>
+                        <Setter Target="img3.(Grid.ColumnSpan)" Value="1"></Setter>
+                        <Setter Target="img4.(Grid.ColumnSpan)" Value="1"></Setter>
+                        <Setter Target="img5.(Grid.ColumnSpan)" Value="1"></Setter>
+                        <Setter Target="img6.(Grid.ColumnSpan)" Value="1"></Setter>
+                        <Setter Target="img7.(Grid.ColumnSpan)" Value="1"></Setter>
+                        <Setter Target="img8.(Grid.ColumnSpan)" Value="1"></Setter>
+                        <Setter Target="img9.(Grid.ColumnSpan)" Value="1"></Setter>
+                        <!-- Las imagene subican primera fila-->
+                        <Setter Target="img1.(Grid.Row)" Value="0"></Setter>
+                        <Setter Target="img2.(Grid.Row)" Value="0"></Setter>
+                        <Setter Target="img3.(Grid.Row)" Value="0"></Setter>
+                        
+                        <!--Se ubican en las otras 2 columnas-->
+                        <Setter Target="img2.(Grid.Column)" Value="1"></Setter>
+                        <Setter Target="img3.(Grid.Column)" Value="2"></Setter>
+
+                        <!-- Las imagene se ubican segunda fila-->
+                        <Setter Target="img4.(Grid.Row)" Value="1"></Setter>
+                        <Setter Target="img5.(Grid.Row)" Value="1"></Setter>
+                        <Setter Target="img6.(Grid.Row)" Value="1"></Setter>
+
+                        <!--Se ubican en las otras 2 columnas-->
+                        <Setter Target="img4.(Grid.Column)" Value="0"></Setter>
+                        <Setter Target="img5.(Grid.Column)" Value="1"></Setter>
+                        <Setter Target="img6.(Grid.Column)" Value="2"></Setter>
+
+                        <!-- Las imagene se ubican tercera fila-->
+                        <Setter Target="img7.(Grid.Row)" Value="2"></Setter>
+                        <Setter Target="img8.(Grid.Row)" Value="2"></Setter>
+                        <Setter Target="img9.(Grid.Row)" Value="2"></Setter>
+                        
+                        <!--Se ubican en las otras 2 columnas-->
+                        <Setter Target="img7.(Grid.Column)" Value="0"></Setter>
+                        <Setter Target="img8.(Grid.Column)" Value="1"></Setter>
+                        <Setter Target="img9.(Grid.Column)" Value="2"></Setter>
+
+                    </VisualState.Setters>
+                </VisualState>
+
+            </VisualStateGroup>
+        </VisualStateManager.VisualStateGroups>
+
+        <StackPanel Name="menu" Orientation="Horizontal">
+            <StackPanel Orientation="Vertical" Name="mItem1" Margin=" 20">
+            <SymbolIcon Symbol="Add"></SymbolIcon>
+            <TextBlock Text="Añadir" ></TextBlock>
+            </StackPanel>
+
+            <StackPanel Orientation="Vertical" Name="mItem2" Margin="20">
+                <SymbolIcon Symbol="Go"></SymbolIcon>
+                <TextBlock Text="Ir" TextAlignment="Center"  ></TextBlock>
+            </StackPanel>
+
+            <StackPanel Orientation="Vertical" Name="mItem3" Margin="10">
+                <SymbolIcon Symbol="Target"></SymbolIcon>
+                <TextBlock Text="Objetivo"  ></TextBlock>
+            </StackPanel>
+
+            <StackPanel Orientation="Vertical" Name="mItem4" Margin="10">
+                <SymbolIcon Symbol="Contact2"></SymbolIcon>
+                <TextBlock Text="Añadir" TextAlignment="Center" ></TextBlock>
+            </StackPanel>
+        </StackPanel>
+        <ScrollViewer Name="galeria" RelativePanel.Below="menu">
+            <Grid Name="imagenes">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"></ColumnDefinition>
+                    <ColumnDefinition Width="*"></ColumnDefinition>
+                    <ColumnDefinition Width="*"></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"></RowDefinition>
+                    <RowDefinition Height="*"></RowDefinition>
+                    <RowDefinition Height="*"></RowDefinition>
+                    <RowDefinition Height="*"></RowDefinition>
+                    <RowDefinition Height="*"></RowDefinition>
+                    <RowDefinition Height="*"></RowDefinition>
+                    <RowDefinition Height="*"></RowDefinition>
+                    <RowDefinition Height="*"></RowDefinition>
+                    <RowDefinition Height="*"></RowDefinition>
+                </Grid.RowDefinitions>
+                <Image Source="/Assets/Imagenes/p.jpg" Grid.ColumnSpan="3" Grid.Row="0" Name="img1" ></Image>
+                <Image Source="/Assets/Imagenes/playa-de-venezuela.jpg" Grid.ColumnSpan="3" Grid.Row="1" Name="img2" ></Image>
+                <Image Source="/Assets/Imagenes/playa-turismo-venezuela.jpg" Grid.ColumnSpan="3" Grid.Row="2" Name="img3" ></Image>
+                <Image Source="/Assets/Imagenes/playa-de-venezuela.jpg" Grid.ColumnSpan="3" Grid.Row="3" Name="img4" ></Image>
+                <Image Source="/Assets/Imagenes/p.jpg" Grid.ColumnSpan="3" Grid.Row="4" Name="img5" ></Image>
+                <Image Source="/Assets/Imagenes/playa-de-venezuela.jpg" Grid.ColumnSpan="3" Grid.Row="5" Name="img6" ></Image>
+                <Image Source="/Assets/Imagenes/p.jpg" Grid.ColumnSpan="3" Grid.Row="6" Name="img7" ></Image>
+                <Image Source="/Assets/Imagenes/playa-turismo-venezuela.jpg" Grid.ColumnSpan="3" Grid.Row="7" Name="img8" ></Image>
+                <Image Source="/Assets/Imagenes/p.jpg" Grid.ColumnSpan="3" Grid.Row="8" Name="img9" ></Image>
+            </Grid>
+        </ScrollViewer>
+        
+        
+
+    </RelativePanel>
+</Page>

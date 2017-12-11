@@ -1,0 +1,131 @@
+﻿<Page
+    x:Class="_09_UWP_EjercicioRandom.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:_09_UWP_EjercicioRandom"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+
+        <Border Grid.Row="0" Grid.Column="0" BorderBrush="Black" BorderThickness="2"/>
+        <Border Grid.Row="0" Grid.Column="1" BorderBrush="Black" BorderThickness="2"/>
+        <Border Grid.Row="0" Grid.Column="2" BorderBrush="Black" BorderThickness="2"/>
+        <Border Grid.Row="0" Grid.Column="3" BorderBrush="Black" BorderThickness="2"/>
+
+        <Border Grid.Row="1" Grid.Column="0" BorderBrush="Black" BorderThickness="2"/>
+        <Border Grid.Row="1" Grid.Column="1" BorderBrush="Black" BorderThickness="2"/>
+        <Border Grid.Row="1" Grid.Column="2" BorderBrush="Black" BorderThickness="2"/>
+        <Border Grid.Row="1" Grid.Column="3" BorderBrush="Black" BorderThickness="2"/>
+
+        <Border Grid.Row="2" Grid.Column="0" BorderBrush="Black" BorderThickness="2"/>
+        <Border Grid.Row="2" Grid.Column="1" BorderBrush="Black" BorderThickness="2"/>
+        <Border Grid.Row="2" Grid.Column="2" BorderBrush="Black" BorderThickness="2"/>
+        <Border Grid.Row="2" Grid.Column="3" BorderBrush="Black" BorderThickness="2"/>
+
+        <Border Grid.Row="3" Grid.Column="0" BorderBrush="Black" BorderThickness="2"/>
+        <Border Grid.Row="3" Grid.Column="1" BorderBrush="Black" BorderThickness="2"/>
+        <Border Grid.Row="3" Grid.Column="2" BorderBrush="Black" BorderThickness="2"/>
+        <Border Grid.Row="3" Grid.Column="3" BorderBrush="Black" BorderThickness="2"/>
+
+        <TextBlock Text="Vamos chavales, a trabajar!" FontSize="25" Grid.Row="0" Grid.Column="0" HorizontalAlignment="Center"/>
+
+            <Button x:Name ="btn1" Content="pepejava" HorizontalAlignment="Center" FontSize="25" Grid.Row="0" Grid.Column="0"/>
+
+        <TextBlock Text="TextBlock y Button" VerticalAlignment="Bottom" HorizontalAlignment="Center" FontSize="25" Margin="10" Grid.Row="0" Grid.Column="0"/>
+
+            <CommandBar Grid.Row="0" Grid.Column="1">
+                <AppBarButton Icon="Save"/>
+                <AppBarButton Icon="Delete"/>
+            </CommandBar>
+
+            <Rectangle Fill="Red" MinHeight="135" MaxWidth="345" Grid.Column="1" Grid.Row="0" VerticalAlignment="Bottom"/>
+
+        
+        
+        
+        <StackPanel  Grid.Row="0" Grid.Column="2">
+            <RadioButton>
+                <StackPanel Orientation="Horizontal">
+                    <SymbolIcon Symbol="Save"/>
+                    <TextBlock Text=" SymbolIcon y RadioButton"/>
+                </StackPanel>
+            </RadioButton>
+            <RadioButton>Ey k pasa chavules 2</RadioButton>
+            <RadioButton>Ey k pasa chavules 3</RadioButton>
+        </StackPanel>
+
+        <ProgressRing IsActive="True" Height="100" Width="100" Grid.Column="3" Grid.Row="0"/>
+        <TextBlock Text="ProgressRing" Grid.Column="3" Grid.Row="0" VerticalAlignment="Bottom" HorizontalAlignment="Center" FontSize="25" Margin="10"/>
+
+        <ProgressBar Grid.Row="1" Maximum="100" Minimum="0" Value="{Binding Value, ElementName=MySlider}" MinHeight="30" VerticalAlignment="Top" Margin="10"/>
+        <Slider x:Name="MySlider" Grid.Row="1" Minimum="0" Maximum="100" Grid.Column="0" VerticalAlignment="Center"/>
+        <TextBlock Text="ProgressBar y Slider" Margin="10" VerticalAlignment="Bottom" HorizontalAlignment="Center" FontSize="25" Grid.Row="1" Grid.Column="0"/>
+
+        <Pivot x:Name="rootPivot" Grid.Row="1" Grid.Column="1">
+              <PivotItem>
+                <PivotItem.Header>
+                    <StackPanel Orientation="Horizontal">
+                        <SymbolIcon Symbol="Delete"/>
+                        <TextBlock Text="Ordenadores"/>
+                    </StackPanel>
+                </PivotItem.Header>
+                <TextBlock Text="Aqui hay un viaje de ordenadores"/>
+            </PivotItem>
+            <PivotItem Header="Casas">
+                <TextBlock Text="Aqui hay un viaje de casas"/>
+            </PivotItem>
+            <PivotItem Header="Cocinas">
+                <TextBlock Text="Aqui hay un viaje de cocinas"/>
+            </PivotItem>
+        </Pivot>
+        <TextBlock Text="Pivot" FontSize="25" VerticalAlignment="Bottom" HorizontalAlignment="Center" Grid.Row="1" Grid.Column="1" Margin="10"/>
+
+        <ListBox Grid.Row="1" Grid.Column="2" BorderBrush="Black" BorderThickness="2">
+            <ListBoxItem Content="Esto"/>
+            <ListBoxItem Content="Es"/>
+            <ListBoxItem Content="Un"/>
+            <ListBoxItem Content="ListBox"/>
+        </ListBox>
+
+        <ComboBox Grid.Row="1" Grid.Column="3" Width="auto">
+            <ComboBoxItem>Esto</ComboBoxItem>
+            <ComboBoxItem>Es</ComboBoxItem>
+            <ComboBoxItem>Un</ComboBoxItem>
+            <ComboBoxItem>ComboBox</ComboBoxItem>
+            <ComboBoxItem>!!!!</ComboBoxItem>
+        </ComboBox>
+        <TextBlock Text="ComboBox" Grid.Row="1" Grid.Column="3" VerticalAlignment="Bottom" HorizontalAlignment="Center" FontSize="25" Margin="10"/>
+
+        <CalendarView Grid.Row="2" Grid.Column="0" MinWidth="320" MinHeight="180" DayItemFontSize="10"/>
+
+       
+
+        <CalendarDatePicker x:Name="fechaEntrada" Header="Fecha de entrada" Grid.Row="2" Grid.Column="1" VerticalAlignment="Top" HorizontalAlignment="Center" Margin="10"/>
+        <CalendarDatePicker x:Name="fechaSalida" MinDate="{Binding Date, ElementName=fechaEntrada}" Header="Fecha de llegada" Grid.Row="2" Grid.Column="1" VerticalAlignment="Bottom" HorizontalAlignment="Center" Margin="10"/>
+
+        <TextBox Grid.Row="2" IsSpellCheckEnabled="True" Grid.Column="2" PlaceholderText="Esto es un TextBlock con SpellCheck..." VerticalAlignment="Top" Margin="10" AcceptsReturn="True" TextWrapping="Wrap" MaxHeight="120" ScrollViewer.VerticalScrollBarVisibility="Auto"/>
+        <TextBlock VerticalAlignment="Bottom" HorizontalAlignment="Center" Margin="10" Grid.Column="2" Grid.Row="2" Text="SpellCheck" FontSize="25"/>
+
+        <PasswordBox Grid.Column="3" Grid.Row="2" PlaceholderText="Esto es un PasswordBox..." Height="10" VerticalAlignment="Top" Margin="10"/>
+        <TextBlock VerticalAlignment="Bottom" HorizontalAlignment="Center" Margin="10" Grid.Column="3" Grid.Row="2" Text="PasswordBox" FontSize="25"/>
+
+        <DatePicker Header="Fecha de Nacimiento" Grid.Row="3" Grid.Column="0" VerticalAlignment="Top" HorizontalAlignment="Center" Margin="10"/>
+        <TextBlock Text="DatePicker" Grid.Row="3" Grid.Column="0" FontSize="25" VerticalAlignment="Bottom" HorizontalAlignment="Center" Margin="10"/>
+    </Grid>
+</Page>

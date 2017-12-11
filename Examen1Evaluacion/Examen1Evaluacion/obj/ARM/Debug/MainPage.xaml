@@ -1,0 +1,50 @@
+﻿<Page
+    x:Class="Examen1Evaluacion.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:Examen1Evaluacion"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    xmlns:vm="using:Examen1Evaluacion"
+    >
+
+    <Page.DataContext>
+        <vm:MainPageVM></vm:MainPageVM>
+    </Page.DataContext>
+    
+    
+    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        
+        
+        <RelativePanel Grid.Row="0">
+            <AppBarButton x:ConnectionId='2' Icon="Next" Label="Volver a jugar" RelativePanel.AlignLeftWithPanel="True"                           />
+            <TextBlock x:ConnectionId='3' Grid.Row="0" Name="txtTimer" Text="{Binding textoreloj,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}" FontSize="20" RelativePanel.AlignHorizontalCenterWithPanel="True"/>
+            <TextBlock RelativePanel.Below="txtTimer" FontSize="20" Text=" FELICIDADES HAS GANADO " Visibility="{Binding haganado, Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}" RelativePanel.AlignHorizontalCenterWithPanel="True"/>
+        </RelativePanel>
+
+
+        <GridView Grid.Row="1" ItemsSource="{Binding lista,UpdateSourceTrigger=PropertyChanged}" IsEnabled="{Binding clickeble,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}" SelectedItem="{Binding Path=cartaSeleccionada, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" >
+            <GridView.ItemTemplate>
+                <DataTemplate>
+
+                    <Image x:ConnectionId='1' Name="Foto" Source="{Binding uri}" MaxWidth="450" MaxHeight="200"                                      >
+                        <Image.Projection>
+                            <PlaneProjection></PlaneProjection>
+                        </Image.Projection>
+                        
+                    </Image>
+
+                </DataTemplate>
+
+            </GridView.ItemTemplate>
+            
+        </GridView>
+    </Grid>
+</Page>
+

@@ -1,0 +1,43 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.26730.16
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StackPanelEjercicio1", "StackPanelEjercicio1\StackPanelEjercicio1.csproj", "{3BFEAEF9-9C91-4368-983D-818B68D27382}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|ARM = Debug|ARM
+		Debug|x64 = Debug|x64
+		Debug|x86 = Debug|x86
+		Release|ARM = Release|ARM
+		Release|x64 = Release|x64
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{3BFEAEF9-9C91-4368-983D-818B68D27382}.Debug|ARM.ActiveCfg = Debug|ARM
+		{3BFEAEF9-9C91-4368-983D-818B68D27382}.Debug|ARM.Build.0 = Debug|ARM
+		{3BFEAEF9-9C91-4368-983D-818B68D27382}.Debug|ARM.Deploy.0 = Debug|ARM
+		{3BFEAEF9-9C91-4368-983D-818B68D27382}.Debug|x64.ActiveCfg = Debug|x64
+		{3BFEAEF9-9C91-4368-983D-818B68D27382}.Debug|x64.Build.0 = Debug|x64
+		{3BFEAEF9-9C91-4368-983D-818B68D27382}.Debug|x64.Deploy.0 = Debug|x64
+		{3BFEAEF9-9C91-4368-983D-818B68D27382}.Debug|x86.ActiveCfg = Debug|x86
+		{3BFEAEF9-9C91-4368-983D-818B68D27382}.Debug|x86.Build.0 = Debug|x86
+		{3BFEAEF9-9C91-4368-983D-818B68D27382}.Debug|x86.Deploy.0 = Debug|x86
+		{3BFEAEF9-9C91-4368-983D-818B68D27382}.Release|ARM.ActiveCfg = Release|ARM
+		{3BFEAEF9-9C91-4368-983D-818B68D27382}.Release|ARM.Build.0 = Release|ARM
+		{3BFEAEF9-9C91-4368-983D-818B68D27382}.Release|ARM.Deploy.0 = Release|ARM
+		{3BFEAEF9-9C91-4368-983D-818B68D27382}.Release|x64.ActiveCfg = Release|x64
+		{3BFEAEF9-9C91-4368-983D-818B68D27382}.Release|x64.Build.0 = Release|x64
+		{3BFEAEF9-9C91-4368-983D-818B68D27382}.Release|x64.Deploy.0 = Release|x64
+		{3BFEAEF9-9C91-4368-983D-818B68D27382}.Release|x86.ActiveCfg = Release|x86
+		{3BFEAEF9-9C91-4368-983D-818B68D27382}.Release|x86.Build.0 = Release|x86
+		{3BFEAEF9-9C91-4368-983D-818B68D27382}.Release|x86.Deploy.0 = Release|x86
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {D19ACCA3-CC58-4F58-8867-50F53211955D}
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,42 @@
+﻿<Page
+    x:Class="RelativePanelEjercicio1.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:RelativePanelEjercicio1"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <RelativePanel HorizontalAlignment="Stretch"  Margin="20" Background="SeaGreen" >
+
+        <TextBlock Text="Buscar" Name="BuscarElementos" Margin="15,15" />
+
+        <TextBox Name="BuscaAlgo" Height="10 " Width="200"
+                 RelativePanel.RightOf="BuscarElementos"  />
+        
+        <Rectangle Name="RedRectangle" Fill="Red" Width="100" Height="100"
+                   RelativePanel.AlignRightWithPanel="True" 
+                   RelativePanel.Below="BuscaAlgo"/>
+
+        <Rectangle Name="BlueRectangle"  Fill="Blue"  Width="50"  Height="50" 
+                   RelativePanel.LeftOf="RedRectangle"
+                   RelativePanel.Below="BuscaAlgo"/>
+
+        <Rectangle Name="GreenRectangle" Fill="Green" Width="50"  Height="50"  
+                   RelativePanel.AlignVerticalCenterWith="RedRectangle"  
+                   RelativePanel.AlignHorizontalCenterWithPanel="True" />
+
+        <Rectangle Name="YellowRectangle" Fill="Yellow" MinWidth="50" MinHeight="50" 
+                   RelativePanel.AlignBottomWithPanel="True" 
+                   RelativePanel.AlignTopWith="PurpleRectangle"/>
+
+
+        <Rectangle Name="PurpleRectangle" Fill="Purple" MinWidth="50" MinHeight="50"  
+                   RelativePanel.Below="RedRectangle"  
+                   RelativePanel.AlignRightWith="RedRectangle" 
+                   RelativePanel.AlignLeftWith="GreenRectangle" 
+                            />
+
+
+    </RelativePanel>
+</Page>

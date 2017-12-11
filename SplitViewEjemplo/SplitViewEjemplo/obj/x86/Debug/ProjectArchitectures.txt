@@ -1,0 +1,1 @@
+G:\SEGUNDO\DEINT\Proyectos\DEINT\SplitViewEjemplo\SplitViewEjemplo\SplitViewEjemplo.csproj;x86

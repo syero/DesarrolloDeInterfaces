@@ -1,0 +1,11 @@
+/out:"E:\SEGUNDO\DEINT\Proyectos\DEINT\PanelesSolaresApp\PanelesSolaresApp\obj\x86\Release\ilc\intermediate\SgGenerated\\"
+/int:"E:\SEGUNDO\DEINT\Proyectos\DEINT\PanelesSolaresApp\PanelesSolaresApp\obj\x86\Release\ilc\intermediate\\"
+/ref:"E:\SEGUNDO\DEINT\Proyectos\DEINT\PanelesSolaresApp\PanelesSolaresApp\obj\x86\Release\ilc\intermediate\PreMergeILTransformed"
+/ref:"E:\SEGUNDO\DEINT\Proyectos\DEINT\PanelesSolaresApp\PanelesSolaresApp\obj\x86\Release\ilc\intermediate\TransformedSRWR"
+/ref:"E:\SEGUNDO\DEINT\Proyectos\DEINT\PanelesSolaresApp\PanelesSolaresApp\obj\x86\Release\ilc\in"
+/ref:"E:\SEGUNDO\DEINT\Proyectos\DEINT\PanelesSolaresApp\PanelesSolaresApp\obj\x86\Release\ilc\in\\"
+/ref:"E:\SEGUNDO\DEINT\Proyectos\DEINT\PanelesSolaresApp\PanelesSolaresApp\obj\x86\Release\ilc\in\\"
+/ref:"C:\Users\syero\.nuget\packages\microsoft.net.native.compiler\1.7.1\tools\x86\ilc\lib\Private\\"
+/ref:"E:\SEGUNDO\DEINT\Proyectos\DEINT\PanelesSolaresApp\PanelesSolaresApp\obj\x86\Release\ilc\in\WinMetadata"
+/ca:System.Private.CoreLib
+/cscpath:"C:\Users\syero\.nuget\packages\microsoft.net.native.compiler\1.7.1\tools\x86\ilc\csc"

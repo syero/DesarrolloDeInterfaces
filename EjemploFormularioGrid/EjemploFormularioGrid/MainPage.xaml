@@ -1,0 +1,53 @@
+﻿<Page
+    x:Class="EjemploFormularioGrid.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:EjemploFormularioGrid"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <Grid Background="DarkCyan">
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto" />           
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="Auto" />
+        </Grid.ColumnDefinitions>
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+
+        <TextBlock Text="Formulario" Grid.Column="0"  Grid.ColumnSpan="3"  TextAlignment="Center" HorizontalAlignment="Center" />
+
+        <TextBlock Name="txbl_Nombre" Text="Nombre" Grid.Column="0" Grid.Row="1" Margin="9"/>
+        <TextBox Name="txbx_Nombre"  Grid.Column="1" Grid.Row="1" Margin="6" />
+        <TextBlock Name="txbl_textoNombre" Text="Escriba el nombre" Grid.Column="2" Grid.Row="1" Margin="2" Visibility="Collapsed"/>
+
+        <TextBlock Name="txbl_Apellidos" Text="Apellidos" Grid.Column="0" Grid.Row="2" Margin="9"/>
+        <TextBox Name="txbx_Apellidos"  Grid.Column="1" Grid.Row="2" Margin="6" />
+        <TextBlock Name="txbl_textoApellidos" Text="Escriba los Apellidos" Grid.Column="2" 
+                   Grid.Row="2" Margin="2" Visibility="Collapsed"/>
+
+
+        <TextBlock Name="txbl_Fecha" Text="Fecha" Grid.Column="0" Grid.Row="3" Margin="9"/>
+        <TextBox Name="txbx_Fecha"  Grid.Column="1" Grid.Row="3" Margin="6" />
+        <TextBlock Name="txbl_textoFecha"  Grid.Column="2" Grid.Row="3" 
+                   Margin="2"/>
+
+        <Button Name="btn_Enviar" Content="Enviar" Grid.Column="1" Grid.Row="4"  HorizontalAlignment="Right" Click="btn_Enviar_Click" />
+
+        <StackPanel Grid.Column="1" Grid.Row="4" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="2">
+            <TextBlock Name="txbl_mostrarNombre"   Margin="2"/>
+            <TextBlock Name="txbl_mostrarApellidos"  Margin="2"/>
+            <TextBlock Name="txbl_mostrarFecha"   Margin="2"/>
+        </StackPanel>
+        
+    </Grid>
+    
+</Page>

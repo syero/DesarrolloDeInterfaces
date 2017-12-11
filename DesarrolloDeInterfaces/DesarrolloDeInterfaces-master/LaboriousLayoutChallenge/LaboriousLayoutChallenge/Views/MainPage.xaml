@@ -1,0 +1,64 @@
+﻿<Page
+    x:Class="LaboriousLayoutChallenge.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:LaboriousLayoutChallenge"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+    <ScrollViewer>
+    <StackPanel x:Name="stkPanelPrincipal" Background="{ThemeResource ApplicationPageBackgroundThemeBrush}" Width="500">
+        <Grid Margin="10, 10, 20, 10">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="1*"/>
+                <ColumnDefinition Width="3*"/>
+            </Grid.ColumnDefinitions>
+
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+
+            <TextBlock x:Name="txbTitulo1" Text="Title 1" FontSize="24" Margin="10, 10, 20, 10" Grid.Row="0" Grid.Column="0"/>
+            <TextBlock x:Name="txbContent1" Text="Lorem ipsum dolor sit amet, consecteur adipiscing elit. Ut luctus, mi nec fermentum congue, turpis nibh porttitor ex, sed commodo neque eros non libero. Donec mauris felis, malesuada nec consecteur et, pharetra in ante. Praesent nec hendrerit purus. Ut vel nunc id nisl volutpat porta. Cras in convallis ipsum. Integer id sollicitudin ex. Ut sed iaculis nisl."
+                       TextWrapping="Wrap" Grid.Row="1" Grid.Column="1" Margin="20, 10, 20, 0"/>
+
+            <StackPanel x:Name="stkPanelRec1" Grid.Column="1" Grid.Row="2" Orientation="Horizontal" Margin="20, 0, 0, 20">
+                <Rectangle Fill="Green" MinWidth="100" MinHeight="30"/>
+                <Rectangle Fill="Black" MinWidth="100" MinHeight="30"/>
+                <Rectangle Fill="Red" MinWidth="100" MinHeight="30"/>
+            </StackPanel>
+
+
+            <TextBlock x:Name="txbTitulo2" Text="Title 2" FontSize="24" Margin="10, 10, 20, 10" Grid.Row="3" Grid.Column="0"/>
+            <TextBlock x:Name="txbContent2" Text="Lorem ipsum dolor sit amet, consecteur adipiscing elit. Ut luctus, mi nec fermentum congue, turpis nibh porttitor ex, sed commodo neque eros non libero. Donec mauris felis, malesuada nec consecteur et, pharetra in ante. Praesent nec hendrerit purus. Ut vel nunc id nisl volutpat porta. Cras in convallis ipsum. Integer id sollicitudin ex. Ut sed iaculis nisl."
+                       TextWrapping="Wrap" Grid.Row="4" Grid.Column="1" Margin="20, 10, 20, 0"/>
+
+            <StackPanel x:Name="stkPanelRec2" Grid.Column="1" Grid.Row="5" Orientation="Horizontal" Margin="20, 0, 0, 20">
+                <Rectangle Fill="Red" MinWidth="100" MinHeight="30"/>
+                <Rectangle Fill="Black" MinWidth="100" MinHeight="30"/>
+                <Rectangle Fill="Blue" MinWidth="100" MinHeight="30"/>
+            </StackPanel>
+
+            <TextBlock x:Name="txbTitulo3" Text="Title 3" FontSize="24" Margin="10, 10, 20, 10" Grid.Row="6" Grid.Column="0"/>
+            <TextBlock x:Name="txbContent3" Text="Lorem ipsum dolor sit amet, consecteur adipiscing elit. Ut luctus, mi nec fermentum congue, turpis nibh porttitor ex, sed commodo neque eros non libero. Donec mauris felis, malesuada nec consecteur et, pharetra in ante. Praesent nec hendrerit purus. Ut vel nunc id nisl volutpat porta. Cras in convallis ipsum. Integer id sollicitudin ex. Ut sed iaculis nisl."
+                       TextWrapping="Wrap" Grid.Row="7" Grid.Column="1" Margin="20, 10, 20, 0"/>
+
+            <StackPanel x:Name="stkPanelRec3" Grid.Column="1" Grid.Row="8" Orientation="Horizontal" Margin="20, 0, 0, 20">
+                <Rectangle Fill="Blue" MinWidth="100" MinHeight="30"/>
+                <Rectangle Fill="Black" MinWidth="100" MinHeight="30"/>
+                <Rectangle Fill="Yellow" MinWidth="100" MinHeight="30"/>
+            </StackPanel>
+        </Grid>
+    </StackPanel>
+    </ScrollViewer>
+</Page>

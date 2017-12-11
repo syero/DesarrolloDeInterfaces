@@ -1,0 +1,25 @@
+﻿<Page
+    x:Class="WindowsUniversalNavegarEntrePaginas.BlankPage1"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:WindowsUniversalNavegarEntrePaginas"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+
+    <RelativePanel Background="White" >
+        <Rectangle  Name="rt_rectangulo" Fill="Purple" Width="Auto" Height="50" 
+                     RelativePanel.AlignLeftWithPanel="True" 
+                     RelativePanel.AlignRightWithPanel="True"/>
+
+        <TextBox Name="txt_Escribe"  TextAlignment="Left"  Height="30" RelativePanel.AlignLeftWithPanel="True"  RelativePanel.LeftOf="btn_Siguiente"/>
+
+        <Button Name="btn_Siguiente" Content="Siguiente" RelativePanel.AlignRightWithPanel="True" Margin="0.333,0,0,0" VerticalAlignment="Bottom" Click="btn_Navegar_Click" />
+      
+
+
+        <Button Name="btn_Atras" Content="Atras" RelativePanel.AlignBottomWithPanel="True"  RelativePanel.AlignRightWithPanel="True" HorizontalAlignment="Stretch" VerticalAlignment="Top" Height="32" Click="btn_Atras_Click"/>
+
+    </RelativePanel>
+</Page>

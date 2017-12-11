@@ -1,0 +1,34 @@
+﻿<Page
+    x:Class="_06_Canvas_UWP.Views.InkCanvasPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:_06_Canvas_UWP.Views"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+    <Page.TopAppBar>
+        <CommandBar>
+            <AppBarButton
+                Name="Color"
+                Icon="Bullets"
+                Click="Color_Click"
+                />
+            <AppBarButton 
+                Name="abbDibujar"
+                Icon="Edit"
+                Click="abbDibujar_Click"/>
+            <AppBarButton
+                Name="abbBorrar"
+                Icon="Delete"
+                Click="abbBorrar_Click"/>
+            <AppBarButton
+                Name="abbAtras"
+                Icon="Back"
+                Click="abbAtras_Click"/>
+        </CommandBar>
+    </Page.TopAppBar>
+    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        <InkCanvas
+            Name="inkCanvas"/>
+    </Grid>
+</Page>

@@ -1,0 +1,21 @@
+﻿<Page
+    x:Class="VariablesSizeWrapGrid.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:VariablesSizeWrapGrid"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <VariableSizedWrapGrid ItemWidth="120"  Background="Aquamarine" Orientation="Horizontal" >
+        <Button Content="Perros" Name="Perros" Background="Green" Padding="20,10,20,10" Width="120" />
+        <Button Content="Gatos" Name="Gatos"  Background="Green" Padding="20,10,20,10" Width="120"/>
+        <Button Content="Leones" Name="Leones" Background="Green" Padding="20,10,20,10" Width="120"/>
+        <Button Content="Camellos" Name="Camellos" Background="Green" Padding="20,10,20,10" Width="120"/>
+        <Button Content="Cerdos"  Name="Cerdos" Background="Green" Padding="20,10,20,10"  Width="120"/>
+        <Button Content="Zorros"  Name="Zorros" Background="Green" Padding="20,10,20,10" Width="120"/>
+        <Button Content="Gallinas" Name="Gallinas" Background="Green" Padding="20,10,20,10" Width="120" />
+            <Button Content="Tiburones" Name="Tiburones" Background="Green" Padding="20,10,20,10" Width="120"/>
+    </VariableSizedWrapGrid> 
+
+</Page>

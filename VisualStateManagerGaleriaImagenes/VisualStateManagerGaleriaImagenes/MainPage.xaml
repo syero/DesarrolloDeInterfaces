@@ -1,0 +1,35 @@
+﻿<Page
+    x:Class="VisualStateManagerGaleriaImagenes.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:VisualStateManagerGaleriaImagenes"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <RelativePanel Background="Aqua">
+        <StackPanel Name="stk_Panel" Orientation="Vertical">
+            <AppBarButton Icon="Bullets" Name="Algo" />
+            <AppBarButton Icon="Admin" Name="Algo1"/>
+            <AppBarButton Icon="AttachCamera" Name="Algo2"/>
+            <AppBarButton Icon="Audio" Name="Algo3"/>
+            <AppBarButton Icon="Account" Name="Algo4"/>
+            <AppBarButton Icon="Contact" Name="Algo5"/>
+        </StackPanel>
+
+        <GridView  RelativePanel.RightOf="stk_Panel" VerticalAlignment="Stretch"  >
+            <Image Name="img1" Source="Assets/imagenes/img1.jpg" Height="200" Width="200" />
+            <Image Name="img2" Source="Assets/imagenes/img2.jpg" Height="200" Width="200" />
+            <Image Name="img3" Source="Assets/imagenes/img3.jpg" Height="200" Width="200" />
+            <Image Name="img4" Source="Assets/imagenes/img4.jpg" Height="200" Width="200"  />
+            <Image Name="img5" Source="Assets/imagenes/img5.jpg" Height="200" Width="200" />
+            <Image Name="img6" Source="Assets/imagenes/img6.jpg" Height="200" Width="200"  />
+            <Image Name="img7" Source="Assets/imagenes/img7.jpg" Height="200" Width="200" />
+            <Image Name="img8" Source="Assets/imagenes/la_bella_durmiente.png" Height="200" Width="200" />
+            <Image Name="img9" Source="Assets/imagenes/la_cenicienta.png" Height="200" Width="200" />
+            <Image Name="img10" Source="Assets/imagenes/la_dama_vagabundo.png" Height="200" Width="200" />
+            <Image Name="img11" Source="Assets/imagenes/peter_pan.png" Height="200" Width="200" />
+
+        </GridView>
+    </RelativePanel>
+</Page>

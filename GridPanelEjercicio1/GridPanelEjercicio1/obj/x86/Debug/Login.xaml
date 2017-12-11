@@ -1,0 +1,47 @@
+﻿<Page
+    x:Class="GridPanelEjercicio1.Login"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:GridPanelEjercicio1"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <Grid x:ConnectionId='1' Name="gr_panel"  Background="LightSalmon">
+
+        <!--Permite definir una o varias columnas  -->
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto" />
+            <ColumnDefinition />
+            <!-- esto va simular como si ubiesen dos columnas pero en realidad va a dejar libre el espacio de la clomna simulada-->
+        </Grid.ColumnDefinitions>
+
+        <!--Permite definir una o varias filas  -->
+        <Grid.RowDefinitions >
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+
+        </Grid.RowDefinitions>
+
+        <TextBlock x:ConnectionId='2' Grid.Row="0" Grid.Column="1" Name="txt_titulo" Text="Introduzca sus Datos"  FontFamily="Verdana"  Margin="10" HorizontalAlignment="Left" VerticalAlignment="Center" Width="Auto"/>
+
+
+        <!-- Grid.Row para saber a que fila pertenece y Grid.Column para saber a que columna pertenece cada elemento-->
+        <TextBlock x:ConnectionId='3' Grid.Row="1" Grid.Column="0" Name="txt_Nombre" Text="Nombre"  FontFamily="Verdana"  Margin="10" HorizontalAlignment="Left" VerticalAlignment="Center" Width="Auto"/>
+        <TextBox x:ConnectionId='4' Grid.Row="1" Grid.Column="1"  Name="txt_EscribeNombre" FontFamily="Verdana" Margin="10"  />
+
+        <TextBlock x:ConnectionId='5' Grid.Row="2" Grid.Column="0" Name="txt_Apellido" Text="Apellido" FontFamily="Verdana"  Margin="10" HorizontalAlignment="Left" VerticalAlignment="Center" Width="Auto"/>
+        <TextBox x:ConnectionId='6' Grid.Row="2" Grid.Column="1"  Name="txt_EscribeApellido" FontFamily="Verdana" Margin="10"  />
+
+        <TextBlock x:ConnectionId='7' Grid.Row="3" Grid.Column="0" Name="txt_Edad" Text="Edad" FontFamily="Verdana"  Margin="10"  HorizontalAlignment="Left" VerticalAlignment="Center" Width="Auto"/>
+        <TextBox x:ConnectionId='8' Grid.Row="3" Grid.Column="1"  Name="txt_EscribeEdad" FontFamily="Verdana" Margin="10"  />
+
+        <RelativePanel x:ConnectionId='9' Name="rp_Enviar" Grid.Row="4" Grid.Column="1" >
+            <Button x:ConnectionId='10' Name="btn_Enviar" Content="Enviar"  RelativePanel.AlignRightWithPanel="True"  RelativePanel.AlignBottomWithPanel="True"                          HorizontalAlignment="Right" Margin="6" />
+        </RelativePanel>
+    </Grid>
+</Page>
+

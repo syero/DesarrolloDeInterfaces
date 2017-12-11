@@ -1,0 +1,66 @@
+﻿<Page
+    x:Class="PanelesSolaresApp.Views.Detalles"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:PanelesSolaresApp.Views"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:my="using:Windows.UI.Xaml.Controls.Maps"
+    mc:Ignorable="d">
+    
+    <RelativePanel Background="#FFC55D">
+       
+           <TextBlock x:ConnectionId='1' Name="Titulo" Text="Título" FontSize="30"/>
+
+            <my:MapControl x:ConnectionId='2' Name="map" RelativePanel.AlignLeftWithPanel="True" RelativePanel.AlignRightWithPanel="True" MinHeight="200"
+                           RelativePanel.Below="Titulo"/>
+        
+        <TextBlock x:ConnectionId='3' Name="direccion" Text="Calle de la piruleta,Ciudad de las chuches"
+                   RelativePanel.Below="map" Margin="3" />
+                
+         <ScrollViewer VerticalScrollMode="Enabled"  RelativePanel.Below="direccion">
+            <StackPanel x:ConnectionId='4' Name="stack" Orientation="Vertical">
+               
+        <Grid Padding="0,20,0,0">
+            <Grid.RowDefinitions>
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+
+            <Image Source="http://www.espanoladecubiertas.es/html/7588_RUBeN_GONZaLEZ_REQUENA/img/big_82284_91500_construcciones_de_tejados_en_oviedo.jpg" />
+            <Image Source="http://www.gabinosolana.es/wp-content/uploads/Tejados-y-cubiertas-en-Santander.jpg" Grid.Column="1"/>
+            <Image Source="http://www.materialesde.com/wp-content/uploads/2011/10/tejados3_g.jpg" Grid.Column="2"/>
+
+        </Grid>
+
+        <AppBarButton x:ConnectionId='5' Name="botonAnadir" Icon="Add" HorizontalAlignment="Center"/>
+        <TextBox Margin="20,0,20,0" Height="50" PlaceholderText="Comentario..." TextWrapping="Wrap" AcceptsReturn="True" ScrollViewer.VerticalScrollBarVisibility="Auto" />
+
+        <Grid BorderBrush="gray" Margin="20,10,20,0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="2*"/>
+                <ColumnDefinition Width="3*"/>
+                <ColumnDefinition Width="4*"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+
+            <RadioButton Content="Apto" />
+            <RadioButton Content="No apto" Grid.Column="1"/>
+            <RadioButton Content="Por determinar" Grid.Column="2"/>
+        </Grid>
+            <Button x:ConnectionId='6' Name="btnGuardar" Margin="20,10,20,0" Content="Guardar"                         />
+        
+            </StackPanel>
+       </ScrollViewer>
+    </RelativePanel>
+        
+</Page>
+

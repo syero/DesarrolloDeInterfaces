@@ -1,0 +1,45 @@
+﻿<Page
+    x:Class="SandraRepasoBindingNavegarEntrePaginasCommand.Contenido"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:SandraRepasoBindingNavegarEntrePaginasCommand"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:vm="using:SandraRepasoBindingNavegarEntrePaginasCommand.ViewModel"
+    mc:Ignorable="d">
+
+    <Page.DataContext>
+        <vm:ContenidoVM></vm:ContenidoVM>
+    </Page.DataContext>
+
+    <RelativePanel Background="Azure">
+
+        
+        <ListView x:ConnectionId='1' Name="listaPeliculas"  ItemsSource="{Binding ListaPeliculasAMostrar}" SelectedItem="{Binding PeliculaSeleccionada,Mode=TwoWay}" >
+            <ListView.ItemTemplate>
+                <DataTemplate >
+                    <StackPanel Orientation="Horizontal" Padding="5" Margin="5">
+                        <Image Name="ImagenPelicula" Source="{Binding FotoPelicula}" Height="60" Width="60"/>
+                        <TextBlock Name="txtBx_ApellidoPersona" Text="{Binding Nombre }"/>
+                    </StackPanel>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+
+        <!-- Aqui pongo la lista de actores que participan en cada pelicula -->
+        <ListView x:ConnectionId='2' Name="listaActores" RelativePanel.RightOf="listaPeliculas"  ItemsSource="{Binding PeliculaSeleccionada.Reparto}" SelectedItem="" >
+            <ListView.ItemTemplate>
+                <DataTemplate >
+                    <StackPanel Orientation="Horizontal" Padding="5" Margin="5">
+                        <TextBlock Name="txtBx_ApellidoPersona" Text="{Binding Nombre }"/>
+                    </StackPanel>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+
+
+        <Button x:ConnectionId='3' Name="Atras" Content="Atras"                    />
+
+    </RelativePanel>
+</Page>
+

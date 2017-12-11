@@ -1,0 +1,75 @@
+﻿<Page
+    x:Class="SplitViewPanel.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:SplitViewPanel"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}" >
+        <SplitView Name="splitView" DisplayMode="CompactInline"  Background="LightGreen" PanePlacement="Left" CompactPaneLength="48"  >
+            <!--The pane represents the menu that you want to be able to interact with-->
+            <SplitView.Pane>
+
+                <StackPanel Orientation="Vertical" Background="LimeGreen" >
+                    <ToggleButton Name="HamburgerButton" FontFamily="Segoe MDL2 Assets" Content="&#xE700;" Width="50" Height="50" Background="Transparent" Click="HamburgerButton_Click"/>
+
+                    <StackPanel Orientation="Vertical" >
+                        
+                        <StackPanel Orientation="Horizontal">
+                            <AppBarButton Name="Add"  Icon="AddFriend" Click="Add_Click"/>
+                            <TextBlock Text="Button 2"   FontSize="18" VerticalAlignment="Center" />
+                        </StackPanel>
+
+                        <StackPanel Orientation="Horizontal">
+                            <AppBarButton Name="Camera"  Icon="Camera" />
+                            <TextBlock Text="Button 2"   FontSize="18" VerticalAlignment="Center" />
+                        </StackPanel>
+                        
+                        <StackPanel Orientation="Horizontal">
+                            <AppBarButton Name="Admin"  Icon="Admin"/>
+                            <TextBlock Text="Button 2"   FontSize="18" VerticalAlignment="Center" />
+                        </StackPanel>
+
+                        <StackPanel Orientation="Horizontal">
+                            <AppBarButton Name="Favorite"  Icon="Favorite"/>
+                            <TextBlock Text="Button 2"   FontSize="18" VerticalAlignment="Center" />
+                        </StackPanel>
+
+                        <StackPanel Orientation="Horizontal">
+                            <AppBarButton Name="Delete"  Icon="Delete"/>
+                            <TextBlock Text="Button 2"   FontSize="18" VerticalAlignment="Center" />
+                        </StackPanel>
+
+                        <StackPanel Orientation="Horizontal">
+                            <AppBarButton Name="Edit"  Icon="Edit"/>
+                            <TextBlock Text="Button 2"   FontSize="18" VerticalAlignment="Center" />
+                        </StackPanel>
+                        
+                  
+
+                        <StackPanel Orientation="Horizontal">
+                            <Button x:Name="MenuButton2" FontFamily="Segoe MDL2 Assets" Content="&#xE10F;" Width="50" Height="50" Background="Transparent"/>
+                            <TextBlock Text="Button 2"   FontSize="18" VerticalAlignment="Center" />
+                        </StackPanel>
+
+                    </StackPanel>
+                </StackPanel>
+
+            </SplitView.Pane>
+            <SplitView.Content>
+                <StackPanel Orientation="Vertical">
+                    <TextBlock Name="txt_Block_Setting" Text="Cosas sin importancia"/>
+
+                </StackPanel>
+            </SplitView.Content>
+        </SplitView>
+    </Grid>
+</Page>
+
+
+
+
+
+  

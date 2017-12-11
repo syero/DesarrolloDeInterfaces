@@ -1,0 +1,44 @@
+﻿<Page
+    x:Class="LegendaryLayoutChallenge.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:LegendaryLayoutChallenge"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <StackPanel Background="White" Orientation="Vertical" >
+        <TextBlock x:ConnectionId='1' Name="txtb_Titulo" Text="Lorem Ipsum" FontSize="48" Padding="6"/>
+            <!--texto enorme-->
+        <StackPanel Orientation="Horizontal">
+            <TextBlock x:ConnectionId='2' Name="txtblk_TextoInutil1" Text="¿Qué es Lorem Ipsum?Lorem Ipsum es simplemente el texto de relleno de las imprentas y archivos de texto. 
+                       Lorem Ipsum ha sido el texto de relleno estándar de las industrias desde el año 1500, cuando un impresor (N. del T. persona que se dedica a la imprenta)
+                       desconocido usó una galería de textos y los mezcló de tal manera que logró hacer un libro de textos especimen. No sólo sobrevivió 500 años, sino que tambien
+                       ingresó como texto de relleno en documentos electrónicos, quedando esencialmente igual al original. "
+                        FontSize="12" Padding="6" TextWrapping="Wrap"  Width="250"/>
+            
+            <TextBlock x:ConnectionId='3' Name="txtblk_TextoInutil2" Text="Fue popularizado en los 60s con la creación de las hojas 
+                       Letraset, las cuales contenian pasajes de Lorem Ipsum, y más recientemente con software de autoedición, como por ejemplo Aldus PageMaker, 
+                       el cual incluye versiones de Lorem Ipsum.¿Por qué lo usamos?Es un hecho establecido hace demasiado tiempo que un lector se distraerá con el 
+                       contenido del texto de un sitio mientras que mira su diseño. El punto de usar Lorem Ipsum es que tiene una distribución más o menos normal de 
+                       las letras, al contrario de usar textos como por ejemplo Contenido aquí, contenido aquí. Estos textos hacen parecerlo un español que se puede 
+                       leer. Muchos paquetes de autoedición y editores de páginas web usan el Lorem Ipsum como su texto por defecto, y al hacer una búsqueda de 
+                       Lorem Ipsum va a dar por resultado muchos sitios web que usan este texto si se encuentran en estado de desarrollo. Muchas versiones han 
+                       evolucionado a través de los años, algunas veces por accidente, otras veces a propósito (por ejemplo insertándole humor y cosas por el estilo)."
+                        FontSize="12" Padding="6" TextWrapping="Wrap" Width="500"/>
+            
+             <!--cuadrados-->
+            <StackPanel x:ConnectionId='4' Name="stkp_cuadrados" Orientation="Horizontal">
+                <Rectangle x:ConnectionId='5' Name="rgl_Azul" Fill="Blue" Height="200"  Width="200"  />
+                
+                <StackPanel x:ConnectionId='6' Name="stkp_cuadradosChicos" Orientation="Vertical">
+                    <Rectangle x:ConnectionId='7' Name="rgl_Rojo" Fill="Red" Height="100"  Width="100"  />
+                    <Rectangle x:ConnectionId='8' Name="rgl_Verde" Fill="Yellow" Height="100"  Width="100"  />
+                </StackPanel>
+                
+            </StackPanel>
+
+        </StackPanel>
+    </StackPanel>
+</Page>
+

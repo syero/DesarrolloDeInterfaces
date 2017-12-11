@@ -1,0 +1,9 @@
+﻿<Application
+    x:Class="CRUD_Personas_Entidades.App"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:CRUD_Personas_Entidades"
+    RequestedTheme="Light">
+
+</Application>
+

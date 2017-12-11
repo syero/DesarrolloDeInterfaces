@@ -1,0 +1,9 @@
+﻿<Application
+    x:Class="EjemploSimpleBindeo1.App"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:EjemploSimpleBindeo1"
+    RequestedTheme="Light">
+
+</Application>
+

@@ -1,0 +1,1 @@
+c:\users\syero\source\repos\VariablesSizeWrapGrid\VariablesSizeWrapGrid\VariablesSizeWrapGrid.csproj;x86

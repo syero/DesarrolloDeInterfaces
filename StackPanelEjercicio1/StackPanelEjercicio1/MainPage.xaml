@@ -1,0 +1,23 @@
+﻿<Page
+    x:Class="StackPanelEjercicio1.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:StackPanelEjercicio1"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+          <Grid Background="Aqua">    
+      
+            <StackPanel Name = "myPanel" Orientation="Vertical" >
+            <Button Content = "Boton_1" Width = "Auto" Height = "Auto" HorizontalAlignment="Center" Margin = "10"  Padding="17,7"/>
+            <Button Content = "Boton_2"  Width = "Auto" Height = "Auto" HorizontalAlignment="Center" Margin = "10"  Padding="17,7" />
+            <RadioButton Content = "Radio Button 1" Width = "Auto" HorizontalAlignment="Center" Margin = "10" />
+            <RadioButton Content = "Radio Button 2" Width = "Auto" HorizontalAlignment="Center" Margin = "10"  />
+            <RadioButton Content = "Radio Button 3" Width = "Auto" HorizontalAlignment="Center" Margin = "10" />
+            <CheckBox Content = "Check Box 1" Width = "Auto" HorizontalAlignment="Center"  Margin = "10"  />
+            <CheckBox Content = "Check Box 2" Width = "Auto" HorizontalAlignment="Center"  Margin = "10"  />
+            </StackPanel>
+        </Grid>
+    
+</Page>

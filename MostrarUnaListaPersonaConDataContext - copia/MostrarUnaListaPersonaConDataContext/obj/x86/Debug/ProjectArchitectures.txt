@@ -1,0 +1,1 @@
+C:\Users\sandra\source\repos\GitHub_DesarrolloDeInterfaces\MostrarUnaListaPersonaConDataContext\MostrarUnaListaPersonaConDataContext\MostrarUnaListaPersonaConDataContext.csproj;x86

@@ -1,0 +1,143 @@
+﻿<Page
+    x:Class="PanelesSolaresApp.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:PanelesSolaresApp"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <Grid  Background="#FFC55D" >
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>           
+        </Grid.ColumnDefinitions>
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        
+        <TextBlock Name="Fecha" FontSize="30" Grid.Column="0" Grid.Row="0" Margin="5"/>
+
+        <RelativePanel Grid.Column="0" Grid.Row="1" Margin="20,0,20,15" >
+            
+            <Rectangle Name="rectangle_Apto" Fill="#B0D72A" Height="20" Width="20" RadiusX="3" RadiusY="5"  
+                       Stroke="Gray" StrokeThickness="2"/>
+            <TextBlock Name="txt_Apto" Text="Apto" RelativePanel.RightOf="rectangle_Apto" Margin="1,0,15,0"/>
+
+            <Rectangle Name="rectangle_NoApto" Fill="#CD3E48" Height="20" Width="20" RadiusX="3" RadiusY="5"  
+                       Stroke="Gray" StrokeThickness="2" RelativePanel.RightOf="txt_Apto"/>
+            <TextBlock Name="txt_NoApto" Text="No apto" RelativePanel.RightOf="rectangle_NoApto" Margin="1,0,15,0"/>
+
+            <Rectangle Name="rectangle_PorDeterminar" Fill="White" Height="20" Width="20" RadiusX="3" RadiusY="5"  
+                       Stroke="Gray" StrokeThickness="2" RelativePanel.RightOf="txt_NoApto" />
+            <TextBlock Name="txt_PorDeterminar" Text="Por determinar" RelativePanel.RightOf="rectangle_PorDeterminar"
+                       Margin="2,0,15,0" />
+
+        </RelativePanel>
+
+        <ScrollViewer  Grid.Column="0" Grid.Row="3" >
+            <StackPanel  Orientation="Vertical">
+
+                <RelativePanel Margin="20,0,20,0" BorderBrush="Gray" BorderThickness="2" Background="{Binding ElementName=rectangle_Apto,Path=Fill}">
+                        <TextBlock Name="txt_Ubicacion1" Text="Ubicación 1" Margin="6"/>
+                        <TextBlock Text="C/ Guadalajara,23 Sevilla" Margin="6" RelativePanel.Below="txt_Ubicacion1" 
+                                   FontSize="12" />
+                    <AppBarButton Name="btn_Flecha1" RelativePanel.AlignRightWithPanel="True" 
+                                      RelativePanel.AlignVerticalCenterWithPanel="True" Height="40" Width="40"
+                                      Margin="4" Icon="Forward"
+                                      Click="btn_Flecha_Click">
+
+                    </AppBarButton>
+                </RelativePanel>
+
+                <RelativePanel Margin="20,0,20,0" BorderBrush="Gray" BorderThickness="2" Background="{Binding ElementName=rectangle_NoApto,Path=Fill}">
+                    <TextBlock Name="txt_Ubicacion2" Text="Ubicación 2" Margin="6"/>
+                    <TextBlock Text="C/ Guadalajara,23 Sevilla" Margin="6" RelativePanel.Below="txt_Ubicacion2" 
+                               FontSize="12" />
+                    <AppBarButton Name="btn_Flecha2"  RelativePanel.AlignRightWithPanel="True" 
+                                      RelativePanel.AlignVerticalCenterWithPanel="True" Height="40" Width="40"
+                                      Margin="4" Icon="Forward"
+                                  Click="btn_Flecha_Click">
+                    </AppBarButton>
+                </RelativePanel>
+
+                <RelativePanel Margin="20,0,20,0" BorderBrush="Gray" BorderThickness="2" Background="{Binding ElementName=rectangle_Apto,Path=Fill}">
+                    <TextBlock Name="txt_Ubicacion3" Text="Ubicación 3" Margin="6"/>
+                    <TextBlock Text="C/ Guadalajara,23 Sevilla" Margin="6" RelativePanel.Below="txt_Ubicacion3" 
+                               FontSize="12" />
+                    <AppBarButton Name="btn_Flecha3"  RelativePanel.AlignRightWithPanel="True" 
+                                      RelativePanel.AlignVerticalCenterWithPanel="True" Height="40" Width="40"
+                                      Margin="4" Icon="Forward"
+                                  Click="btn_Flecha_Click">
+
+                    </AppBarButton>
+                </RelativePanel>
+
+                <RelativePanel Margin="20,0,20,0" BorderBrush="Gray" BorderThickness="2" Background="{Binding ElementName=rectangle_Apto,Path=Fill}" >
+                    <TextBlock Name="txt_Ubicacion4" Text="Ubicación 4" Margin="6"/>
+                    <TextBlock Text="C/ Guadalajara,23 Sevilla" Margin="6" RelativePanel.Below="txt_Ubicacion4" 
+                               FontSize="12" />
+                    <AppBarButton Name="btn_Flecha4"  RelativePanel.AlignRightWithPanel="True" 
+                                      RelativePanel.AlignVerticalCenterWithPanel="True" Height="40" Width="40"
+                                      Margin="4" Icon="Forward"
+                                  Click="btn_Flecha_Click">
+
+                    </AppBarButton>
+                </RelativePanel>
+
+                <RelativePanel Margin="20,0,20,0" BorderBrush="Gray" BorderThickness="2" Background="{Binding ElementName=rectangle_NoApto,Path=Fill}">
+                    <TextBlock Name="txt_Ubicacion5" Text="Ubicación 5" Margin="6"/>
+                    <TextBlock Text="C/ Guadalajara,23 Sevilla" Margin="6" RelativePanel.Below="txt_Ubicacion5" 
+                               FontSize="12" />
+                    <AppBarButton Name="btn_Flecha5" RelativePanel.AlignRightWithPanel="True" 
+                                      RelativePanel.AlignVerticalCenterWithPanel="True" Height="40" Width="40"
+                                      Margin="4" Icon="Forward"
+                                  Click="btn_Flecha_Click">
+
+                    </AppBarButton>
+                </RelativePanel>
+
+                <RelativePanel Margin="20,0,20,0" BorderBrush="Gray" BorderThickness="2" Background="{Binding ElementName=rectangle_PorDeterminar,Path=Fill}">
+                    <TextBlock Name="txt_Ubicacion6" Text="Ubicación 6" Margin="6"/>
+                    <TextBlock Text="C/ Guadalajara,23 Sevilla" Margin="6" RelativePanel.Below="txt_Ubicacion6" 
+                               FontSize="12" />
+                    <AppBarButton Name="btn_Flecha6"  RelativePanel.AlignRightWithPanel="True" 
+                                      RelativePanel.AlignVerticalCenterWithPanel="True" Height="40" Width="40"
+                                      Margin="4" Icon="Forward"
+                                  Click="btn_Flecha_Click">
+
+                    </AppBarButton>
+                </RelativePanel>
+
+                <RelativePanel Margin="20,0,20,0" BorderBrush="Gray" BorderThickness="2" Background="{Binding ElementName=rectangle_PorDeterminar,Path=Fill}">
+                    <TextBlock Name="txt_Ubicacion7" Text="Ubicación 7" Margin="6"/>
+                    <TextBlock Text="C/ Guadalajara,23 Sevilla" Margin="6" RelativePanel.Below="txt_Ubicacion7" 
+                               FontSize="12" />
+                    <AppBarButton Name="btn_Flecha7"  RelativePanel.AlignRightWithPanel="True" 
+                                      RelativePanel.AlignVerticalCenterWithPanel="True" Height="40" Width="40"
+                                      Margin="4" Icon="Forward"
+                                  Click="btn_Flecha_Click">
+
+                    </AppBarButton>
+                </RelativePanel>
+
+                <RelativePanel Margin="20,0,20,0" BorderBrush="Gray" BorderThickness="2" Background="{Binding ElementName=rectangle_NoApto,Path=Fill}">
+                    <TextBlock Name="txt_Ubicacion8" Text="Ubicación 8" Margin="6"/>
+                    <TextBlock Text="C/ Guadalajara,23 Sevilla" Margin="6" RelativePanel.Below="txt_Ubicacion8" 
+                               FontSize="12" />
+                    <AppBarButton Name="btn_Flecha8"  RelativePanel.AlignRightWithPanel="True" 
+                                      RelativePanel.AlignVerticalCenterWithPanel="True" Height="40" Width="40"
+                                      Margin="4" Icon="Forward"
+                                  Click="btn_Flecha_Click">
+
+                    </AppBarButton>
+                </RelativePanel>
+                
+            </StackPanel>
+        </ScrollViewer>
+        
+
+    </Grid>
+</Page>
