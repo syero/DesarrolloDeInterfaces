@@ -28,19 +28,10 @@ namespace SandraRepasoBindingNavegarEntrePaginasCommand
 
         }
 
-        private void passwordBox1_PasswordChanged(object sender, RoutedEventArgs e)
+       /* private void btn_Enviar_Click(object sender, RoutedEventArgs e)
         {
-            this.passwordBox1.GetBindingExpression(PasswordBox.TextReadingOrderProperty).UpdateSource();
-
-        }
-
-        /**para ir a la pagina del contenido*/
-        private void btn_Gurdar_Click(object sender, RoutedEventArgs e)
-        {           
-            Frame.Navigate(typeof(Contenido));
-          //  Frame.Navigate(typeof(View.BlankPage2));
-        }
-
-        
+            //para navegar de una pagina a otra OJOOOOO important
+            this.Frame.Navigate(typeof(BlankPage1));
+        }*/
     }
 }

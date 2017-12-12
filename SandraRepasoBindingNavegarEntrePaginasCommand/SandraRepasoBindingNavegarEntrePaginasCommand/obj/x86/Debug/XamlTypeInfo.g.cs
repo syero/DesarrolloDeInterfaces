@@ -67,18 +67,6 @@ namespace SandraRepasoBindingNavegarEntrePaginasCommand.SandraRepasoBindingNaveg
             {
                 xamlType = CreateXamlType(typeIndex);
             }
-            var userXamlType = xamlType as global::SandraRepasoBindingNavegarEntrePaginasCommand.SandraRepasoBindingNavegarEntrePaginasCommand_XamlTypeInfo.XamlUserType;
-            if(xamlType == null || (userXamlType != null && userXamlType.IsReturnTypeStub && !userXamlType.IsLocalType))
-            {
-                global::Windows.UI.Xaml.Markup.IXamlType libXamlType = CheckOtherMetadataProvidersForType(type);
-                if (libXamlType != null)
-                {
-                    if(libXamlType.IsConstructible || xamlType == null)
-                    {
-                        xamlType = libXamlType;
-                    }
-                }
-            }
             if (xamlType != null)
             {
                 _xamlTypeCacheByName.Add(xamlType.FullName, xamlType);
@@ -102,18 +90,6 @@ namespace SandraRepasoBindingNavegarEntrePaginasCommand.SandraRepasoBindingNaveg
             if(typeIndex != -1)
             {
                 xamlType = CreateXamlType(typeIndex);
-            }
-            var userXamlType = xamlType as global::SandraRepasoBindingNavegarEntrePaginasCommand.SandraRepasoBindingNavegarEntrePaginasCommand_XamlTypeInfo.XamlUserType;
-            if(xamlType == null || (userXamlType != null && userXamlType.IsReturnTypeStub && !userXamlType.IsLocalType))
-            {
-                global::Windows.UI.Xaml.Markup.IXamlType libXamlType = CheckOtherMetadataProvidersForName(typeName);
-                if (libXamlType != null)
-                {
-                    if(libXamlType.IsConstructible || xamlType == null)
-                    {
-                        xamlType = libXamlType;
-                    }
-                }
             }
             if (xamlType != null)
             {
@@ -156,8 +132,8 @@ namespace SandraRepasoBindingNavegarEntrePaginasCommand.SandraRepasoBindingNaveg
 
         private void InitTypeTables()
         {
-            _typeNameTable = new string[24];
-            _typeNameTable[0] = "SandraRepasoBindingNavegarEntrePaginasCommand.ViewModel.ContenidoVM";
+            _typeNameTable = new string[18];
+            _typeNameTable[0] = "SandraRepasoBindingNavegarEntrePaginasCommand.ViewModel.MainPageVM";
             _typeNameTable[1] = "SandraRepasoBindingNavegarEntrePaginasCommand.ViewModel.clsVMBase";
             _typeNameTable[2] = "Object";
             _typeNameTable[3] = "System.Collections.ObjectModel.ObservableCollection`1<SandraRepasoBindingNavegarEntrePaginasCommand.Model.Pelicula>";
@@ -172,18 +148,12 @@ namespace SandraRepasoBindingNavegarEntrePaginasCommand.SandraRepasoBindingNaveg
             _typeNameTable[12] = "SandraRepasoBindingNavegarEntrePaginasCommand.Model.Persona";
             _typeNameTable[13] = "System.DateTime";
             _typeNameTable[14] = "System.ValueType";
-            _typeNameTable[15] = "SandraRepasoBindingNavegarEntrePaginasCommand.ViewModel.DelegateCommand";
-            _typeNameTable[16] = "SandraRepasoBindingNavegarEntrePaginasCommand.Contenido";
-            _typeNameTable[17] = "Windows.UI.Xaml.Controls.Page";
-            _typeNameTable[18] = "Windows.UI.Xaml.Controls.UserControl";
-            _typeNameTable[19] = "SandraRepasoBindingNavegarEntrePaginasCommand.ViewModel.MainPageVM";
-            _typeNameTable[20] = "System.Collections.ObjectModel.ObservableCollection`1<SandraRepasoBindingNavegarEntrePaginasCommand.Model.Login>";
-            _typeNameTable[21] = "System.Collections.ObjectModel.Collection`1<SandraRepasoBindingNavegarEntrePaginasCommand.Model.Login>";
-            _typeNameTable[22] = "SandraRepasoBindingNavegarEntrePaginasCommand.Model.Login";
-            _typeNameTable[23] = "SandraRepasoBindingNavegarEntrePaginasCommand.MainPage";
+            _typeNameTable[15] = "SandraRepasoBindingNavegarEntrePaginasCommand.MainPage";
+            _typeNameTable[16] = "Windows.UI.Xaml.Controls.Page";
+            _typeNameTable[17] = "Windows.UI.Xaml.Controls.UserControl";
 
-            _typeTable = new global::System.Type[24];
-            _typeTable[0] = typeof(global::SandraRepasoBindingNavegarEntrePaginasCommand.ViewModel.ContenidoVM);
+            _typeTable = new global::System.Type[18];
+            _typeTable[0] = typeof(global::SandraRepasoBindingNavegarEntrePaginasCommand.ViewModel.MainPageVM);
             _typeTable[1] = typeof(global::SandraRepasoBindingNavegarEntrePaginasCommand.ViewModel.clsVMBase);
             _typeTable[2] = typeof(global::System.Object);
             _typeTable[3] = typeof(global::System.Collections.ObjectModel.ObservableCollection<global::SandraRepasoBindingNavegarEntrePaginasCommand.Model.Pelicula>);
@@ -198,15 +168,9 @@ namespace SandraRepasoBindingNavegarEntrePaginasCommand.SandraRepasoBindingNaveg
             _typeTable[12] = typeof(global::SandraRepasoBindingNavegarEntrePaginasCommand.Model.Persona);
             _typeTable[13] = typeof(global::System.DateTime);
             _typeTable[14] = typeof(global::System.ValueType);
-            _typeTable[15] = typeof(global::SandraRepasoBindingNavegarEntrePaginasCommand.ViewModel.DelegateCommand);
-            _typeTable[16] = typeof(global::SandraRepasoBindingNavegarEntrePaginasCommand.Contenido);
-            _typeTable[17] = typeof(global::Windows.UI.Xaml.Controls.Page);
-            _typeTable[18] = typeof(global::Windows.UI.Xaml.Controls.UserControl);
-            _typeTable[19] = typeof(global::SandraRepasoBindingNavegarEntrePaginasCommand.ViewModel.MainPageVM);
-            _typeTable[20] = typeof(global::System.Collections.ObjectModel.ObservableCollection<global::SandraRepasoBindingNavegarEntrePaginasCommand.Model.Login>);
-            _typeTable[21] = typeof(global::System.Collections.ObjectModel.Collection<global::SandraRepasoBindingNavegarEntrePaginasCommand.Model.Login>);
-            _typeTable[22] = typeof(global::SandraRepasoBindingNavegarEntrePaginasCommand.Model.Login);
-            _typeTable[23] = typeof(global::SandraRepasoBindingNavegarEntrePaginasCommand.MainPage);
+            _typeTable[15] = typeof(global::SandraRepasoBindingNavegarEntrePaginasCommand.MainPage);
+            _typeTable[16] = typeof(global::Windows.UI.Xaml.Controls.Page);
+            _typeTable[17] = typeof(global::Windows.UI.Xaml.Controls.UserControl);
         }
 
         private int LookupTypeIndexByName(string typeName)
@@ -241,19 +205,14 @@ namespace SandraRepasoBindingNavegarEntrePaginasCommand.SandraRepasoBindingNaveg
             return -1;
         }
 
-        private object Activate_0_ContenidoVM() { return new global::SandraRepasoBindingNavegarEntrePaginasCommand.ViewModel.ContenidoVM(); }
+        private object Activate_0_MainPageVM() { return new global::SandraRepasoBindingNavegarEntrePaginasCommand.ViewModel.MainPageVM(); }
         private object Activate_3_ObservableCollection() { return new global::System.Collections.ObjectModel.ObservableCollection<global::SandraRepasoBindingNavegarEntrePaginasCommand.Model.Pelicula>(); }
         private object Activate_4_Collection() { return new global::System.Collections.ObjectModel.Collection<global::SandraRepasoBindingNavegarEntrePaginasCommand.Model.Pelicula>(); }
         private object Activate_5_Pelicula() { return new global::SandraRepasoBindingNavegarEntrePaginasCommand.Model.Pelicula(); }
         private object Activate_10_ObservableCollection() { return new global::System.Collections.ObjectModel.ObservableCollection<global::SandraRepasoBindingNavegarEntrePaginasCommand.Model.Persona>(); }
         private object Activate_11_Collection() { return new global::System.Collections.ObjectModel.Collection<global::SandraRepasoBindingNavegarEntrePaginasCommand.Model.Persona>(); }
         private object Activate_12_Persona() { return new global::SandraRepasoBindingNavegarEntrePaginasCommand.Model.Persona(); }
-        private object Activate_16_Contenido() { return new global::SandraRepasoBindingNavegarEntrePaginasCommand.Contenido(); }
-        private object Activate_19_MainPageVM() { return new global::SandraRepasoBindingNavegarEntrePaginasCommand.ViewModel.MainPageVM(); }
-        private object Activate_20_ObservableCollection() { return new global::System.Collections.ObjectModel.ObservableCollection<global::SandraRepasoBindingNavegarEntrePaginasCommand.Model.Login>(); }
-        private object Activate_21_Collection() { return new global::System.Collections.ObjectModel.Collection<global::SandraRepasoBindingNavegarEntrePaginasCommand.Model.Login>(); }
-        private object Activate_22_Login() { return new global::SandraRepasoBindingNavegarEntrePaginasCommand.Model.Login(); }
-        private object Activate_23_MainPage() { return new global::SandraRepasoBindingNavegarEntrePaginasCommand.MainPage(); }
+        private object Activate_15_MainPage() { return new global::SandraRepasoBindingNavegarEntrePaginasCommand.MainPage(); }
         private void VectorAdd_3_ObservableCollection(object instance, object item)
         {
             var collection = (global::System.Collections.Generic.ICollection<global::SandraRepasoBindingNavegarEntrePaginasCommand.Model.Pelicula>)instance;
@@ -278,18 +237,6 @@ namespace SandraRepasoBindingNavegarEntrePaginasCommand.SandraRepasoBindingNaveg
             var newItem = (global::SandraRepasoBindingNavegarEntrePaginasCommand.Model.Persona)item;
             collection.Add(newItem);
         }
-        private void VectorAdd_20_ObservableCollection(object instance, object item)
-        {
-            var collection = (global::System.Collections.Generic.ICollection<global::SandraRepasoBindingNavegarEntrePaginasCommand.Model.Login>)instance;
-            var newItem = (global::SandraRepasoBindingNavegarEntrePaginasCommand.Model.Login)item;
-            collection.Add(newItem);
-        }
-        private void VectorAdd_21_Collection(object instance, object item)
-        {
-            var collection = (global::System.Collections.Generic.ICollection<global::SandraRepasoBindingNavegarEntrePaginasCommand.Model.Login>)instance;
-            var newItem = (global::SandraRepasoBindingNavegarEntrePaginasCommand.Model.Login)item;
-            collection.Add(newItem);
-        }
 
         private global::Windows.UI.Xaml.Markup.IXamlType CreateXamlType(int typeIndex)
         {
@@ -301,14 +248,11 @@ namespace SandraRepasoBindingNavegarEntrePaginasCommand.SandraRepasoBindingNaveg
             switch (typeIndex)
             {
 
-            case 0:   //  SandraRepasoBindingNavegarEntrePaginasCommand.ViewModel.ContenidoVM
+            case 0:   //  SandraRepasoBindingNavegarEntrePaginasCommand.ViewModel.MainPageVM
                 userType = new global::SandraRepasoBindingNavegarEntrePaginasCommand.SandraRepasoBindingNavegarEntrePaginasCommand_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("SandraRepasoBindingNavegarEntrePaginasCommand.ViewModel.clsVMBase"));
-                userType.Activator = Activate_0_ContenidoVM;
+                userType.Activator = Activate_0_MainPageVM;
                 userType.AddMemberName("ListaPeliculasAMostrar");
                 userType.AddMemberName("PeliculaSeleccionada");
-                userType.AddMemberName("GuardarNuevaPelicula");
-                userType.AddMemberName("AgregarPelicula");
-                userType.AddMemberName("BorrarPelicula");
                 userType.SetIsLocalType();
                 xamlType = userType;
                 break;
@@ -408,133 +352,33 @@ namespace SandraRepasoBindingNavegarEntrePaginasCommand.SandraRepasoBindingNaveg
                 xamlType = userType;
                 break;
 
-            case 15:   //  SandraRepasoBindingNavegarEntrePaginasCommand.ViewModel.DelegateCommand
-                userType = new global::SandraRepasoBindingNavegarEntrePaginasCommand.SandraRepasoBindingNavegarEntrePaginasCommand_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Object"));
-                userType.SetIsReturnTypeStub();
-                userType.SetIsLocalType();
-                xamlType = userType;
-                break;
-
-            case 16:   //  SandraRepasoBindingNavegarEntrePaginasCommand.Contenido
+            case 15:   //  SandraRepasoBindingNavegarEntrePaginasCommand.MainPage
                 userType = new global::SandraRepasoBindingNavegarEntrePaginasCommand.SandraRepasoBindingNavegarEntrePaginasCommand_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.Page"));
-                userType.Activator = Activate_16_Contenido;
+                userType.Activator = Activate_15_MainPage;
                 userType.SetIsLocalType();
                 xamlType = userType;
                 break;
 
-            case 17:   //  Windows.UI.Xaml.Controls.Page
+            case 16:   //  Windows.UI.Xaml.Controls.Page
                 xamlType = new global::SandraRepasoBindingNavegarEntrePaginasCommand.SandraRepasoBindingNavegarEntrePaginasCommand_XamlTypeInfo.XamlSystemBaseType(typeName, type);
                 break;
 
-            case 18:   //  Windows.UI.Xaml.Controls.UserControl
+            case 17:   //  Windows.UI.Xaml.Controls.UserControl
                 xamlType = new global::SandraRepasoBindingNavegarEntrePaginasCommand.SandraRepasoBindingNavegarEntrePaginasCommand_XamlTypeInfo.XamlSystemBaseType(typeName, type);
-                break;
-
-            case 19:   //  SandraRepasoBindingNavegarEntrePaginasCommand.ViewModel.MainPageVM
-                userType = new global::SandraRepasoBindingNavegarEntrePaginasCommand.SandraRepasoBindingNavegarEntrePaginasCommand_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("SandraRepasoBindingNavegarEntrePaginasCommand.ViewModel.clsVMBase"));
-                userType.Activator = Activate_19_MainPageVM;
-                userType.AddMemberName("ListaUsuarios");
-                userType.AddMemberName("UsuarioSeleccionado");
-                userType.SetIsLocalType();
-                xamlType = userType;
-                break;
-
-            case 20:   //  System.Collections.ObjectModel.ObservableCollection`1<SandraRepasoBindingNavegarEntrePaginasCommand.Model.Login>
-                userType = new global::SandraRepasoBindingNavegarEntrePaginasCommand.SandraRepasoBindingNavegarEntrePaginasCommand_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("System.Collections.ObjectModel.Collection`1<SandraRepasoBindingNavegarEntrePaginasCommand.Model.Login>"));
-                userType.CollectionAdd = VectorAdd_20_ObservableCollection;
-                userType.SetIsReturnTypeStub();
-                xamlType = userType;
-                break;
-
-            case 21:   //  System.Collections.ObjectModel.Collection`1<SandraRepasoBindingNavegarEntrePaginasCommand.Model.Login>
-                userType = new global::SandraRepasoBindingNavegarEntrePaginasCommand.SandraRepasoBindingNavegarEntrePaginasCommand_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Object"));
-                userType.Activator = Activate_21_Collection;
-                userType.CollectionAdd = VectorAdd_21_Collection;
-                xamlType = userType;
-                break;
-
-            case 22:   //  SandraRepasoBindingNavegarEntrePaginasCommand.Model.Login
-                userType = new global::SandraRepasoBindingNavegarEntrePaginasCommand.SandraRepasoBindingNavegarEntrePaginasCommand_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("SandraRepasoBindingNavegarEntrePaginasCommand.ViewModel.clsVMBase"));
-                userType.Activator = Activate_22_Login;
-                userType.AddMemberName("NombreUsuario");
-                userType.AddMemberName("Password");
-                userType.SetIsLocalType();
-                xamlType = userType;
-                break;
-
-            case 23:   //  SandraRepasoBindingNavegarEntrePaginasCommand.MainPage
-                userType = new global::SandraRepasoBindingNavegarEntrePaginasCommand.SandraRepasoBindingNavegarEntrePaginasCommand_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.Page"));
-                userType.Activator = Activate_23_MainPage;
-                userType.SetIsLocalType();
-                xamlType = userType;
                 break;
             }
             return xamlType;
         }
 
-        private global::System.Collections.Generic.List<global::Windows.UI.Xaml.Markup.IXamlMetadataProvider> _otherProviders;
-        private global::System.Collections.Generic.List<global::Windows.UI.Xaml.Markup.IXamlMetadataProvider> OtherProviders
-        {
-            get
-            {
-                if(_otherProviders == null)
-                {
-                    var otherProviders = new global::System.Collections.Generic.List<global::Windows.UI.Xaml.Markup.IXamlMetadataProvider>();
-                    global::Windows.UI.Xaml.Markup.IXamlMetadataProvider provider;
-                    provider = new global::Xamarin.Forms.Platform.UAP.Xamarin_Forms_Platform_UAP_XamlTypeInfo.XamlMetaDataProvider() as global::Windows.UI.Xaml.Markup.IXamlMetadataProvider;
-                    otherProviders.Add(provider); 
-                    _otherProviders = otherProviders;
-                }
-                return _otherProviders;
-            }
-        }
 
-        private global::Windows.UI.Xaml.Markup.IXamlType CheckOtherMetadataProvidersForName(string typeName)
+        private object get_0_MainPageVM_ListaPeliculasAMostrar(object instance)
         {
-            global::Windows.UI.Xaml.Markup.IXamlType xamlType = null;
-            global::Windows.UI.Xaml.Markup.IXamlType foundXamlType = null;
-            foreach(global::Windows.UI.Xaml.Markup.IXamlMetadataProvider xmp in OtherProviders)
-            {
-                xamlType = xmp.GetXamlType(typeName);
-                if(xamlType != null)
-                {
-                    if(xamlType.IsConstructible)    // not Constructible means it might be a Return Type Stub
-                    {
-                        return xamlType;
-                    }
-                    foundXamlType = xamlType;
-                }
-            }
-            return foundXamlType;
-        }
-
-        private global::Windows.UI.Xaml.Markup.IXamlType CheckOtherMetadataProvidersForType(global::System.Type type)
-        {
-            global::Windows.UI.Xaml.Markup.IXamlType xamlType = null;
-            global::Windows.UI.Xaml.Markup.IXamlType foundXamlType = null;
-            foreach(global::Windows.UI.Xaml.Markup.IXamlMetadataProvider xmp in OtherProviders)
-            {
-                xamlType = xmp.GetXamlType(type);
-                if(xamlType != null)
-                {
-                    if(xamlType.IsConstructible)    // not Constructible means it might be a Return Type Stub
-                    {
-                        return xamlType;
-                    }
-                    foundXamlType = xamlType;
-                }
-            }
-            return foundXamlType;
-        }
-
-        private object get_0_ContenidoVM_ListaPeliculasAMostrar(object instance)
-        {
-            var that = (global::SandraRepasoBindingNavegarEntrePaginasCommand.ViewModel.ContenidoVM)instance;
+            var that = (global::SandraRepasoBindingNavegarEntrePaginasCommand.ViewModel.MainPageVM)instance;
             return that.ListaPeliculasAMostrar;
         }
-        private void set_0_ContenidoVM_ListaPeliculasAMostrar(object instance, object Value)
+        private void set_0_MainPageVM_ListaPeliculasAMostrar(object instance, object Value)
         {
-            var that = (global::SandraRepasoBindingNavegarEntrePaginasCommand.ViewModel.ContenidoVM)instance;
+            var that = (global::SandraRepasoBindingNavegarEntrePaginasCommand.ViewModel.MainPageVM)instance;
             that.ListaPeliculasAMostrar = (global::System.Collections.ObjectModel.ObservableCollection<global::SandraRepasoBindingNavegarEntrePaginasCommand.Model.Pelicula>)Value;
         }
         private object get_1_Pelicula_IDPelicula(object instance)
@@ -677,85 +521,15 @@ namespace SandraRepasoBindingNavegarEntrePaginasCommand.SandraRepasoBindingNaveg
             var that = (global::SandraRepasoBindingNavegarEntrePaginasCommand.Model.Persona)instance;
             that.Telefono = (global::System.String)Value;
         }
-        private object get_15_ContenidoVM_PeliculaSeleccionada(object instance)
+        private object get_15_MainPageVM_PeliculaSeleccionada(object instance)
         {
-            var that = (global::SandraRepasoBindingNavegarEntrePaginasCommand.ViewModel.ContenidoVM)instance;
+            var that = (global::SandraRepasoBindingNavegarEntrePaginasCommand.ViewModel.MainPageVM)instance;
             return that.PeliculaSeleccionada;
         }
-        private void set_15_ContenidoVM_PeliculaSeleccionada(object instance, object Value)
+        private void set_15_MainPageVM_PeliculaSeleccionada(object instance, object Value)
         {
-            var that = (global::SandraRepasoBindingNavegarEntrePaginasCommand.ViewModel.ContenidoVM)instance;
+            var that = (global::SandraRepasoBindingNavegarEntrePaginasCommand.ViewModel.MainPageVM)instance;
             that.PeliculaSeleccionada = (global::SandraRepasoBindingNavegarEntrePaginasCommand.Model.Pelicula)Value;
-        }
-        private object get_16_ContenidoVM_GuardarNuevaPelicula(object instance)
-        {
-            var that = (global::SandraRepasoBindingNavegarEntrePaginasCommand.ViewModel.ContenidoVM)instance;
-            return that.GuardarNuevaPelicula;
-        }
-        private void set_16_ContenidoVM_GuardarNuevaPelicula(object instance, object Value)
-        {
-            var that = (global::SandraRepasoBindingNavegarEntrePaginasCommand.ViewModel.ContenidoVM)instance;
-            that.GuardarNuevaPelicula = (global::SandraRepasoBindingNavegarEntrePaginasCommand.ViewModel.DelegateCommand)Value;
-        }
-        private object get_17_ContenidoVM_AgregarPelicula(object instance)
-        {
-            var that = (global::SandraRepasoBindingNavegarEntrePaginasCommand.ViewModel.ContenidoVM)instance;
-            return that.AgregarPelicula;
-        }
-        private void set_17_ContenidoVM_AgregarPelicula(object instance, object Value)
-        {
-            var that = (global::SandraRepasoBindingNavegarEntrePaginasCommand.ViewModel.ContenidoVM)instance;
-            that.AgregarPelicula = (global::SandraRepasoBindingNavegarEntrePaginasCommand.ViewModel.DelegateCommand)Value;
-        }
-        private object get_18_ContenidoVM_BorrarPelicula(object instance)
-        {
-            var that = (global::SandraRepasoBindingNavegarEntrePaginasCommand.ViewModel.ContenidoVM)instance;
-            return that.BorrarPelicula;
-        }
-        private void set_18_ContenidoVM_BorrarPelicula(object instance, object Value)
-        {
-            var that = (global::SandraRepasoBindingNavegarEntrePaginasCommand.ViewModel.ContenidoVM)instance;
-            that.BorrarPelicula = (global::SandraRepasoBindingNavegarEntrePaginasCommand.ViewModel.DelegateCommand)Value;
-        }
-        private object get_19_MainPageVM_ListaUsuarios(object instance)
-        {
-            var that = (global::SandraRepasoBindingNavegarEntrePaginasCommand.ViewModel.MainPageVM)instance;
-            return that.ListaUsuarios;
-        }
-        private void set_19_MainPageVM_ListaUsuarios(object instance, object Value)
-        {
-            var that = (global::SandraRepasoBindingNavegarEntrePaginasCommand.ViewModel.MainPageVM)instance;
-            that.ListaUsuarios = (global::System.Collections.ObjectModel.ObservableCollection<global::SandraRepasoBindingNavegarEntrePaginasCommand.Model.Login>)Value;
-        }
-        private object get_20_Login_NombreUsuario(object instance)
-        {
-            var that = (global::SandraRepasoBindingNavegarEntrePaginasCommand.Model.Login)instance;
-            return that.NombreUsuario;
-        }
-        private void set_20_Login_NombreUsuario(object instance, object Value)
-        {
-            var that = (global::SandraRepasoBindingNavegarEntrePaginasCommand.Model.Login)instance;
-            that.NombreUsuario = (global::System.String)Value;
-        }
-        private object get_21_Login_Password(object instance)
-        {
-            var that = (global::SandraRepasoBindingNavegarEntrePaginasCommand.Model.Login)instance;
-            return that.Password;
-        }
-        private void set_21_Login_Password(object instance, object Value)
-        {
-            var that = (global::SandraRepasoBindingNavegarEntrePaginasCommand.Model.Login)instance;
-            that.Password = (global::System.String)Value;
-        }
-        private object get_22_MainPageVM_UsuarioSeleccionado(object instance)
-        {
-            var that = (global::SandraRepasoBindingNavegarEntrePaginasCommand.ViewModel.MainPageVM)instance;
-            return that.UsuarioSeleccionado;
-        }
-        private void set_22_MainPageVM_UsuarioSeleccionado(object instance, object Value)
-        {
-            var that = (global::SandraRepasoBindingNavegarEntrePaginasCommand.ViewModel.MainPageVM)instance;
-            that.UsuarioSeleccionado = (global::SandraRepasoBindingNavegarEntrePaginasCommand.Model.Login)Value;
         }
 
         private global::Windows.UI.Xaml.Markup.IXamlMember CreateXamlMember(string longMemberName)
@@ -765,11 +539,11 @@ namespace SandraRepasoBindingNavegarEntrePaginasCommand.SandraRepasoBindingNaveg
 
             switch (longMemberName)
             {
-            case "SandraRepasoBindingNavegarEntrePaginasCommand.ViewModel.ContenidoVM.ListaPeliculasAMostrar":
-                userType = (global::SandraRepasoBindingNavegarEntrePaginasCommand.SandraRepasoBindingNavegarEntrePaginasCommand_XamlTypeInfo.XamlUserType)GetXamlTypeByName("SandraRepasoBindingNavegarEntrePaginasCommand.ViewModel.ContenidoVM");
+            case "SandraRepasoBindingNavegarEntrePaginasCommand.ViewModel.MainPageVM.ListaPeliculasAMostrar":
+                userType = (global::SandraRepasoBindingNavegarEntrePaginasCommand.SandraRepasoBindingNavegarEntrePaginasCommand_XamlTypeInfo.XamlUserType)GetXamlTypeByName("SandraRepasoBindingNavegarEntrePaginasCommand.ViewModel.MainPageVM");
                 xamlMember = new global::SandraRepasoBindingNavegarEntrePaginasCommand.SandraRepasoBindingNavegarEntrePaginasCommand_XamlTypeInfo.XamlMember(this, "ListaPeliculasAMostrar", "System.Collections.ObjectModel.ObservableCollection`1<SandraRepasoBindingNavegarEntrePaginasCommand.Model.Pelicula>");
-                xamlMember.Getter = get_0_ContenidoVM_ListaPeliculasAMostrar;
-                xamlMember.Setter = set_0_ContenidoVM_ListaPeliculasAMostrar;
+                xamlMember.Getter = get_0_MainPageVM_ListaPeliculasAMostrar;
+                xamlMember.Setter = set_0_MainPageVM_ListaPeliculasAMostrar;
                 break;
             case "SandraRepasoBindingNavegarEntrePaginasCommand.Model.Pelicula.IDPelicula":
                 userType = (global::SandraRepasoBindingNavegarEntrePaginasCommand.SandraRepasoBindingNavegarEntrePaginasCommand_XamlTypeInfo.XamlUserType)GetXamlTypeByName("SandraRepasoBindingNavegarEntrePaginasCommand.Model.Pelicula");
@@ -855,53 +629,11 @@ namespace SandraRepasoBindingNavegarEntrePaginasCommand.SandraRepasoBindingNaveg
                 xamlMember.Getter = get_14_Persona_Telefono;
                 xamlMember.Setter = set_14_Persona_Telefono;
                 break;
-            case "SandraRepasoBindingNavegarEntrePaginasCommand.ViewModel.ContenidoVM.PeliculaSeleccionada":
-                userType = (global::SandraRepasoBindingNavegarEntrePaginasCommand.SandraRepasoBindingNavegarEntrePaginasCommand_XamlTypeInfo.XamlUserType)GetXamlTypeByName("SandraRepasoBindingNavegarEntrePaginasCommand.ViewModel.ContenidoVM");
+            case "SandraRepasoBindingNavegarEntrePaginasCommand.ViewModel.MainPageVM.PeliculaSeleccionada":
+                userType = (global::SandraRepasoBindingNavegarEntrePaginasCommand.SandraRepasoBindingNavegarEntrePaginasCommand_XamlTypeInfo.XamlUserType)GetXamlTypeByName("SandraRepasoBindingNavegarEntrePaginasCommand.ViewModel.MainPageVM");
                 xamlMember = new global::SandraRepasoBindingNavegarEntrePaginasCommand.SandraRepasoBindingNavegarEntrePaginasCommand_XamlTypeInfo.XamlMember(this, "PeliculaSeleccionada", "SandraRepasoBindingNavegarEntrePaginasCommand.Model.Pelicula");
-                xamlMember.Getter = get_15_ContenidoVM_PeliculaSeleccionada;
-                xamlMember.Setter = set_15_ContenidoVM_PeliculaSeleccionada;
-                break;
-            case "SandraRepasoBindingNavegarEntrePaginasCommand.ViewModel.ContenidoVM.GuardarNuevaPelicula":
-                userType = (global::SandraRepasoBindingNavegarEntrePaginasCommand.SandraRepasoBindingNavegarEntrePaginasCommand_XamlTypeInfo.XamlUserType)GetXamlTypeByName("SandraRepasoBindingNavegarEntrePaginasCommand.ViewModel.ContenidoVM");
-                xamlMember = new global::SandraRepasoBindingNavegarEntrePaginasCommand.SandraRepasoBindingNavegarEntrePaginasCommand_XamlTypeInfo.XamlMember(this, "GuardarNuevaPelicula", "SandraRepasoBindingNavegarEntrePaginasCommand.ViewModel.DelegateCommand");
-                xamlMember.Getter = get_16_ContenidoVM_GuardarNuevaPelicula;
-                xamlMember.Setter = set_16_ContenidoVM_GuardarNuevaPelicula;
-                break;
-            case "SandraRepasoBindingNavegarEntrePaginasCommand.ViewModel.ContenidoVM.AgregarPelicula":
-                userType = (global::SandraRepasoBindingNavegarEntrePaginasCommand.SandraRepasoBindingNavegarEntrePaginasCommand_XamlTypeInfo.XamlUserType)GetXamlTypeByName("SandraRepasoBindingNavegarEntrePaginasCommand.ViewModel.ContenidoVM");
-                xamlMember = new global::SandraRepasoBindingNavegarEntrePaginasCommand.SandraRepasoBindingNavegarEntrePaginasCommand_XamlTypeInfo.XamlMember(this, "AgregarPelicula", "SandraRepasoBindingNavegarEntrePaginasCommand.ViewModel.DelegateCommand");
-                xamlMember.Getter = get_17_ContenidoVM_AgregarPelicula;
-                xamlMember.Setter = set_17_ContenidoVM_AgregarPelicula;
-                break;
-            case "SandraRepasoBindingNavegarEntrePaginasCommand.ViewModel.ContenidoVM.BorrarPelicula":
-                userType = (global::SandraRepasoBindingNavegarEntrePaginasCommand.SandraRepasoBindingNavegarEntrePaginasCommand_XamlTypeInfo.XamlUserType)GetXamlTypeByName("SandraRepasoBindingNavegarEntrePaginasCommand.ViewModel.ContenidoVM");
-                xamlMember = new global::SandraRepasoBindingNavegarEntrePaginasCommand.SandraRepasoBindingNavegarEntrePaginasCommand_XamlTypeInfo.XamlMember(this, "BorrarPelicula", "SandraRepasoBindingNavegarEntrePaginasCommand.ViewModel.DelegateCommand");
-                xamlMember.Getter = get_18_ContenidoVM_BorrarPelicula;
-                xamlMember.Setter = set_18_ContenidoVM_BorrarPelicula;
-                break;
-            case "SandraRepasoBindingNavegarEntrePaginasCommand.ViewModel.MainPageVM.ListaUsuarios":
-                userType = (global::SandraRepasoBindingNavegarEntrePaginasCommand.SandraRepasoBindingNavegarEntrePaginasCommand_XamlTypeInfo.XamlUserType)GetXamlTypeByName("SandraRepasoBindingNavegarEntrePaginasCommand.ViewModel.MainPageVM");
-                xamlMember = new global::SandraRepasoBindingNavegarEntrePaginasCommand.SandraRepasoBindingNavegarEntrePaginasCommand_XamlTypeInfo.XamlMember(this, "ListaUsuarios", "System.Collections.ObjectModel.ObservableCollection`1<SandraRepasoBindingNavegarEntrePaginasCommand.Model.Login>");
-                xamlMember.Getter = get_19_MainPageVM_ListaUsuarios;
-                xamlMember.Setter = set_19_MainPageVM_ListaUsuarios;
-                break;
-            case "SandraRepasoBindingNavegarEntrePaginasCommand.Model.Login.NombreUsuario":
-                userType = (global::SandraRepasoBindingNavegarEntrePaginasCommand.SandraRepasoBindingNavegarEntrePaginasCommand_XamlTypeInfo.XamlUserType)GetXamlTypeByName("SandraRepasoBindingNavegarEntrePaginasCommand.Model.Login");
-                xamlMember = new global::SandraRepasoBindingNavegarEntrePaginasCommand.SandraRepasoBindingNavegarEntrePaginasCommand_XamlTypeInfo.XamlMember(this, "NombreUsuario", "String");
-                xamlMember.Getter = get_20_Login_NombreUsuario;
-                xamlMember.Setter = set_20_Login_NombreUsuario;
-                break;
-            case "SandraRepasoBindingNavegarEntrePaginasCommand.Model.Login.Password":
-                userType = (global::SandraRepasoBindingNavegarEntrePaginasCommand.SandraRepasoBindingNavegarEntrePaginasCommand_XamlTypeInfo.XamlUserType)GetXamlTypeByName("SandraRepasoBindingNavegarEntrePaginasCommand.Model.Login");
-                xamlMember = new global::SandraRepasoBindingNavegarEntrePaginasCommand.SandraRepasoBindingNavegarEntrePaginasCommand_XamlTypeInfo.XamlMember(this, "Password", "String");
-                xamlMember.Getter = get_21_Login_Password;
-                xamlMember.Setter = set_21_Login_Password;
-                break;
-            case "SandraRepasoBindingNavegarEntrePaginasCommand.ViewModel.MainPageVM.UsuarioSeleccionado":
-                userType = (global::SandraRepasoBindingNavegarEntrePaginasCommand.SandraRepasoBindingNavegarEntrePaginasCommand_XamlTypeInfo.XamlUserType)GetXamlTypeByName("SandraRepasoBindingNavegarEntrePaginasCommand.ViewModel.MainPageVM");
-                xamlMember = new global::SandraRepasoBindingNavegarEntrePaginasCommand.SandraRepasoBindingNavegarEntrePaginasCommand_XamlTypeInfo.XamlMember(this, "UsuarioSeleccionado", "SandraRepasoBindingNavegarEntrePaginasCommand.Model.Login");
-                xamlMember.Getter = get_22_MainPageVM_UsuarioSeleccionado;
-                xamlMember.Setter = set_22_MainPageVM_UsuarioSeleccionado;
+                xamlMember.Getter = get_15_MainPageVM_PeliculaSeleccionada;
+                xamlMember.Setter = set_15_MainPageVM_PeliculaSeleccionada;
                 break;
             }
             return xamlMember;

@@ -10,22 +10,22 @@
     <PackageArchitecture>x86</PackageArchitecture>
     <PackageIdentityName>d487a4d9-ccfa-4d81-b30d-f55d97ce40ef</PackageIdentityName>
     <PackageIdentityPublisher>CN=syero</PackageIdentityPublisher>
-    <IntermediateOutputPath>E:\SEGUNDO\DEINT\Proyectos\DEINT\SandraRepasoBindingNavegarEntrePaginasCommand\SandraRepasoBindingNavegarEntrePaginasCommand\obj\x86\Debug\</IntermediateOutputPath>
+    <IntermediateOutputPath>c:\users\syero\source\repos\SandraRepasoBindingNavegarEntrePaginasCommand\SandraRepasoBindingNavegarEntrePaginasCommand\obj\x86\Debug\</IntermediateOutputPath>
     <RemoteDeploymentType></RemoteDeploymentType>
     <PackageRegistrationPath></PackageRegistrationPath>
     <RemoveNonLayoutFiles>true</RemoveNonLayoutFiles>
     <DeployOptionalPackages>false</DeployOptionalPackages>
     <WindowsSdkPath>C:\Program Files %28x86%29\Windows Kits\10\</WindowsSdkPath>
-    <LayoutDir>E:\SEGUNDO\DEINT\Proyectos\DEINT\SandraRepasoBindingNavegarEntrePaginasCommand\SandraRepasoBindingNavegarEntrePaginasCommand\bin\x86\Debug\AppX</LayoutDir>
+    <LayoutDir>c:\users\syero\source\repos\SandraRepasoBindingNavegarEntrePaginasCommand\SandraRepasoBindingNavegarEntrePaginasCommand\bin\x86\Debug\AppX</LayoutDir>
   </PropertyGroup>
   <ItemGroup>
-    <AppXManifest Include="E:\SEGUNDO\DEINT\Proyectos\DEINT\SandraRepasoBindingNavegarEntrePaginasCommand\SandraRepasoBindingNavegarEntrePaginasCommand\bin\x86\Debug\Core\AppxManifest.xml">
+    <AppXManifest Include="c:\users\syero\source\repos\SandraRepasoBindingNavegarEntrePaginasCommand\SandraRepasoBindingNavegarEntrePaginasCommand\bin\x86\Debug\Core\AppxManifest.xml">
       <PackagePath>AppxManifest.xml</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
     </AppXManifest>
   </ItemGroup>
   <ItemGroup>
-    <AppxPackagedFile Include="E:\SEGUNDO\DEINT\Proyectos\DEINT\SandraRepasoBindingNavegarEntrePaginasCommand\SandraRepasoBindingNavegarEntrePaginasCommand\bin\x86\Debug\SandraRepasoBindingNavegarEntrePaginasCommand.exe">
+    <AppxPackagedFile Include="c:\users\syero\source\repos\SandraRepasoBindingNavegarEntrePaginasCommand\SandraRepasoBindingNavegarEntrePaginasCommand\bin\x86\Debug\SandraRepasoBindingNavegarEntrePaginasCommand.exe">
       <PackagePath>entrypoint\SandraRepasoBindingNavegarEntrePaginasCommand.exe</PackagePath>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\syero\.nuget\packages\Microsoft.CSharp\4.0.1\lib\netcore50\Microsoft.CSharp.dll">
@@ -370,92 +370,74 @@
     <AppxPackagedFile Include="C:\Users\syero\.nuget\packages\System.Xml.XmlSerializer\4.0.11\lib\netcore50\System.Xml.XmlSerializer.dll">
       <PackagePath>System.Xml.XmlSerializer.dll</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\syero\.nuget\packages\Xamarin.Forms\2.4.0.280\lib\uap10.0\Xamarin.Forms.Core.dll">
-      <PackagePath>Xamarin.Forms.Core.dll</PackagePath>
-    </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\syero\.nuget\packages\Xamarin.Forms\2.4.0.280\lib\uap10.0\Xamarin.Forms.Platform.UAP.dll">
-      <PackagePath>Xamarin.Forms.Platform.UAP.dll</PackagePath>
-    </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\syero\.nuget\packages\Xamarin.Forms\2.4.0.280\lib\uap10.0\Xamarin.Forms.Platform.dll">
-      <PackagePath>Xamarin.Forms.Platform.dll</PackagePath>
-    </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\syero\.nuget\packages\Xamarin.Forms\2.4.0.280\lib\uap10.0\Xamarin.Forms.Xaml.dll">
-      <PackagePath>Xamarin.Forms.Xaml.dll</PackagePath>
-    </AppxPackagedFile>
-    <AppxPackagedFile Include="E:\SEGUNDO\DEINT\Proyectos\DEINT\SandraRepasoBindingNavegarEntrePaginasCommand\SandraRepasoBindingNavegarEntrePaginasCommand\Assets\imagenes\alicia_pais_maravillas.png">
+    <AppxPackagedFile Include="c:\users\syero\source\repos\SandraRepasoBindingNavegarEntrePaginasCommand\SandraRepasoBindingNavegarEntrePaginasCommand\Assets\imagenes\alicia_pais_maravillas.png">
       <PackagePath>Assets\imagenes\alicia_pais_maravillas.png</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="E:\SEGUNDO\DEINT\Proyectos\DEINT\SandraRepasoBindingNavegarEntrePaginasCommand\SandraRepasoBindingNavegarEntrePaginasCommand\Assets\imagenes\bambi.png">
+    <AppxPackagedFile Include="c:\users\syero\source\repos\SandraRepasoBindingNavegarEntrePaginasCommand\SandraRepasoBindingNavegarEntrePaginasCommand\Assets\imagenes\bambi.png">
       <PackagePath>Assets\imagenes\bambi.png</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="E:\SEGUNDO\DEINT\Proyectos\DEINT\SandraRepasoBindingNavegarEntrePaginasCommand\SandraRepasoBindingNavegarEntrePaginasCommand\Assets\imagenes\blancanieves.png">
+    <AppxPackagedFile Include="c:\users\syero\source\repos\SandraRepasoBindingNavegarEntrePaginasCommand\SandraRepasoBindingNavegarEntrePaginasCommand\Assets\imagenes\blancanieves.png">
       <PackagePath>Assets\imagenes\blancanieves.png</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="E:\SEGUNDO\DEINT\Proyectos\DEINT\SandraRepasoBindingNavegarEntrePaginasCommand\SandraRepasoBindingNavegarEntrePaginasCommand\Assets\imagenes\fantasia.png">
+    <AppxPackagedFile Include="c:\users\syero\source\repos\SandraRepasoBindingNavegarEntrePaginasCommand\SandraRepasoBindingNavegarEntrePaginasCommand\Assets\imagenes\fantasia.png">
       <PackagePath>Assets\imagenes\fantasia.png</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="E:\SEGUNDO\DEINT\Proyectos\DEINT\SandraRepasoBindingNavegarEntrePaginasCommand\SandraRepasoBindingNavegarEntrePaginasCommand\Assets\imagenes\la_bella_durmiente.png">
+    <AppxPackagedFile Include="c:\users\syero\source\repos\SandraRepasoBindingNavegarEntrePaginasCommand\SandraRepasoBindingNavegarEntrePaginasCommand\Assets\imagenes\la_bella_durmiente.png">
       <PackagePath>Assets\imagenes\la_bella_durmiente.png</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="E:\SEGUNDO\DEINT\Proyectos\DEINT\SandraRepasoBindingNavegarEntrePaginasCommand\SandraRepasoBindingNavegarEntrePaginasCommand\Assets\imagenes\la_cenicienta.png">
+    <AppxPackagedFile Include="c:\users\syero\source\repos\SandraRepasoBindingNavegarEntrePaginasCommand\SandraRepasoBindingNavegarEntrePaginasCommand\Assets\imagenes\la_cenicienta.png">
       <PackagePath>Assets\imagenes\la_cenicienta.png</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="E:\SEGUNDO\DEINT\Proyectos\DEINT\SandraRepasoBindingNavegarEntrePaginasCommand\SandraRepasoBindingNavegarEntrePaginasCommand\Assets\imagenes\la_dama_vagabundo.png">
+    <AppxPackagedFile Include="c:\users\syero\source\repos\SandraRepasoBindingNavegarEntrePaginasCommand\SandraRepasoBindingNavegarEntrePaginasCommand\Assets\imagenes\la_dama_vagabundo.png">
       <PackagePath>Assets\imagenes\la_dama_vagabundo.png</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="E:\SEGUNDO\DEINT\Proyectos\DEINT\SandraRepasoBindingNavegarEntrePaginasCommand\SandraRepasoBindingNavegarEntrePaginasCommand\Assets\imagenes\peter_pan.png">
+    <AppxPackagedFile Include="c:\users\syero\source\repos\SandraRepasoBindingNavegarEntrePaginasCommand\SandraRepasoBindingNavegarEntrePaginasCommand\Assets\imagenes\peter_pan.png">
       <PackagePath>Assets\imagenes\peter_pan.png</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="E:\SEGUNDO\DEINT\Proyectos\DEINT\SandraRepasoBindingNavegarEntrePaginasCommand\SandraRepasoBindingNavegarEntrePaginasCommand\Assets\LockScreenLogo.scale-200.png">
+    <AppxPackagedFile Include="c:\users\syero\source\repos\SandraRepasoBindingNavegarEntrePaginasCommand\SandraRepasoBindingNavegarEntrePaginasCommand\Assets\LockScreenLogo.scale-200.png">
       <PackagePath>Assets\LockScreenLogo.scale-200.png</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="E:\SEGUNDO\DEINT\Proyectos\DEINT\SandraRepasoBindingNavegarEntrePaginasCommand\SandraRepasoBindingNavegarEntrePaginasCommand\Assets\SplashScreen.scale-200.png">
+    <AppxPackagedFile Include="c:\users\syero\source\repos\SandraRepasoBindingNavegarEntrePaginasCommand\SandraRepasoBindingNavegarEntrePaginasCommand\Assets\SplashScreen.scale-200.png">
       <PackagePath>Assets\SplashScreen.scale-200.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="E:\SEGUNDO\DEINT\Proyectos\DEINT\SandraRepasoBindingNavegarEntrePaginasCommand\SandraRepasoBindingNavegarEntrePaginasCommand\Assets\Square150x150Logo.scale-200.png">
+    <AppxPackagedFile Include="c:\users\syero\source\repos\SandraRepasoBindingNavegarEntrePaginasCommand\SandraRepasoBindingNavegarEntrePaginasCommand\Assets\Square150x150Logo.scale-200.png">
       <PackagePath>Assets\Square150x150Logo.scale-200.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="E:\SEGUNDO\DEINT\Proyectos\DEINT\SandraRepasoBindingNavegarEntrePaginasCommand\SandraRepasoBindingNavegarEntrePaginasCommand\Assets\Square44x44Logo.scale-200.png">
+    <AppxPackagedFile Include="c:\users\syero\source\repos\SandraRepasoBindingNavegarEntrePaginasCommand\SandraRepasoBindingNavegarEntrePaginasCommand\Assets\Square44x44Logo.scale-200.png">
       <PackagePath>Assets\Square44x44Logo.scale-200.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="E:\SEGUNDO\DEINT\Proyectos\DEINT\SandraRepasoBindingNavegarEntrePaginasCommand\SandraRepasoBindingNavegarEntrePaginasCommand\Assets\Square44x44Logo.targetsize-24_altform-unplated.png">
+    <AppxPackagedFile Include="c:\users\syero\source\repos\SandraRepasoBindingNavegarEntrePaginasCommand\SandraRepasoBindingNavegarEntrePaginasCommand\Assets\Square44x44Logo.targetsize-24_altform-unplated.png">
       <PackagePath>Assets\Square44x44Logo.targetsize-24_altform-unplated.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="E:\SEGUNDO\DEINT\Proyectos\DEINT\SandraRepasoBindingNavegarEntrePaginasCommand\SandraRepasoBindingNavegarEntrePaginasCommand\Assets\StoreLogo.png">
+    <AppxPackagedFile Include="c:\users\syero\source\repos\SandraRepasoBindingNavegarEntrePaginasCommand\SandraRepasoBindingNavegarEntrePaginasCommand\Assets\StoreLogo.png">
       <PackagePath>Assets\StoreLogo.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="E:\SEGUNDO\DEINT\Proyectos\DEINT\SandraRepasoBindingNavegarEntrePaginasCommand\SandraRepasoBindingNavegarEntrePaginasCommand\Assets\Wide310x150Logo.scale-200.png">
+    <AppxPackagedFile Include="c:\users\syero\source\repos\SandraRepasoBindingNavegarEntrePaginasCommand\SandraRepasoBindingNavegarEntrePaginasCommand\Assets\Wide310x150Logo.scale-200.png">
       <PackagePath>Assets\Wide310x150Logo.scale-200.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="E:\SEGUNDO\DEINT\Proyectos\DEINT\SandraRepasoBindingNavegarEntrePaginasCommand\SandraRepasoBindingNavegarEntrePaginasCommand\Assets\imagenes\fondo.jpg">
-      <PackagePath>Assets\imagenes\fondo.jpg</PackagePath>
-    </AppxPackagedFile>
-    <AppxPackagedFile Include="E:\SEGUNDO\DEINT\Proyectos\DEINT\SandraRepasoBindingNavegarEntrePaginasCommand\SandraRepasoBindingNavegarEntrePaginasCommand\Assets\imagenes\otros.jpg">
+    <AppxPackagedFile Include="c:\users\syero\source\repos\SandraRepasoBindingNavegarEntrePaginasCommand\SandraRepasoBindingNavegarEntrePaginasCommand\Assets\imagenes\otros.jpg">
       <PackagePath>Assets\imagenes\otros.jpg</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="E:\SEGUNDO\DEINT\Proyectos\DEINT\SandraRepasoBindingNavegarEntrePaginasCommand\SandraRepasoBindingNavegarEntrePaginasCommand\Properties\Default.rd.xml">
+    <AppxPackagedFile Include="c:\users\syero\source\repos\SandraRepasoBindingNavegarEntrePaginasCommand\SandraRepasoBindingNavegarEntrePaginasCommand\Properties\Default.rd.xml">
       <PackagePath>Properties\Default.rd.xml</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="E:\SEGUNDO\DEINT\Proyectos\DEINT\SandraRepasoBindingNavegarEntrePaginasCommand\SandraRepasoBindingNavegarEntrePaginasCommand\bin\x86\Debug\SandraRepasoBindingNavegarEntrePaginasCommand.xr.xml">
+    <AppxPackagedFile Include="c:\users\syero\source\repos\SandraRepasoBindingNavegarEntrePaginasCommand\SandraRepasoBindingNavegarEntrePaginasCommand\bin\x86\Debug\SandraRepasoBindingNavegarEntrePaginasCommand.xr.xml">
       <PackagePath>SandraRepasoBindingNavegarEntrePaginasCommand.xr.xml</PackagePath>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Program Files %28x86%29\Windows Kits\10\UnionMetadata\10.0.15063.0\Windows.winmd">
       <PackagePath>WinMetadata\Windows.winmd</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\syero\.nuget\packages\Xamarin.Forms\2.4.0.280\lib\uap10.0\Xamarin.Forms.Platform.UAP\Xamarin.Forms.Platform.UAP.xr.xml">
-      <PackagePath>Xamarin.Forms.Platform.UAP\Xamarin.Forms.Platform.UAP.xr.xml</PackagePath>
-    </AppxPackagedFile>
-    <AppxPackagedFile Include="E:\SEGUNDO\DEINT\Proyectos\DEINT\SandraRepasoBindingNavegarEntrePaginasCommand\SandraRepasoBindingNavegarEntrePaginasCommand\bin\x86\Debug\resources.pri">
+    <AppxPackagedFile Include="c:\users\syero\source\repos\SandraRepasoBindingNavegarEntrePaginasCommand\SandraRepasoBindingNavegarEntrePaginasCommand\bin\x86\Debug\resources.pri">
       <PackagePath>resources.pri</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="E:\SEGUNDO\DEINT\Proyectos\DEINT\SandraRepasoBindingNavegarEntrePaginasCommand\SandraRepasoBindingNavegarEntrePaginasCommand\bin\x86\Debug\Core\SandraRepasoBindingNavegarEntrePaginasCommand.exe">
+    <AppxPackagedFile Include="c:\users\syero\source\repos\SandraRepasoBindingNavegarEntrePaginasCommand\SandraRepasoBindingNavegarEntrePaginasCommand\bin\x86\Debug\Core\SandraRepasoBindingNavegarEntrePaginasCommand.exe">
       <PackagePath>SandraRepasoBindingNavegarEntrePaginasCommand.exe</PackagePath>
     </AppxPackagedFile>
   </ItemGroup>

@@ -16,9 +16,9 @@ namespace SandraRepasoBindingNavegarEntrePaginasCommand.Model
 
             ObservableCollection<Pelicula> listaPeliculas = new ObservableCollection<Pelicula>();
 
-            //lista de acotes de las peliculas
+            //lista de acotes vacia
             ObservableCollection<Persona> actoresBancaNieves = listadoActores.ObtenerListado();
-            ObservableCollection<Persona> actoresFantacia = listadoActores.ObtenerListado();
+            ObservableCollection<Persona> actoresFantacia = new ObservableCollection<Persona>();
             ObservableCollection<Persona> actoresBambi = new ObservableCollection<Persona>();
             ObservableCollection<Persona> actoresCenicienta = new ObservableCollection<Persona>();
             ObservableCollection<Persona> actoresPeterPan = new ObservableCollection<Persona>();
@@ -26,8 +26,8 @@ namespace SandraRepasoBindingNavegarEntrePaginasCommand.Model
 
             //imagenes de las peliculas
             Uri ImagenBlancaNieves = new Uri("ms-appx://_SandraRepasoBindingNavegarEntrePaginasCommand/Assets/imagenes/blancanieves.png", UriKind.Absolute);
-            Uri ImagenFantacia = new Uri("ms-appx://_SandraRepasoBindingNavegarEntrePaginasCommand/Assets/imagenes/fantasia.png", UriKind.Absolute);
-            Uri ImagenBambi = new Uri("ms-appx://_SandraRepasoBindingNavegarEntrePaginasCommand/Assets/imagenes/bambi.png", UriKind.Absolute);
+            Uri ImagenFantacia = new Uri("ms-appx://_SandraRepasoBindingNavegarEntrePaginasCommand/Assets/imagenes/blancanieves.png", UriKind.Absolute);
+            Uri ImagenBambi = new Uri("ms-appx://_SandraRepasoBindingNavegarEntrePaginasCommand/Assets/imagenes/blancanieves.png", UriKind.Absolute);
             Uri ImagenCenicienta = new Uri("ms-appx://_SandraRepasoBindingNavegarEntrePaginasCommand/Assets/imagenes/blancanieves.png", UriKind.Absolute);
             Uri ImagenPeterPan = new Uri("ms-appx://_SandraRepasoBindingNavegarEntrePaginasCommand/Assets/imagenes/blancanieves.png", UriKind.Absolute);
             Uri ImagenLaDamaYElVagabundo = new Uri("ms-appx://_SandraRepasoBindingNavegarEntrePaginasCommand/Assets/imagenes/blancanieves.png", UriKind.Absolute);

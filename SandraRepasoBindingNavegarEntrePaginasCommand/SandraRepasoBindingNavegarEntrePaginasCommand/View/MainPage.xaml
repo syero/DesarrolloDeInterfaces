@@ -11,20 +11,31 @@
     <Page.DataContext>
         <vm:MainPageVM></vm:MainPageVM>
     </Page.DataContext>
+    
+    <RelativePanel Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
-    <RelativePanel Background="Wheat" Height="Auto" Width="Auto">
-        
-        <StackPanel Name="stk_Nombre" Orientation="Horizontal" RelativePanel.AlignHorizontalCenterWithPanel="True" RelativePanel.AlignVerticalCenterWithPanel="True">            
-            <TextBlock Name="Nombre"  Text="Nombre" Margin="15" FontSize="20"/>
-            <TextBox Name="EscribeNombre"  Margin="15" Height="20" Width="300"/>            
-        </StackPanel>
+        <ListView Name="listaPeliculas"  ItemsSource="{Binding ListaPeliculasAMostrar}" SelectedItem="{Binding PeliculaSeleccionada,Mode=TwoWay}" >
+            <ListView.ItemTemplate>
+                <DataTemplate >
+                    <StackPanel Orientation="Horizontal" Padding="5" Margin="5">
+                        <Image Name="ImagenPelicula" Source="{Binding FotoPelicula}" Height="100" Width="100"/>
+                        <TextBlock Name="txtBx_ApellidoPersona" Text="{Binding Nombre }"/>                                               
+                    </StackPanel>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+        <!-- Aqui  -->
+        <ListView Name="listaActores" RelativePanel.RightOf="listaPeliculas"  ItemsSource="{Binding PeliculaSeleccionada.Reparto}" SelectedItem="" >
+            <ListView.ItemTemplate>
+                <DataTemplate >
+                    <StackPanel Orientation="Horizontal" Padding="5" Margin="5">
+                        <Image Name="ImagenPelicula" Source="{Binding FotoPelicula}" Height="100" Width="100"/>
+                        <TextBlock Name="txtBx_ApellidoPersona" Text="{Binding Nombre }"/>
+                    </StackPanel>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
 
-        <StackPanel Name="STK_Password" Orientation="Horizontal" RelativePanel.Below="stk_Nombre"  RelativePanel.AlignHorizontalCenterWithPanel="True" RelativePanel.AlignVerticalCenterWithPanel="True">
-            <TextBlock Name="Password"  Text="Password" Margin="15" FontSize="20"/>
-            <PasswordBox x:Name="passwordBox1"   PasswordChanged="passwordBox1_PasswordChanged"  Margin="15" Height="20" Width="300" />
-        </StackPanel>
-
-        <Button Name="btn_Gurdar" Content="Guardar" RelativePanel.Below="STK_Password" Margin="12" RelativePanel.AlignHorizontalCenterWithPanel="True" RelativePanel.AlignVerticalCenterWithPanel="True" Click="btn_Gurdar_Click"/> 
 
     </RelativePanel>
 </Page>

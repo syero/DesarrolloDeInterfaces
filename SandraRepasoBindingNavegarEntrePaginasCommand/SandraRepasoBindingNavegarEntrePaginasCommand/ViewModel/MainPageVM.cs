@@ -10,54 +10,48 @@ namespace SandraRepasoBindingNavegarEntrePaginasCommand.ViewModel
 {
    public class MainPageVM:clsVMBase
     {
-
         #region "Atributos"
-        private ObservableCollection<Login> _listaUsuarios;
-        private Login _usuarioSeleccionado;
+        private ObservableCollection<Pelicula> _listaPeliculasAMostrar;
+        private ObservableCollection<Persona>_listadoActores;
+        private Pelicula _peliculaSeleccionada;
 
-        //delegate commad para guardar un nuevo suaurio y contraseña
-        private DelegateCommand _delegateCommandGuardar;
-        
 
         #endregion
+
 
         #region "Constructores"
-
         public MainPageVM()
         {
-            Gestionadora gestion = new Gestionadora();
+            ListaPeliculas peliculas = new ListaPeliculas();
 
-            //relleno la lista de peliculas
-            _listaUsuarios = gestion.usuariosPassword();
-            _usuarioSeleccionado = null;
-
-            //delegate command guardar
-           // _delegateCommandGuardar = new DelegateCommand();
+            _listaPeliculasAMostrar = peliculas.obtenerLista();
+            _peliculaSeleccionada = null;
 
         }
 
-        public MainPageVM(ObservableCollection<Login> nListaUsuarios, Login nUsuarioSeleccionado)
+        public MainPageVM(ObservableCollection<Pelicula> nListaPeliculasAMostrar, Pelicula nPeliculaSeleccionada)
         {
-           
-            //relleno la lista de peliculas
-            _listaUsuarios = nListaUsuarios;
-            _usuarioSeleccionado = nUsuarioSeleccionado;
+
+            _listaPeliculasAMostrar = nListaPeliculasAMostrar;
+            _peliculaSeleccionada = nPeliculaSeleccionada;
+
         }
+
+
         #endregion
 
-        
 
         #region "Gets y Sets"
-        public ObservableCollection<Login> ListaUsuarios
+        public ObservableCollection<Pelicula> ListaPeliculasAMostrar
         {
-            get { return _listaUsuarios; }
-            set { this._listaUsuarios = value; NotifyPropertyChanged("ListaUsuarios"); }
+            get { return _listaPeliculasAMostrar; }
+            set { this._listaPeliculasAMostrar = value; NotifyPropertyChanged("ListaPeliculasAMostrar"); }
         }
 
-        public Login UsuarioSeleccionado
+        public Pelicula PeliculaSeleccionada
         {
-            get { return _usuarioSeleccionado; }
-            set { this._usuarioSeleccionado = value; NotifyPropertyChanged("UsuarioSeleccionado"); }
+            get { return _peliculaSeleccionada; }
+            set { this._peliculaSeleccionada = value; NotifyPropertyChanged("PeliculaSeleccionada"); }
 
         }
 
@@ -67,15 +61,8 @@ namespace SandraRepasoBindingNavegarEntrePaginasCommand.ViewModel
 
         #region "Metodos"
 
-        public void ExecuteCommadGuardarUsuario()
-        {
-
-           
-        }
-
-
         #endregion
 
-    
+
     }
 }

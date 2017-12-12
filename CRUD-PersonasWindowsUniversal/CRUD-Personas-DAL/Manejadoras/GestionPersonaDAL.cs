@@ -1,4 +1,5 @@
-﻿using CRUD_Personas_DAL.Conexion;
+﻿using CRUD_DAL.Conexion;
+using CRUD_Personas_DAL.Conexion;
 using CRUD_Personas_Entidades;
 using System;
 using System.Collections.Generic;
@@ -12,14 +13,20 @@ namespace CRUD_Personas_DAL.Manejadoras
    public class GestionPersonaDAL
     {
 
-        clsMyConnection miConexion = new clsMyConnection();
-        SqlConnection conexion = new SqlConnection();
-        SqlCommand miComando = new SqlCommand();
-
         public Persona buscarPersonaDAl(int id)
         {
+           //Creamos el objeto de tipo conexion de mi conexion
+            clsMyConnection miConexion = new clsMyConnection();
+
+            //Creamos la sql Connection
+            SqlConnection conexion = new SqlConnection();
+
+            //
+            SqlCommand miComando = new SqlCommand();
+
             //
             SqlDataReader miLector;
+
             //
             Persona person = new Persona();
 
@@ -73,6 +80,10 @@ namespace CRUD_Personas_DAL.Manejadoras
         /// <returns></returns>
         public int guardarPersonaDAL(Persona persona)
         {
+            clsMyConnection miConexion = new clsMyConnection();
+            SqlConnection conexion = new SqlConnection();
+            SqlCommand miComando = new SqlCommand();
+
             int resultado = 0;
 
             //
@@ -100,24 +111,22 @@ namespace CRUD_Personas_DAL.Manejadoras
             return (resultado);
         }//fin guardarPersonaDAL
 
-        /// <summary>
-        /// 
-        /// </summary>
-        /// <param name="id"></param>
-        /// <returns></returns>
         public int eliminarPersonaDAL(int id)
         {
+            clsMyConnection miConexion = new clsMyConnection();
+            SqlConnection conexion = new SqlConnection();
+            SqlCommand miComando = new SqlCommand();
+
             int filasAfectadas=0;
-            /*
-                SqlParameter param;
-                param = new SqlParameter();
-                param.ParameterName = "@id";
-                param.SqlDbType = System.Data.SqlDbType.Int;
-                param.Value = id;
-                */
+
+            SqlParameter param;
+            param = new SqlParameter();
+            param.ParameterName = "@id";
+            param.SqlDbType = System.Data.SqlDbType.Int;
+            param.Value = id;
 
             //Le damos al comando el paramentro
-            miComando.Parameters.Add("id",System.Data.SqlDbType.Int).Value= id;
+            miComando.Parameters.Add(param);
 
             try {
                 conexion = miConexion.getConnection();
@@ -138,9 +147,14 @@ namespace CRUD_Personas_DAL.Manejadoras
         /// <param name="persona"></param>
         /// <returns></returns>
         public int crearPersonaDAL(Persona persona)
-        {           
+        {
+            clsMyConnection miConexion = new clsMyConnection();
+            SqlConnection conexion = new SqlConnection();
+            SqlCommand miComando = new SqlCommand();
+
             int resultado = 0;
 
+            //
            // miComando.Parameters.Add("@id", System.Data.SqlDbType.Int).Value = persona.idPersona;
             miComando.Parameters.Add("@nombre", System.Data.SqlDbType.VarChar).Value = persona.nombre;
             miComando.Parameters.Add("@apellidos", System.Data.SqlDbType.VarChar).Value = persona.apellidos;

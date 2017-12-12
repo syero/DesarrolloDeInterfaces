@@ -271,7 +271,7 @@
       },
       "CRUD-Personas-Entidades/1.0.0": {
         "type": "project",
-        "framework": "UAP,Version=v10.0.16299",
+        "framework": "UAP,Version=v10.0.10586",
         "dependencies": {
           "Microsoft.NETCore.UniversalWindowsPlatform": "6.0.1"
         },
@@ -727,7 +727,7 @@
       },
       "CRUD-Personas-Entidades/1.0.0": {
         "type": "project",
-        "framework": "UAP,Version=v10.0.16299",
+        "framework": "UAP,Version=v10.0.10586",
         "dependencies": {
           "Microsoft.NETCore.UniversalWindowsPlatform": "6.0.1"
         },
@@ -1184,7 +1184,7 @@
       },
       "CRUD-Personas-Entidades/1.0.0": {
         "type": "project",
-        "framework": "UAP,Version=v10.0.16299",
+        "framework": "UAP,Version=v10.0.10586",
         "dependencies": {
           "Microsoft.NETCore.UniversalWindowsPlatform": "6.0.1"
         },
@@ -1640,7 +1640,7 @@
       },
       "CRUD-Personas-Entidades/1.0.0": {
         "type": "project",
-        "framework": "UAP,Version=v10.0.16299",
+        "framework": "UAP,Version=v10.0.10586",
         "dependencies": {
           "Microsoft.NETCore.UniversalWindowsPlatform": "6.0.1"
         },
@@ -2097,7 +2097,7 @@
       },
       "CRUD-Personas-Entidades/1.0.0": {
         "type": "project",
-        "framework": "UAP,Version=v10.0.16299",
+        "framework": "UAP,Version=v10.0.10586",
         "dependencies": {
           "Microsoft.NETCore.UniversalWindowsPlatform": "6.0.1"
         },
@@ -2553,7 +2553,7 @@
       },
       "CRUD-Personas-Entidades/1.0.0": {
         "type": "project",
-        "framework": "UAP,Version=v10.0.16299",
+        "framework": "UAP,Version=v10.0.10586",
         "dependencies": {
           "Microsoft.NETCore.UniversalWindowsPlatform": "6.0.1"
         },
@@ -3010,7 +3010,7 @@
       },
       "CRUD-Personas-Entidades/1.0.0": {
         "type": "project",
-        "framework": "UAP,Version=v10.0.16299",
+        "framework": "UAP,Version=v10.0.10586",
         "dependencies": {
           "Microsoft.NETCore.UniversalWindowsPlatform": "6.0.1"
         },
@@ -6544,11 +6544,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "E:\\SEGUNDO\\DEINT\\CRUD-PersonasWindowsUniversal\\CRUD-Personas-BL\\CRUD-Personas-BL.csproj",
+      "projectUniqueName": "C:\\Users\\syero\\source\\repos\\CRUD-PersonasWindowsUniversal\\CRUD-Personas-BL\\CRUD-Personas-BL.csproj",
       "projectName": "CRUD-Personas-BL",
-      "projectPath": "E:\\SEGUNDO\\DEINT\\CRUD-PersonasWindowsUniversal\\CRUD-Personas-BL\\CRUD-Personas-BL.csproj",
+      "projectPath": "C:\\Users\\syero\\source\\repos\\CRUD-PersonasWindowsUniversal\\CRUD-Personas-BL\\CRUD-Personas-BL.csproj",
       "packagesPath": "C:\\Users\\syero\\.nuget\\packages\\",
-      "outputPath": "E:\\SEGUNDO\\DEINT\\CRUD-PersonasWindowsUniversal\\CRUD-Personas-BL\\obj\\",
+      "outputPath": "C:\\Users\\syero\\source\\repos\\CRUD-PersonasWindowsUniversal\\CRUD-Personas-BL\\obj\\",
       "projectStyle": "PackageReference",
       "skipContentFileWrite": true,
       "configFilePaths": [
@@ -6565,11 +6565,11 @@
       "frameworks": {
         "uap10.0.16299": {
           "projectReferences": {
-            "E:\\SEGUNDO\\DEINT\\CRUD-PersonasWindowsUniversal\\CRUD-Personas-DAL\\CRUD-Personas-DAL.csproj": {
-              "projectPath": "E:\\SEGUNDO\\DEINT\\CRUD-PersonasWindowsUniversal\\CRUD-Personas-DAL\\CRUD-Personas-DAL.csproj"
+            "C:\\Users\\syero\\source\\repos\\CRUD-PersonasWindowsUniversal\\CRUD-Personas-DAL\\CRUD-Personas-DAL.csproj": {
+              "projectPath": "C:\\Users\\syero\\source\\repos\\CRUD-PersonasWindowsUniversal\\CRUD-Personas-DAL\\CRUD-Personas-DAL.csproj"
             },
-            "E:\\SEGUNDO\\DEINT\\CRUD-PersonasWindowsUniversal\\CRUD-Personas-Entidades\\CRUD-Personas-Entidades.csproj": {
-              "projectPath": "E:\\SEGUNDO\\DEINT\\CRUD-PersonasWindowsUniversal\\CRUD-Personas-Entidades\\CRUD-Personas-Entidades.csproj"
+            "C:\\Users\\syero\\source\\repos\\CRUD-PersonasWindowsUniversal\\CRUD-Personas-Entidades\\CRUD-Personas-Entidades.csproj": {
+              "projectPath": "C:\\Users\\syero\\source\\repos\\CRUD-PersonasWindowsUniversal\\CRUD-Personas-Entidades\\CRUD-Personas-Entidades.csproj"
             }
           }
         }

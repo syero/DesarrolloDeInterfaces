@@ -1,4 +1,5 @@
-﻿using CRUD_Personas_DAL.Conexion;
+﻿using CRUD_DAL.Conexion;
+using CRUD_Personas_DAL.Conexion;
 using CRUD_Personas_Entidades;
 using System;
 using System.Collections.Generic;

@@ -96,18 +96,12 @@
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
     <Compile Include="Model\clsListadoPersonas.cs" />
-    <Compile Include="Model\Gestionadora.cs" />
     <Compile Include="Model\ListaPeliculas.cs" />
-    <Compile Include="Model\Login.cs" />
     <Compile Include="Model\Pelicula.cs" />
     <Compile Include="Model\Persona.cs" />
     <Compile Include="ViewModel\clsVMBase.cs" />
     <Compile Include="ViewModel\DelegateCommand.cs" />
-    <Compile Include="ViewModel\ContenidoVM.cs" />
     <Compile Include="ViewModel\MainPageVM.cs" />
-    <Compile Include="View\Contenido.xaml.cs">
-      <DependentUpon>Contenido.xaml</DependentUpon>
-    </Compile>
     <Compile Include="View\MainPage.xaml.cs">
       <DependentUpon>MainPage.xaml</DependentUpon>
     </Compile>
@@ -124,7 +118,6 @@
     <Content Include="Assets\imagenes\bambi.png" />
     <Content Include="Assets\imagenes\blancanieves.png" />
     <Content Include="Assets\imagenes\fantasia.png" />
-    <Content Include="Assets\imagenes\fondo.jpg" />
     <Content Include="Assets\imagenes\la_bella_durmiente.png" />
     <Content Include="Assets\imagenes\la_cenicienta.png" />
     <Content Include="Assets\imagenes\la_dama_vagabundo.png" />
@@ -144,10 +137,6 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Page Include="View\Contenido.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
     <Page Include="View\MainPage.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -155,10 +144,7 @@
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="Microsoft.NETCore.UniversalWindowsPlatform">
-      <Version>6.0.2</Version>
-    </PackageReference>
-    <PackageReference Include="Xamarin.Forms">
-      <Version>2.4.0.280</Version>
+      <Version>5.4.0</Version>
     </PackageReference>
   </ItemGroup>
   <ItemGroup />

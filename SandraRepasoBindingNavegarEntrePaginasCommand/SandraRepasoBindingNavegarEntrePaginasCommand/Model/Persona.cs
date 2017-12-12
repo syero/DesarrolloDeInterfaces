@@ -31,7 +31,7 @@ namespace SandraRepasoBindingNavegarEntrePaginasCommand.Model
         private string _apellidos;
         private DateTime _fechaNac;
         private string _direccion;
-        private string _telefono;  
+        private string _telefono;
 
 
         //Constructor por defecto
@@ -43,7 +43,6 @@ namespace SandraRepasoBindingNavegarEntrePaginasCommand.Model
             _fechaNac =new DateTime();
             _direccion = "";
             _telefono = "";
-          
         }
 
         //Constructor por ordinario

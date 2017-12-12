@@ -1,5 +1,5 @@
 ﻿using BindingPersonaListaPersonaConDataContext.Models;
-using CRUD_Personas_BL.Manejadoras;
+using CRUD_BL.Manejadoras;
 using CRUD_Personas_Entidades;
 using System;
 using System.Collections.Generic;
@@ -30,23 +30,21 @@ namespace CRUD_Personas_UI.ViewModels
         #region "Atributos"   
         private Persona _personaSeleccionada;
         private ObservableCollection<Persona> _listpersonas;
-        private Persona _personaBuscada;
-
-        public List<Persona> personaBuscada { get; set; }
-        //private int _indicePersonaseleccionada;
+      //private int _indicePersonaseleccionada;
 
         //DelegateCommands privadas 
         private DelegateCommand _delegateCommandEliminarPersona;
         private DelegateCommand _delegateCommandGuardar;
         private DelegateCommand _delegateCommandAgregar;
 
-        GestionadoraBL gestionBL = new GestionadoraBL();
         #endregion   //cerramos la region
 
 
         #region "Constructor"
         public MainPageMV()
-        {    
+        {
+            GestionadoraBL gestionBL = new GestionadoraBL();
+
              clsListadoPersonas personas = new clsListadoPersonas();
              _listpersonas = personas.ObtenerListado();
             
@@ -58,7 +56,7 @@ namespace CRUD_Personas_UI.ViewModels
         }
         #endregion
 
-        
+        //getes y setes
         #region "GetesSetes"
         public ObservableCollection<Persona> ListaDepersonas
         {
@@ -145,7 +143,7 @@ namespace CRUD_Personas_UI.ViewModels
             
             if (_personaSeleccionada!=null && _personaSeleccionada.idPersona<0)
             {
-                _personaSeleccionada.idPersona = ListaDepersonas.ElementAt(ListaDepersonas.Count - 1).idPersona;
+                _personaSeleccionada.idPersona = ListaDepersonas.ElementAt(ListaDepersonas.Count - 1).IDPersona + 1;
                 NotifyPropertyChanged("PersonaSeleccionada");
                 ListaDepersonas.Add(_personaSeleccionada);
                 NotifyPropertyChanged("ListaDepersonas");
@@ -159,7 +157,7 @@ namespace CRUD_Personas_UI.ViewModels
         {
             bool hayPersonaModificadaONueva=false;
 
-            if (_personaSeleccionada != null &&  !String.IsNullOrWhiteSpace(_personaSeleccionada.nombre) )
+            if (_personaSeleccionada != null &&  !String.IsNullOrWhiteSpace(_personaSeleccionada.Nombre) )
             {
                 hayPersonaModificadaONueva = true;
             }
