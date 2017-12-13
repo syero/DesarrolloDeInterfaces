@@ -1,0 +1,17 @@
+C:\Users\sandra\source\repos\CRUD_Personas_WindowsUniversal\CRUD_Personas_Entidades\bin\x64\Debug\CRUD_Personas_Entidades.dll
+C:\Users\sandra\source\repos\CRUD_Personas_WindowsUniversal\CRUD_Personas_Entidades\bin\x64\Debug\CRUD_Personas_Entidades.pdb
+C:\Users\sandra\source\repos\CRUD_Personas_WindowsUniversal\CRUD_Personas_Entidades\bin\x64\Debug\CRUD_Personas_Entidades.pri
+C:\Users\sandra\source\repos\CRUD_Personas_WindowsUniversal\CRUD_Personas_Entidades\obj\x64\Debug\CRUD_Personas_Entidades.csproj.CoreCompileInputs.cache
+C:\Users\sandra\source\repos\CRUD_Personas_WindowsUniversal\CRUD_Personas_Entidades\obj\x64\Debug\CRUD_Personas_Entidades.dll
+C:\Users\sandra\source\repos\CRUD_Personas_WindowsUniversal\CRUD_Personas_Entidades\obj\x64\Debug\CRUD_Personas_Entidades.pdb
+C:\Users\sandra\source\repos\CRUD_Personas_WindowsUniversal\CRUD_Personas_Entidades\obj\x64\Debug\priconfig.xml
+C:\Users\sandra\source\repos\CRUD_Personas_WindowsUniversal\CRUD_Personas_Entidades\obj\x64\Debug\priconfig.xml.intermediate
+C:\Users\sandra\source\repos\CRUD_Personas_WindowsUniversal\CRUD_Personas_Entidades\obj\x64\Debug\layout.resfiles
+C:\Users\sandra\source\repos\CRUD_Personas_WindowsUniversal\CRUD_Personas_Entidades\obj\x64\Debug\layout.resfiles.intermediate
+C:\Users\sandra\source\repos\CRUD_Personas_WindowsUniversal\CRUD_Personas_Entidades\obj\x64\Debug\resources.resfiles
+C:\Users\sandra\source\repos\CRUD_Personas_WindowsUniversal\CRUD_Personas_Entidades\obj\x64\Debug\resources.resfiles.intermediate
+C:\Users\sandra\source\repos\CRUD_Personas_WindowsUniversal\CRUD_Personas_Entidades\obj\x64\Debug\pri.resfiles
+C:\Users\sandra\source\repos\CRUD_Personas_WindowsUniversal\CRUD_Personas_Entidades\obj\x64\Debug\pri.resfiles.intermediate
+C:\Users\sandra\source\repos\CRUD_Personas_WindowsUniversal\CRUD_Personas_Entidades\obj\x64\Debug\qualifiers.txt
+C:\Users\sandra\source\repos\CRUD_Personas_WindowsUniversal\CRUD_Personas_Entidades\obj\x64\Debug\qualifiers.txt.intermediate
+C:\Users\sandra\source\repos\CRUD_Personas_WindowsUniversal\CRUD_Personas_Entidades\obj\x64\Debug\MultipleQualifiersPerDimensionFound.txt
