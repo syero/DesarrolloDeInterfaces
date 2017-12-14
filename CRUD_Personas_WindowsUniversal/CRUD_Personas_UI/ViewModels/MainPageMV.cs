@@ -25,6 +25,7 @@ namespace CRUD_Personas_UI.ViewModels
 
     public class MainPageMV : clsVMBase
     {
+       
         //abrimos  la region
         #region "Atributos"   
         private Persona _personaSeleccionada;
@@ -42,19 +43,20 @@ namespace CRUD_Personas_UI.ViewModels
         private GestionadoraBL gestionBL;
         private ListadoPersonasBL personas;
 
+
         #region "Constructor"
         public MainPageMV()
         {
-
+            
             gestionBL = new GestionadoraBL();
             personas = new ListadoPersonasBL();
 
-             _listpersonas = new ObservableCollection<Persona>(personas.getListaPersonaBL());
+            _listpersonas = new ObservableCollection<Persona>(personas.getListaPersonaBL());
             _listAuxiliarParaBuscarPersonas = _listpersonas;
-            
-            _delegateCommandEliminarPersona = new DelegateCommand(ExecuteEliminarPersona,CanExecuteEliminarPersona);
+
+            _delegateCommandEliminarPersona = new DelegateCommand(ExecuteEliminarPersona, CanExecuteEliminarPersona);
             _delegateCommandAgregar = new DelegateCommand(ExecuteAgregarPersona);
-            _delegateCommandGuardar = new DelegateCommand(ExecuteGuardarPersona,CanExecuteGuardarPersona);
+            _delegateCommandGuardar = new DelegateCommand(ExecuteGuardarPersona, CanExecuteGuardarPersona);
             _delegateCommandBuscar = new DelegateCommand(ExecuteBuscarPersona, CanExecuteBuscarPersona);
         }
         #endregion
@@ -65,7 +67,8 @@ namespace CRUD_Personas_UI.ViewModels
         {
 
             get { return _listpersonas; }
-            set {
+            set
+            {
 
                 this._listpersonas = value;
                 NotifyPropertyChanged("ListaDepersonas");
@@ -78,13 +81,14 @@ namespace CRUD_Personas_UI.ViewModels
         public Persona PersonaSeleccionada
         {
             get { return (_personaSeleccionada); }
-            set {
-                 this._personaSeleccionada = value;
+            set
+            {
+                this._personaSeleccionada = value;
 
                 /*este llama al CanExecuteEliminarPersona*/
                 _delegateCommandEliminarPersona.RaiseCanExecuteChanged();
-                 
-                _delegateCommandAgregar.RaiseCanExecuteChanged();               
+
+                _delegateCommandAgregar.RaiseCanExecuteChanged();
 
                 _delegateCommandGuardar.RaiseCanExecuteChanged();
 
@@ -130,7 +134,7 @@ namespace CRUD_Personas_UI.ViewModels
         public DelegateCommand delegateCommandBuscar
         {
             get
-            {             
+            {
                 return _delegateCommandBuscar;
             }
             set
@@ -187,8 +191,8 @@ namespace CRUD_Personas_UI.ViewModels
         /// </summary>
         private void ExecuteGuardarPersona()
         {
-            
-            if (_personaSeleccionada!=null && _personaSeleccionada.idPersona<0)
+
+            if (_personaSeleccionada != null && _personaSeleccionada.idPersona < 0)
             {
                 _personaSeleccionada.idPersona = ListaDepersonas.ElementAt(ListaDepersonas.Count - 1).idPersona + 1;
                 NotifyPropertyChanged("PersonaSeleccionada");
@@ -204,9 +208,9 @@ namespace CRUD_Personas_UI.ViewModels
         /// <returns></returns>
         private bool CanExecuteGuardarPersona()
         {
-            bool hayPersonaModificadaONueva=false;
+            bool hayPersonaModificadaONueva = false;
 
-            if (_personaSeleccionada != null &&  !String.IsNullOrWhiteSpace(_personaSeleccionada.nombre) )
+            if (_personaSeleccionada != null && !String.IsNullOrWhiteSpace(_personaSeleccionada.nombre))
             {
                 hayPersonaModificadaONueva = true;
             }
@@ -227,11 +231,11 @@ namespace CRUD_Personas_UI.ViewModels
         /// CanExecute para Eliminar una Persona 
         /// </summary>
         /// <returns></returns>
-        private bool CanExecuteEliminarPersona() 
+        private bool CanExecuteEliminarPersona()
         {
             bool hayUnaPersonaSeleccionada = false;
 
-            if (_personaSeleccionada !=null)
+            if (_personaSeleccionada != null)
             {
                 hayUnaPersonaSeleccionada = true;
             }
@@ -287,7 +291,7 @@ namespace CRUD_Personas_UI.ViewModels
                     ListaAuxiliarParaBuscarPersonas.Add(ListaDepersonas.ElementAt(i));
                 }
             }
-             NotifyPropertyChanged("mListaConBusqueda");
+            NotifyPropertyChanged("mListaConBusqueda");
         }
 
 

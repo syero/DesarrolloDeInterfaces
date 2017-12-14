@@ -7,11 +7,11 @@
     <RootPropertyPathName Name="delegateCommandAgregar" />
     <RootPropertyPathName Name="delegateCommandGuardar" />
     <RootPropertyPathName Name="PersonaSeleccionada" />
-    <RootPropertyPathName Name="Direccion" />
-    <RootPropertyPathName Name="Telefono" />
-    <RootPropertyPathName Name="FechaNacimiento" />
-    <RootPropertyPathName Name="Apellidos" />
-    <RootPropertyPathName Name="Nombre" />
+    <RootPropertyPathName Name="direccion" />
+    <RootPropertyPathName Name="telefono" />
+    <RootPropertyPathName Name="fechaNac" />
+    <RootPropertyPathName Name="apellidos" />
+    <RootPropertyPathName Name="nombre" />
     <RootPropertyPathName Name="ListaDepersonas" />
   </Roots.PropertyPathNames>
   <Roots.RootTypes>
@@ -92,6 +92,6 @@
     <RootType FullName="Windows.UI.Xaml.DataTemplate">
       <RootProperty Name="Template" />
     </RootType>
-    <RootType FullName="CRUD_Personas_UI.Views.MainPage" />
+    <RootType FullName="CRUD_Personas_UI.MainPage" />
   </Roots.RootTypes>
 </Roots>

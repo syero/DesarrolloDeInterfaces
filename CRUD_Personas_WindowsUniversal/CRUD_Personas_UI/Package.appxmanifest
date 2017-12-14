@@ -7,11 +7,11 @@
   IgnorableNamespaces="uap mp">
 
   <Identity
-    Name="497058b3-1965-412e-872d-8dd4e449e4f2"
+    Name="689a69c4-435d-499e-9a00-d0b70127a5b3"
     Publisher="CN=syero"
     Version="1.0.0.0" />
 
-  <mp:PhoneIdentity PhoneProductId="497058b3-1965-412e-872d-8dd4e449e4f2" PhonePublisherId="00000000-0000-0000-0000-000000000000"/>
+  <mp:PhoneIdentity PhoneProductId="689a69c4-435d-499e-9a00-d0b70127a5b3" PhonePublisherId="00000000-0000-0000-0000-000000000000"/>
 
   <Properties>
     <DisplayName>CRUD_Personas_UI</DisplayName>

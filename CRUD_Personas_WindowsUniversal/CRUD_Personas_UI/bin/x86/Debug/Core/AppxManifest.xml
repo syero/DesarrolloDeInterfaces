@@ -7,8 +7,8 @@
 
     Para obtener más información acerca de los archivos de manifiesto del paquete, vea http://go.microsoft.com/fwlink/?LinkID=241727
   -->
-  <Identity Name="497058b3-1965-412e-872d-8dd4e449e4f2" Publisher="CN=syero" Version="1.0.0.0" ProcessorArchitecture="x86" />
-  <mp:PhoneIdentity PhoneProductId="497058b3-1965-412e-872d-8dd4e449e4f2" PhonePublisherId="00000000-0000-0000-0000-000000000000" />
+  <Identity Name="689a69c4-435d-499e-9a00-d0b70127a5b3" Publisher="CN=syero" Version="1.0.0.0" ProcessorArchitecture="x86" />
+  <mp:PhoneIdentity PhoneProductId="689a69c4-435d-499e-9a00-d0b70127a5b3" PhonePublisherId="00000000-0000-0000-0000-000000000000" />
   <Properties>
     <DisplayName>CRUD_Personas_UI</DisplayName>
     <PublisherDisplayName>syero</PublisherDisplayName>
@@ -39,7 +39,7 @@
     <build:Item Name="VisualStudioEdition" Value="Microsoft Visual Studio Enterprise 2017" />
     <build:Item Name="OperatingSystem" Version="10.0.16299.15 (WinBuild.160101.0800)" />
     <build:Item Name="Microsoft.Build.AppxPackage.dll" Version="15.0.26906.1" />
-    <build:Item Name="ProjectGUID" Value="{0EA3988F-7635-4C6F-895A-D01020189ED3}" />
+    <build:Item Name="ProjectGUID" Value="{B810BF18-1701-413E-B472-C2D5D27BAE3B}" />
     <build:Item Name="OptimizingToolset" Value="None" />
     <build:Item Name="TargetRuntime" Value="Managed" />
     <build:Item Name="Microsoft.Windows.UI.Xaml.Build.Tasks.dll" Version="15.0.26906.1" />

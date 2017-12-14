@@ -8,7 +8,7 @@
     <TargetOsDescription>Windows 10.0</TargetOsDescription>
     <SolutionConfiguration>Debug|x86</SolutionConfiguration>
     <PackageArchitecture>x86</PackageArchitecture>
-    <PackageIdentityName>497058b3-1965-412e-872d-8dd4e449e4f2</PackageIdentityName>
+    <PackageIdentityName>689a69c4-435d-499e-9a00-d0b70127a5b3</PackageIdentityName>
     <PackageIdentityPublisher>CN=syero</PackageIdentityPublisher>
     <IntermediateOutputPath>C:\Users\syero\source\repos\DesarrolloDeInterfaces\CRUD_Personas_WindowsUniversal\CRUD_Personas_UI\obj\x86\Debug\</IntermediateOutputPath>
     <RemoteDeploymentType>
@@ -19,10 +19,10 @@
     <DeployOptionalPackages>false</DeployOptionalPackages>
     <WindowsSdkPath>C:\Program Files %28x86%29\Windows Kits\10\</WindowsSdkPath>
     <LayoutDir>C:\Users\syero\source\repos\DesarrolloDeInterfaces\CRUD_Personas_WindowsUniversal\CRUD_Personas_UI\bin\x86\Debug\AppX</LayoutDir>
-    <RegisteredManifestChecksum>72B0644C97C3120457D7BAD58479EBC23E6207A3ECA36F64EF50B5F83822555A</RegisteredManifestChecksum>
-    <RegisteredPackageMoniker>497058b3-1965-412e-872d-8dd4e449e4f2_1.0.0.0_x86__2hxbragdc4tge</RegisteredPackageMoniker>
-    <RegisteredUserModeAppID>497058b3-1965-412e-872d-8dd4e449e4f2_2hxbragdc4tge!App</RegisteredUserModeAppID>
-    <RegisteredPackageID>497058b3-1965-412e-872d-8dd4e449e4f2</RegisteredPackageID>
+    <RegisteredManifestChecksum>2D23331C11697AD399BDB43E7025748CD2227C86588759B9BCB257FC6150B073</RegisteredManifestChecksum>
+    <RegisteredPackageMoniker>689a69c4-435d-499e-9a00-d0b70127a5b3_1.0.0.0_x86__2hxbragdc4tge</RegisteredPackageMoniker>
+    <RegisteredUserModeAppID>689a69c4-435d-499e-9a00-d0b70127a5b3_2hxbragdc4tge!App</RegisteredUserModeAppID>
+    <RegisteredPackageID>689a69c4-435d-499e-9a00-d0b70127a5b3</RegisteredPackageID>
     <RegisteredPackagePublisher>CN=syero</RegisteredPackagePublisher>
     <RegisteredVersion>1.0.0.0</RegisteredVersion>
     <JitOptimizationSuppressed>True</JitOptimizationSuppressed>
@@ -31,13 +31,13 @@
     <AppXManifest Include="C:\Users\syero\source\repos\DesarrolloDeInterfaces\CRUD_Personas_WindowsUniversal\CRUD_Personas_UI\bin\x86\Debug\Core\AppxManifest.xml">
       <PackagePath>AppxManifest.xml</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2017-12-14T08:41:32.591</Modified>
+      <Modified>2017-12-14T10:11:53.361</Modified>
     </AppXManifest>
   </ItemGroup>
   <ItemGroup>
     <AppxPackagedFile Include="C:\Users\syero\source\repos\DesarrolloDeInterfaces\CRUD_Personas_WindowsUniversal\CRUD_Personas_UI\bin\x86\Debug\CRUD_Personas_UI.exe">
       <PackagePath>entrypoint\CRUD_Personas_UI.exe</PackagePath>
-      <Modified>2017-12-14T08:41:30.888</Modified>
+      <Modified>2017-12-14T10:11:50.267</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\syero\.nuget\packages\runtime.win10-x86.microsoft.netcore.universalwindowsplatform\6.0.5\runtimes\win10-x86\nativeassets\uap10.0.15138\clrcompression.dll">
       <PackagePath>clrcompression.dll</PackagePath>
@@ -697,19 +697,19 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\syero\source\repos\DesarrolloDeInterfaces\CRUD_Personas_WindowsUniversal\CRUD_Personas_BL\bin\Debug\CRUD_Personas_BL.dll">
       <PackagePath>CRUD_Personas_BL.dll</PackagePath>
-      <Modified>2017-12-14T08:41:00.435</Modified>
+      <Modified>2017-12-14T10:10:53.583</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\syero\source\repos\DesarrolloDeInterfaces\CRUD_Personas_WindowsUniversal\CRUD_Personas_Entidades\bin\Debug\CRUD_Personas_Entidades.dll">
       <PackagePath>CRUD_Personas_Entidades.dll</PackagePath>
-      <Modified>2017-12-14T08:40:59.138</Modified>
+      <Modified>2017-12-14T10:10:51.610</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\syero\source\repos\DesarrolloDeInterfaces\CRUD_Personas_WindowsUniversal\CRUD_Personas_BL\bin\Debug\CRUD_Personas_DAL.dll">
       <PackagePath>CRUD_Personas_DAL.dll</PackagePath>
-      <Modified>2017-12-14T08:40:59.779</Modified>
+      <Modified>2017-12-14T10:10:52.600</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\syero\source\repos\DesarrolloDeInterfaces\CRUD_Personas_WindowsUniversal\CRUD_Personas_UI\Properties\Default.rd.xml">
       <PackagePath>Properties\Default.rd.xml</PackagePath>
-      <Modified>2017-12-14T08:08:11.921</Modified>
+      <Modified>2017-12-14T10:00:45.006</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\syero\source\repos\DesarrolloDeInterfaces\CRUD_Personas_WindowsUniversal\CRUD_Personas_UI\Assets\LockScreenLogo.scale-200.png">
       <PackagePath>Assets\LockScreenLogo.scale-200.png</PackagePath>
@@ -747,7 +747,7 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\syero\source\repos\DesarrolloDeInterfaces\CRUD_Personas_WindowsUniversal\CRUD_Personas_UI\bin\x86\Debug\CRUD_Personas_UI.xr.xml">
       <PackagePath>CRUD_Personas_UI.xr.xml</PackagePath>
-      <Modified>2017-12-14T08:13:53.228</Modified>
+      <Modified>2017-12-14T10:11:49.857</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Program Files %28x86%29\Windows Kits\10\UnionMetadata\10.0.16299.0\Windows.winmd">
       <PackagePath>WinMetadata\Windows.winmd</PackagePath>
@@ -756,11 +756,11 @@
     <AppxPackagedFile Include="C:\Users\syero\source\repos\DesarrolloDeInterfaces\CRUD_Personas_WindowsUniversal\CRUD_Personas_UI\bin\x86\Debug\resources.pri">
       <PackagePath>resources.pri</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2017-12-14T08:41:32.294</Modified>
+      <Modified>2017-12-14T10:11:52.896</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\syero\source\repos\DesarrolloDeInterfaces\CRUD_Personas_WindowsUniversal\CRUD_Personas_UI\bin\x86\Debug\Core\CRUD_Personas_UI.exe">
       <PackagePath>CRUD_Personas_UI.exe</PackagePath>
-      <Modified>2017-12-14T08:41:32.575</Modified>
+      <Modified>2017-12-14T10:11:53.351</Modified>
     </AppxPackagedFile>
   </ItemGroup>
   <ItemGroup>

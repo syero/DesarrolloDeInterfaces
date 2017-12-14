@@ -8,7 +8,7 @@
     <TargetOsDescription>Windows 10.0</TargetOsDescription>
     <SolutionConfiguration>Debug|x86</SolutionConfiguration>
     <PackageArchitecture>x86</PackageArchitecture>
-    <PackageIdentityName>497058b3-1965-412e-872d-8dd4e449e4f2</PackageIdentityName>
+    <PackageIdentityName>689a69c4-435d-499e-9a00-d0b70127a5b3</PackageIdentityName>
     <PackageIdentityPublisher>CN=syero</PackageIdentityPublisher>
     <IntermediateOutputPath>C:\Users\syero\source\repos\DesarrolloDeInterfaces\CRUD_Personas_WindowsUniversal\CRUD_Personas_UI\obj\x86\Debug\</IntermediateOutputPath>
     <RemoteDeploymentType></RemoteDeploymentType>

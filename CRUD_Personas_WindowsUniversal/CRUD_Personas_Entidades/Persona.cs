@@ -49,5 +49,11 @@ namespace CRUD_Personas_Entidades
              apellidos = nApelllidos;
             departamento = ndepartamento;   
         }
+
+        public Persona(string nNombre, string nApelllidos)
+        {       
+            nombre = nNombre;
+            apellidos = nApelllidos;
+        }
     }
 }
