@@ -91,7 +91,7 @@
             <AppBarButton Name="btn_agregar" Content="Agregar" Icon="Add"   Command="{Binding delegateCommandAgregar}"   />
             <AppBarButton Name="btn_eliminar" Content="Eliminar" Icon="Delete" Command="{Binding delegateCommandEliminarPersona }" />
             <TextBox Name="Buscar" PlaceholderText="Buscar" Text="{Binding Tx, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" ></TextBox>
-            <AppBarButton Icon="Filter" Command="{Binding delegateCommandBuscar}" Label="Buscar" Click="btn_guardar_Click"  ></AppBarButton>
+            <AppBarButton Icon="Find" Command="{Binding delegateCommandBuscar}" Label="Buscar" Click="btn_guardar_Click"  ></AppBarButton>
         </StackPanel>
 
     </Grid>
