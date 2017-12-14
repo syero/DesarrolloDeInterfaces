@@ -39,10 +39,10 @@
                 </ListView.ItemTemplate>
             </ListView>
         </ScrollViewer>
-
+     
 
         <!-- el grid va relacionado con un datacontext-->
-        <Grid Name="grid_Formulario" Background="Coral" Grid.Column="1" Grid.RowSpan="2"
+         <Grid Name="grid_Formulario" Background="Coral" Grid.Column="1" Grid.RowSpan="2"
               DataContext="{Binding PersonaSeleccionada,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}" >
 
             <Grid.ColumnDefinitions>

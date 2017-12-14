@@ -1,0 +1,98 @@
+﻿<Page
+    x:Class="CRUD_Personas_UI.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:CRUD_Personas_UI"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:vm="using:CRUD_Personas_UI.ViewModels"
+    mc:Ignorable="d">
+
+    <Page.DataContext>
+        <vm:MainPageMV></vm:MainPageMV>
+    </Page.DataContext>
+
+    <Grid Background="White" >
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="2*"/>
+            <ColumnDefinition Width="4*"/>
+        </Grid.ColumnDefinitions>
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+
+        <ScrollViewer Name="ScrollListaPersonas" Grid.Column="0" Grid.RowSpan="2" >
+
+            <!--ItemsSource="{Binding la propiedad que contiene la lista}"-->
+            <!--SelectedItem="{Binding la persona seleccionada de la lista }"-->
+            <ListView Name="listaPersonas"  ItemsSource="{Binding ListaDepersonas}" SelectedItem="{Binding Path=PersonaSeleccionada,Mode=TwoWay}" >
+                <ListView.ItemTemplate>
+                    <DataTemplate >
+                        <StackPanel Orientation="Horizontal" Padding="5" Margin="5">
+                            <TextBlock Name="txtBlck_NombrePersona" Text="{Binding Path=Nombre }" />
+                            <TextBlock Name="txtBx_ApellidoPersona" Text="{Binding Path=Apellidos }"/>
+                        </StackPanel>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </ScrollViewer>
+
+
+        <!-- el grid va relacionado con un datacontext-->
+        <Grid Name="grid_Formulario" Background="Coral" Grid.Column="1" Grid.RowSpan="2"
+              DataContext="{Binding PersonaSeleccionada,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}" >
+
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="Auto"/>
+            </Grid.ColumnDefinitions>
+
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+
+            <!--nombre de la persona seleccionada-->
+            <TextBlock Name="txtBlck_Nombre" Text="Nombre" Grid.Column="0" Grid.Row="0" Padding="5" Margin="10" />
+            <TextBox  Name="txtBx_Nombre" Text="{Binding Nombre,Mode=TwoWay,UpdateSourceTrigger=Explicit}" Grid.Column="1" Grid.Row="0" Padding="5" Margin="10"  Width="300"/>
+
+            <!--apellidos de la persona seleccionada-->
+            <TextBlock Name="txtBlck_Apellidos" Text="Apellidos" Grid.Column="0" Grid.Row="1" Padding="5" Margin="10" />
+            <TextBox  Name="txtBx_Apellidos" Text="{Binding Apellidos,Mode=TwoWay,UpdateSourceTrigger=Explicit}" Grid.Column="1" Grid.Row="1" Padding="5" Margin="10"  Width="300"/>
+
+            <!--fecha de nacimiento de la persona seleccionada-->
+            <TextBlock Name="txtBlck_FNacimiento" Text="Fecha Nacimiento" Grid.Column="0" Grid.Row="2" Padding="5" Margin="10" />
+            <TextBox  Name="txtBx_FNacimiento" Text="{Binding FechaNacimiento,Mode=TwoWay,UpdateSourceTrigger=Explicit}" Grid.Column="1" Grid.Row="2" Padding="5" Margin="10"  Width="300"/>
+
+            <!--nombre de la persona seleccionada-->
+            <TextBlock Name="txtBlck_Telefono" Text="Telefono" Grid.Column="0" Grid.Row="3" Padding="5" Margin="10" />
+            <TextBox  Name="txtBx_Telefono" Text="{Binding Telefono,Mode=TwoWay}" Grid.Column="1" Grid.Row="3" Padding="5" Margin="10"  Width="300"/>
+
+            <ScrollViewer Grid.ColumnSpan="2"  Grid.Row="4">
+                <StackPanel Orientation="Vertical">
+                    <!--direccion de la persona seleccionada-->
+                    <TextBlock Name="txtBlck_Direccion" Text="Direccion"  Padding="5" Margin="10" />
+                    <TextBox  Name="txtBx_Direccion" Text="{Binding Direccion,Mode=TwoWay,UpdateSourceTrigger=Explicit}" Padding="5" Margin="10"  Width="500" Height="100"/>
+                </StackPanel>
+            </ScrollViewer>
+
+
+        </Grid>
+
+        <StackPanel  Grid.ColumnSpan="2" Grid.Row="5" Orientation="Horizontal" >
+            <AppBarButton Name="btn_guardar" Content="Guardar" Icon="Save" Click="btn_guardar_Click" Command="{Binding delegateCommandGuardar}" />
+            <AppBarButton Name="btn_agregar" Content="Agregar" Icon="Add"   Command="{Binding delegateCommandAgregar}"   />
+            <AppBarButton Name="btn_eliminar" Content="Eliminar" Icon="Delete" Command="{Binding delegateCommandEliminarPersona }" />
+            <TextBox Name="Buscar" PlaceholderText="Buscar" Text="{Binding Tx, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" ></TextBox>
+            <AppBarButton Icon="Find" Command="{Binding delegateCommandBuscar}" Label="Buscar" Click="btn_guardar_Click"  ></AppBarButton>
+        </StackPanel>
+
+    </Grid>
+</Page>

@@ -31,13 +31,13 @@
     <AppXManifest Include="C:\Users\syero\source\repos\DesarrolloDeInterfaces\CRUD_Personas_WindowsUniversal\CRUD_Personas_UI\bin\x86\Debug\Core\AppxManifest.xml">
       <PackagePath>AppxManifest.xml</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2017-12-14T08:13:57.382</Modified>
+      <Modified>2017-12-14T08:41:32.591</Modified>
     </AppXManifest>
   </ItemGroup>
   <ItemGroup>
     <AppxPackagedFile Include="C:\Users\syero\source\repos\DesarrolloDeInterfaces\CRUD_Personas_WindowsUniversal\CRUD_Personas_UI\bin\x86\Debug\CRUD_Personas_UI.exe">
       <PackagePath>entrypoint\CRUD_Personas_UI.exe</PackagePath>
-      <Modified>2017-12-14T08:13:53.487</Modified>
+      <Modified>2017-12-14T08:41:30.888</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\syero\.nuget\packages\runtime.win10-x86.microsoft.netcore.universalwindowsplatform\6.0.5\runtimes\win10-x86\nativeassets\uap10.0.15138\clrcompression.dll">
       <PackagePath>clrcompression.dll</PackagePath>
@@ -697,15 +697,15 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\syero\source\repos\DesarrolloDeInterfaces\CRUD_Personas_WindowsUniversal\CRUD_Personas_BL\bin\Debug\CRUD_Personas_BL.dll">
       <PackagePath>CRUD_Personas_BL.dll</PackagePath>
-      <Modified>2017-12-14T08:13:25.240</Modified>
+      <Modified>2017-12-14T08:41:00.435</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\syero\source\repos\DesarrolloDeInterfaces\CRUD_Personas_WindowsUniversal\CRUD_Personas_Entidades\bin\Debug\CRUD_Personas_Entidades.dll">
       <PackagePath>CRUD_Personas_Entidades.dll</PackagePath>
-      <Modified>2017-12-14T08:13:23.686</Modified>
+      <Modified>2017-12-14T08:40:59.138</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\syero\source\repos\DesarrolloDeInterfaces\CRUD_Personas_WindowsUniversal\CRUD_Personas_BL\bin\Debug\CRUD_Personas_DAL.dll">
       <PackagePath>CRUD_Personas_DAL.dll</PackagePath>
-      <Modified>2017-12-14T08:13:24.511</Modified>
+      <Modified>2017-12-14T08:40:59.779</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\syero\source\repos\DesarrolloDeInterfaces\CRUD_Personas_WindowsUniversal\CRUD_Personas_UI\Properties\Default.rd.xml">
       <PackagePath>Properties\Default.rd.xml</PackagePath>
@@ -756,11 +756,11 @@
     <AppxPackagedFile Include="C:\Users\syero\source\repos\DesarrolloDeInterfaces\CRUD_Personas_WindowsUniversal\CRUD_Personas_UI\bin\x86\Debug\resources.pri">
       <PackagePath>resources.pri</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2017-12-14T08:13:56.770</Modified>
+      <Modified>2017-12-14T08:41:32.294</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\syero\source\repos\DesarrolloDeInterfaces\CRUD_Personas_WindowsUniversal\CRUD_Personas_UI\bin\x86\Debug\Core\CRUD_Personas_UI.exe">
       <PackagePath>CRUD_Personas_UI.exe</PackagePath>
-      <Modified>2017-12-14T08:13:57.356</Modified>
+      <Modified>2017-12-14T08:41:32.575</Modified>
     </AppxPackagedFile>
   </ItemGroup>
   <ItemGroup>

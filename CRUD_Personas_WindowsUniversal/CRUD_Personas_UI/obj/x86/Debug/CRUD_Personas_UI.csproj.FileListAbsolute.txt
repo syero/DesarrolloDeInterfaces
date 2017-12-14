@@ -296,3 +296,7 @@ C:\Users\syero\source\repos\DesarrolloDeInterfaces\CRUD_Personas_WindowsUniversa
 C:\Users\syero\source\repos\DesarrolloDeInterfaces\CRUD_Personas_WindowsUniversal\CRUD_Personas_UI\obj\x86\Debug\resources.en-us.resfiles
 C:\Users\syero\source\repos\DesarrolloDeInterfaces\CRUD_Personas_WindowsUniversal\CRUD_Personas_UI\obj\x86\Debug\resources.en-us.resfiles.intermediate
 C:\Users\syero\source\repos\DesarrolloDeInterfaces\CRUD_Personas_WindowsUniversal\CRUD_Personas_UI\obj\x86\Debug\ProjectArchitectures.txt
+C:\Users\syero\source\repos\DesarrolloDeInterfaces\CRUD_Personas_WindowsUniversal\CRUD_Personas_UI\obj\x86\Debug\MainPage.g.i.cs
+C:\Users\syero\source\repos\DesarrolloDeInterfaces\CRUD_Personas_WindowsUniversal\CRUD_Personas_UI\obj\x86\Debug\MainPage.g.cs
+C:\Users\syero\source\repos\DesarrolloDeInterfaces\CRUD_Personas_WindowsUniversal\CRUD_Personas_UI\obj\x86\Debug\MainPage.xaml
+C:\Users\syero\source\repos\DesarrolloDeInterfaces\CRUD_Personas_WindowsUniversal\CRUD_Personas_UI\obj\x86\Debug\MainPage.xbf
