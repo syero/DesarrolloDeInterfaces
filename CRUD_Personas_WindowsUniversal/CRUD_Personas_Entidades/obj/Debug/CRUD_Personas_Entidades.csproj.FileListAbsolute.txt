@@ -35,7 +35,6 @@ C:\Users\sandra\source\repos\DesarrolloDeInterfaces\CRUD_Personas_WindowsUnivers
 C:\Users\syero\source\repos\DesarrolloDeInterfaces\CRUD_Personas_WindowsUniversal\CRUD_Personas_Entidades\bin\Debug\CRUD_Personas_Entidades.dll
 C:\Users\syero\source\repos\DesarrolloDeInterfaces\CRUD_Personas_WindowsUniversal\CRUD_Personas_Entidades\bin\Debug\CRUD_Personas_Entidades.pdb
 C:\Users\syero\source\repos\DesarrolloDeInterfaces\CRUD_Personas_WindowsUniversal\CRUD_Personas_Entidades\bin\Debug\CRUD_Personas_Entidades.pri
-C:\Users\syero\source\repos\DesarrolloDeInterfaces\CRUD_Personas_WindowsUniversal\CRUD_Personas_Entidades\obj\Debug\CRUD_Personas_Entidades.csprojResolveAssemblyReference.cache
 C:\Users\syero\source\repos\DesarrolloDeInterfaces\CRUD_Personas_WindowsUniversal\CRUD_Personas_Entidades\obj\Debug\CRUD_Personas_Entidades.csproj.CoreCompileInputs.cache
 C:\Users\syero\source\repos\DesarrolloDeInterfaces\CRUD_Personas_WindowsUniversal\CRUD_Personas_Entidades\obj\Debug\CRUD_Personas_Entidades.dll
 C:\Users\syero\source\repos\DesarrolloDeInterfaces\CRUD_Personas_WindowsUniversal\CRUD_Personas_Entidades\obj\Debug\CRUD_Personas_Entidades.pdb

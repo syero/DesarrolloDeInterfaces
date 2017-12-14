@@ -32,7 +32,7 @@ namespace CRUD_Personas_UI.ViewModels
         private ObservableCollection<Persona> _listpersonas;
         private ObservableCollection<Persona> _listAuxiliarParaBuscarPersonas;
         private String _txtBuscar;
-
+       
         //DelegateCommands privadas 
         private DelegateCommand _delegateCommandEliminarPersona;
         private DelegateCommand _delegateCommandGuardar;
@@ -52,12 +52,14 @@ namespace CRUD_Personas_UI.ViewModels
             personas = new ListadoPersonasBL();
 
             _listpersonas = new ObservableCollection<Persona>(personas.getListaPersonaBL());
-            _listAuxiliarParaBuscarPersonas = _listpersonas;
+            _listAuxiliarParaBuscarPersonas =new ObservableCollection<Persona>(_listpersonas);
 
             _delegateCommandEliminarPersona = new DelegateCommand(ExecuteEliminarPersona, CanExecuteEliminarPersona);
             _delegateCommandAgregar = new DelegateCommand(ExecuteAgregarPersona);
             _delegateCommandGuardar = new DelegateCommand(ExecuteGuardarPersona, CanExecuteGuardarPersona);
             _delegateCommandBuscar = new DelegateCommand(ExecuteBuscarPersona, CanExecuteBuscarPersona);
+
+
         }
         #endregion
 
@@ -65,11 +67,9 @@ namespace CRUD_Personas_UI.ViewModels
         #region "GetesSetes"
         public ObservableCollection<Persona> ListaDepersonas
         {
-
             get { return _listpersonas; }
             set
             {
-
                 this._listpersonas = value;
                 NotifyPropertyChanged("ListaDepersonas");
             }
@@ -87,16 +87,12 @@ namespace CRUD_Personas_UI.ViewModels
 
                 /*este llama al CanExecuteEliminarPersona*/
                 _delegateCommandEliminarPersona.RaiseCanExecuteChanged();
-
                 _delegateCommandAgregar.RaiseCanExecuteChanged();
-
                 _delegateCommandGuardar.RaiseCanExecuteChanged();
+                _delegateCommandBuscar.RaiseCanExecuteChanged();
 
                 //notificacion del cambio para la vista
                 NotifyPropertyChanged("PersonaSeleccionada");
-
-                //RaiseCanExecuteChanged mira el canExecute (a ver si se puede ejecutar o no )
-                //delegateCommandEliminarPersona.RaiseCanExecuteChanged();
             }
         }
 
@@ -250,6 +246,7 @@ namespace CRUD_Personas_UI.ViewModels
         {
             _personaSeleccionada = new Persona();
             NotifyPropertyChanged("PersonaSeleccionada");
+            _delegateCommandGuardar.RaiseCanExecuteChanged();
         }
 
         /// <summary>
@@ -277,11 +274,6 @@ namespace CRUD_Personas_UI.ViewModels
         /// </summary>
         public void ExecuteBuscarPersona()
         {
-            //_mListadoColecPersons = mPersonasIntantactas;
-
-            //Listado para buscar LAMBDA EXPRESION TO SEARCH
-            //LINQ expresion para buscar
-
             ListaAuxiliarParaBuscarPersonas = new ObservableCollection<Persona>();
             NotifyPropertyChanged("ListaAuxiliarParaBuscarPersonas");
             for (int i = 0; i < ListaDepersonas.Count; i++)
@@ -293,8 +285,14 @@ namespace CRUD_Personas_UI.ViewModels
             }
             NotifyPropertyChanged("mListaConBusqueda");
         }
-
-
+/*
+        public void Buscar()
+        {
+            ListaAuxiliarParaBuscarPersonas = new ObservableCollection<Persona>();
+            var query = from persona in ListaAuxiliarParaBuscarPersonas
+                        where (persona.nombre.ToLower().StartsWith(TxtBuscar) || (persona.apellidos.ToLower().StartsWith(TxtBuscar);
+        }
+        */
 
     }
 }

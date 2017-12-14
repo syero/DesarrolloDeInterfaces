@@ -71,7 +71,6 @@
             <TextBlock Name="txtBlck_FNacimiento" Text="Fecha Nacimiento" Grid.Column="0" Grid.Row="2" Padding="5" Margin="10" />
             <TextBox  Name="txtBx_FNacimiento" Text="{Binding fechaNac,Mode=TwoWay,UpdateSourceTrigger=Explicit}" Grid.Column="1" Grid.Row="2" Padding="5" Margin="10"  Width="300"/>
 
-            <!--nombre de la persona seleccionada-->
             <TextBlock Name="txtBlck_Telefono" Text="Telefono" Grid.Column="0" Grid.Row="3" Padding="5" Margin="10" />
             <TextBox  Name="txtBx_Telefono" Text="{Binding telefono,Mode=TwoWay}" Grid.Column="1" Grid.Row="3" Padding="5" Margin="10"  Width="300"/>
 
