@@ -6344,20 +6344,20 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\sandra\\.nuget\\packages\\": {}
+    "C:\\Users\\syero\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\sandra\\source\\repos\\DesarrolloDeInterfaces\\CRUD_Personas_WindowsUniversal\\CRUD_Personas_Entidades\\CRUD_Personas_Entidades.csproj",
+      "projectUniqueName": "C:\\Users\\syero\\source\\repos\\DesarrolloDeInterfaces\\CRUD_Personas_WindowsUniversal\\CRUD_Personas_Entidades\\CRUD_Personas_Entidades.csproj",
       "projectName": "CRUD_Personas_Entidades",
-      "projectPath": "C:\\Users\\sandra\\source\\repos\\DesarrolloDeInterfaces\\CRUD_Personas_WindowsUniversal\\CRUD_Personas_Entidades\\CRUD_Personas_Entidades.csproj",
-      "packagesPath": "C:\\Users\\sandra\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\sandra\\source\\repos\\DesarrolloDeInterfaces\\CRUD_Personas_WindowsUniversal\\CRUD_Personas_Entidades\\obj\\",
+      "projectPath": "C:\\Users\\syero\\source\\repos\\DesarrolloDeInterfaces\\CRUD_Personas_WindowsUniversal\\CRUD_Personas_Entidades\\CRUD_Personas_Entidades.csproj",
+      "packagesPath": "C:\\Users\\syero\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\syero\\source\\repos\\DesarrolloDeInterfaces\\CRUD_Personas_WindowsUniversal\\CRUD_Personas_Entidades\\obj\\",
       "projectStyle": "PackageReference",
       "skipContentFileWrite": true,
       "configFilePaths": [
-        "C:\\Users\\sandra\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\syero\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -6365,7 +6365,6 @@
       ],
       "sources": {
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-        "http://packagesource": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
