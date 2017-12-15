@@ -6,12 +6,18 @@
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:vm="using:CRUD_Personas_UI.ViewModels"
+    xmlns:convert="using:CRUD_Personas_UI.Converters"
     mc:Ignorable="d">
-    
+   
     <Page.DataContext>
         <vm:MainPageMV></vm:MainPageMV>
     </Page.DataContext>
-
+    
+    <Page.Resources>
+        <convert:RecursoFecha x:Key="Fecha"/>
+    </Page.Resources>
+    
+    
     <Grid Background="White" >
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="2*"/>
@@ -69,7 +75,7 @@
 
             <!--fecha de nacimiento de la persona seleccionada-->
             <TextBlock Name="txtBlck_FNacimiento" Text="Fecha Nacimiento" Grid.Column="0" Grid.Row="2" Padding="5" Margin="10" />
-            <TextBox  Name="txtBx_FNacimiento" Text="{Binding fechaNac,Mode=TwoWay,UpdateSourceTrigger=Explicit}" Grid.Column="1" Grid.Row="2" Padding="5" Margin="10"  Width="300"/>
+            <TextBox  Name="txtBx_FNacimiento" Text="{Binding fechaNac,Mode=TwoWay,UpdateSourceTrigger=Explicit,Converter={StaticResource Fecha}}" Grid.Column="1" Grid.Row="2" Padding="5" Margin="10"  Width="300"/>
 
             <TextBlock Name="txtBlck_Telefono" Text="Telefono" Grid.Column="0" Grid.Row="3" Padding="5" Margin="10" />
             <TextBox  Name="txtBx_Telefono" Text="{Binding telefono,Mode=TwoWay}" Grid.Column="1" Grid.Row="3" Padding="5" Margin="10"  Width="300"/>
