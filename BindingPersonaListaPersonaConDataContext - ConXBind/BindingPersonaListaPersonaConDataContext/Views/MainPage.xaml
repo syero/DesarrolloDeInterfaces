@@ -8,6 +8,7 @@
     xmlns:vm="using:BindingPersonaListaPersonaConDataContext.ViewModels"
     mc:Ignorable="d">
 
+    
 
     <Grid Background="White">
         <Grid.ColumnDefinitions>
@@ -21,40 +22,6 @@
         </Grid.RowDefinitions>
 <!--Tengo que terminar de ajustar el formulario para cuando se haga mas chica la pantalla-->
         
-        <!--Para que la interfaz se adapte cuando pongamos la ventana mas chica Tenemos que usar-->
-        <VisualStateManager.VisualStateGroups>
-            <!--VisualStateGroup nos permite reflejar el tamaño que queremos que adopte la pantalla de la apliacion -->
-            <VisualStateGroup>
-                <!--pantalla normal-->
-                <VisualState x:Name="FormularioNormal">
-                    <VisualState.StateTriggers>
-                        <AdaptiveTrigger MinWindowWidth="500"/>
-                    </VisualState.StateTriggers>
-                    <VisualState.Setters>
-                                         
-                    </VisualState.Setters>
-                </VisualState>
-                
-                <!--Formulario cuando achican la pantalla-->
-                <VisualState x:Name="PonerFormularioDebajo">
-                    <VisualState.StateTriggers>
-                        <AdaptiveTrigger MinWindowWidth="700"/>
-                    </VisualState.StateTriggers>
-                    <VisualState.Setters>
-
-                        <Setter Target="ScrollListaPersonas.Grid.ColumnSpan" Value="2"/>
-                        <Setter Target="ScrollListaPersonas.Grid.Row" Value="0"/>
-
-                        <Setter Target="grid_Formulario.Grid.ColumnSpan" Value="2"/>
-                        <Setter Target="grid_Formulario.Grid.Row" Value="1"/>
-                    </VisualState.Setters>
-                </VisualState>
-                
-                
-            </VisualStateGroup>
-        </VisualStateManager.VisualStateGroups>
-        
-
         <ScrollViewer Name="ScrollListaPersonas" Grid.Column="0" Grid.RowSpan="2" >
             <!--ItemsSource="{Binding la propiedad que contiene la lista}"-->
             <!--SelectedItem="{Binding la persona seleccionada de la lista }"-->

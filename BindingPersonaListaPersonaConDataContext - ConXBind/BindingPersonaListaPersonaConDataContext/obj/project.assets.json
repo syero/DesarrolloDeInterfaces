@@ -24336,11 +24336,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\SEGUNDO\\DEINT\\Proyectos\\DEINT\\BindingPersonaListaPersonaConDataContext - ConXBind\\BindingPersonaListaPersonaConDataContext\\BindingPersonaListaPersonaConDataContext.csproj",
+      "projectUniqueName": "C:\\Users\\syero\\source\\repos\\DesarrolloDeInterfaces\\BindingPersonaListaPersonaConDataContext - ConXBind\\BindingPersonaListaPersonaConDataContext\\BindingPersonaListaPersonaConDataContext.csproj",
       "projectName": "BindingPersonaListaPersonaConDataContext",
-      "projectPath": "D:\\SEGUNDO\\DEINT\\Proyectos\\DEINT\\BindingPersonaListaPersonaConDataContext - ConXBind\\BindingPersonaListaPersonaConDataContext\\BindingPersonaListaPersonaConDataContext.csproj",
+      "projectPath": "C:\\Users\\syero\\source\\repos\\DesarrolloDeInterfaces\\BindingPersonaListaPersonaConDataContext - ConXBind\\BindingPersonaListaPersonaConDataContext\\BindingPersonaListaPersonaConDataContext.csproj",
       "packagesPath": "C:\\Users\\syero\\.nuget\\packages\\",
-      "outputPath": "D:\\SEGUNDO\\DEINT\\Proyectos\\DEINT\\BindingPersonaListaPersonaConDataContext - ConXBind\\BindingPersonaListaPersonaConDataContext\\obj\\",
+      "outputPath": "C:\\Users\\syero\\source\\repos\\DesarrolloDeInterfaces\\BindingPersonaListaPersonaConDataContext - ConXBind\\BindingPersonaListaPersonaConDataContext\\obj\\",
       "projectStyle": "PackageReference",
       "skipContentFileWrite": true,
       "configFilePaths": [
@@ -24358,12 +24358,6 @@
         "uap10.0.10586": {
           "projectReferences": {}
         }
-      }
-    },
-    "dependencies": {
-      "Microsoft.NETCore.UniversalWindowsPlatform": {
-        "target": "Package",
-        "version": "5.4.1"
       }
     },
     "frameworks": {
