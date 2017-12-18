@@ -96,6 +96,7 @@
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
     <Compile Include="Models\clsListadoPersonas.cs" />
+    <Compile Include="Models\ConverterPersona.cs" />
     <Compile Include="Models\Persona.cs" />
     <Compile Include="ViewModels\MainPageMV.cs" />
     <Compile Include="Views\MainPage.xaml.cs">

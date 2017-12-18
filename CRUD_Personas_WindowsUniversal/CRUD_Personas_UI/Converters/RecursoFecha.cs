@@ -17,6 +17,7 @@ namespace CRUD_Personas_UI.Converters
             {
                 DateTime fechaPasada = (DateTime)value; //DateTime.Parse(value.ToString());
                 fecha = fechaPasada.ToString("dd /mm/ yyyy"); //concatenar bien
+               
             }
 
             return fecha;           
