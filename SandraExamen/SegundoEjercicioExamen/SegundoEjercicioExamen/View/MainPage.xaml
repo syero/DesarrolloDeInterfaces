@@ -57,7 +57,8 @@
         </ListView>
 
         <ComboBox Name="comboBoxCursos"  RelativePanel.AlignLeftWithPanel="True" RelativePanel.AlignRightWithPanel="True"  
-                  RelativePanel.AlignTopWithPanel="True" Visibility="Collapsed" ItemsSource="{Binding CursosCiclo}" >
+                  RelativePanel.AlignTopWithPanel="True" Visibility="Collapsed" ItemsSource="{Binding CursosCiclo}"
+                  SelectedItem="{Binding CursoSeleccionado,Mode=TwoWay}">
             <ComboBox.ItemTemplate>
                 <DataTemplate>
                     <TextBlock Name="txtNombreCurso" Text="{Binding Nombre }"></TextBlock>
@@ -90,18 +91,5 @@
             </ComboBox.ItemTemplate>
         </ComboBox>
 
-<!--
-        <ComboBox Name="ComboBoxListaCursoUnoCicloo" Visibility="Collapsed" SelectedItem="{Binding CursoSeleccionado.ListadoAlumnos}" 
-                  Width="auto" RelativePanel.Below="listaCursosCiclo"  >
-            <ComboBoxItem Content="{Binding Nombre }" />
-            <ComboBoxItem Content="{Binding Nombre }" />
-        </ComboBox>
-
-        <ComboBox Name="ComboBoxListaDosCursoCicloo" Visibility="Collapsed" SelectedItem="{Binding CursoSeleccionado.ListadoAlumnos}"  
-                  Width="auto" RelativePanel.Below="ComboBoxListaCursoUnoCiclo"  >
-            <ComboBoxItem Content="{Binding Nombre }" />
-            <ComboBoxItem Content="{Binding Nombre }" />
-        </ComboBox>
-        -->
     </RelativePanel>
 </Page>
