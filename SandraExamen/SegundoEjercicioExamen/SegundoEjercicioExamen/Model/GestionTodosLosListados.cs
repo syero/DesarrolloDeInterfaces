@@ -76,8 +76,6 @@ namespace SegundoEjercicioExamen.Model
         Persona Iván = new Persona("Iván", "Leo Morilla");
 
             /*
-                Gordillo Rodríguez, Daniel
-                Leo Morilla, Iván
                 Manzano Medina, Rafael
                 Martínez Vicente, Ezequiel
                 Mejías Dorado, Ricardo

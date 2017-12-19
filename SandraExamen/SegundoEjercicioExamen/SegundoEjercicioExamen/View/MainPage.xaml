@@ -45,7 +45,7 @@
             </ListView.ItemTemplate>
         </ListView>
 
-        <!-- Aqui pongo la lista de actores que participan en cada pelicula -->
+      
         <ListView Name="listaAlumnosCiclo" RelativePanel.RightOf="listaCursosCiclo"  ItemsSource="{Binding CursoSeleccionado.ListadoAlumnos}" SelectedItem="" >
             <ListView.ItemTemplate>
                 <DataTemplate >
@@ -56,16 +56,52 @@
             </ListView.ItemTemplate>
         </ListView>
 
+        <ComboBox Name="comboBoxCursos"  RelativePanel.AlignLeftWithPanel="True" RelativePanel.AlignRightWithPanel="True"  
+                  RelativePanel.AlignTopWithPanel="True" Visibility="Collapsed" ItemsSource="{Binding CursosCiclo}" >
+            <ComboBox.ItemTemplate>
+                <DataTemplate>
+                    <TextBlock Name="txtNombreCurso" Text="{Binding Nombre }"></TextBlock>
+                </DataTemplate>
+            </ComboBox.ItemTemplate>
+        </ComboBox>
 
-        <ComboBox Name="ComboBoxListaCursoUnoCiclo" Visibility="Collapsed" SelectedItem="{Binding CursoSeleccionado.ListadoAlumnos}"  Width="auto" RelativePanel.Below="listaCursosCiclo"  >
+        <ComboBox Name="ComboBoxListaCursoUnoCiclo" Visibility="Collapsed" SelectedItem="{Binding CursoSeleccionado.ListadoAlumnos}" 
+                  Width="auto" RelativePanel.Below="listaCursosCiclo" >
+            <ComboBox.ItemTemplate>
+                <DataTemplate>
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock Name="txtapellido" Text="{Binding Apellidos }"></TextBlock>
+                        <TextBlock Name="txtnombre" Text="{Binding Nombre }"></TextBlock>
+                    </StackPanel>
+                </DataTemplate>
+            </ComboBox.ItemTemplate>
+        </ComboBox>
+
+
+        <ComboBox Name="ComboBoxListaDosCursoCiclo" Visibility="Collapsed" SelectedItem="{Binding CursoSeleccionado.ListadoAlumnos}"  
+                  Width="auto" RelativePanel.Below="ComboBoxListaCursoUnoCiclo" >
+            <ComboBox.ItemTemplate>
+                <DataTemplate>
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock Name="txtapellido" Text="{Binding Apellidos }"></TextBlock>
+                        <TextBlock Name="txtnombre" Text="{Binding Nombre }"></TextBlock>
+                    </StackPanel>
+                </DataTemplate>
+            </ComboBox.ItemTemplate>
+        </ComboBox>
+
+<!--
+        <ComboBox Name="ComboBoxListaCursoUnoCicloo" Visibility="Collapsed" SelectedItem="{Binding CursoSeleccionado.ListadoAlumnos}" 
+                  Width="auto" RelativePanel.Below="listaCursosCiclo"  >
             <ComboBoxItem Content="{Binding Nombre }" />
             <ComboBoxItem Content="{Binding Nombre }" />
         </ComboBox>
 
-        <ComboBox Name="ComboBoxListaDosCursoCiclo" Visibility="Collapsed" SelectedItem="{Binding CursoSeleccionado.ListadoAlumnos}"  Width="auto" RelativePanel.Below="ComboBoxListaCursoUnoCiclo"  >
+        <ComboBox Name="ComboBoxListaDosCursoCicloo" Visibility="Collapsed" SelectedItem="{Binding CursoSeleccionado.ListadoAlumnos}"  
+                  Width="auto" RelativePanel.Below="ComboBoxListaCursoUnoCiclo"  >
             <ComboBoxItem Content="{Binding Nombre }" />
             <ComboBoxItem Content="{Binding Nombre }" />
         </ComboBox>
-        
+        -->
     </RelativePanel>
 </Page>
