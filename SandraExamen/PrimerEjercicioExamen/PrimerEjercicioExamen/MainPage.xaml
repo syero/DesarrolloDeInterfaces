@@ -6,12 +6,13 @@
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:vm="using:PrimerEjercicioExamen.ViewModel"
+    x:Name="MainPageVM"
     mc:Ignorable="d">
 
     <Page.DataContext>
         <vm:MainPageVM></vm:MainPageVM>
     </Page.DataContext>
-    
+
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
         <Grid.RowDefinitions>
             <RowDefinition Height = "Auto"/>
@@ -22,33 +23,20 @@
             <ColumnDefinition Width = "*"/>
             <ColumnDefinition Width = "*"/>
         </Grid.ColumnDefinitions>
-       
-         <Image Name="ImagenOriginal" Grid.Column="0" Grid.Row="1" Source="{Binding ImagenOriginal.Localizacion}" Height="Auto" Width="Auto" Margin="10"/>
-         <Image Name="ImagenDiferencias" Grid.Column="1" Grid.Row="1" Source="{Binding ImagenConDiferencias.Localizacion}"  Height="Auto" Width="Auto" Margin="10" RelativePanel.LeftOf="ImagenOriginal"/>
 
-            <!--grid para posicionar las elipces-->
-            <Grid Grid.Column="1" Grid.Row="1">
-                
-                <Grid.RowDefinitions>
-                    <RowDefinition Height = "Auto"/>
-                    <RowDefinition Height = "Auto"/>
-                </Grid.RowDefinitions>
+        <Image Name="ImagenOriginal" Grid.Column="0" Grid.Row="1" Source="{Binding ImagenOriginal.Localizacion}" Height="Auto" Width="Auto" Margin="10"/>
+        <Image Name="ImagenDiferencias" Grid.Column="1" Grid.Row="1" Source="{Binding ImagenConDiferencias.Localizacion}"  Height="Auto" Width="Auto" Margin="10,10,10,9.5" RelativePanel.LeftOf="ImagenOriginal"/>
+        <!--tengo que usar x:bind en el PointerPressed-->
+        <Canvas Name="Diferencias" >
+            <Ellipse Name="PeloMiguelAngel" Stroke="Red" StrokeThickness="5" Width="64" Height="92" Canvas.Left="1243" Canvas.Top="147" Opacity="{Binding Opacidad}"  PointerPressed="{x:Bind MetodoPointerPressed}"/> 
+            <Ellipse Name="PiernaJavi" Stroke="Red" StrokeThickness="5" Width="76" Height="101" Canvas.Left="957" Canvas.Top="381" Opacity="0"  />
+            <Ellipse Name="GafasRebeca" Stroke="Red" StrokeThickness="5" Width="64" Height="76" Canvas.Left="1049" Canvas.Top="199" Opacity="0"  />
+            <Ellipse Name="PinDeFrank" Stroke="Red" StrokeThickness="5" Width="38" Height="40" Canvas.Left="1158" Canvas.Top="238" Opacity="0"  />
+            <Ellipse Name="CascoDeManu" Stroke="Red" StrokeThickness="5" Width="74" Height="72" Canvas.Left="1150" Canvas.Top="147" Opacity="0"  />
+            <Ellipse Name="AntonioPodemos" Stroke="Red" StrokeThickness="5" Width="119" Height="109" Canvas.Left="821" Canvas.Top="120" Opacity="0"  />
+            <Ellipse Name="CaraPable" Stroke="Red" StrokeThickness="5" Width="84" Height="109" Canvas.Left="1308" Canvas.Top="152" Opacity="0"  />
 
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width = "Auto"/>
-                    <ColumnDefinition Width = "Auto"/>
-                    <ColumnDefinition Width = "Auto"/>
-                    <ColumnDefinition Width = "Auto"/>
-                </Grid.ColumnDefinitions>
-
-                
-                <Canvas>
-                     <Ellipse Name="PeloMiguelAngel" Stroke="Black" StrokeThickness="3" Width="100" Height="100" Canvas.Left="50" Canvas.Top="100"  Visibility="Visible"/>
-                     <Ellipse Fill="Black" Width="100" Height="100" Canvas.Left="500" Canvas.Top="250"/>
-                     <Ellipse Fill="Black" Width="100" Height="100" Canvas.Left="700" Canvas.Top="250"/>
-                  </Canvas>
-            </Grid>
-
+        </Canvas>
 
     </Grid>
 </Page>
