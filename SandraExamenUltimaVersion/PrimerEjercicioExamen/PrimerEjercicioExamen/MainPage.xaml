@@ -28,23 +28,23 @@
 
         <!--tengo que usar x:bind en el PointerPressed-->
         <Canvas Name="Diferencias" >
-            <Ellipse Name="AntonioPodemos" Stroke="Red" StrokeThickness="5" Width="64" Height="92" Canvas.Left="510" Canvas.Top="216"   Opacity="{Binding Opacidad}"  PointerPressed="{x:Bind ViewModel.MetodoPointerPressed}"/>
-            <Ellipse Name="PiernaJavi" Stroke="Red" StrokeThickness="5" Width="60" Height="109" Canvas.Left="232" Canvas.Top="448"      Opacity="{Binding Opacidad}"  PointerPressed="{x:Bind ViewModel.MetodoPointerPressed}" />
-            <Ellipse Name="GafasRebeca" Stroke="Red" StrokeThickness="5" Width="54" Height="76" Canvas.Left="318" Canvas.Top="266"      Opacity="{Binding Opacidad}"  PointerPressed="{x:Bind ViewModel.MetodoPointerPressed}"  />
-            <Ellipse Name="PinDeFrank" Stroke="Red" StrokeThickness="5" Width="38" Height="40" Canvas.Left="424" Canvas.Top="302"       Opacity="{Binding Opacidad}"  PointerPressed="{x:Bind ViewModel.MetodoPointerPressed}"/>
-            <Ellipse Name="CascoDeManu" Stroke="Red" StrokeThickness="5" Width="58" Height="72" Canvas.Left="424" Canvas.Top="216"      Opacity="{Binding Opacidad}"  PointerPressed="{x:Bind ViewModel.MetodoPointerPressed}"/>
-            <Ellipse Name="PeloMiguelAngel" Stroke="Red" StrokeThickness="5" Width="123" Height="115" Canvas.Left="83" Canvas.Top="187" Opacity="{Binding Opacidad}"  PointerPressed="{x:Bind ViewModel.MetodoPointerPressed}"/>
-            <Ellipse Name="CaraPablo" Stroke="Red" StrokeThickness="5" Width="80" Height="109" Canvas.Left="579" Canvas.Top="216"       Opacity="{Binding Opacidad}"  PointerPressed="{x:Bind ViewModel.MetodoPointerPressed}" />
+            <Ellipse Name="AntonioPodemos" Stroke="Red" StrokeThickness="5" Width="64" Height="92" Canvas.Left="510" Canvas.Top="216"   Fill="Transparent" Opacity="{Binding Opacidad}"  PointerPressed="{x:Bind ViewModel.MetodoPointerPressed}"/>
+            <Ellipse Name="PiernaJavi" Stroke="Red" StrokeThickness="5" Width="60" Height="109" Canvas.Left="232" Canvas.Top="448"      Fill="Transparent" Opacity="{Binding Opacidad}"  PointerPressed="{x:Bind ViewModel.MetodoPointerPressed}" />
+            <Ellipse Name="GafasRebeca" Stroke="Red" StrokeThickness="5" Width="54" Height="76" Canvas.Left="318" Canvas.Top="266"      Fill="Transparent" Opacity="{Binding Opacidad}"  PointerPressed="{x:Bind ViewModel.MetodoPointerPressed}"  />
+            <Ellipse Name="PinDeFrank" Stroke="Red" StrokeThickness="5" Width="38" Height="40" Canvas.Left="424" Canvas.Top="302"       Fill="Transparent" Opacity="{Binding Opacidad}"  PointerPressed="{x:Bind ViewModel.MetodoPointerPressed}"/>
+            <Ellipse Name="CascoDeManu" Stroke="Red" StrokeThickness="5" Width="58" Height="72" Canvas.Left="424" Canvas.Top="216"      Fill="Transparent" Opacity="{Binding Opacidad}"  PointerPressed="{x:Bind ViewModel.MetodoPointerPressed}"/>
+            <Ellipse Name="PeloMiguelAngel" Stroke="Red" StrokeThickness="5" Width="123" Height="115" Canvas.Left="83" Canvas.Top="187" Fill="Transparent" Opacity="{Binding Opacidad}"  PointerPressed="{x:Bind ViewModel.MetodoPointerPressed}"/>
+            <Ellipse Name="CaraPablo" Stroke="Red" StrokeThickness="5" Width="80" Height="109" Canvas.Left="579" Canvas.Top="216"       Fill="Transparent" Opacity="{Binding Opacidad}"  PointerPressed="{x:Bind ViewModel.MetodoPointerPressed}" />
         </Canvas>
 
         <Canvas Name="Diferencias2" >
-            <Ellipse Name="AntonioPodemos2" Stroke="Red" StrokeThickness="5" Width="64" Height="92" Canvas.Left="1251" Canvas.Top="210"    Opacity="{Binding Path=Opacity ,ElementName=AntonioPodemos,Mode=TwoWay}"  PointerPressed="{x:Bind ViewModel.MetodoPointerPressed}"/>
-            <Ellipse Name="PiernaJavi2" Stroke="Red" StrokeThickness="5" Width="60" Height="109" Canvas.Left="971" Canvas.Top="447"        Opacity="{Binding Path=Opacity ,ElementName=PiernaJavi,Mode=TwoWay}"  PointerPressed="{x:Bind ViewModel.MetodoPointerPressed}"/>
-            <Ellipse Name="GafasRebeca2" Stroke="Red" StrokeThickness="5" Width="54" Height="76" Canvas.Left="1059" Canvas.Top="263"       Opacity="{Binding Path=Opacity ,ElementName=GafasRebeca,Mode=TwoWay}"  PointerPressed="{x:Bind ViewModel.MetodoPointerPressed}" />
-            <Ellipse Name="PinDeFrank2" Stroke="Red" StrokeThickness="5" Width="38" Height="40" Canvas.Left="1162" Canvas.Top="302"        Opacity="{Binding Path=Opacity ,ElementName=PinDeFrank,Mode=TwoWay}"  PointerPressed="{x:Bind ViewModel.MetodoPointerPressed}"  />
-            <Ellipse Name="CascoDeManu2" Stroke="Red" StrokeThickness="5" Width="58" Height="72" Canvas.Left="1162" Canvas.Top="216"       Opacity="{Binding Path=Opacity ,ElementName=CascoDeManu,Mode=TwoWay}"  PointerPressed="{x:Bind ViewModel.MetodoPointerPressed}"/>
-            <Ellipse Name="PeloMiguelAngel2" Stroke="Red" StrokeThickness="5" Width="123" Height="115" Canvas.Left="823" Canvas.Top="187"  Opacity="{Binding Path=Opacity ,ElementName=PeloMiguelAngel,Mode=TwoWay}"  PointerPressed="{x:Bind ViewModel.MetodoPointerPressed}" />
-            <Ellipse Name="CaraPablo2" Stroke="Red" StrokeThickness="5" Width="80" Height="109" Canvas.Left="1316" Canvas.Top="216"        Opacity="{Binding Path=Opacity ,ElementName=CaraPablo,Mode=TwoWay}"  PointerPressed="{x:Bind ViewModel.MetodoPointerPressed}"/>
+            <Ellipse Name="AntonioPodemos2" Stroke="Red" StrokeThickness="5" Width="64" Height="92" Canvas.Left="1251" Canvas.Top="210"   Fill="Transparent"  Opacity="{Binding Path=Opacity ,ElementName=AntonioPodemos,Mode=TwoWay}"  PointerPressed="{x:Bind ViewModel.MetodoPointerPressed}"/>
+            <Ellipse Name="PiernaJavi2" Stroke="Red" StrokeThickness="5" Width="60" Height="109" Canvas.Left="971" Canvas.Top="447"       Fill="Transparent"  Opacity="{Binding Path=Opacity ,ElementName=PiernaJavi,Mode=TwoWay}"  PointerPressed="{x:Bind ViewModel.MetodoPointerPressed}"/>
+            <Ellipse Name="GafasRebeca2" Stroke="Red" StrokeThickness="5" Width="54" Height="76" Canvas.Left="1059" Canvas.Top="263"      Fill="Transparent"  Opacity="{Binding Path=Opacity ,ElementName=GafasRebeca,Mode=TwoWay}"  PointerPressed="{x:Bind ViewModel.MetodoPointerPressed}" />
+            <Ellipse Name="PinDeFrank2" Stroke="Red" StrokeThickness="5" Width="38" Height="40" Canvas.Left="1162" Canvas.Top="302"       Fill="Transparent"  Opacity="{Binding Path=Opacity ,ElementName=PinDeFrank,Mode=TwoWay}"  PointerPressed="{x:Bind ViewModel.MetodoPointerPressed}"  />
+            <Ellipse Name="CascoDeManu2" Stroke="Red" StrokeThickness="5" Width="58" Height="72" Canvas.Left="1162" Canvas.Top="216"      Fill="Transparent"  Opacity="{Binding Path=Opacity ,ElementName=CascoDeManu,Mode=TwoWay}"  PointerPressed="{x:Bind ViewModel.MetodoPointerPressed}"/>
+            <Ellipse Name="PeloMiguelAngel2" Stroke="Red" StrokeThickness="5" Width="123" Height="115" Canvas.Left="823" Canvas.Top="187" Fill="Transparent"  Opacity="{Binding Path=Opacity ,ElementName=PeloMiguelAngel,Mode=TwoWay}"  PointerPressed="{x:Bind ViewModel.MetodoPointerPressed}" />
+            <Ellipse Name="CaraPablo2" Stroke="Red" StrokeThickness="5" Width="80" Height="109" Canvas.Left="1316" Canvas.Top="216"       Fill="Transparent"  Opacity="{Binding Path=Opacity ,ElementName=CaraPablo,Mode=TwoWay}"  PointerPressed="{x:Bind ViewModel.MetodoPointerPressed}"/>
 
         </Canvas>
 
