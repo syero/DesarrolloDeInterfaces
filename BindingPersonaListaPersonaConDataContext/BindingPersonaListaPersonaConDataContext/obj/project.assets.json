@@ -24331,20 +24331,20 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\syero\\.nuget\\packages\\": {}
+    "C:\\Users\\sandra\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "E:\\SEGUNDO\\DEINT\\Proyectos\\DEINT\\BindingPersonaListaPersonaConDataContext\\BindingPersonaListaPersonaConDataContext\\BindingPersonaListaPersonaConDataContext.csproj",
+      "projectUniqueName": "C:\\Users\\sandra\\source\\repos\\DesarrolloDeInterfaces\\BindingPersonaListaPersonaConDataContext\\BindingPersonaListaPersonaConDataContext\\BindingPersonaListaPersonaConDataContext.csproj",
       "projectName": "BindingPersonaListaPersonaConDataContext",
-      "projectPath": "E:\\SEGUNDO\\DEINT\\Proyectos\\DEINT\\BindingPersonaListaPersonaConDataContext\\BindingPersonaListaPersonaConDataContext\\BindingPersonaListaPersonaConDataContext.csproj",
-      "packagesPath": "C:\\Users\\syero\\.nuget\\packages\\",
-      "outputPath": "E:\\SEGUNDO\\DEINT\\Proyectos\\DEINT\\BindingPersonaListaPersonaConDataContext\\BindingPersonaListaPersonaConDataContext\\obj\\",
+      "projectPath": "C:\\Users\\sandra\\source\\repos\\DesarrolloDeInterfaces\\BindingPersonaListaPersonaConDataContext\\BindingPersonaListaPersonaConDataContext\\BindingPersonaListaPersonaConDataContext.csproj",
+      "packagesPath": "C:\\Users\\sandra\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\sandra\\source\\repos\\DesarrolloDeInterfaces\\BindingPersonaListaPersonaConDataContext\\BindingPersonaListaPersonaConDataContext\\obj\\",
       "projectStyle": "PackageReference",
       "skipContentFileWrite": true,
       "configFilePaths": [
-        "C:\\Users\\syero\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\sandra\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -24352,18 +24352,13 @@
       ],
       "sources": {
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+        "http://packagesource": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
         "uap10.0.10586": {
           "projectReferences": {}
         }
-      }
-    },
-    "dependencies": {
-      "Microsoft.NETCore.UniversalWindowsPlatform": {
-        "target": "Package",
-        "version": "5.4.1"
       }
     },
     "frameworks": {

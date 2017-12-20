@@ -58,7 +58,7 @@
 
         <ComboBox Name="comboBoxCursos"  RelativePanel.AlignLeftWithPanel="True" RelativePanel.AlignRightWithPanel="True"  
                   RelativePanel.AlignTopWithPanel="True" Visibility="Collapsed" ItemsSource="{Binding CursosCiclo}"
-                  SelectedItem="{Binding CursoSeleccionado,Mode=TwoWay}">
+                  SelectedItem="{Binding CursoSeleccionado,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}">
             <ComboBox.ItemTemplate>
                 <DataTemplate>
                     <TextBlock Name="txtNombreCurso" Text="{Binding Nombre }"></TextBlock>
@@ -78,18 +78,6 @@
             </ComboBox.ItemTemplate>
         </ComboBox>
 
-
-        <ComboBox Name="ComboBoxListaDosCursoCiclo" Visibility="Collapsed" SelectedItem="{Binding CursoSeleccionado.ListadoAlumnos}"  
-                  Width="auto" RelativePanel.Below="ComboBoxListaCursoUnoCiclo" >
-            <ComboBox.ItemTemplate>
-                <DataTemplate>
-                    <StackPanel Orientation="Horizontal">
-                        <TextBlock Name="txtapellido" Text="{Binding Apellidos }"></TextBlock>
-                        <TextBlock Name="txtnombre" Text="{Binding Nombre }"></TextBlock>
-                    </StackPanel>
-                </DataTemplate>
-            </ComboBox.ItemTemplate>
-        </ComboBox>
 
     </RelativePanel>
 </Page>

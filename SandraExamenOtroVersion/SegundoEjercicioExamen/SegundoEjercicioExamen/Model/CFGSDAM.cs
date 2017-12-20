@@ -41,13 +41,13 @@ namespace SegundoEjercicioExamen.Model
         public int IdCurso
         {
             get { return _idCurso; }
-            set { _idCurso = value;  }
+            set { _idCurso = value; NotifyPropertyChanged("IdCurso"); }
         }
 
         public string Nombre
         {
             get { return _nombre; }
-            set { _nombre = value; }
+            set { _nombre = value; NotifyPropertyChanged("Nombre"); }
 
         }
         

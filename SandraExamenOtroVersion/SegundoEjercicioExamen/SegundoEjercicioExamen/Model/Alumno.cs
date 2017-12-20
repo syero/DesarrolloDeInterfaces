@@ -52,7 +52,7 @@ namespace SegundoEjercicioExamen.Model
         public string Nombre {
             get { return _nombre; }
             set {
-                this._nombre = value;
+                this._nombre = value; 
             }
         }
         public string Apellidos {
@@ -70,7 +70,7 @@ namespace SegundoEjercicioExamen.Model
                 this._idCurso = value;
             }
         }
-      
+
 
 
     }

@@ -80,7 +80,7 @@
         </ComboBox>
 
 
-        <ComboBox Name="ComboBoxListaDosCursoCiclo" Visibility="Collapsed" SelectedItem="{Binding CursoSeleccionado.ListadoAlumnos}"  
+        <ComboBox Name="ComboBoxListaDosCursoCiclo" Visibility="Collapsed" SelectedItem="{Binding CursoSeleccionado}"  
                   Width="auto" RelativePanel.Below="ComboBoxListaCursoUnoCiclo" >
             <ComboBox.ItemTemplate>
                 <DataTemplate>
@@ -91,19 +91,5 @@
                 </DataTemplate>
             </ComboBox.ItemTemplate>
         </ComboBox>
-
-<!--
-        <ComboBox Name="ComboBoxListaCursoUnoCicloo" Visibility="Collapsed" SelectedItem="{Binding CursoSeleccionado.ListadoAlumnos}" 
-                  Width="auto" RelativePanel.Below="listaCursosCiclo"  >
-            <ComboBoxItem Content="{Binding Nombre }" />
-            <ComboBoxItem Content="{Binding Nombre }" />
-        </ComboBox>
-
-        <ComboBox Name="ComboBoxListaDosCursoCicloo" Visibility="Collapsed" SelectedItem="{Binding CursoSeleccionado.ListadoAlumnos}"  
-                  Width="auto" RelativePanel.Below="ComboBoxListaCursoUnoCiclo"  >
-            <ComboBoxItem Content="{Binding Nombre }" />
-            <ComboBoxItem Content="{Binding Nombre }" />
-        </ComboBox>
-        -->
     </RelativePanel>
 </Page>

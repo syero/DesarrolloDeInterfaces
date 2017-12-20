@@ -8,7 +8,7 @@ namespace SegundoEjercicioExamen.Model
     public class GestionTodosLosListados
     {
         public ObservableCollection<CFGSDAM> cursosCiclo;
-        public ObservableCollection<Alumno> listaPersonas = new ObservableCollection<Alumno>();
+        public ObservableCollection<Alumno> listaPersonas;
         public ObservableCollection<Alumno> listadoClase;
 
         /// <summary>
@@ -32,74 +32,15 @@ namespace SegundoEjercicioExamen.Model
         }
 
 
-
-            /// <summary>
-            /// método que nos devuelve un listado de todos los alumnos del primer curso del ciclo
-            /// no tiene entradas y devuelve una lista de alumnos
-            /// </summary>
-            /// <returns>lista de personas</returns>
-        //    public ObservableCollection<Alumno> ObtenerListadoAlumnosPrimerCurso()
-        //    {
-        //        listaPersonas = new ObservableCollection<Alumno>();
-
-        //        Alumno David = new Alumno("David Abraham", "Aguilar Martín",1);
-        //        Alumno Carlos = new Alumno("Carlos", "Alberto Vadillo", 1);
-        //        Alumno Manuel = new Alumno("Manuel", "Bancalero Carretero", 1);
-        //        Alumno Yeray = new Alumno("Yeray Manuel", "Campanario Fernández", 1);
-        //        Alumno Oscar = new Alumno("Óscar", "Funes Trigo", 1);
-        //        Alumno Sergio = new Alumno("Sergio", " Gamero Cañete", 1);
-        //        Alumno Abraham = new Alumno("Abraham", " Gómez Reyes", 1);
-        //        Alumno Raquel = new Alumno("Raquel", "González Trujill", 1);
-
-        //        listaPersonas.Add(David);
-        //        listaPersonas.Add(Carlos);
-        //        listaPersonas.Add(Manuel);
-        //        listaPersonas.Add(Yeray);
-        //        listaPersonas.Add(Oscar);
-        //        listaPersonas.Add(Sergio);
-        //        listaPersonas.Add(Abraham);
-        //        listaPersonas.Add(Raquel);
-
-
-        //    return listaPersonas;
-        //}
-
-
-        ///// <summary>
-        ///// método que nos devuelve un listado de todos los alumnos del segundo curso del ciclo
-        ///// no tiene entradas y devuelve una lista de alumnos
-        ///// </summary>
-        ///// <returns>lista de personas</returns>
-        //public ObservableCollection<Alumno> ObtenerListadoAlumnosSegundo()
-        //{
-        //    listaPersonas = new ObservableCollection<Alumno>();
-
-        //    Alumno Daniel = new Alumno("Daniel", "Gordillo Rodríguez", 2);
-        //    Alumno Ivan = new Alumno("Iván", "Leo Morilla", 2);
-        //    Alumno Rafael = new Alumno("Rafael", "Manzano Medina", 2);
-        //    Alumno Ezequiel = new Alumno("Ezequiel", "Martínez Vicente", 2);
-        //    Alumno Pablo = new Alumno("Pablo", "Prat Jiménez", 2);
-        //    Alumno Genaro = new Alumno("Genaro", " Rodríguez Seda", 2);
-
-        //    listaPersonas.Add(Daniel);
-        //    listaPersonas.Add(Ivan);
-        //    listaPersonas.Add(Rafael);
-        //    listaPersonas.Add(Ezequiel);
-        //    listaPersonas.Add(Pablo);
-        //    listaPersonas.Add(Genaro);
-
-        //    return listaPersonas;
-        //}
-
-
-
         /// <summary>
-        /// 
+        /// este medotos nos permite obtener todos los alumnos del ciclo
+        /// entradas: no tiene
+        /// salidas: ObservableCollection con todo los alumnos del ciclo 
         /// </summary>
-        /// <returns></returns>
+        /// <returns>  </returns>
         public ObservableCollection<Alumno> ObtenerListadoAlumnos()
         {
-            
+            listaPersonas = new ObservableCollection<Alumno>();
 
             Alumno David = new Alumno("David Abraham", "Aguilar Martín", 1);
             Alumno Carlos = new Alumno("Carlos", "Alberto Vadillo", 1);
@@ -109,8 +50,6 @@ namespace SegundoEjercicioExamen.Model
             Alumno Sergio = new Alumno("Sergio", " Gamero Cañete", 1);
             Alumno Abraham = new Alumno("Abraham", " Gómez Reyes", 1);
             Alumno Raquel = new Alumno("Raquel", "González Trujill", 1);
-
-
             Alumno Daniel = new Alumno("Daniel", "Gordillo Rodríguez", 2);
             Alumno Ivan = new Alumno("Iván", "Leo Morilla", 2);
             Alumno Rafael = new Alumno("Rafael", "Manzano Medina", 2);
@@ -126,7 +65,6 @@ namespace SegundoEjercicioExamen.Model
             listaPersonas.Add(Sergio);
             listaPersonas.Add(Abraham);
             listaPersonas.Add(Raquel);       
-
             listaPersonas.Add(Daniel);
             listaPersonas.Add(Ivan);
             listaPersonas.Add(Rafael);
@@ -144,12 +82,14 @@ namespace SegundoEjercicioExamen.Model
         /// </summary>
         /// <param name="idCurso"></param>
         /// <returns></returns>
+        /// 
+
         public ObservableCollection<Alumno> ObtenerAlumnosPorIdCurso(int idCurso)
         {
-           listadoClase = new ObservableCollection<Alumno>();
+            listadoClase = new ObservableCollection<Alumno>();
 
 
-            for (int i = 0; i < this.listaPersonas.Count(); i++)
+            for (int i = 0; i < listaPersonas.Count(); i++)
             {
                 if (listaPersonas.ElementAt(i).IdCurso == idCurso)
                 {

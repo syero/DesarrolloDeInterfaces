@@ -13,6 +13,7 @@ namespace SegundoEjercicioExamen.ViewModel
     {
         #region "Atributos"
         private ObservableCollection<CFGSDAM> _cursosCiclo;
+        private ObservableCollection<Alumno> _todosLosAlumnos;
         private ObservableCollection<Alumno> _alumnosDeUnCurso;
         private CFGSDAM _cursoSeleccionado;
 
@@ -25,6 +26,8 @@ namespace SegundoEjercicioExamen.ViewModel
         public MainPageVM()
         {            
             _cursosCiclo = gestionadora.ObtenerCursosCiclo();
+            _todosLosAlumnos = gestionadora.ObtenerListadoAlumnos();
+            _cursoSeleccionado =new CFGSDAM();
             _alumnosDeUnCurso = gestionadora.ObtenerAlumnosPorIdCurso(_cursoSeleccionado.IdCurso);
         }
 
@@ -35,21 +38,29 @@ namespace SegundoEjercicioExamen.ViewModel
         public ObservableCollection<CFGSDAM> CursosCiclo
             {
                 get { return _cursosCiclo; }
-                set { this._cursosCiclo = value; }
+                set { this._cursosCiclo = value; NotifyPropertyChanged("CursosCiclo"); }
             }
+
+        public ObservableCollection<Alumno> TodosLosAlumnos
+        {
+            get { return _todosLosAlumnos; }
+            set { this._todosLosAlumnos = value; NotifyPropertyChanged("TodosLosAlumnos"); }
+        }
+
+
+        public CFGSDAM CursoSeleccionado
+        {
+            get { return _cursoSeleccionado; }
+            set { this._cursoSeleccionado = value; NotifyPropertyChanged("CursoSeleccionado"); }
+
+        }
 
         public ObservableCollection<Alumno> AlumnosDeUnCurso
         {
             get { return _alumnosDeUnCurso; }
-            set { this._alumnosDeUnCurso = value;  }
+            set { this._alumnosDeUnCurso = value; NotifyPropertyChanged("AlumnosDeUnCurso"); }
         }
-        
-        public CFGSDAM CursoSeleccionado
-            {
-                get { return _cursoSeleccionado; }
-                set {  this._cursoSeleccionado = value; NotifyPropertyChanged("CursoSeleccionado"); }
-
-            }
+       
 
         
         #endregion

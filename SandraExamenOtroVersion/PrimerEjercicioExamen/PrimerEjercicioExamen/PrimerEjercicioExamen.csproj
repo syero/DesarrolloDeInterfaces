@@ -99,7 +99,6 @@
       <DependentUpon>MainPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Model\Imagen.cs" />
-    <Compile Include="Model\Imagenes.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ViewModel\clsVMBase.cs" />
     <Compile Include="ViewModel\DelegateCommand.cs" />
