@@ -16,26 +16,29 @@
     <RelativePanel Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
         <VisualStateManager.VisualStateGroups>
-            <VisualStateGroup x:Name="VisualStateGroup">
-                <VisualState x:Name="Tablet">
-                    <!--Tamaño  minimo-->
+            <VisualStateGroup>
+                <VisualState x:Name="ancho">
                     <VisualState.StateTriggers>
                         <AdaptiveTrigger MinWindowWidth="550"/>
                     </VisualState.StateTriggers>
-                    <!--Los cambios-->
+                </VisualState>
+                <VisualState x:Name="estrecho">
+                    <VisualState.StateTriggers>
+                        <AdaptiveTrigger MinWindowWidth="0"/>
+                    </VisualState.StateTriggers>
                     <VisualState.Setters>
-                        <Setter Target="listaCursosCiclo.(Visibility)"  Value="Collapsed"></Setter>
-                        <Setter Target="listaAlumnosCiclo.(Visibility)"  Value="Collapsed"></Setter>
-                        <Setter Target="ComboBoxListaCursoUnoCiclo.(Visibility)"  Value="Visible"></Setter>
-                        <Setter Target="ComboBoxListaDosCursoCiclo.(Visibility)"  Value="Visible"></Setter>
-                        
-                    </VisualState.Setters>                    
+                        <Setter Target="listaCursosCiclo.Visibility" Value="Collapsed"/>
+                        <Setter Target="listaAlumnosCiclo.Visibility" Value="Collapsed"/>
+
+                        <Setter Target="comboBoxListaCursosCiclo.Visibility" Value="Visible"/>
+                        <Setter Target="comboBoxListaAlumnosCiclo.Visibility" Value="Visible"/>
+                    </VisualState.Setters>
                 </VisualState>
             </VisualStateGroup>
         </VisualStateManager.VisualStateGroups>
 
 
-        <ListView Name="listaCursosCiclo"  ItemsSource="{Binding CursosCiclo}" SelectedItem="{Binding CursoSeleccionado,Mode=TwoWay}" >
+        <ListView Name="listaCursosCiclo"  ItemsSource="{Binding CursosCiclo}" SelectedItem="{Binding CursoSeleccionado,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}" >
             <ListView.ItemTemplate>
                 <DataTemplate >
                     <StackPanel Orientation="Horizontal" Padding="5" Margin="5">
@@ -57,18 +60,21 @@
             </ListView.ItemTemplate>
         </ListView>
 
-        
-        <ComboBox Name="comboBoxCursos"  RelativePanel.AlignLeftWithPanel="True" RelativePanel.AlignRightWithPanel="True"  
-                  RelativePanel.AlignTopWithPanel="True" Visibility="Collapsed" ItemsSource="{Binding CursosCiclo}" >
+
+        <ComboBox Name="comboBoxListaCursosCiclo"  RelativePanel.AlignLeftWithPanel="True" RelativePanel.AlignRightWithPanel="True"  RelativePanel.AlignTopWithPanel="True" 
+                  Visibility="Collapsed" ItemsSource="{Binding CursosCiclo}"  SelectedItem="{Binding CursoSeleccionado,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}"
+                  Margin="10">
             <ComboBox.ItemTemplate>
                 <DataTemplate>
-                    <TextBlock Name="txtNombreCurso" Text="{Binding Nombre }"></TextBlock>
+                    <StackPanel Orientation="Horizontal" Padding="5" Margin="5">
+                        <TextBlock Name="txtBx_NombreCurso" Text="{Binding Nombre }"/>
+                    </StackPanel>
                 </DataTemplate>
             </ComboBox.ItemTemplate>
         </ComboBox>
 
-        <ComboBox Name="ComboBoxListaCursoUnoCiclo" Visibility="Collapsed" SelectedItem="{Binding AlumnosDeUnCurso}" 
-                  Width="auto" RelativePanel.Below="listaCursosCiclo" >
+        <ComboBox Name="comboBoxListaAlumnosCiclo" Visibility="Collapsed" ItemsSource="{Binding AlumnosDeUnCurso}"
+                  Width="auto" RelativePanel.Below="comboBoxListaCursosCiclo" Margin="10">
             <ComboBox.ItemTemplate>
                 <DataTemplate>
                     <StackPanel Orientation="Horizontal">
@@ -80,16 +86,5 @@
         </ComboBox>
 
 
-        <ComboBox Name="ComboBoxListaDosCursoCiclo" Visibility="Collapsed" SelectedItem="{Binding CursoSeleccionado}"  
-                  Width="auto" RelativePanel.Below="ComboBoxListaCursoUnoCiclo" >
-            <ComboBox.ItemTemplate>
-                <DataTemplate>
-                    <StackPanel Orientation="Horizontal">
-                        <TextBlock Name="txtapellido" Text="{Binding Apellidos }"></TextBlock>
-                        <TextBlock Name="txtnombre" Text="{Binding Nombre }"></TextBlock>
-                    </StackPanel>
-                </DataTemplate>
-            </ComboBox.ItemTemplate>
-        </ComboBox>
     </RelativePanel>
 </Page>

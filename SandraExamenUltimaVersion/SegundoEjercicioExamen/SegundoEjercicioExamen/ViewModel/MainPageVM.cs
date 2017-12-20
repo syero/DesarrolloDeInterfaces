@@ -27,8 +27,6 @@ namespace SegundoEjercicioExamen.ViewModel
         {            
             _cursosCiclo = gestionadora.ObtenerCursosCiclo();
             _todosLosAlumnos = gestionadora.ObtenerListadoAlumnos();
-            _cursoSeleccionado =new CFGSDAM();
-            _alumnosDeUnCurso = gestionadora.ObtenerAlumnosPorIdCurso(_cursoSeleccionado.IdCurso);
         }
 
         #endregion
@@ -51,14 +49,27 @@ namespace SegundoEjercicioExamen.ViewModel
         public CFGSDAM CursoSeleccionado
         {
             get { return _cursoSeleccionado; }
-            set { this._cursoSeleccionado = value; NotifyPropertyChanged("CursoSeleccionado"); }
+            set {
+                this._cursoSeleccionado = value;
+                NotifyPropertyChanged("CursoSeleccionado");
+
+
+                if (_cursoSeleccionado.Nombre.Equals("Primero CFGS"))
+                {
+                    _alumnosDeUnCurso = gestionadora.ObtenerAlumnosPorIdCurso(_cursoSeleccionado.IdCurso);
+                }
+                else {
+                    _alumnosDeUnCurso = gestionadora.ObtenerAlumnosPorIdCurso(_cursoSeleccionado.IdCurso);
+                }
+                NotifyPropertyChanged("AlumnosDeUnCurso");
+            }
 
         }
 
         public ObservableCollection<Alumno> AlumnosDeUnCurso
         {
             get { return _alumnosDeUnCurso; }
-            set { this._alumnosDeUnCurso = value; NotifyPropertyChanged("AlumnosDeUnCurso"); }
+            set {this._alumnosDeUnCurso = value; NotifyPropertyChanged("AlumnosDeUnCurso"); }
         }
        
 

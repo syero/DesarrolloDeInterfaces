@@ -23,15 +23,15 @@ namespace PrimerEjercicioExamen
     /// </summary>
     public sealed partial class MainPage : Page
     {
+        MainPageVM ViewModel = new MainPageVM();
 
-       
         public MainPage()
         {
             this.InitializeComponent();
-
+       
         }
 
-        public MainPageVM ViewModel { get; set; }
+
 
     }
 }
