@@ -96,10 +96,10 @@ namespace PrimerEjercicioExamen.ViewModel
                 for (int i=0 ; i<elipses.Count();i++)
                 {
                    elipses.ElementAt(i).SetValue(UIElement.OpacityProperty, 0);
-
+                    
                 }
-                 
 
+                elipses.Clear();
             }
         }
     }
