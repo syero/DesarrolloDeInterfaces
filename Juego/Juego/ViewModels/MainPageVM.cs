@@ -23,7 +23,7 @@ namespace Juego.ViewModels
     {
 
         private ObservableCollection<Carta> _cartas;
-        private ObservableCollection<Carta> _listaCartasAux;
+        //private ObservableCollection<Carta> _listaCartasAux;
 
         private Carta _cartaSeleccionada;
         private Carta _cartaAuxiliar;
@@ -274,10 +274,50 @@ namespace Juego.ViewModels
         /// <summary>
         /// 
         /// </summary>
-        public void comprobarGanadorJuego()
-        {
+        //public void comprobarGanadorJuego()
+        //{
 
-            if(_contadorParejasAcertadas == 6)
+        //    if(_contadorParejasAcertadas == 6)
+        //    {
+        //        Gana = true;
+        //        _textoGanaPierde = " HA GANADO ¡¡¡¡ FELICIDADES !!!!";
+        //        NotifyPropertyChanged("textoGanaPierde");
+        //        tiempoDeJuego.Stop();
+
+        //    }
+        //    else
+        //    {
+        //        Gana = true;
+        //        _textoGanaPierde = "HA PERDIDO";
+        //        NotifyPropertyChanged("textoGanaPierde");
+        //        tiempoDeJuego.Stop();
+        //        _contadorDeJugadas = 0;
+
+        //        giraCartasIncorrectas();
+        //        _cartas.Clear();
+        //        _cartas = lista.obtenerCartas();
+        //        NotifyPropertyChanged("Cartas");
+        //        Frame.Navigate(typeof(MainPage));
+        //    }
+
+        //}
+
+        private void comprobarJugada()
+        {
+            if (_cartaAuxiliar.idCarta == _cartaSeleccionada.idCarta)
+            {
+                _contadorParejasAcertadas++;
+                _cartaSeleccionada = null;
+                _cartaAuxiliar = null;
+                NotifyPropertyChanged("CartaSeleccionada");
+
+            }
+            else
+            {
+                giraCartasIncorrectas();
+
+            }
+            if (_contadorParejasAcertadas == 6)
             {
                 Gana = true;
                 _textoGanaPierde = " HA GANADO ¡¡¡¡ FELICIDADES !!!!";
@@ -285,47 +325,8 @@ namespace Juego.ViewModels
                 tiempoDeJuego.Stop();
 
             }
-            else
-            {
-                Gana = true;
-                _textoGanaPierde = "HA PERDIDO";
-                NotifyPropertyChanged("textoGanaPierde");
-                tiempoDeJuego.Stop();
-                _contadorDeJugadas = 0;
-
-                //giraCartasIncorrectas();
-                //_cartas.Clear();
-                //_cartas = lista.obtenerCartas();
-                //NotifyPropertyChanged("Cartas");
-            }
 
         }
-
-        //private void comprobarJugada()
-        //{
-        //     if (_cartaAuxiliar.idCarta == _cartaSeleccionada.idCarta)
-        //        {
-        //            _contadorParejasAcertadas++;
-        //            _cartaSeleccionada = null;
-        //            _cartaAuxiliar = null;
-        //            NotifyPropertyChanged("CartaSeleccionada");
-
-        //        }
-        //        else
-        //        {
-        //            giraCartasIncorrectas();
-
-        //        }
-        //        if (_contadorParejasAcertadas == 6)
-        //        {
-        //            Gana = true;
-        //            _textoGanaPierde = " HA GANADO ¡¡¡¡ FELICIDADES !!!!";
-        //            NotifyPropertyChanged("textoGanaPierde");
-        //            tiempoDeJuego.Stop();
-
-        //        }
-
-        //}
 
 
         /// <summary>
@@ -358,17 +359,17 @@ namespace Juego.ViewModels
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-       public void tiempoTranscurrido(object sender, object e)
+        public void tiempoTranscurrido(object sender, object e)
         {
             Reloj = string.Format("{0}:{1}:{2}", tiempoDeJuego.Elapsed.Hours.ToString(), tiempoDeJuego.Elapsed.Minutes.ToString(), tiempoDeJuego.Elapsed.Seconds.ToString());
         }
         #endregion
- 
+
         /// <summary>
         /// Este metod permite realizar el efecto de que se gire la carta cuando se le de click
         /// </summary>
         /// <param name="sender"></param>
-        /// <param name="e"></param>
+        ///// <param name="e"></param>
         public void giraCartaPointerPressed(object sender, PointerRoutedEventArgs e)
         {
             Storyboard storyboard = new Storyboard();

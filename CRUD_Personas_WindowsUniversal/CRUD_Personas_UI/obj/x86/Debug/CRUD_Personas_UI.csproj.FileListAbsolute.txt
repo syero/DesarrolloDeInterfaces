@@ -296,3 +296,4 @@ C:\Users\syero\source\repos\DesarrolloDeInterfaces\CRUD_Personas_WindowsUniversa
 C:\Users\syero\source\repos\DesarrolloDeInterfaces\CRUD_Personas_WindowsUniversal\CRUD_Personas_UI\obj\x86\Debug\resources.en-us.resfiles
 C:\Users\syero\source\repos\DesarrolloDeInterfaces\CRUD_Personas_WindowsUniversal\CRUD_Personas_UI\obj\x86\Debug\resources.en-us.resfiles.intermediate
 C:\Users\syero\source\repos\DesarrolloDeInterfaces\CRUD_Personas_WindowsUniversal\CRUD_Personas_UI\obj\x86\Debug\ProjectArchitectures.txt
+C:\Users\syero\source\repos\DesarrolloDeInterfaces\CRUD_Personas_WindowsUniversal\CRUD_Personas_UI\bin\x86\Debug\Newtonsoft.Json.dll

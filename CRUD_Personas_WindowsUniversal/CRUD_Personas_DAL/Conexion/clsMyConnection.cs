@@ -28,6 +28,7 @@ namespace CRUD_Personas_DAL.Conexion
         public String dataBase { get; set; }
         public String user { get; set; }
         public String pass { get; set; }
+        public Uri uri { get; set; }
 
         //Constructores
 
@@ -39,6 +40,7 @@ namespace CRUD_Personas_DAL.Conexion
             this.dataBase = "Persona";
             this.user = "syero";
             this.pass = "Galadriel123";
+          //  this.uri = new Uri("");
 
         }
         //Con parámetros por si quisiera cambiar las conexiones

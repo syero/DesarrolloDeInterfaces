@@ -28,6 +28,9 @@
     <AppxPackagedFile Include="C:\Users\syero\source\repos\DesarrolloDeInterfaces\CRUD_Personas_WindowsUniversal\CRUD_Personas_UI\bin\x86\Debug\CRUD_Personas_UI.exe">
       <PackagePath>entrypoint\CRUD_Personas_UI.exe</PackagePath>
     </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\syero\.nuget\packages\newtonsoft.json\10.0.3\lib\netstandard1.3\Newtonsoft.Json.dll">
+      <PackagePath>Newtonsoft.Json.dll</PackagePath>
+    </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\syero\.nuget\packages\runtime.win10-x86.microsoft.netcore.universalwindowsplatform\6.0.5\runtimes\win10-x86\nativeassets\uap10.0.15138\clrcompression.dll">
       <PackagePath>clrcompression.dll</PackagePath>
     </AppxPackagedFile>

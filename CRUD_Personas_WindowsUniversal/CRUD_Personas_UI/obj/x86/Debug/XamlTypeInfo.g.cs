@@ -180,7 +180,7 @@ namespace CRUD_Personas_UI.CRUD_Personas_UI_XamlTypeInfo
 
         private void InitTypeTables()
         {
-            _typeNameTable = new string[14];
+            _typeNameTable = new string[15];
             _typeNameTable[0] = "CRUD_Personas_UI.ViewModels.MainPageMV";
             _typeNameTable[1] = "CRUD_Personas_UI.ViewModels.clsVMBase";
             _typeNameTable[2] = "Object";
@@ -192,11 +192,12 @@ namespace CRUD_Personas_UI.CRUD_Personas_UI_XamlTypeInfo
             _typeNameTable[8] = "System.DateTime";
             _typeNameTable[9] = "System.ValueType";
             _typeNameTable[10] = "CRUD_Personas_UI.ViewModels.DelegateCommand";
-            _typeNameTable[11] = "CRUD_Personas_UI.MainPage";
-            _typeNameTable[12] = "Windows.UI.Xaml.Controls.Page";
-            _typeNameTable[13] = "Windows.UI.Xaml.Controls.UserControl";
+            _typeNameTable[11] = "CRUD_Personas_UI.Converters.RecursoFecha";
+            _typeNameTable[12] = "CRUD_Personas_UI.MainPage";
+            _typeNameTable[13] = "Windows.UI.Xaml.Controls.Page";
+            _typeNameTable[14] = "Windows.UI.Xaml.Controls.UserControl";
 
-            _typeTable = new global::System.Type[14];
+            _typeTable = new global::System.Type[15];
             _typeTable[0] = typeof(global::CRUD_Personas_UI.ViewModels.MainPageMV);
             _typeTable[1] = typeof(global::CRUD_Personas_UI.ViewModels.clsVMBase);
             _typeTable[2] = typeof(global::System.Object);
@@ -208,9 +209,10 @@ namespace CRUD_Personas_UI.CRUD_Personas_UI_XamlTypeInfo
             _typeTable[8] = typeof(global::System.DateTime);
             _typeTable[9] = typeof(global::System.ValueType);
             _typeTable[10] = typeof(global::CRUD_Personas_UI.ViewModels.DelegateCommand);
-            _typeTable[11] = typeof(global::CRUD_Personas_UI.MainPage);
-            _typeTable[12] = typeof(global::Windows.UI.Xaml.Controls.Page);
-            _typeTable[13] = typeof(global::Windows.UI.Xaml.Controls.UserControl);
+            _typeTable[11] = typeof(global::CRUD_Personas_UI.Converters.RecursoFecha);
+            _typeTable[12] = typeof(global::CRUD_Personas_UI.MainPage);
+            _typeTable[13] = typeof(global::Windows.UI.Xaml.Controls.Page);
+            _typeTable[14] = typeof(global::Windows.UI.Xaml.Controls.UserControl);
         }
 
         private int LookupTypeIndexByName(string typeName)
@@ -249,7 +251,8 @@ namespace CRUD_Personas_UI.CRUD_Personas_UI_XamlTypeInfo
         private object Activate_3_ObservableCollection() { return new global::System.Collections.ObjectModel.ObservableCollection<global::CRUD_Personas_Entidades.Persona>(); }
         private object Activate_4_Collection() { return new global::System.Collections.ObjectModel.Collection<global::CRUD_Personas_Entidades.Persona>(); }
         private object Activate_5_Persona() { return new global::CRUD_Personas_Entidades.Persona(); }
-        private object Activate_11_MainPage() { return new global::CRUD_Personas_UI.MainPage(); }
+        private object Activate_11_RecursoFecha() { return new global::CRUD_Personas_UI.Converters.RecursoFecha(); }
+        private object Activate_12_MainPage() { return new global::CRUD_Personas_UI.MainPage(); }
         private void VectorAdd_3_ObservableCollection(object instance, object item)
         {
             var collection = (global::System.Collections.Generic.ICollection<global::CRUD_Personas_Entidades.Persona>)instance;
@@ -351,18 +354,25 @@ namespace CRUD_Personas_UI.CRUD_Personas_UI_XamlTypeInfo
                 xamlType = userType;
                 break;
 
-            case 11:   //  CRUD_Personas_UI.MainPage
-                userType = new global::CRUD_Personas_UI.CRUD_Personas_UI_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.Page"));
-                userType.Activator = Activate_11_MainPage;
+            case 11:   //  CRUD_Personas_UI.Converters.RecursoFecha
+                userType = new global::CRUD_Personas_UI.CRUD_Personas_UI_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Object"));
+                userType.Activator = Activate_11_RecursoFecha;
                 userType.SetIsLocalType();
                 xamlType = userType;
                 break;
 
-            case 12:   //  Windows.UI.Xaml.Controls.Page
+            case 12:   //  CRUD_Personas_UI.MainPage
+                userType = new global::CRUD_Personas_UI.CRUD_Personas_UI_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.Page"));
+                userType.Activator = Activate_12_MainPage;
+                userType.SetIsLocalType();
+                xamlType = userType;
+                break;
+
+            case 13:   //  Windows.UI.Xaml.Controls.Page
                 xamlType = new global::CRUD_Personas_UI.CRUD_Personas_UI_XamlTypeInfo.XamlSystemBaseType(typeName, type);
                 break;
 
-            case 13:   //  Windows.UI.Xaml.Controls.UserControl
+            case 14:   //  Windows.UI.Xaml.Controls.UserControl
                 xamlType = new global::CRUD_Personas_UI.CRUD_Personas_UI_XamlTypeInfo.XamlSystemBaseType(typeName, type);
                 break;
             }

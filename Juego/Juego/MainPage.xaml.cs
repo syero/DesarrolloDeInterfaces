@@ -24,11 +24,12 @@ namespace Juego
     /// </summary>
     public sealed partial class MainPage : Page
     {
-        MainPageVM ViewModel = new MainPageVM();
+      public MainPageVM ViewModel { get; }
 
         public MainPage()
         {
             this.InitializeComponent();
+            ViewModel = (MainPageVM)this.DataContext;
         }
 
         private void Jugar_Click(object sender, RoutedEventArgs e)
