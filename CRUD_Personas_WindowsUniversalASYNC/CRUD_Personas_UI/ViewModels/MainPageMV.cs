@@ -42,17 +42,15 @@ namespace CRUD_Personas_UI.ViewModels
 
         private GestionadoraBL gestionBL;
         private ListadoPersonasBL personas;
-
+        private bool _habilitarProgressRing;
 
         #region "Constructor"
         public MainPageMV()
-        {
-            
-            gestionBL = new GestionadoraBL();
-            personas = new ListadoPersonasBL();
-
-            _listpersonas = new ObservableCollection<Persona>(personas.getListaPersonaBL());
-            _listAuxiliarParaBuscarPersonas =new ObservableCollection<Persona>(_listpersonas);
+        {            
+            //gestionBL = new GestionadoraBL();
+            //personas = new ListadoPersonasBL();
+           
+            rellenaListaPersona();
 
             _delegateCommandEliminarPersona = new DelegateCommand(ExecuteEliminarPersona, CanExecuteEliminarPersona);
             _delegateCommandAgregar = new DelegateCommand(ExecuteAgregarPersona);
@@ -124,6 +122,17 @@ namespace CRUD_Personas_UI.ViewModels
             }
         }
 
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool habilitarProgressRing
+        {
+            get { return _habilitarProgressRing; }
+            set { this._habilitarProgressRing = value; NotifyPropertyChanged("habilitarProgressRing"); }
+        }
+
+
         /// <summary>
         /// 
         /// </summary>
@@ -172,14 +181,7 @@ namespace CRUD_Personas_UI.ViewModels
             }
         }
 
-        //esto ya no vale pa na
-        /*   public int IndicePersonaSeleccionada
-           {
-               get { return _indicePersonaseleccionada; }
-               set { this._indicePersonaseleccionada = value; }
-
-           }*/
-
+      
         #endregion
 
         /// <summary>
@@ -218,7 +220,7 @@ namespace CRUD_Personas_UI.ViewModels
         /// <summary>
         /// execute para Eliminar una persona
         /// </summary>
-        private void ExecuteEliminarPersona()
+        private async void ExecuteEliminarPersona()
         {
             this._listpersonas.Remove(_personaSeleccionada);
         }
@@ -285,14 +287,26 @@ namespace CRUD_Personas_UI.ViewModels
             }
             NotifyPropertyChanged("mListaConBusqueda");
         }
-/*
-        public void Buscar()
-        {
-            ListaAuxiliarParaBuscarPersonas = new ObservableCollection<Persona>();
-            var query = from persona in ListaAuxiliarParaBuscarPersonas
-                        where (persona.nombre.ToLower().StartsWith(TxtBuscar) || (persona.apellidos.ToLower().StartsWith(TxtBuscar);
-        }
-        */
 
+        /// <summary>
+        /// 
+        /// </summary>
+        private async void rellenaListaPersona()
+        {
+            try
+            {
+                ListadoPersonasBL personas = new ListadoPersonasBL();
+                _listpersonas = await personas.getListaPersonaBL();
+                NotifyPropertyChanged("ListaDepersonas");
+
+                _habilitarProgressRing = false;
+                NotifyPropertyChanged("habilitarProgressRing");
+            }
+            catch (Exception e) { }
+
+        }
+
+
+     
     }
 }

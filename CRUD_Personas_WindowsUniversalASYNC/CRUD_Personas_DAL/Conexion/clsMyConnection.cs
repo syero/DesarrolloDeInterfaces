@@ -24,91 +24,20 @@ namespace CRUD_Personas_DAL.Conexion
 { public class clsMyConnection
     {
         //Atributos
-        public String server { get; set; }
-        public String dataBase { get; set; }
-        public String user { get; set; }
-        public String pass { get; set; }
         public Uri uri { get; set; }
 
+        /**
+         en la uri home es controlador 
+            en caso de tener mas de  un controlador tendriasmos hasta https://sandrawebapi.azurewebsites.net/api
+             
+             */
         //Constructores
-
         public clsMyConnection()
-        {
-            // this.server = "(local)";
-            this.server = "personasdbservers.database.windows.net";
-
-            this.dataBase = "Persona";
-            this.user = "syero";
-            this.pass = "Galadriel123";
-            this.uri = new Uri("");
+        {          
+            this.uri = new Uri("https://sandrawebapi.azurewebsites.net/api/Home");
 
         }
-        //Con parámetros por si quisiera cambiar las conexiones
-        public clsMyConnection(String server, String database, String user, String pass)
-        {
-            this.server = server;
-            this.dataBase = database;
-            this.user = user;
-            this.pass = pass;
-        }
-
-
-        //METODOS
-
-        /// <summary>
-        /// Método que abre una conexión con la base de datos
-        /// </summary>
-        /// <pre>Nada.</pre>
-        /// <returns>Una conexión con la base de datso</returns>
-        public SqlConnection getConnection()
-        {
-            SqlConnection connection = new SqlConnection();
-
-            try
-            {               
-                //connection.ConnectionString = string.Format("server={0};database={1};uid={2};pwd={3};", server, dataBase, user, pass);
-                connection.ConnectionString = $"server={server};database={dataBase};uid={user};pwd={pass};";
-                connection.Open();
-            }
-            catch (SqlException)
-            {
-                throw;
-            }
-
-            return connection;
-
-        }
-
-
-
-
-        /// <summary>
-        /// Este metodo cierra una conexión con la Base de datos
-        /// </summary>
-        /// <post>The connection is closed.</post>
-        /// <param name="connection">La entrada es la conexión a cerrar
-        /// </param>
-        public void closeConnection(ref SqlConnection connection)
-        {
-            try
-            {
-                connection.Close();
-            }
-            catch (SqlException)
-            {
-                throw;
-            }
-            catch (InvalidOperationException)
-            {
-                throw;
-            }
-            catch (Exception)
-            {
-                throw;
-            }
-        }
-
-
+      
     }
 
 }
