@@ -12,6 +12,36 @@ namespace CRUD_Personas_BL.Manejadoras
     {
         GestionPersonaDAL gestionDal = new GestionPersonaDAL();
 
+        ///// <summary>
+        ///// metodo para eliminar personas de la bd
+        ///// </summary>
+        ///// <param name="id"></param>
+        ///// <returns></returns>
+        public async Task<int> eliminarPersona(int id)
+        {
+            int codigoRespuesta;
+          
+            codigoRespuesta = await gestionDal.eliminarPersonaDAL(id);
+
+            return (codigoRespuesta);
+        }
+
+        ///// <summary>
+        ///// para insertar una persona nueva
+        ///// </summary>
+        ///// <param name="id"></param>
+        ///// <returns></returns>
+
+        public async Task<int> insertarPersonaBL(Persona persona)
+        {
+            int codigoDeRespuesta;
+
+            GestionPersonaDAL gestion = new GestionPersonaDAL();
+            codigoDeRespuesta =await gestion.crearPersonaDAL(persona);
+
+            return codigoDeRespuesta;
+        }
+
         /// <summary>
         /// 
         /// </summary>
@@ -43,36 +73,6 @@ namespace CRUD_Personas_BL.Manejadoras
         //    filasAfectadas = gestionadoraDal.guardarPersonaDAL(id,person);
 
         //    return (filasAfectadas);
-        //}
-
-        ///// <summary>
-        ///// metodo para eliminar personas de la bd
-        ///// </summary>
-        ///// <param name="id"></param>
-        ///// <returns></returns>
-        public async Task<int> eliminarPersona(int id)
-        {
-            int codigoRespuesta;
-          
-            codigoRespuesta = await gestionDal.eliminarPersonaDAL(id);
-
-            return (codigoRespuesta);
-        }
-
-        ///// <summary>
-        ///// para insertar una persona nueva
-        ///// </summary>
-        ///// <param name="id"></param>
-        ///// <returns></returns>
-
-        //public int insertarPersonaBL(Persona persona)
-        //{
-        //    int filasAfectadas;
-
-        //    GestionPersonaDAL gestion = new GestionPersonaDAL();
-        //    filasAfectadas = gestion.crearPersonaDAL(persona);
-
-        //    return filasAfectadas;
         //}
 
     }

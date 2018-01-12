@@ -40,8 +40,8 @@ namespace CRUD_Personas_UI.ViewModels
         private DelegateCommand _delegateCommandBuscar;
         #endregion   //cerramos la region
 
-        private GestionadoraBL gestionBL;
-        private ListadoPersonasBL personas;
+        private GestionadoraBL gestionBL =new GestionadoraBL();
+        
         private bool _habilitarProgressRing;
 
         #region "Constructor"
@@ -187,16 +187,23 @@ namespace CRUD_Personas_UI.ViewModels
         /// <summary>
         /// execute para guardar una persona
         /// </summary>
-        private void ExecuteGuardarPersona()
+        private async void ExecuteGuardarPersona()
         {
-
-            if (_personaSeleccionada != null && _personaSeleccionada.idPersona < 0)
+            if (_personaSeleccionada != null && _personaSeleccionada.idPersona==0)
             {
-                _personaSeleccionada.idPersona = ListaDepersonas.ElementAt(ListaDepersonas.Count - 1).idPersona + 1;
-                NotifyPropertyChanged("PersonaSeleccionada");
-                ListaDepersonas.Add(_personaSeleccionada);
-                NotifyPropertyChanged("ListaDepersonas");
+               await gestionBL.insertarPersonaBL(_personaSeleccionada);
+                _delegateCommandGuardar.RaiseCanExecuteChanged();
+                rellenaListaPersona();
             }
+            NotifyPropertyChanged("ListaDepersonas");
+
+            //if (_personaSeleccionada != null && _personaSeleccionada.idPersona < 0)
+            //{
+            //    //_personaSeleccionada.idPersona = await ;
+            //    //NotifyPropertyChanged("PersonaSeleccionada");
+            //    //ListaDepersonas.Add(_personaSeleccionada);
+            //    //NotifyPropertyChanged("ListaDepersonas");
+            //}
         }
 
 
@@ -218,11 +225,14 @@ namespace CRUD_Personas_UI.ViewModels
         }
 
         /// <summary>
-        /// execute para Eliminar una persona
+        /// Llamo al metodo de eliminar persona de la gestionadora BL 
         /// </summary>
         private async void ExecuteEliminarPersona()
         {
-            this._listpersonas.Remove(_personaSeleccionada);
+            int eliminado;
+
+            eliminado= await gestionBL.eliminarPersona(_personaSeleccionada.idPersona);
+            NotifyPropertyChanged("ListaDepersonas");
         }
 
         /// <summary>
