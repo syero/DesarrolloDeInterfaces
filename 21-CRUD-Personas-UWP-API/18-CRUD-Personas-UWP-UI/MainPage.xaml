@@ -1,0 +1,146 @@
+﻿<Page
+    x:Class="_18_CRUD_Personas_UWP_UI.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:_18_CRUD_Personas_UWP_UI"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:modelo="using:_18_CRUD_Personas_UWP_UI.ViewModels"
+    xmlns:dp="using:_18_CRUD_Personas_UWP_Entidades"
+    xmlns:conv="using:_18_CRUD_Personas_UWP_UI.Converters"
+    mc:Ignorable="d">
+    <Page.DataContext>
+        <modelo:MainPageVM></modelo:MainPageVM>
+    </Page.DataContext>
+
+    <Page.Resources>
+        <dp:DateTimeToDateTimeOffsetConverter x:Key="DateTimeToDateTimeOffsetConverter"></dp:DateTimeToDateTimeOffsetConverter>
+        <conv:dateTimeToStringConverter x:Key="DateStringconver"></conv:dateTimeToStringConverter>
+    </Page.Resources>
+    
+    
+
+    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        <VisualStateManager.VisualStateGroups>
+            <VisualStateGroup x:Name="VisualStateGroup">
+                <!--TamañoTablet-->
+                <VisualState x:Name="Tablet">
+                    <!--Tamaño limite minimo-->
+                    <VisualState.StateTriggers>
+                        <AdaptiveTrigger MinWindowHeight="100" MinWindowWidth="100"/>
+                    </VisualState.StateTriggers>
+                    <!--Los cambios-->
+                    <VisualState.Setters>
+                        <Setter Target="formulario.(Grid.Row)" Value="2"  ></Setter>
+                        <Setter Target="formulario.(Grid.Column)" Value="0"  ></Setter>
+                        <Setter Target="formulario.(Grid.ColumnSpan)" Value="2"></Setter>
+                    </VisualState.Setters>
+                </VisualState>
+                <!--Tamaño escritorio-->
+                <VisualState x:Name="Desktop">
+                    <VisualState.StateTriggers>
+                        <AdaptiveTrigger MinWindowWidth="850"  />
+                    </VisualState.StateTriggers>
+                    <VisualState.Setters>
+                        <Setter Target="formulario.(Grid.Row)" Value="1"  ></Setter>
+                        <Setter Target="formulario.(Grid.Column)" Value="1"  ></Setter>
+                    </VisualState.Setters>
+                </VisualState>
+            </VisualStateGroup>
+        </VisualStateManager.VisualStateGroups>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+        <!-- Le damos la fuente los items, bindeando la lista o colection de Personas 
+        Y que al seleccionar un item, bindee la personaSeleccionada, Two Ways para que avise cuando cambie-->
+        <!-- en vez de Binding, usamos x:Bind y ViewModel.tal.tal.
+        Cambiamos SelectedItem por SelectedIndex y se lo pasamos como atributo para luego en el evento borrar, borramos del array el qie este en esa posicion. DEBE SER TWO WAYS PARA QUE BORRE EL QUE ES-->
+
+        <StackPanel Orientation="Horizontal" Background="AliceBlue" >
+            <AppBarButton Icon="Save" Label="Guardar" Command="{Binding cmdSave}" Click="AppBarButton_Click"/>
+            <AppBarButton Icon="Delete" Label="Borrar" Command="{Binding cmdDelete}" />
+            <AppBarButton Icon="Add" Label="Añadir" Command="{Binding cmdAdd}"/>
+            <TextBox Name="searchBox" PlaceholderText="Busque aquí" Text="{Binding textoABuscar, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Margin="0 10" ></TextBox>
+            <AppBarButton Icon="Filter" Command="{Binding cmdSearch}" Label="Search" Click="AppBarButton_Click"  ></AppBarButton>
+            <AppBarButton Icon="Refresh" Label="Actualizar" Command="{Binding actualizarLista }"/>
+
+        </StackPanel>
+
+        <ScrollViewer  x:Name="itemListView" Grid.Row="1" Grid.Column="0">
+            <StackPanel>
+                
+                <ListView  MinWidth="100"  SelectedItem="{Binding personSeleccionada,Mode=TwoWay}" ItemsSource="{Binding mListaConBusqueda}">
+                    <ListView.ItemTemplate>
+                        <DataTemplate >
+                            <StackPanel Orientation="Horizontal">
+                                <SymbolIcon Symbol="Contact"></SymbolIcon>
+                                <TextBlock Text="{Binding Nombre}" Margin=" 10 0"></TextBlock>
+                                <TextBlock Text="{Binding Apellido}"></TextBlock>
+                            </StackPanel>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+
+                </ListView>
+
+                <ProgressRing Name="progressBar" Margin="0 90 0 0" IsActive="{Binding mHabiliteProgressring, Mode=TwoWay}"></ProgressRing>
+
+
+            </StackPanel>
+            
+            
+            
+        </ScrollViewer>
+
+        
+
+        <StackPanel Grid.Row="0" Grid.Column="2" Background="AliceBlue"/>
+
+        <Grid Grid.Row="1" Grid.Column="2" Background="AliceBlue" Name="formulario">
+
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto"></ColumnDefinition>
+                <ColumnDefinition Width="*"></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"></RowDefinition>
+                <RowDefinition Height="Auto"></RowDefinition>
+                <RowDefinition Height="Auto"></RowDefinition>
+                <RowDefinition Height="Auto"></RowDefinition>
+                <RowDefinition Height="Auto"></RowDefinition>
+                <RowDefinition Height="Auto"></RowDefinition>
+                <RowDefinition Height="Auto"></RowDefinition>
+                <RowDefinition Height="Auto"></RowDefinition>
+            </Grid.RowDefinitions>
+            <StackPanel Grid.ColumnSpan="2" Orientation="Horizontal">
+            </StackPanel>
+
+            <TextBlock Text="Nombre" FontSize="16"  Margin="30 10" Grid.Column="0" Grid.Row="1" TextAlignment="Right" ></TextBlock>
+            <TextBox Name="txtBlcNombre" Margin="0 10 20 10"  Text="{Binding personSeleccionada.Nombre,Mode=TwoWay,UpdateSourceTrigger=Explicit}" Grid.Column="1" Grid.Row="1" ></TextBox>
+
+            <TextBlock Text="Apellido" Margin="30 10" FontSize="16" Grid.Column="0" Grid.Row="2" TextAlignment="Right"></TextBlock>
+            <TextBox Name="txtBlcapellido" Margin="0 10 20 10" Text="{Binding personSeleccionada.Apellido, Mode=TwoWay, UpdateSourceTrigger=Explicit}" Grid.Column="1" Grid.Row="2" ></TextBox>
+
+            <TextBlock Text="Telefóno" Margin="30 10" FontSize="16" Grid.Column="0" Grid.Row="3" TextAlignment="Right"></TextBlock>
+            <TextBox Name="txtBlctelefono" Margin="0 10 20 10" Text="{Binding personSeleccionada.Telefono, Mode=TwoWay, UpdateSourceTrigger=Explicit}" Grid.Column="1" Grid.Row="3" ></TextBox>
+
+            <TextBlock Text="Fecha de Nacimiento" Margin="30 10" FontSize="16" Grid.Column="0" Grid.Row="4" TextAlignment="Right"></TextBlock>
+            <TextBox Name="txtBlcFechaNacimiento" Margin="0 10 20 10" Text="{Binding personSeleccionada.FechaNac, Converter={StaticResource DateStringconver}, Mode=TwoWay, UpdateSourceTrigger=Explicit}" Grid.Column="1" Grid.Row="4" ></TextBox>
+            <!--<DatePicker Name="txtBlcFechaNacimiento" Header="" Margin="0 10 20 10"  Date="{Binding personSeleccionada.FechaNac, Converter={StaticResource DateTimeToDateTimeOffsetConverter}, Mode=TwoWay, UpdateSourceTrigger=Explicit}" Grid.Column="1" Grid.Row="4" />-->
+
+            <TextBlock Text="Dirección" Margin="30 10" FontSize="16" Grid.Column="0" Grid.Row="5" TextAlignment="Right"></TextBlock>
+            <TextBox Name="txtBlcDireccion" Margin="0 10 20 10" Text="{Binding personSeleccionada.Direccion, Mode=TwoWay, UpdateSourceTrigger=Explicit}" Grid.Column="1" Grid.Row="5" Grid.ColumnSpan="2"  ></TextBox>
+
+        </Grid>
+        <StackPanel Background="CornflowerBlue" Grid.Row="4" Name="stackMensaje" >
+            <TextBlock Name="notification" Text="{Binding mensaje, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"  ></TextBlock>
+        </StackPanel>
+
+    </Grid>
+</Page>
