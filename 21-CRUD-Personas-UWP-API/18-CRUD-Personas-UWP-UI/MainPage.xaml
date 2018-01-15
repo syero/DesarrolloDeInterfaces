@@ -20,7 +20,7 @@
     
     
 
-    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+    <Grid Background="Aquamarine">
         <VisualStateManager.VisualStateGroups>
             <VisualStateGroup x:Name="VisualStateGroup">
                 <!--TamañoTablet-->
@@ -63,7 +63,7 @@
         <!-- en vez de Binding, usamos x:Bind y ViewModel.tal.tal.
         Cambiamos SelectedItem por SelectedIndex y se lo pasamos como atributo para luego en el evento borrar, borramos del array el qie este en esa posicion. DEBE SER TWO WAYS PARA QUE BORRE EL QUE ES-->
 
-        <StackPanel Orientation="Horizontal" Background="AliceBlue" >
+        <StackPanel Orientation="Horizontal" Background="Azure" >
             <AppBarButton Icon="Save" Label="Guardar" Command="{Binding cmdSave}" Click="AppBarButton_Click"/>
             <AppBarButton Icon="Delete" Label="Borrar" Command="{Binding cmdDelete}" />
             <AppBarButton Icon="Add" Label="Añadir" Command="{Binding cmdAdd}"/>

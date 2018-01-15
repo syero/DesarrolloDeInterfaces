@@ -23,8 +23,8 @@ namespace _18_CRUD_Personas_UWP_DAL.Conexion
             this.user = "rsgonzalez";
             //this.user = "pruebaResident";
             this.pass = "IwRmGaM-23";
-            this.uriBase = new Uri("http://webAPI-Rebeca.azurewebsites.net/api/Persona");
-            this.uriBaseCore = new Uri("https://webapicorerebeca.azurewebsites.net/api/Persona");
+            this.uriBase = new Uri("https://sandrawebapi.azurewebsites.net/api/Home");
+            this.uriBaseCore = new Uri("https://sandrawebapi.azurewebsites.net/api/Home");
 
             this.conexion = new SqlConnection();
             try

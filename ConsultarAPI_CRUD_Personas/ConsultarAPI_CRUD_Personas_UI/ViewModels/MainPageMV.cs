@@ -1,5 +1,5 @@
-﻿using CRUD_Personas_BL.Manejadoras;
-using CRUD_Personas_Entidades;
+﻿using ConsultarAPI_CRUD_Personas_BL.Manejadoras;
+using ConsultarAPI_CRUD_Personas_Entidades;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -12,18 +12,7 @@ using Windows.UI.Xaml.Controls;
 namespace CRUD_Personas_UI.ViewModels
 {
 
-    /**
-     En este ViewModel  vamos a tener el listado de las personas que se mostara en el ListView(listado de personas) 
-     y la personas seleccionada que se mostrara en el formulario(Grid) del MainPage.xaml 
-    */
-
-    /*Cada Delegate Command tiene su 
-     *      Execute(contiene el código que queremos que se ejecute con el comando)
-     *      CanExecute(devuelve el estado del comando, True si está enable y false si está disabled.)
-     
-     */
-
-    public class MainPageMV : clsVMBase
+     public class MainPageMV : clsVMBase
     {
        
         //abrimos  la region
@@ -46,18 +35,8 @@ namespace CRUD_Personas_UI.ViewModels
 
         #region "Constructor"
         public MainPageMV()
-        {            
-            //gestionBL = new GestionadoraBL();
-            //personas = new ListadoPersonasBL();
-           
+        {
             rellenaListaPersona();
-
-            _delegateCommandEliminarPersona = new DelegateCommand(ExecuteEliminarPersona, CanExecuteEliminarPersona);
-            _delegateCommandAgregar = new DelegateCommand(ExecuteAgregarPersona);
-            _delegateCommandGuardar = new DelegateCommand(ExecuteGuardarPersona, CanExecuteGuardarPersona);
-            _delegateCommandBuscar = new DelegateCommand(ExecuteBuscarPersona, CanExecuteBuscarPersona);
-
-
         }
         #endregion
 
@@ -194,6 +173,14 @@ namespace CRUD_Personas_UI.ViewModels
                 rellenaListaPersona();
             }
             NotifyPropertyChanged("ListaDepersonas");
+
+            //if (_personaSeleccionada != null && _personaSeleccionada.idPersona < 0)
+            //{
+            //    //_personaSeleccionada.idPersona = await ;
+            //    //NotifyPropertyChanged("PersonaSeleccionada");
+            //    //ListaDepersonas.Add(_personaSeleccionada);
+            //    //NotifyPropertyChanged("ListaDepersonas");
+            //}
         }
 
 
@@ -210,16 +197,8 @@ namespace CRUD_Personas_UI.ViewModels
                 hayPersonaModificadaONueva = true;
             }
             return (hayPersonaModificadaONueva);
-        }
 
-        /// <summary>
-        /// 
-        /// </summary>
-        private void ExecuteAgregarPersona()
-        {
-            _personaSeleccionada = new Persona();
-            NotifyPropertyChanged("PersonaSeleccionada");
-            _delegateCommandGuardar.RaiseCanExecuteChanged();
+
         }
 
         /// <summary>
@@ -249,7 +228,16 @@ namespace CRUD_Personas_UI.ViewModels
 
         }
 
-        
+        /// <summary>
+        /// 
+        /// </summary>
+        private void ExecuteAgregarPersona()
+        {
+            _personaSeleccionada = new Persona();
+            NotifyPropertyChanged("PersonaSeleccionada");
+            _delegateCommandGuardar.RaiseCanExecuteChanged();
+        }
+
         /// <summary>
         ///  mantiene deshabilitado el boton de buscar mientras no se escriba nada en el campo de texto
         /// </summary>
