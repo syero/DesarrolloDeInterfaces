@@ -11,22 +11,19 @@ namespace CRUD_Personas_UI.Converters
     {
         public object Convert(object value, Type targetType, object parameter, string language)
         {
-            String fecha="";
-
-            if (value != null)
-            {
-                DateTime fechaPasada = (DateTime)value; //DateTime.Parse(value.ToString());
-                fecha = fechaPasada.ToString("dd /mm/ yyyy"); //concatenar bien
-               
-            }
-
-            return fecha;           
+            DateTime date = (DateTime)value;
+            return date.ToShortDateString();
         }
 
+        //De String a fecha
         public object ConvertBack(object value, Type targetType, object parameter, string language)
         {
+            string strValue = value as string;
+            //DateTime resultDateTime= DateTime.Now;
 
-             throw new NotImplementedException();
+            DateTime myDate = DateTime.Parse(value.ToString());
+
+            return myDate;
         }
     }
 }

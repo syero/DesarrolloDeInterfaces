@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace CRUD_Personas_UI.ViewModels
+namespace ConsultarAPI_CRUD_Personas_UI.ViewModels
 {
     public abstract class clsVMBase : INotifyPropertyChanged
     {

@@ -12,43 +12,55 @@
     <Page.DataContext>
         <vm:MainPageMV></vm:MainPageMV>
     </Page.DataContext>
-    
+  <!--
     <Page.Resources>
         <convert:RecursoFecha x:Key="Fecha"/>
     </Page.Resources>
-    
-    
+    -->
+
     <Grid Background="White" >
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="2*"/>
-            <ColumnDefinition Width="4*"/>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="*"/>
         </Grid.ColumnDefinitions>
 
         <Grid.RowDefinitions>
-            <RowDefinition Height="*"/>
-            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
         </Grid.RowDefinitions>
 
+        <StackPanel Orientation="Horizontal" Grid.ColumnSpan="3" Grid.Row="0" >
+            <AppBarButton Name="btn_guardar" Content="Guardar" Icon="Save" Click="btn_guardar_Click" Command="{Binding delegateCommandGuardar}" />
+            <AppBarButton Name="btn_agregar" Content="Agregar" Icon="Add"   Command="{Binding delegateCommandAgregar}"   />
+            <AppBarButton Name="btn_eliminar" Content="Eliminar" Icon="Delete" Command="{Binding delegateCommandEliminarPersona }" />
+            <TextBox Name="Buscar" Width="250" PlaceholderText="Buscar" Text="{Binding TxtBuscar, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" ></TextBox>
+            <AppBarButton Icon="Find" Command="{Binding delegateCommandBuscar}" Label="Buscar" Click="btn_guardar_Click"  ></AppBarButton>
+        </StackPanel>
 
-        <ScrollViewer Name="ScrollListaPersonas" Grid.Column="0" Grid.RowSpan="2" >
+        <ScrollViewer Name="ScrollListaPersonas" Grid.Column="0" Grid.Row="1" >
+            <StackPanel>
+                <!--ItemsSource="{Binding la propiedad que contiene la lista}"-->
+                <!--SelectedItem="{Binding la persona seleccionada de la lista }"-->
+                <ListView Name="listaPersonas"  ItemsSource="{Binding ListaDepersonas}"  SelectedItem="{Binding Path=PersonaSeleccionada,Mode=TwoWay}" >
+                    <ListView.ItemTemplate>
+                        <DataTemplate >
+                            <StackPanel Orientation="Horizontal" Padding="5" Margin="5">
+                                <SymbolIcon Symbol="Contact2"></SymbolIcon>
+                                <TextBlock Name="txtBlck_NombrePersona" Text="{Binding Path=nombre}" />
+                                <TextBlock Name="txtBx_ApellidoPersona" Text="{Binding Path=apellidos}"/>
+                            </StackPanel>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
 
-            <!--ItemsSource="{Binding la propiedad que contiene la lista}"-->
-            <!--SelectedItem="{Binding la persona seleccionada de la lista }"-->
-            <ListView Name="listaPersonas"  ItemsSource="{Binding ListaDepersonas}"  SelectedItem="{Binding Path=PersonaSeleccionada,Mode=TwoWay}" >
-                <ListView.ItemTemplate>
-                    <DataTemplate >
-                        <StackPanel Orientation="Horizontal" Padding="5" Margin="5">
-                            <TextBlock Name="txtBlck_NombrePersona" Text="{Binding Path=nombre}" />
-                            <TextBlock Name="txtBx_ApellidoPersona" Text="{Binding Path=apellidos}"/>
-                        </StackPanel>
-                    </DataTemplate>
-                </ListView.ItemTemplate>
-            </ListView>
+                <ProgressRing Name="progressRing" Margin="0 90 0 0" IsActive="{Binding habilitarProgressRing, Mode=TwoWay}"/>
+            </StackPanel>
         </ScrollViewer>
-
-
-        <!-- el grid va relacionado con un datacontext-->
-        <Grid Name="grid_Formulario" Background="Coral" Grid.Column="1" Grid.RowSpan="2"
+        
+              <!-- el grid va relacionado con un datacontext-->
+        <Grid Name="grid_Formulario" Background="Coral" Grid.Column="2" Grid.Row="1"
               DataContext="{Binding PersonaSeleccionada,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}" >
 
             <Grid.ColumnDefinitions>
@@ -75,7 +87,7 @@
 
             <!--fecha de nacimiento de la persona seleccionada-->
             <TextBlock Name="txtBlck_FNacimiento" Text="Fecha Nacimiento" Grid.Column="0" Grid.Row="2" Padding="5" Margin="10" />
-            <TextBox  Name="txtBx_FNacimiento" Text="{Binding fechaNac,Mode=TwoWay,UpdateSourceTrigger=Explicit,Converter={StaticResource Fecha}}" Grid.Column="1" Grid.Row="2" Padding="5" Margin="10"  Width="300"/>
+            <TextBox  Name="txtBx_FNacimiento" Text="{Binding fechaNac,Mode=TwoWay,UpdateSourceTrigger=Explicit,Converter={StaticResource DateStringconver}}" Grid.Column="1" Grid.Row="2" Padding="5" Margin="10"  Width="300"/>
 
             <TextBlock Name="txtBlck_Telefono" Text="Telefono" Grid.Column="0" Grid.Row="3" Padding="5" Margin="10" />
             <TextBox  Name="txtBx_Telefono" Text="{Binding telefono,Mode=TwoWay}" Grid.Column="1" Grid.Row="3" Padding="5" Margin="10"  Width="300"/>
@@ -89,12 +101,6 @@
             </ScrollViewer>
         </Grid>
 
-        <StackPanel  Grid.ColumnSpan="2" Grid.Row="5" Orientation="Horizontal" >
-            <AppBarButton Name="btn_guardar" Content="Guardar" Icon="Save" Click="btn_guardar_Click" Command="{Binding delegateCommandGuardar}" />
-            <AppBarButton Name="btn_agregar" Content="Agregar" Icon="Add"   Command="{Binding delegateCommandAgregar}"   />
-            <AppBarButton Name="btn_eliminar" Content="Eliminar" Icon="Delete" Command="{Binding delegateCommandEliminarPersona }" />
-            <TextBox Name="Buscar" PlaceholderText="Buscar" Text="{Binding Tx, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" ></TextBox>
-            <AppBarButton Icon="Find" Command="{Binding delegateCommandBuscar}" Label="Buscar" Click="btn_guardar_Click"  ></AppBarButton>
-        </StackPanel>
+       
 </Grid>
 </Page>

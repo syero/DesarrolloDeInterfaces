@@ -304,15 +304,6 @@ namespace _18_CRUD_Personas_UWP_UI.ViewModels
                 //_mListaCompleta = mListaConBusqueda;
                 NotifyPropertyChanged("mListaConBusqueda");
 
-            //Listado para buscar LAMBDA EXPRESION TO SEARCH
-            //LINQ expresion para buscar
-
-            /*del myDelegate = x => x * x;
-            int j = myDelegate(5); //j = 25
-            del search = mListaCompleta => mListaCompleta; */
-            //Each(mListaCompleta, i => Console.WriteLine(i));
-            
-            // Console.WriteLine(i)
         }
 
         /// <summary>

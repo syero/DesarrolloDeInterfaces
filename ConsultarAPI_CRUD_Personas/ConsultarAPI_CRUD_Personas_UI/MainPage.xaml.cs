@@ -24,7 +24,25 @@ namespace ConsultarAPI_CRUD_Personas_UI
     {
         public MainPage()
         {
-            this.InitializeComponent();
+            InitializeComponent();
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void btn_guardar_Click(object sender, RoutedEventArgs e)
+        {
+            //para cuando le demos al boton guardar notifica que se han modificados los datos de la lista
+            this.txtBx_Nombre.GetBindingExpression(TextBox.TextProperty).UpdateSource();
+
+            this.txtBx_Apellidos.GetBindingExpression(TextBox.TextProperty).UpdateSource();
+
+            this.txtBx_FNacimiento.GetBindingExpression(TextBox.TextProperty).UpdateSource();
+
+            this.txtBx_Direccion.GetBindingExpression(TextBox.TextProperty).UpdateSource();
+
         }
     }
 }

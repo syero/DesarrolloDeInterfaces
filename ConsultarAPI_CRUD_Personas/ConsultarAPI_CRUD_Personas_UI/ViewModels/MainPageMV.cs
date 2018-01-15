@@ -1,4 +1,5 @@
-﻿using ConsultarAPI_CRUD_Personas_BL.Manejadoras;
+﻿using ConsultarAPI_CRUD_Personas_BL.Listados;
+using ConsultarAPI_CRUD_Personas_BL.Manejadoras;
 using ConsultarAPI_CRUD_Personas_Entidades;
 using System;
 using System.Collections.Generic;
@@ -9,7 +10,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Windows.UI.Xaml.Controls;
 
-namespace CRUD_Personas_UI.ViewModels
+namespace ConsultarAPI_CRUD_Personas_UI.ViewModels
 {
 
      public class MainPageMV : clsVMBase
@@ -36,6 +37,11 @@ namespace CRUD_Personas_UI.ViewModels
         #region "Constructor"
         public MainPageMV()
         {
+            _delegateCommandEliminarPersona=new DelegateCommand(ExecuteEliminarPersona,CanExecuteEliminarPersona);
+            _delegateCommandGuardar=new DelegateCommand(ExecuteGuardarPersona,CanExecuteGuardarPersona);
+            _delegateCommandAgregar=new DelegateCommand(ExecuteAgregarPersona);
+            _delegateCommandBuscar=new DelegateCommand(ExecuteBuscarPersona,CanExecuteGuardarPersona);
+
             rellenaListaPersona();
         }
         #endregion
@@ -173,14 +179,7 @@ namespace CRUD_Personas_UI.ViewModels
                 rellenaListaPersona();
             }
             NotifyPropertyChanged("ListaDepersonas");
-
-            //if (_personaSeleccionada != null && _personaSeleccionada.idPersona < 0)
-            //{
-            //    //_personaSeleccionada.idPersona = await ;
-            //    //NotifyPropertyChanged("PersonaSeleccionada");
-            //    //ListaDepersonas.Add(_personaSeleccionada);
-            //    //NotifyPropertyChanged("ListaDepersonas");
-            //}
+            
         }
 
 

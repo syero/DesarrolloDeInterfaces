@@ -31,24 +31,14 @@ namespace CRUD_Personas_UI
         {
             //para cuando le demos al boton guardar notifica que se han modificados los datos de la lista
             this.txtBx_Nombre.GetBindingExpression(TextBox.TextProperty).UpdateSource();
-
             this.txtBx_Apellidos.GetBindingExpression(TextBox.TextProperty).UpdateSource();
-
             this.txtBx_FNacimiento.GetBindingExpression(TextBox.TextProperty).UpdateSource();
-
             this.txtBx_Direccion.GetBindingExpression(TextBox.TextProperty).UpdateSource();
+            this.txtBlck_Telefono.GetBindingExpression(TextBox.TextProperty).UpdateSource();
 
         }
 
-        /// <summary>
-        /// para el click de buscar
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void AppBarButton_Click(object sender, RoutedEventArgs e)
-        {
-            this.Buscar.GetBindingExpression(TextBox.TextProperty).UpdateSource();
-        }
+              
 
     }
 }

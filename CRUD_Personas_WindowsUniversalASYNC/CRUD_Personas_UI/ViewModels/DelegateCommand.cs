@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -80,6 +81,11 @@ namespace CRUD_Personas_UI.ViewModels
             {
                 _execute();
             }
+        }
+
+        public static implicit operator ObservableCollection<object>(DelegateCommand v)
+        {
+            throw new NotImplementedException();
         }
     }
 }

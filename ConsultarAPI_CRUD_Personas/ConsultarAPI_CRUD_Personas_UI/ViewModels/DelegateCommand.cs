@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Input;
 
-namespace CRUD_Personas_UI.ViewModels
+namespace ConsultarAPI_CRUD_Personas_UI.ViewModels
 {
     public class DelegateCommand : ICommand
     {

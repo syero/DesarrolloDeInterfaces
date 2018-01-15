@@ -50,7 +50,7 @@ namespace CRUD_Personas_DAL.Manejadoras
         /// </summary>
         /// <param name="persona"></param>
         /// <returns></returns>
-        public async Task<int> crearPersonaDAL(Persona persona)
+        public async Task<int> insertarPersonaDAL(Persona persona)
         {
             int resultado = 0;
             HttpResponseMessage miRespuesta = new HttpResponseMessage();
@@ -89,18 +89,16 @@ namespace CRUD_Personas_DAL.Manejadoras
         public async Task<Persona> buscarPersonaDAl(int id)
         {
             //Usamos el Status de la respuesta para comprobar si ha borrado
-            HttpResponseMessage miRespuesta = new HttpResponseMessage();
-            Uri miUri = new Uri(miConexion.uri.ToString() + "/" + id);
+            String miRespuesta;
+            Uri miUri = new Uri(miConexion.uri+ "/" + id);
             Persona person = new Persona();
 
             try
             {
-                miRespuesta = await miCliente.GetAsync(miUri);
-                if (miRespuesta.IsSuccessStatusCode)
-                {
-                  //  person = miRespuesta.Content.ReadAsStringAsync().;
-                    miCliente.Dispose();
-                }
+                miRespuesta = await miCliente.GetStringAsync(miUri);
+                miCliente.Dispose();
+                person = JsonConvert.DeserializeObject<Persona>(miRespuesta);
+                
             }catch (Exception e) { throw e; }
 
             return (person);
@@ -112,21 +110,25 @@ namespace CRUD_Personas_DAL.Manejadoras
         /// </summary>
         /// <param name="persona"></param>
         /// <returns></returns>
-        //public int guardarPersonaDAL(int id, Persona persona)
-        //{
-        //    int resultado = 0;
-        //    String body="";
+        public async Task<HttpStatusCode> guardarPersonaDAL( Persona persona)
+        {
+            String body = "";
+            HttpStringContent mContenido;
+            HttpResponseMessage respuesta;
+            Uri mUri = new Uri(miConexion.uri + "/" + persona.idPersona);
+            try
+            {
+                // Serializamos al objeto persona que recibe
+                body = JsonConvert.SerializeObject(persona);
 
-        //    try
-        //    {
-        //        body = JsonConvert.SerializeObject(persona); 
+                mContenido = new HttpStringContent(body, Windows.Storage.Streams.UnicodeEncoding.Utf8, "application/json");
 
-        //    }
-        //    catch (Exception e) { throw e; }
+                respuesta = await miCliente.PutAsync(mUri, mContenido);
 
-        //    return (resultado);
-        //}//fin guardarPersonaDAL
+            }
+            catch (Exception e) { throw e; }
 
-
+            return respuesta.StatusCode;
+        }//fin guardarPersonaDAL
     }
 }

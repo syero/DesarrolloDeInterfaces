@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Windows.Web.Http;
 
 namespace CRUD_Personas_BL.Manejadoras
 {
@@ -36,8 +37,7 @@ namespace CRUD_Personas_BL.Manejadoras
         {
             int codigoDeRespuesta;
 
-            GestionPersonaDAL gestion = new GestionPersonaDAL();
-            codigoDeRespuesta =await gestion.crearPersonaDAL(persona);
+              codigoDeRespuesta =await gestionDal.insertarPersonaDAL(persona);
 
             return codigoDeRespuesta;
         }
@@ -47,33 +47,25 @@ namespace CRUD_Personas_BL.Manejadoras
         /// </summary>
         /// <param name="id"></param>
         /// <returns></returns>
-        //public Persona obtenerPersonaParaEditarBL(int id)
-        //{
-        //    Persona persona = new Persona();
-        //    //Objeto de la gestionadora BAL
-        //    GestionPersonaDAL gestionadoraDal = new GestionPersonaDAL();
+        public async Task<Persona> obtenerPersonaParaEditarBL(int id)
+        {
+            Persona persona = new Persona();
 
-        //    //llamar a buscar persona de DAL
-        //    persona = gestionadoraDal.buscarPersonaDAl(id);
+            //llamar a buscar persona de DAL
+            persona = await gestionDal.buscarPersonaDAl(id);
 
-        //    return (persona);
-        //}
+            return (persona);
+        }
 
         ///// <summary>
         ///// esta actualiza a la persona
         ///// </summary>
         ///// <param name="person"></param>
         ///// <returns></returns>
-        //public int actualizarPersonaBL(int id,Persona person)
-        //{
-        //    int filasAfectadas = 0;
-        //    GestionPersonaDAL gestionadoraDal = new GestionPersonaDAL();
-
-        //    //llamar a actualizar de DAl
-        //    filasAfectadas = gestionadoraDal.guardarPersonaDAL(id,person);
-
-        //    return (filasAfectadas);
-        //}
+        public async Task<HttpStatusCode> actualizarPersonaBL( Persona person)
+        {            
+            return await gestionDal.guardarPersonaDAL(person);
+        }
 
     }
 }
