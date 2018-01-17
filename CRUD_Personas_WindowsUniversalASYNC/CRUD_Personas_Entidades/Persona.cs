@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 
 
@@ -20,40 +21,26 @@ namespace CRUD_Personas_Entidades
 
         //Constructor por defecto
         public Persona()
-            {
-                idPersona = 0;
-                nombre = "";
-                apellidos = "";
-                fechaNac = DateTime.Now;
-                direccion = " ";
-                telefono = " ";
-                departamento = 0;
+        {
+            idPersona = 0;
+            nombre = "";
+            apellidos = "";
+            fechaNac = DateTime.Now;
+            direccion = " ";
+            telefono = " ";
+            departamento = 0;
         }
 
         //Constructor por ordinario
-        public Persona(int id, string nNombre,string nApelllidos,DateTime nFechaNac
-                        ,string nDireccio,string nTelefono)
+        public Persona(string nNombre,string nApelllidos,string nDireccio,string nTelefono)
         {
-            idPersona =id;
             nombre = nNombre;
             apellidos = nApelllidos;
-            fechaNac = nFechaNac;
+            fechaNac = DateTime.Now;
             direccion = nDireccio;
             telefono = nTelefono;
         }
 
-        public Persona(int id,string nNombre, string nApelllidos,int ndepartamento)
-        {
-            idPersona = id;
-             nombre = nNombre;
-             apellidos = nApelllidos;
-            departamento = ndepartamento;   
-        }
-
-        public Persona(string nNombre, string nApelllidos)
-        {       
-            nombre = nNombre;
-            apellidos = nApelllidos;
-        }
+        
     }
 }

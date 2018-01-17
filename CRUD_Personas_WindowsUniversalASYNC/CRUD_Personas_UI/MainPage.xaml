@@ -6,19 +6,50 @@
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:vm="using:CRUD_Personas_UI.ViewModels"
-    xmlns:convert="using:CRUD_Personas_UI.Converters"
+    xmlns:dconventidad="using:CRUD_Personas_Entidades"
+    xmlns:convertes="using:CRUD_Personas_UI.Converters"
     mc:Ignorable="d">
    
     <Page.DataContext>
-        <vm:MainPageMV></vm:MainPageMV>
+        <vm:MainPageVM></vm:MainPageVM>
     </Page.DataContext>
-  <!--
+
     <Page.Resources>
-        <convert:RecursoFecha x:Key="Fecha"/>
+        <dconventidad:DateTimeToDateTimeOffsetConverter x:Key="DateTimeToDateTimeOffsetConverter"></dconventidad:DateTimeToDateTimeOffsetConverter>
+        <convertes:dateTimeToStringConverter x:Key="DateStringconver"></convertes:dateTimeToStringConverter>
     </Page.Resources>
-    -->
 
     <Grid Background="White" >
+        
+        <VisualStateManager.VisualStateGroups>
+            <VisualStateGroup x:Name="VisualStateGroup">
+                <!--TamañoMovilTablet-->
+                <VisualState x:Name="MovilTablet">
+                    <!--Tamaño limite minimo-->
+                    <VisualState.StateTriggers>
+                        <AdaptiveTrigger MinWindowHeight="150" MinWindowWidth="150"/>
+                    </VisualState.StateTriggers>
+                    <!--Los cambios-->
+                    <VisualState.Setters>
+                        <Setter Target="grid_Formulario.(Grid.Row)" Value="2"  ></Setter>
+                        <Setter Target="grid_Formulario.(Grid.Column)" Value="0"  ></Setter>
+                        <Setter Target="grid_Formulario.(Grid.ColumnSpan)" Value="2"></Setter>
+                    </VisualState.Setters>
+                </VisualState>
+                <!--Tamaño Ordenador-->
+                <VisualState x:Name="Ordenador">
+                    <VisualState.StateTriggers>
+                        <AdaptiveTrigger MinWindowWidth="850"  />
+                    </VisualState.StateTriggers>
+                    <VisualState.Setters>
+                        <Setter Target="grid_Formulario.(Grid.Row)" Value="1"  ></Setter>
+                        <Setter Target="grid_Formulario.(Grid.Column)" Value="1"  ></Setter>
+                    </VisualState.Setters>
+                </VisualState>
+            </VisualStateGroup>
+        </VisualStateManager.VisualStateGroups>
+        
+        <!--Columnas del Grid principal-->
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="Auto"/>
             <ColumnDefinition Width="*"/>
@@ -31,35 +62,36 @@
             <RowDefinition Height="Auto" />
         </Grid.RowDefinitions>
 
+        <!--Barra de Herremientas con los botones de la aplicacion-->
         <StackPanel Orientation="Horizontal" Grid.ColumnSpan="3" Grid.Row="0" >
-            <AppBarButton Name="btn_guardar" Content="Guardar" Icon="Save" Click="btn_guardar_Click" Command="{Binding delegateCommandGuardar}" />
             <AppBarButton Name="btn_agregar" Content="Agregar" Icon="Add"   Command="{Binding delegateCommandAgregar}"   />
+            <AppBarButton Name="btn_guardar" Content="Guardar" Icon="Save" Click="btn_guardar_Click" Command="{Binding delegateCommandGuardar}" />
+            <AppBarButton Icon="Refresh" Command="{Binding actualizarLista }"/>
             <AppBarButton Name="btn_eliminar" Content="Eliminar" Icon="Delete" Command="{Binding delegateCommandEliminarPersona }" />
             <TextBox Name="Buscar" Width="250" PlaceholderText="Buscar" Text="{Binding TxtBuscar, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" ></TextBox>
-            <AppBarButton Icon="Find" Command="{Binding delegateCommandBuscar}" Label="Buscar" Click="btn_guardar_Click"  ></AppBarButton>
+            <AppBarButton Icon="Find" Command="{Binding delegateCommandBuscar}" Label="Buscar" Click="btn_guardar_Click"  ></AppBarButton>            
         </StackPanel>
-
+        
+        <!--lista de personas-->
         <ScrollViewer Name="ScrollListaPersonas" Grid.Column="0" Grid.Row="1" >
             <StackPanel>
-                <!--ItemsSource="{Binding la propiedad que contiene la lista}"-->
-                <!--SelectedItem="{Binding la persona seleccionada de la lista }"-->
                 <ListView Name="listaPersonas"  ItemsSource="{Binding ListaDepersonas}"  SelectedItem="{Binding Path=PersonaSeleccionada,Mode=TwoWay}" >
                     <ListView.ItemTemplate>
                         <DataTemplate >
                             <StackPanel Orientation="Horizontal" Padding="5" Margin="5">
-                                <SymbolIcon Symbol="Contact2"></SymbolIcon>
+                                <SymbolIcon Symbol="Contact2" Margin="3"></SymbolIcon>
                                 <TextBlock Name="txtBlck_NombrePersona" Text="{Binding Path=nombre}" />
                                 <TextBlock Name="txtBx_ApellidoPersona" Text="{Binding Path=apellidos}"/>
                             </StackPanel>
                         </DataTemplate>
                     </ListView.ItemTemplate>
                 </ListView>
-
+                <!--muentra un icono de cargando mientras se carga la lista-->
                 <ProgressRing Name="progressRing" Margin="0 90 0 0" IsActive="{Binding habilitarProgressRing, Mode=TwoWay}"/>
             </StackPanel>
         </ScrollViewer>
         
-              <!-- el grid va relacionado con un datacontext-->
+              <!-- el grid del formulario. va relacionado con un datacontext-->
         <Grid Name="grid_Formulario" Background="Coral" Grid.Column="2" Grid.Row="1"
               DataContext="{Binding PersonaSeleccionada,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}" >
 
@@ -90,7 +122,7 @@
             <TextBox  Name="txtBx_FNacimiento" Text="{Binding fechaNac,Mode=TwoWay,UpdateSourceTrigger=Explicit,Converter={StaticResource DateStringconver}}" Grid.Column="1" Grid.Row="2" Padding="5" Margin="10"  Width="300"/>
 
             <TextBlock Name="txtBlck_Telefono" Text="Telefono" Grid.Column="0" Grid.Row="3" Padding="5" Margin="10" />
-            <TextBox  Name="txtBx_Telefono" Text="{Binding telefono,Mode=TwoWay}" Grid.Column="1" Grid.Row="3" Padding="5" Margin="10"  Width="300"/>
+            <TextBox  Name="txtBx_Telefono" Text="{Binding telefono,Mode=TwoWay,UpdateSourceTrigger=Explicit}" Grid.Column="1" Grid.Row="3" Padding="5" Margin="10"  Width="300"/>
 
             <ScrollViewer Grid.ColumnSpan="2"  Grid.Row="4">
                 <StackPanel Orientation="Vertical">
@@ -101,6 +133,6 @@
             </ScrollViewer>
         </Grid>
 
-       
-</Grid>
+        <!--Text="{Binding fechaNac,Mode=TwoWay,UpdateSourceTrigger=Explicit,Converter={StaticResource DateStringconver}}"-->
+    </Grid>
 </Page>

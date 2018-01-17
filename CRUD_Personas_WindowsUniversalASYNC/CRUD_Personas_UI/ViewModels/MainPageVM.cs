@@ -24,7 +24,7 @@ namespace CRUD_Personas_UI.ViewModels
      
      */
 
-    public class MainPageMV : clsVMBase
+    public class MainPageVM : clsVMBase
     {
        
         //abrimos  la region
@@ -42,7 +42,7 @@ namespace CRUD_Personas_UI.ViewModels
         private DelegateCommand _delegateCommandActualizar;              
 
         private GestionadoraBL gestionBL =new GestionadoraBL();
-        ListadoPersonasBL personas = new ListadoPersonasBL();
+        private ListadoPersonasBL personas = new ListadoPersonasBL();
         private bool _habilitarProgressRing=true;
         private String _mensaje;
         private Boolean _mostrarMensaje;
@@ -50,12 +50,12 @@ namespace CRUD_Personas_UI.ViewModels
         #endregion   //cerramos la region
 
         #region "Constructor"
-        public MainPageMV()
+        public MainPageVM()
         {
             _delegateCommandBuscar = new DelegateCommand(ExecuteBuscarPersona, CanExecuteBuscarPersona);
             _delegateCommandEliminarPersona = new DelegateCommand(ExecuteEliminarPersona, CanExecuteEliminarPersona);
             _delegateCommandGuardar = new DelegateCommand(ExecuteGuardarPersona, CanExecuteGuardarPersona);
-            _delegateCommandAgregar = new DelegateCommand(ExecuteAgregarPersona, CanExecuteGuardarPersona);
+            _delegateCommandAgregar = new DelegateCommand(ExecuteAgregarPersona);
             _delegateCommandActualizar = new DelegateCommand(ExecuteActualizar);
            
              rellenaListaPersona();
@@ -185,11 +185,13 @@ namespace CRUD_Personas_UI.ViewModels
         /// </summary>
         public async void ExecuteGuardarPersona()
         {
-            if (_personaSeleccionada != null)
+            if (_personaSeleccionada.idPersona==0)
             {
-               await gestionBL.insertarPersonaBL(_personaSeleccionada);
-               _listpersonas.Add(_personaSeleccionada);
-                rellenaListaPersona();
+               _personaSeleccionada.idPersona = ListaDepersonas.ElementAt(ListaDepersonas.Count() - 1).idPersona - 1;
+                await gestionBL.insertarPersonaBL(_personaSeleccionada);
+                ListaDepersonas.Add(_personaSeleccionada);
+                //NotifyPropertyChanged("ListaDepersonas");
+                //rellenaListaPersona();
             }
             else
             {
@@ -198,7 +200,7 @@ namespace CRUD_Personas_UI.ViewModels
                 if ((int)codigoRespuesta == 204)
                 {
                     _listpersonas = new ObservableCollection<Persona>(await personas.getListaPersonaBL());
-                    ListaAuxiliarParaBuscarPersonas = ListaDepersonas;
+                    _listAuxiliarParaBuscarPersonas = ListaDepersonas;
                     NotifyPropertyChanged("PersonaSeleccionada");
                 }
             }
@@ -259,8 +261,7 @@ namespace CRUD_Personas_UI.ViewModels
         ///  mantiene deshabilitado el boton de buscar mientras no se escriba nada en el campo de texto
         /// </summary>
         /// <returns></returns>
-
-        private bool CanExecuteBuscarPersona()
+        public bool CanExecuteBuscarPersona()
         {
             bool quieroBuscar = false;
             if (!String.IsNullOrEmpty(TxtBuscar))
@@ -274,7 +275,7 @@ namespace CRUD_Personas_UI.ViewModels
             }
             return quieroBuscar;
         }
-
+        
         /// <summary>
         /// Al ejecutarse la busqueda
         /// </summary>
@@ -285,8 +286,8 @@ namespace CRUD_Personas_UI.ViewModels
 
             for (int i = 0; i < ListaDepersonas.Count; i++)
             {
-                if ((ListaDepersonas.ElementAt(i).nombre.ToLower().StartsWith(TxtBuscar)) 
-                    || (ListaDepersonas.ElementAt(i).apellidos.ToLower().StartsWith(TxtBuscar)))
+                if ((ListaDepersonas.ElementAt(i).nombre.ToLower().Contains(TxtBuscar)) 
+                    || (ListaDepersonas.ElementAt(i).apellidos.ToLower().Contains(TxtBuscar)))
                 {
                     ListaAuxiliarParaBuscarPersonas.Add(ListaDepersonas.ElementAt(i));
                 }
@@ -316,7 +317,6 @@ namespace CRUD_Personas_UI.ViewModels
         /// <param name="action"></param>
         public void Each<T>(IEnumerable<T> items, Action<T> action)
         {
-
             foreach (var item in items)
                 action(item);
         }

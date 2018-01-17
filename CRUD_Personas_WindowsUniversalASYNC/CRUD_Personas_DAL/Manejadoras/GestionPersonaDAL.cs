@@ -54,17 +54,15 @@ namespace CRUD_Personas_DAL.Manejadoras
         {
             int resultado = 0;
             HttpResponseMessage miRespuesta = new HttpResponseMessage();
-            Uri miUri;
-            String body = "";
+            String body;
             HttpStringContent contenido;
 
             try
             {
                 body = JsonConvert.SerializeObject(persona);
-                contenido = new HttpStringContent(body,encoding:Windows.Storage.Streams.UnicodeEncoding.Utf8);
-                miUri = new Uri(miConexion.uri.ToString());
-                miRespuesta = await miCliente.PostAsync(miUri,contenido);
-                miCliente.Dispose();
+                contenido = new HttpStringContent(body,Windows.Storage.Streams.UnicodeEncoding.Utf8, "application/json");
+                miRespuesta = await miCliente.PostAsync(miConexion.uri,contenido);
+               // miCliente.Dispose();
 
                 if (miRespuesta.IsSuccessStatusCode)
                 {
@@ -110,12 +108,12 @@ namespace CRUD_Personas_DAL.Manejadoras
         /// </summary>
         /// <param name="persona"></param>
         /// <returns></returns>
-        public async Task<HttpStatusCode> guardarPersonaDAL( Persona persona)
+        public async Task<HttpStatusCode> guardarPersonaDAL(Persona persona)
         {
             String body = "";
             HttpStringContent mContenido;
             HttpResponseMessage respuesta;
-            Uri mUri = new Uri(miConexion.uri + "/" + persona.idPersona);
+            Uri miUri = new Uri(miConexion.uri + "/" + persona.idPersona);
             try
             {
                 // Serializamos al objeto persona que recibe
@@ -123,12 +121,14 @@ namespace CRUD_Personas_DAL.Manejadoras
 
                 mContenido = new HttpStringContent(body, Windows.Storage.Streams.UnicodeEncoding.Utf8, "application/json");
 
-                respuesta = await miCliente.PutAsync(mUri, mContenido);
+                respuesta = await miCliente.PutAsync(miUri, mContenido);
 
             }
             catch (Exception e) { throw e; }
 
             return respuesta.StatusCode;
         }//fin guardarPersonaDAL
+
+        
     }
 }

@@ -351,7 +351,6 @@ namespace _18_CRUD_Personas_UWP_UI.ViewModels
                 _personSeleccionada.IdPersona = mListaCompleta.ElementAt(mListaCompleta.Count() - 1).IdPersona - 1;
 
                 await _manejadoraBL.addPersonaAsync(_personSeleccionada);
-
                 mListaCompleta.Add(_personSeleccionada);
                 //NotifyPropertyChanged("mListaCompleta");
             }

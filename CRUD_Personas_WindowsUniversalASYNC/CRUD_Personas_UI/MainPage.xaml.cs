@@ -34,7 +34,7 @@ namespace CRUD_Personas_UI
             this.txtBx_Apellidos.GetBindingExpression(TextBox.TextProperty).UpdateSource();
             this.txtBx_FNacimiento.GetBindingExpression(TextBox.TextProperty).UpdateSource();
             this.txtBx_Direccion.GetBindingExpression(TextBox.TextProperty).UpdateSource();
-            this.txtBlck_Telefono.GetBindingExpression(TextBox.TextProperty).UpdateSource();
+            this.txtBx_Telefono.GetBindingExpression(TextBox.TextProperty).UpdateSource();
 
         }
 

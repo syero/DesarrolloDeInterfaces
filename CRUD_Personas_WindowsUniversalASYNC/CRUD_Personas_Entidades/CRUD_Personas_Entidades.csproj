@@ -106,6 +106,8 @@
     <RestoreProjectStyle>PackageReference</RestoreProjectStyle>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="DateTimeConverter.cs" />
+    <Compile Include="DateTimeToDateTimeOffsetConverter .cs" />
     <Compile Include="Persona.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Properties\CRUD_Personas_Entidades.rd.xml" />
