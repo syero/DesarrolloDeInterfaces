@@ -1,4 +1,5 @@
 ﻿using SnakeWebAPI_BL.Listado;
+using SnakeWebAPI_BL.Manejadora;
 using SnakeWebAPI_Entidades;
 using System;
 using System.Collections.Generic;
@@ -17,6 +18,7 @@ namespace SnakeWebAPI.Controllers
         //        return new string[] { "value1", "value2" };
         //    }
         ListadoBL listados = new ListadoBL();
+        ManejadoraBL gestionadora = new ManejadoraBL();
 
         // GET: api/Puntuacion
         public List<Puntuacion> Get()
@@ -26,8 +28,9 @@ namespace SnakeWebAPI.Controllers
         }
 
         // POST: api/Puntuacion
-        public void Post([FromBody]string value)
+        public void Post([FromBody]Puntuacion value)
         {
+            gestionadora.insertarPuntuacion(value);
         }
 
         // PUT: api/Puntuacion/5

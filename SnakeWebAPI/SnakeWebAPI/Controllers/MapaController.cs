@@ -1,4 +1,7 @@
-﻿using System;
+﻿using SnakeWebAPI_BL.Listado;
+using SnakeWebAPI_BL.Manejadora;
+using SnakeWebAPI_Entidades;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Net;
@@ -9,21 +12,20 @@ namespace SnakeWebAPI.Controllers
 {
     public class MapaController : ApiController
     {
-        // GET: api/Mapa
-        public IEnumerable<string> Get()
-        {
-            return new string[] { "value1", "value2" };
-        }
+        ListadoBL listados = new ListadoBL();
+        ManejadoraBL gestionadora = new ManejadoraBL();
 
         // GET: api/Mapa/5
-        public string Get(int id)
+        public List<Mapa> Get()
         {
-            return "value";
+            List<Mapa> listadoMapas =listados.obtenerMapas();
+            return listadoMapas;
         }
 
         // POST: api/Mapa
-        public void Post([FromBody]string value)
+        public void Post([FromBody]Mapa value)
         {
+            gestionadora.insertarMapa(value);
         }
 
         // PUT: api/Mapa/5
