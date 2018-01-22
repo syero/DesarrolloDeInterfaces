@@ -40,4 +40,7 @@ insert into SK_Mapas (NombreMapa,NombreUsuario,MapaJson,ValoracionMapa,FecharCre
 					,('Calamidad','Paco','{"idPersona":35,"nombre":"TestMas","apellidos":"Reciente","telefono":" 123456789","departamento":0}',4,CURRENT_TIMESTAMP)
 
 Select IDRanking,NombreUsuario,Valor from SK_Puntuaciones order by Valor desc
-Select IDMapa,NombreMapa,NombreUsuario,MapaJson,ValoracionMapa,FecharCreacion from SK_Mapas 
+
+Select IDMapa,NombreMapa,NombreUsuario,MapaJson,ValoracionMapa,FecharCreacion from SK_Mapas order by FecharCreacion desc
+
+Select IDMapa,NombreMapa,NombreUsuario,MapaJson,ValoracionMapa,FecharCreacion from SK_Mapas order by ValoracionMapa desc

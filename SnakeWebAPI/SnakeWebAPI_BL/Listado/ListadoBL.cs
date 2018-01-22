@@ -16,9 +16,11 @@ namespace SnakeWebAPI_BL.Listado
         /// 
         /// </summary>
         /// <returns></returns>
-        public List<Mapa> obtenerMapas()
+        public List<Mapa> obtenerMapas(bool ordenarPorValoracionMapa)
         {
-            List<Mapa> mapas = gestionDAL.obtenerMapas();
+            bool ordenarPorValoracionMapA = true;
+
+            List<Mapa> mapas = gestionDAL.obtenerMapas(ordenarPorValoracionMapA);
             return mapas;
         }
 

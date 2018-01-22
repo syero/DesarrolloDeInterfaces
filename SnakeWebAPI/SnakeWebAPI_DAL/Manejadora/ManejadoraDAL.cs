@@ -16,7 +16,7 @@ namespace SnakeWebAPI_DAL.Manejadora
         SqlCommand miComando = new SqlCommand();
 
         /// <summary>
-        /// 
+        /// Este metodo va a insertar un objeto de tipo Puntuacion
         /// </summary>
         public void insertarPuntuacion(Puntuacion puntuacion)
         {
@@ -42,7 +42,7 @@ namespace SnakeWebAPI_DAL.Manejadora
 
 
         /// <summary>
-        /// 
+        /// este metodo va a insertar un objeto de tipo Mapa
         /// </summary>
         public void insertarMapa(Mapa mapa)
         {
@@ -67,6 +67,5 @@ namespace SnakeWebAPI_DAL.Manejadora
         }//insertarMapa
 
 
-       
     }
 }

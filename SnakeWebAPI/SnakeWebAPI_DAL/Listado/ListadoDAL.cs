@@ -20,14 +20,21 @@ namespace SnakeWebAPI_DAL.Listado
         /// Con este metodo vamos a obtener una lista de Mapas
         /// </summary>
         /// <returns></returns>
-        public List<Mapa> obtenerMapas()
+        public List<Mapa> obtenerMapas(bool ordenarPorValoracionMapa)
         {
             List<Mapa> listadoMapas=new List<Mapa>();
             Mapa mapa;
 
             try {
                 conexion = miConexion.getConnection();
-                miComando.CommandText = "Select IDMapa,NombreMapa,NombreUsuario,MapaJson,ValoracionMapa,FecharCreacion from SK_Mapas order by ValoracionMapa desc";
+
+                if (ordenarPorValoracionMapa)
+                {
+                    miComando.CommandText = "Select IDMapa,NombreMapa,NombreUsuario,MapaJson,ValoracionMapa,FecharCreacion from SK_Mapas order by ValoracionMapa desc";
+                }
+                else {
+                    miComando.CommandText = "Select IDMapa, NombreMapa, NombreUsuario, MapaJson, ValoracionMapa, FecharCreacion from SK_Mapas order by FecharCreacion desc";
+                }
                 miComando.Connection = conexion;
                 miLector = miComando.ExecuteReader();
 

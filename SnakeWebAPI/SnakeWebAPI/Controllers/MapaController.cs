@@ -16,9 +16,11 @@ namespace SnakeWebAPI.Controllers
         ManejadoraBL gestionadora = new ManejadoraBL();
 
         // GET: api/Mapa/5
-        public List<Mapa> Get()
+        public List<Mapa> Get(bool ordenarPorValoracionMapa)
         {
-            List<Mapa> listadoMapas =listados.obtenerMapas();
+            bool ordenarPorValoracionMapA = true;
+
+            List<Mapa> listadoMapas =listados.obtenerMapas(ordenarPorValoracionMapA);
             return listadoMapas;
         }
 
