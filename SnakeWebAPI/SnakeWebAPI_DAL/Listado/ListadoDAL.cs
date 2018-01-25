@@ -1,7 +1,9 @@
-﻿using SnakeWebAPI_DAL.Conexiones;
+﻿using Newtonsoft.Json;
+using SnakeWebAPI_DAL.Conexiones;
 using SnakeWebAPI_Entidades;
 using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
@@ -45,7 +47,7 @@ namespace SnakeWebAPI_DAL.Listado
                     mapa.IDMapa =(Int32)miLector["IDMapa"];
                     mapa.NombreMapa =(String) miLector["NombreMapa"];
                     mapa.NombreUsuario = (String)miLector["NombreUsuario"];
-                    mapa.MapaJson = (String)miLector["MapaJson"];
+                    mapa.Casillas = JsonConvert.DeserializeObject<ObservableCollection<ObservableCollection<bool>>>((String)miLector["MapaJson"]);
                     mapa.ValoracionMapa = (Int32)miLector["ValoracionMapa"];
                     mapa.FecharCreacion = (DateTime)miLector["FecharCreacion"];
 

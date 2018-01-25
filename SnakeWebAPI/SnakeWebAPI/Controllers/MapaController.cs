@@ -18,9 +18,7 @@ namespace SnakeWebAPI.Controllers
         // GET: api/Mapa/5
         public List<Mapa> Get(bool ordenarPorValoracionMapa)
         {
-            bool ordenarPorValoracionMapA = true;
-
-            List<Mapa> listadoMapas =listados.obtenerMapas(ordenarPorValoracionMapA);
+            List<Mapa> listadoMapas =listados.obtenerMapas(ordenarPorValoracionMapa);
             return listadoMapas;
         }
 

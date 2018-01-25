@@ -1,4 +1,5 @@
-﻿using SnakeWebAPI_DAL.Conexiones;
+﻿using Newtonsoft.Json;
+using SnakeWebAPI_DAL.Conexiones;
 using SnakeWebAPI_Entidades;
 using System;
 using System.Collections.Generic;
@@ -48,7 +49,7 @@ namespace SnakeWebAPI_DAL.Manejadora
         {
             miComando.Parameters.Add("@NombreMapa", System.Data.SqlDbType.NVarChar).Value = mapa.NombreMapa;
             miComando.Parameters.Add("@NombreUsuario", System.Data.SqlDbType.NVarChar).Value = mapa.NombreUsuario;
-            miComando.Parameters.Add("@MapaJson", System.Data.SqlDbType.NVarChar).Value = mapa.MapaJson;
+            miComando.Parameters.Add("@MapaJson", System.Data.SqlDbType.NVarChar).Value = JsonConvert.SerializeObject(mapa.Casillas);
             miComando.Parameters.Add("@ValoracionMapa", System.Data.SqlDbType.Int).Value = mapa.ValoracionMapa;
             miComando.Parameters.Add("@FecharCreacion", System.Data.SqlDbType.DateTime).Value= mapa.FecharCreacion;
 

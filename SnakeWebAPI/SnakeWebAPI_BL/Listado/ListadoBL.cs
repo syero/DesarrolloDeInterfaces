@@ -2,6 +2,7 @@
 using SnakeWebAPI_Entidades;
 using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -18,9 +19,7 @@ namespace SnakeWebAPI_BL.Listado
         /// <returns></returns>
         public List<Mapa> obtenerMapas(bool ordenarPorValoracionMapa)
         {
-            bool ordenarPorValoracionMapA = true;
-
-            List<Mapa> mapas = gestionDAL.obtenerMapas(ordenarPorValoracionMapA);
+            List<Mapa> mapas = gestionDAL.obtenerMapas(ordenarPorValoracionMapa);
             return mapas;
         }
 
@@ -35,7 +34,5 @@ namespace SnakeWebAPI_BL.Listado
 
         }
 
-
-
-    }
+      }
 }
