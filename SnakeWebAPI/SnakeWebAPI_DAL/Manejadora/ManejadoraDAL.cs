@@ -56,8 +56,7 @@ namespace SnakeWebAPI_DAL.Manejadora
             try{
                 conexion = miConexion.getConnection();
                 //Insertamos los datos de la persona en la base de datos
-                miComando.CommandText = "Insert into SK_Mapas (NombreMapa,NombreUsuario,MapaJson,ValoracionMapa,FecharCreacion)" +
-                                      " values(@NombreMapa,@NombreUsuario,@MapaJson,@ValoracionMapa,@FecharCreacion)";
+                miComando.CommandText = "Insert into SK_Mapas (NombreMapa,NombreUsuario,MapaJson,ValoracionMapa,FecharCreacion) values(@NombreMapa,@NombreUsuario,@MapaJson,@ValoracionMapa,@FecharCreacion)";
 
                 miComando.Connection = conexion;
 
