@@ -16,9 +16,17 @@ namespace SnakeWebAPI.Controllers
         ManejadoraBL gestionadora = new ManejadoraBL();
 
         // GET: api/Mapa/5
-        public List<Mapa> Get(bool ordenarPorValoracionMapa)
+        public List<Mapa> Get(bool? ordenarPorValoracionMapa)
         {
-            List<Mapa> listadoMapas =listados.obtenerMapas(ordenarPorValoracionMapa);
+            bool comoOrdenarMapa = false;
+
+            if (ordenarPorValoracionMapa.HasValue)
+            {
+                comoOrdenarMapa = ordenarPorValoracionMapa.Value;              
+            } else {
+                comoOrdenarMapa = true;
+            }
+            List<Mapa> listadoMapas = listados.obtenerMapas(comoOrdenarMapa);
             return listadoMapas;
         }
 
@@ -31,6 +39,7 @@ namespace SnakeWebAPI.Controllers
         // PUT: api/Mapa/5
         public void Put(int id, [FromBody]string value)
         {
+
         }
 
         // DELETE: api/Mapa/5

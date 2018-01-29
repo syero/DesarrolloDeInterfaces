@@ -20,8 +20,7 @@ namespace SnakeWebAPI_BL.Manejadora
 
         public void insertarMapa(Mapa mapa)
         {
-            mapa.Casillas = rellenacasillas();
-
+          //  mapa.Casillas = rellenacasillas();
             gestionDAL.insertarMapa(mapa);
 
         }
