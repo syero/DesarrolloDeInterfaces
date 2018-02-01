@@ -90,6 +90,36 @@ namespace SnakeWebAPI_DAL.Listado
             return listadoPuntuacion;
         }//Fin de obtenerMapas
 
+        /// <summary>
+        /// Con este metodo vamos a obtener una lista de Puntuaciones
+        /// </summary>
+        /// <returns></returns>
+        public List<Puntuacion> obtenerPrimerasCincuentaPuntuaciones()
+        {
+            List<Puntuacion> listadoPuntuacion = new List<Puntuacion>();
+            Puntuacion puntuacion;
 
+            try
+            {
+                conexion = miConexion.getConnection();
+                miComando.CommandText = "Select top (50) IDRanking,NombreUsuario,Valor from SK_Puntuaciones order by Valor desc";
+                miComando.Connection = conexion;
+                miLector = miComando.ExecuteReader();
+
+                //Si hay lineas en el Lector
+                while (miLector.Read())
+                {
+                    puntuacion = new Puntuacion();
+                    puntuacion.IDPuntuacion = (Int32)miLector["IDRanking"];
+                    puntuacion.NombreUsuario = (String)miLector["NombreUsuario"];
+                    puntuacion.Valor = (Int32)miLector["Valor"];
+
+                    listadoPuntuacion.Add(puntuacion);
+                }
+            }
+            catch (SqlException sql) { throw sql; }
+
+            return listadoPuntuacion;
+        }//Fin de obtenerMapas
     }
 }

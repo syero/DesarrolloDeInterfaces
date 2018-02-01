@@ -14,7 +14,7 @@ namespace SnakeWebAPI_BL.Listado
         ListadoDAL gestionDAL = new ListadoDAL();
 
         /// <summary>
-        /// 
+        /// Este metodo nos permite obtener una lista de mapas
         /// </summary>
         /// <returns></returns>
         public List<Mapa> obtenerMapas(bool ordenarPorValoracionMapa)
@@ -24,7 +24,7 @@ namespace SnakeWebAPI_BL.Listado
         }
 
         /// <summary>
-        /// 
+        /// Este metodos nos permite obtener las puntuaciones
         /// </summary>
         /// <returns></returns>
         public List<Puntuacion> obtenerPuntuacion()
@@ -34,5 +34,16 @@ namespace SnakeWebAPI_BL.Listado
 
         }
 
-      }
+        /// <summary>
+        /// Este metodos nos permite obtener las primeras 50 puntuaciones
+        /// </summary>
+        /// <returns></returns>
+        public List<Puntuacion> obtenerPrimerasCincuentaPuntuacion()
+        {
+            List<Puntuacion> puntuaciones = gestionDAL.obtenerPrimerasCincuentaPuntuaciones();
+            return puntuaciones;
+
+        }
+
+    }
 }

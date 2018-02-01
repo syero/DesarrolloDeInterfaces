@@ -14,7 +14,7 @@ namespace SnakeDAL.Conexion
 
         public clsConnection()
         {
-            this.uriBase = new Uri("http://snakesqlserver.database.windows.net/");
+            this.uriBase = new Uri("http://snakeapi.azurewebsites.net/api/");
         }
     }
 }

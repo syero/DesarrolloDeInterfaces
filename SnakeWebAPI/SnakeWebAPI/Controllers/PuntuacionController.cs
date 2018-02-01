@@ -23,7 +23,7 @@ namespace SnakeWebAPI.Controllers
         // GET: api/Puntuacion
         public List<Puntuacion> Get()
         {
-            List<Puntuacion> puntuaciones = listados.obtenerPuntuacion();
+            List<Puntuacion> puntuaciones = listados.obtenerPrimerasCincuentaPuntuacion();
             return puntuaciones;
         }
 

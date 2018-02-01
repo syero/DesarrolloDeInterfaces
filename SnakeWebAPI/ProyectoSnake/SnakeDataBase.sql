@@ -48,3 +48,5 @@ Select IDMapa,NombreMapa,NombreUsuario,MapaJson,ValoracionMapa,FecharCreacion fr
 delete  from SK_Mapas
 
 select * from  SK_Mapas
+
+Select top (50) IDRanking,NombreUsuario,Valor from SK_Puntuaciones order by Valor desc

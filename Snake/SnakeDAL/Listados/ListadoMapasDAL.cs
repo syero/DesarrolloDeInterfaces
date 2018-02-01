@@ -23,16 +23,16 @@ namespace SnakeDAL.Listados
 
         public async Task<List<Mapa>> getMapas(bool ordenarMapasPorValoracion)
         {
-            clsConnection mCon = new clsConnection();
-            HttpClient client = new HttpClient();
+            clsConnection miConexion = new clsConnection();
+            HttpClient miCliente = new HttpClient();
             String resultadoJSON;
-            Uri uri = new Uri(mCon.uriBase + "/Mapa?ordenarPorValoracionMapa="+ ordenarMapasPorValoracion);
+            Uri uri = new Uri(miConexion.uriBase + "Mapa?ordenarPorValoracionMapa="+ ordenarMapasPorValoracion);
             try
             {
-                resultadoJSON = await client.GetStringAsync(mCon.uriBase);
-                client.Dispose();
+                resultadoJSON = await miCliente.GetStringAsync(uri);
+                miCliente.Dispose();
                 listado = JsonConvert.DeserializeObject<List<Mapa>>(resultadoJSON);
-
+             
             }
             catch (SqlException e)
             {

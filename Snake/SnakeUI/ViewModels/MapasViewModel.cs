@@ -2,6 +2,7 @@
 using SnakeEntidades;
 using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -14,11 +15,29 @@ namespace SnakeUI.ViewModels
         private Mapa _mapaSeleccionado;
         private bool _ordenarPorValoracion=true;
 
+        public ObservableCollection<ObservableCollection<String>> sourceList { get; set; }
+
         ListadoMapasBL listadoMapasBL = new ListadoMapasBL();
+        private int MAX_FILAS = 11;
+        private int MAX_COLUMNAS = 20;
 
         public MapasViewModel()
         {
+            sourceList = new ObservableCollection<ObservableCollection<string>>();
             obtenerMapas();
+            rellenarSourceListBlanco();
+        }
+
+        private void rellenarSourceListBlanco()
+        {
+            for (int i = 0; i < MAX_COLUMNAS; i++)
+            {
+                sourceList.Add(new ObservableCollection<String>());
+                for (int j = 0; j < MAX_FILAS; j++)
+                {
+                    sourceList[i].Add("../Assets/LockScreenLogo.scale-200.png");
+                }
+            }
         }
 
         public List<Mapa> ListaMapas
@@ -44,6 +63,28 @@ namespace SnakeUI.ViewModels
             _listaMapas = await listadoMapasBL.getListadoBL(OrdenarPorValoracion);
             NotifyPropertyChanged("ListaMapas");
         }
+
+        public void dibujar()
+        {
+
+            for (int i = 0; i < MAX_COLUMNAS; i++)
+            {
+                sourceList.Add(new ObservableCollection<String>());
+                for (int j = 0; j < MAX_FILAS; j++)
+                {
+                    if (_mapaSeleccionado.Casillas[i][j])
+                    {
+                        sourceList[i].Add("../Assets/LockScreenLogo.scale-200.png");
+                    }
+                    else
+                    {
+                        sourceList[i].Add("../Assets/transparente.png");
+                    }
+                    
+                }
+            }
+        }
+
 
     }
 }
