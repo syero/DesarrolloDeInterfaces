@@ -26,5 +26,21 @@ namespace SnakeUI.Views
         {
             this.InitializeComponent();
         }
+
+        private void HamburgerButton_Click(object sender, RoutedEventArgs e)
+        {
+            Split.IsPaneOpen = !Split.IsPaneOpen;
+        }
+
+        public void SetContentFrame(Frame frame)
+        {
+            ContentFrame.Content = frame;
+        }
+
+        private void StackPanel_PointerPressed(object sender, PointerRoutedEventArgs e)
+        {
+            SetContentFrame(Mapas);
+           // Frame.Navigate(typeof(Mapas));
+        }
     }
 }

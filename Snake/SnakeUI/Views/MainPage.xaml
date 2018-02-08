@@ -7,25 +7,55 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d">
 
-    <Grid Background="LightGreen">
-        <SplitView Name="Split" DisplayMode="CompactOverlay"  IsPaneOpen="False" 
-              CompactPaneLength="50" OpenPaneLength="150" >
-            <SplitView.Pane>
-                <StackPanel Background="Gray">
-                    <Button x:Name="HamburgerButton" FontFamily="Segoe MDL2 Assets" Content="&#xE700;"
-                    Width="50" Height="50" Background="Transparent" />
+    <Grid>
+        <SplitView Name="Split" DisplayMode="CompactOverlay"  IsPaneOpen="False" Background="#c5cae9"
+              CompactPaneLength="70" OpenPaneLength="150" RelativePanel.AlignLeftWithPanel="True"
+                   RelativePanel.AlignRightWithPanel="True" RelativePanel.AlignBottomWithPanel="True"
+                   RelativePanel.AlignTopWithPanel="True" RelativePanel.Below="stk_HamburgerButton" >
 
+            <SplitView.Pane>
+                <StackPanel Background="#836fa9">
+                    <StackPanel Name="stk_HamburgerButton" Orientation="Vertical" >
+                        <Button Name="HamburgerButton" FontFamily="Segoe MDL2 Assets" Content="&#xE700;"
+                            Width="70" Height="50" Background="Transparent" Click="HamburgerButton_Click" />
+                    </StackPanel>
+
+                    <ListView Background="#836fa9" >
+                        <StackPanel Orientation="Horizontal" Margin="10"  PointerPressed="StackPanel_PointerPressed" >
+                            <Image Name="imgJugar" Source="..\Assets\Imagenes\white-cat.svg" Height="30" Width="30"/>
+                            <TextBlock Name="txtBoxJugar"  Margin="20,0" Text="Jugar" Foreground="Black" FontFamily="Assets/3Dumb.ttf#3Dumb" />
+                        </StackPanel>
+
+                        <StackPanel Orientation="Horizontal" Margin="10">
+                            <Image Name="imgPuntuaciones" Source="..\Assets\Imagenes\stars-stack.svg" Height="30" Width="30"/>
+                            <TextBlock Name="txtBoxPuntuaciones"  Margin="20,0" Text="Puntuaciones" Foreground="Black" FontFamily="Assets/3Dumb.ttf#3Dumb" />
+                        </StackPanel>
+
+                        <StackPanel Orientation="Horizontal" Margin="10">
+                            <Image Name="imgOpciones" Source="..\Assets\Imagenes\cog.svg" Height="30" Width="30"/>
+                            <TextBlock Name="txtBoxOpciones"  Margin="20,0" Text="Opciones" Foreground="Black" FontFamily="Assets/3Dumb.ttf#3Dumb"/>
+                        </StackPanel>
+
+                    </ListView>
                 </StackPanel>
             </SplitView.Pane>
 
             <!--Contenido :)-->
             <SplitView.Content>
-                <Grid>
-                    <TextBlock Text="Nuestras Vistas" FontSize="54" Foreground="Black"
-                          HorizontalAlignment="Center" VerticalAlignment="Center"/>
-                </Grid>
+                
+                <Frame x:Name="ContentFrame" />               
+               
             </SplitView.Content>
-        </SplitView>
 
+        </SplitView>
     </Grid>
 </Page>
+    
+    <!---
+         <Grid>
+    <TextBlock Text="Nuestras Vistas" FontSize="54" Foreground="Black"
+                          HorizontalAlignment="Center" VerticalAlignment="Center"/>
+    </Grid>
+
+
+    -->

@@ -24336,11 +24336,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\syero\\source\\repos\\DEINT\\SplitViewEjemplo1\\SplitViewEjemplo1\\SplitViewEjemplo1.csproj",
+      "projectUniqueName": "C:\\Users\\syero\\source\\repos\\DesarrolloDeInterfaces\\SplitViewEjemplo1\\SplitViewEjemplo1\\SplitViewEjemplo1.csproj",
       "projectName": "SplitViewEjemplo1",
-      "projectPath": "C:\\Users\\syero\\source\\repos\\DEINT\\SplitViewEjemplo1\\SplitViewEjemplo1\\SplitViewEjemplo1.csproj",
+      "projectPath": "C:\\Users\\syero\\source\\repos\\DesarrolloDeInterfaces\\SplitViewEjemplo1\\SplitViewEjemplo1\\SplitViewEjemplo1.csproj",
       "packagesPath": "C:\\Users\\syero\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\syero\\source\\repos\\DEINT\\SplitViewEjemplo1\\SplitViewEjemplo1\\obj\\",
+      "outputPath": "C:\\Users\\syero\\source\\repos\\DesarrolloDeInterfaces\\SplitViewEjemplo1\\SplitViewEjemplo1\\obj\\",
       "projectStyle": "PackageReference",
       "skipContentFileWrite": true,
       "configFilePaths": [
@@ -24358,12 +24358,6 @@
         "uap10.0.10586": {
           "projectReferences": {}
         }
-      }
-    },
-    "dependencies": {
-      "Microsoft.NETCore.UniversalWindowsPlatform": {
-        "target": "Package",
-        "version": "5.4.0"
       }
     },
     "frameworks": {

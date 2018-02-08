@@ -110,10 +110,15 @@
     <AppxManifest Include="Package.appxmanifest">
       <SubType>Designer</SubType>
     </AppxManifest>
+    <Content Include="Assets\3Dumb.ttf" />
     <None Include="SnakeUI_TemporaryKey.pfx" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Assets\fondo.png" />
+    <Content Include="Assets\Imagenes\cog.svg" />
+    <Content Include="Assets\Imagenes\hamburger-menu.svg" />
+    <Content Include="Assets\Imagenes\stars-stack.svg" />
+    <Content Include="Assets\Imagenes\white-cat.svg" />
     <Content Include="Assets\transparente.png" />
     <Content Include="Properties\Default.rd.xml" />
     <Content Include="Assets\LockScreenLogo.scale-200.png" />

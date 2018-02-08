@@ -24336,11 +24336,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "E:\\SEGUNDO\\DEINT\\Proyectos\\DEINT\\SplitViewPanel\\SplitViewPanel\\SplitViewPanel.csproj",
+      "projectUniqueName": "C:\\Users\\syero\\source\\repos\\DesarrolloDeInterfaces\\SplitViewPanel\\SplitViewPanel\\SplitViewPanel.csproj",
       "projectName": "SplitViewPanel",
-      "projectPath": "E:\\SEGUNDO\\DEINT\\Proyectos\\DEINT\\SplitViewPanel\\SplitViewPanel\\SplitViewPanel.csproj",
+      "projectPath": "C:\\Users\\syero\\source\\repos\\DesarrolloDeInterfaces\\SplitViewPanel\\SplitViewPanel\\SplitViewPanel.csproj",
       "packagesPath": "C:\\Users\\syero\\.nuget\\packages\\",
-      "outputPath": "E:\\SEGUNDO\\DEINT\\Proyectos\\DEINT\\SplitViewPanel\\SplitViewPanel\\obj\\",
+      "outputPath": "C:\\Users\\syero\\source\\repos\\DesarrolloDeInterfaces\\SplitViewPanel\\SplitViewPanel\\obj\\",
       "projectStyle": "PackageReference",
       "skipContentFileWrite": true,
       "configFilePaths": [
@@ -24358,12 +24358,6 @@
         "uap10.0.10586": {
           "projectReferences": {}
         }
-      }
-    },
-    "dependencies": {
-      "Microsoft.NETCore.UniversalWindowsPlatform": {
-        "target": "Package",
-        "version": "5.4.0"
       }
     },
     "frameworks": {

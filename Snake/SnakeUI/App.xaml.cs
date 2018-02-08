@@ -1,5 +1,7 @@
-﻿using System;
+﻿using SnakeUI.Views;
+using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.IO;
 using System.Linq;
 using System.Runtime.InteropServices.WindowsRuntime;
@@ -96,5 +98,13 @@ namespace SnakeUI
             //TODO: Guardar el estado de la aplicación y detener toda actividad en segundo plano
             deferral.Complete();
         }
+
+        protected override UIElement CambiarFrame(Frame rootFrame)
+    {
+        var shell = Container.Resolve<MainPage>();
+        shell.SetContentFrame(rootFrame);
+        return shell;
+    }
+
     }
 }
