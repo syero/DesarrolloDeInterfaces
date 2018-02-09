@@ -99,12 +99,6 @@ namespace SnakeUI
             deferral.Complete();
         }
 
-        protected override UIElement CambiarFrame(Frame rootFrame)
-    {
-        var shell = Container.Resolve<MainPage>();
-        shell.SetContentFrame(rootFrame);
-        return shell;
-    }
 
     }
 }

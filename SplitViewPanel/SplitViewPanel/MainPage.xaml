@@ -7,63 +7,39 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d">
 
-    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}" >
-        <SplitView Name="splitView" DisplayMode="CompactInline"  Background="LightGreen" PanePlacement="Left" CompactPaneLength="48"  >
-            <!--The pane represents the menu that you want to be able to interact with-->
+    <Grid>
+        <SplitView Name="Split" DisplayMode="CompactOverlay"  IsPaneOpen="False" Background="#c5cae9" 
+              CompactPaneLength="70" OpenPaneLength="200" RelativePanel.AlignLeftWithPanel="True"
+                   RelativePanel.AlignRightWithPanel="True" RelativePanel.AlignBottomWithPanel="True"
+                   RelativePanel.AlignTopWithPanel="True" RelativePanel.Below="stk_HamburgerButton" >
+
             <SplitView.Pane>
+                <StackPanel Background="#836fa9">
+                    
+                    <ListView ItemsSource="{Binding Menu}" SelectionChanged="Menu_SelectionChanged"
+                      Margin="0 48 0 0"  VerticalAlignment="Top">
 
-                <StackPanel Orientation="Vertical" Background="LimeGreen" >
-                    <ToggleButton Name="HamburgerButton" FontFamily="Segoe MDL2 Assets" Content="&#xE700;" Width="50" Height="50" Background="Transparent" Click="HamburgerButton_Click"/>
+                        <ListView.ItemTemplate>
+                            <DataTemplate>
+                                <StackPanel Orientation="Horizontal">
+                                    <FontIcon x:Name="Glyph"  Glyph="{Binding Glyph}"  VerticalAlignment="Center"
+                                     HorizontalAlignment="Center" Foreground="White" ToolTipService.ToolTip="{Binding Text}" />
+                                    <TextBlock Text="{Binding Text}" Margin="8 0 0 0" Foreground="White" />
+                                </StackPanel>
+                            </DataTemplate>
+                        </ListView.ItemTemplate>
 
-                    <StackPanel Orientation="Vertical" >
-                        
-                        <StackPanel Orientation="Horizontal">
-                            <AppBarButton Name="Add"  Icon="AddFriend" Click="Add_Click"/>
-                            <TextBlock Text="Button 2"   FontSize="18" VerticalAlignment="Center" />
-                        </StackPanel>
-
-                        <StackPanel Orientation="Horizontal">
-                            <AppBarButton Name="Camera"  Icon="Camera" />
-                            <TextBlock Text="Button 2"   FontSize="18" VerticalAlignment="Center" />
-                        </StackPanel>
-                        
-                        <StackPanel Orientation="Horizontal">
-                            <AppBarButton Name="Admin"  Icon="Admin"/>
-                            <TextBlock Text="Button 2"   FontSize="18" VerticalAlignment="Center" />
-                        </StackPanel>
-
-                        <StackPanel Orientation="Horizontal">
-                            <AppBarButton Name="Favorite"  Icon="Favorite"/>
-                            <TextBlock Text="Button 2"   FontSize="18" VerticalAlignment="Center" />
-                        </StackPanel>
-
-                        <StackPanel Orientation="Horizontal">
-                            <AppBarButton Name="Delete"  Icon="Delete"/>
-                            <TextBlock Text="Button 2"   FontSize="18" VerticalAlignment="Center" />
-                        </StackPanel>
-
-                        <StackPanel Orientation="Horizontal">
-                            <AppBarButton Name="Edit"  Icon="Edit"/>
-                            <TextBlock Text="Button 2"   FontSize="18" VerticalAlignment="Center" />
-                        </StackPanel>
-                        
-                  
-
-                        <StackPanel Orientation="Horizontal">
-                            <Button x:Name="MenuButton2" FontFamily="Segoe MDL2 Assets" Content="&#xE10F;" Width="50" Height="50" Background="Transparent"/>
-                            <TextBlock Text="Button 2"   FontSize="18" VerticalAlignment="Center" />
-                        </StackPanel>
-
-                    </StackPanel>
+                    </ListView>
                 </StackPanel>
-
             </SplitView.Pane>
-            <SplitView.Content>
-                <StackPanel Orientation="Vertical">
-                    <TextBlock Name="txt_Block_Setting" Text="Cosas sin importancia"/>
 
-                </StackPanel>
+            <!--Contenido :)-->
+            <SplitView.Content>
+
+                <Frame x:Name="ContentFrame" />
+
             </SplitView.Content>
+
         </SplitView>
     </Grid>
 </Page>

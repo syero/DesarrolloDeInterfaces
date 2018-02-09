@@ -3,8 +3,10 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Runtime.InteropServices.WindowsRuntime;
+using Windows.ApplicationModel.Activation;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
+using Windows.UI.Popups;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Controls.Primitives;
@@ -32,15 +34,43 @@ namespace SnakeUI.Views
             Split.IsPaneOpen = !Split.IsPaneOpen;
         }
 
-        public void SetContentFrame(Frame frame)
+        //public void SetContentFrame(Frame frame)
+        //{
+        //    ContentFrame.Content = frame;
+        ////}
+
+        private void ListView_ItemClick(object sender, ItemClickEventArgs e)
         {
-            ContentFrame.Content = frame;
+            StackPanel boton =(StackPanel) e.ClickedItem;
+
+            switch(boton.Name)
+            {
+                //case  "stk_Jugar":
+                //     ContentFrame.Navigate(typeof(Jugar));
+                //break;
+
+                //case "stk_Puntuaciones":
+                //    ContentFrame.Navigate(typeof(Puntuacion));
+                //    break; 
+                    
+                case "stk_CrearMapa":
+                    ContentFrame.Navigate(typeof(CrearMapas));
+                    break;
+
+                case "stk_Mapas":
+                    ContentFrame.Navigate(typeof(Mapas));
+                    break;
+
+                //case "stk_Opciones":
+                //    ContentFrame.Navigate(typeof(Mapas));
+                //    break;
+
+
+            }
+
+
         }
 
-        private void StackPanel_PointerPressed(object sender, PointerRoutedEventArgs e)
-        {
-            SetContentFrame(Mapas);
-           // Frame.Navigate(typeof(Mapas));
-        }
+   
     }
 }

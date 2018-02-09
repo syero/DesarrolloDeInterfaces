@@ -6,6 +6,7 @@ using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Windows.UI.Xaml.Controls;
 
 namespace SnakeUI.ViewModels
 {
@@ -14,6 +15,7 @@ namespace SnakeUI.ViewModels
         private List<Mapa> _listaMapas;
         private Mapa _mapaSeleccionado;
         private bool _ordenarPorValoracion=true;
+       
 
         public ObservableCollection<ObservableCollection<String>> sourceList { get; set; }
 
@@ -26,6 +28,7 @@ namespace SnakeUI.ViewModels
             sourceList = new ObservableCollection<ObservableCollection<string>>();
             obtenerMapas();
             rellenarSourceListBlanco();
+
         }
 
         private void rellenarSourceListBlanco()
@@ -56,7 +59,7 @@ namespace SnakeUI.ViewModels
         {
             get { return _ordenarPorValoracion; }
             set { this._ordenarPorValoracion = value; NotifyPropertyChanged("OrdenarPorValoracion"); }
-        }
+        }      
 
         private async void obtenerMapas()
         {
