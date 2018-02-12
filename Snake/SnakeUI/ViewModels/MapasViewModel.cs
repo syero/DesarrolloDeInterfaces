@@ -38,7 +38,7 @@ namespace SnakeUI.ViewModels
                 sourceList.Add(new ObservableCollection<String>());
                 for (int j = 0; j < MAX_FILAS; j++)
                 {
-                    sourceList[i].Add("../Assets/LockScreenLogo.scale-200.png");
+                    sourceList[i].Add("../Assets/transparente.png");
                 }
             }
         }
@@ -52,7 +52,9 @@ namespace SnakeUI.ViewModels
         public Mapa MapaSeleccionado
         {
             get { return _mapaSeleccionado; }
-            set { this._mapaSeleccionado = value; NotifyPropertyChanged("MapaSeleccionado"); }
+            set { this._mapaSeleccionado = value;
+                cargarVisualizacionMapaSeleccionado();
+                NotifyPropertyChanged("MapaSeleccionado"); }
         }
 
         public bool OrdenarPorValoracion
@@ -67,9 +69,11 @@ namespace SnakeUI.ViewModels
             NotifyPropertyChanged("ListaMapas");
         }
 
-        public void dibujar()
+        /// <summary>
+        /// Cargar la previsualizacion del mapa seleccionado :)
+        /// </summary>
+        public void cargarVisualizacionMapaSeleccionado()
         {
-
             for (int i = 0; i < MAX_COLUMNAS; i++)
             {
                 sourceList.Add(new ObservableCollection<String>());
@@ -77,13 +81,13 @@ namespace SnakeUI.ViewModels
                 {
                     if (_mapaSeleccionado.Casillas[i][j])
                     {
-                        sourceList[i].Add("../Assets/LockScreenLogo.scale-200.png");
+                        sourceList[i][j] = "../Assets/muro.png";
                     }
                     else
                     {
-                        sourceList[i].Add("../Assets/transparente.png");
+                        sourceList[i][j] = "../Assets/transparente.png";
                     }
-                    
+
                 }
             }
         }

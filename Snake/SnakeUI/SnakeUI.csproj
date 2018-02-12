@@ -95,16 +95,25 @@
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Views\MainPage.xaml.cs">
+    <Compile Include="ClasesDeDatos\ConstantesImageSource.cs" />
+    <Compile Include="ViewModels\CreadorMapasVM.cs" />
+    <Compile Include="ViewModels\PuntuacionVM.cs" />
+    <Compile Include="CreadorMapas.xaml.cs">
+      <DependentUpon>CreadorMapas.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MainPage.xaml.cs">
       <DependentUpon>MainPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Views\Mapas.xaml.cs">
+    <Compile Include="Mapas.xaml.cs">
       <DependentUpon>Mapas.xaml</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ViewModels\clsVMBase.cs" />
     <Compile Include="ViewModels\DelegateCommand.cs" />
     <Compile Include="ViewModels\MapasViewModel.cs" />
+    <Compile Include="Puntuaciones.xaml.cs">
+      <DependentUpon>Puntuaciones.xaml</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <AppxManifest Include="Package.appxmanifest">
@@ -114,11 +123,28 @@
     <None Include="SnakeUI_TemporaryKey.pfx" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Assets\comida.png" />
     <Content Include="Assets\fondo.png" />
+    <Content Include="Assets\fondovertical.png" />
+    <Content Include="Assets\gato\cabeza-aba.png" />
+    <Content Include="Assets\gato\cabeza-arr.png" />
+    <Content Include="Assets\gato\cabeza-der.png" />
+    <Content Include="Assets\gato\cabeza-izq.png" />
+    <Content Include="Assets\gato\cuerpo-hor.png" />
+    <Content Include="Assets\gato\cuerpo-ver.png" />
+    <Content Include="Assets\gato\culo-aba.png" />
+    <Content Include="Assets\gato\culo-arr.png" />
+    <Content Include="Assets\gato\culo-der.png" />
+    <Content Include="Assets\gato\culo-izq.png" />
+    <Content Include="Assets\gato\curva-arr-der.png" />
+    <Content Include="Assets\gato\curva-der-aba.png" />
+    <Content Include="Assets\gato\curva-izq-aba.png" />
+    <Content Include="Assets\gato\curva-izq-arr.png" />
     <Content Include="Assets\Imagenes\cog.svg" />
     <Content Include="Assets\Imagenes\hamburger-menu.svg" />
     <Content Include="Assets\Imagenes\stars-stack.svg" />
     <Content Include="Assets\Imagenes\white-cat.svg" />
+    <Content Include="Assets\muro.png" />
     <Content Include="Assets\transparente.png" />
     <Content Include="Properties\Default.rd.xml" />
     <Content Include="Assets\LockScreenLogo.scale-200.png" />
@@ -134,17 +160,21 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Page Include="Views\CrearMapas.xaml">
+    <Page Include="CreadorMapas.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Views\MainPage.xaml">
+    <Page Include="MainPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Views\Mapas.xaml">
+    <Page Include="Mapas.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Puntuaciones.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
     </Page>
   </ItemGroup>
   <ItemGroup>
