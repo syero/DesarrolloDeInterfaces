@@ -104,7 +104,9 @@ namespace SnakeUI.ViewModels
                 nombreAutor = "Anónimo";
             }
             await manejadoraBL.crearMapaBL(mapaEnviar);
-
+            //Page page = (Page)((Frame)Window.Current.Content).Content;
+            //Frame contentFrame = (Frame)page.FindName("ContentFrame");
+            //contentFrame.Navigate(typeof(Mapas),true);
         }
 
         private ObservableCollection<ObservableCollection<bool>> traducirMapa()

@@ -1,4 +1,5 @@
-﻿using SnakeUI.ViewModels;
+﻿using Snake;
+using SnakeUI.ViewModels;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -33,7 +34,7 @@ namespace SnakeUI
 
         private void BotonJugar_Click(object sender, RoutedEventArgs e)
         {
-            Frame.Navigate(typeof(Mapas));
+            Frame.Navigate(typeof(Jugar),mapasvm.sourceList);
         }
     }
 }

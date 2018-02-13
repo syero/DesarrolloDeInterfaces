@@ -96,7 +96,14 @@
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
     <Compile Include="ClasesDeDatos\ConstantesImageSource.cs" />
+    <Compile Include="ClasesDeDatos\Direccion.cs" />
+    <Compile Include="ClasesDeDatos\Serpiente.cs" />
+    <Compile Include="ClasesDeDatos\TrozoCuerpo.cs" />
+    <Compile Include="Jugar.xaml.cs">
+      <DependentUpon>Jugar.xaml</DependentUpon>
+    </Compile>
     <Compile Include="ViewModels\CreadorMapasVM.cs" />
+    <Compile Include="ViewModels\JugarVM.cs" />
     <Compile Include="ViewModels\PuntuacionVM.cs" />
     <Compile Include="CreadorMapas.xaml.cs">
       <DependentUpon>CreadorMapas.xaml</DependentUpon>
@@ -140,8 +147,11 @@
     <Content Include="Assets\gato\curva-der-aba.png" />
     <Content Include="Assets\gato\curva-izq-aba.png" />
     <Content Include="Assets\gato\curva-izq-arr.png" />
+    <Content Include="Assets\icono_mapa.svg" />
     <Content Include="Assets\Imagenes\cog.svg" />
+    <Content Include="Assets\Imagenes\crear_mapa.svg" />
     <Content Include="Assets\Imagenes\hamburger-menu.svg" />
+    <Content Include="Assets\Imagenes\icono_mapa.svg" />
     <Content Include="Assets\Imagenes\stars-stack.svg" />
     <Content Include="Assets\Imagenes\white-cat.svg" />
     <Content Include="Assets\muro.png" />
@@ -163,6 +173,10 @@
     <Page Include="CreadorMapas.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Jugar.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
     </Page>
     <Page Include="MainPage.xaml">
       <SubType>Designer</SubType>

@@ -32,13 +32,13 @@
 
         <TextBlock Name="puntuacionesTB" Grid.Column="1" Grid.Row="0" Text="Puntuaciones" TextAlignment="Center" FontSize="60" Foreground="#1c1057" FontFamily="Assets/3Dumb.ttf#3Dumb"></TextBlock>
 
-        <StackPanel Grid.Row="1" Grid.Column="1" Width="550" Height="800">
+        <StackPanel Grid.Row="1" Grid.Column="1" Width="550" Height="595" >
             <StackPanel.Background>
                 <ImageBrush ImageSource="Assets/fondovertical.png"/>
             </StackPanel.Background>
 
             <ListView Name="lista"  ItemsSource="{Binding puntuaciones}" Width="467" Margin="70,0,0,0"
-             ScrollViewer.VerticalScrollBarVisibility="Auto">
+             ScrollViewer.VerticalScrollBarVisibility="Visible" Height="590">
 
                 <ListView.ItemTemplate>
                     <DataTemplate>

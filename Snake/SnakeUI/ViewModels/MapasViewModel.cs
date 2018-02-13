@@ -27,9 +27,9 @@ namespace SnakeUI.ViewModels
         {
             sourceList = new ObservableCollection<ObservableCollection<string>>();
             obtenerMapas();
-            rellenarSourceListBlanco();
-
+            rellenarSourceListBlanco();  
         }
+
 
         private void rellenarSourceListBlanco()
         {
@@ -91,6 +91,13 @@ namespace SnakeUI.ViewModels
                 }
             }
         }
+
+        //public async void MapasPorValoracion()
+        //{
+        //    ListaMapas = await listadoMapasBL.getListadoBL(OrdenarPorValoracion);
+        //    NotifyPropertyChanged("ListaMapas");
+        //}
+      
 
 
     }

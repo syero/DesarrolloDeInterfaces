@@ -20,7 +20,7 @@
 
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto" />
-            <RowDefinition Height="340" />
+            <RowDefinition Height="400" />
         </Grid.RowDefinitions>
 
         <!--Panel Superior de la vista-->
@@ -29,8 +29,8 @@
             <!--Panel de Botones-->
             <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" Margin="3">
                 <Button Name="BotonJugar" Content="Jugar" Click="BotonJugar_Click" Margin="2" FontFamily="Assets/3Dumb.ttf#3Dumb" />
-                <Button Name="MapasTopCincuenta" Content="TopMapas" Margin="2" FontFamily="Assets/3Dumb.ttf#3Dumb" />
-                <Button Name="TodosLosMapas" Content="AllMapas" Margin="2" FontFamily="Assets/3Dumb.ttf#3Dumb" />
+                <Button Name="MapasTopCincuenta" Content="TopMapas" Click="BotonJugar_Click" Margin="2" FontFamily="Assets/3Dumb.ttf#3Dumb" />
+                <Button Name="TodosLosMapas" Content="Mapas Por Fecha" Margin="2" FontFamily="Assets/3Dumb.ttf#3Dumb" />
             </StackPanel>
         </StackPanel>
 
@@ -43,9 +43,11 @@
                     <DataTemplate >
                         <!--Datos de Mapas-->
                         <RelativePanel Padding="5" Margin="10" BorderBrush="Black" BorderThickness="3" MinWidth="400">
-                            <TextBlock Name="txtBlck_NombreMapa" Text="{Binding NombreMapa}" Margin="7" FontFamily="Assets/3Dumb.ttf#3Dumb"/>
-                            <TextBlock Name="txtBlck_PuntuacionMapa" Text="{Binding ValoracionMapa}" Margin="5" RelativePanel.Below="txtBlck_NombreMapa" FontFamily="Assets/3Dumb.ttf#3Dumb"/>
-                            <TextBlock Name="txtBlck_CreadorMapa" Text="{Binding NombreUsuario}" Margin="5" RelativePanel.RightOf="txtBlck_NombreMapa" RelativePanel.AlignBottomWith="txtBlck_NombreMapa" FontFamily="Assets/3Dumb.ttf#3Dumb" />
+                            <TextBlock Name="txtBlck_NombreMapa" Text="{Binding NombreMapa}" Margin="7" FontSize="20" />
+                            <TextBlock Name="txt_Autor " Text="Autor" RelativePanel.Below="txtBlck_NombreMapa" Margin="7"/>
+                            <TextBlock Name="txtBlck_CreadorMapa" Text="{Binding NombreUsuario}" Margin="7" RelativePanel.RightOf="txt_Autor " RelativePanel.Below="txtBlck_NombreMapa"/>
+                            <TextBlock Name="txt_Valoracion" Text="Valoracion" RelativePanel.RightOf="txtBlck_CreadorMapa" RelativePanel.Below="txtBlck_NombreMapa" Margin="12,7,0,0"/>
+                            <TextBlock Name="txtBlck_PuntuacionMapa" Text="{Binding ValoracionMapa}" Margin="12,7,0,0" RelativePanel.Below="txtBlck_NombreMapa" RelativePanel.RightOf="txt_Valoracion" />
                         </RelativePanel>
                     </DataTemplate>
                 </ListView.ItemTemplate>
@@ -53,7 +55,7 @@
  
         
         <!--Previsualizacion del mapa-->
-        <RelativePanel Name="relativeFondo" Margin="10" Grid.Column="0"  Height="300"
+        <RelativePanel Name="relativeFondo" Margin="10" Grid.Column="0"  Height="325" Width="509"
                        Grid.Row="1">
             <RelativePanel.Background>
                 <ImageBrush ImageSource="Assets\fondo.png"/>
@@ -94,7 +96,7 @@
                         <RowDefinition Height="Auto"/>
                         <RowDefinition Height="Auto"/>
                         <RowDefinition Height="Auto"/>
-                    </Grid.RowDefinitions>
+                </Grid.RowDefinitions>
 
                     <Image Name="cuadrado_0_0" Grid.Column="0" Grid.Row="0" Source="{Binding sourceList[0][0]}" Height="25" Width="{Binding ElementName=cuadrado_0_0, Path=Height}"/>
                     <Image Name="cuadrado_0_1" Grid.Column="0" Grid.Row="1" Source="{Binding sourceList[0][1]}" Height="{Binding ElementName=cuadrado_0_0, Path=Height}" Width="{Binding ElementName=cuadrado_0_0, Path=Height}"/>

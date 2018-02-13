@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Snake;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -41,13 +42,13 @@ namespace SnakeUI.Views
 
         private void ListView_ItemClick(object sender, ItemClickEventArgs e)
         {
-            StackPanel boton =(StackPanel) e.ClickedItem;
+            StackPanel boton = (StackPanel)e.ClickedItem;
 
-            switch(boton.Name)
+            switch (boton.Name)
             {
-                //case  "stk_Jugar":
-                //     ContentFrame.Navigate(typeof(Jugar));
-                //break;
+                case "stk_Jugar":
+                    ContentFrame.Navigate(typeof(Jugar));
+                    break;
 
                 case "stk_Puntuaciones":
                     ContentFrame.Navigate(typeof(Puntuaciones));
@@ -65,6 +66,6 @@ namespace SnakeUI.Views
 
         }
 
-   
+
     }
 }
