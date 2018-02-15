@@ -34,7 +34,34 @@ namespace SnakeUI
 
         private void BotonJugar_Click(object sender, RoutedEventArgs e)
         {
+            mapasvm.sourceList[17][0] = "Assets/gato/cabeza-izq.png";
+            mapasvm.sourceList[18][0] = "Assets/gato/cuerpo-hor.png";
+            mapasvm.sourceList[19][0] = "Assets/gato/culo-izq.png";
             Frame.Navigate(typeof(Jugar),mapasvm.sourceList);
+        }
+    
+
+        private void MapasPorValoracion_Click(object sender, RoutedEventArgs e)
+        {
+            mapasvm.OrdenarPorValoracion = true;
+            mapasvm.obtenerMapas();
+        }
+
+        private void MapasPorFecha_Click(object sender, RoutedEventArgs e)
+        {
+           mapasvm.OrdenarPorValoracion = false;
+            mapasvm.obtenerMapas();
+        }
+
+        protected override void OnNavigatedTo(NavigationEventArgs e)
+        {
+            base.OnNavigatedTo(e);
+            if (e.Parameter != null)
+            {
+                mapasvm.OrdenarPorValoracion = (bool)e.Parameter;
+                mapasvm.obtenerMapas();
+            }
+
         }
     }
 }

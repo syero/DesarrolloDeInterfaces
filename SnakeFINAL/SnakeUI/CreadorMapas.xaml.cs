@@ -25,6 +25,8 @@ namespace SnakeUI.Views
     {
 
         public CreadorMapasVM creadorMapaVM { get; set; }
+        public MapasViewModel mapasvm { get; set; }
+
         public CreadorMapas()
         {
             this.InitializeComponent();
@@ -33,7 +35,7 @@ namespace SnakeUI.Views
 
         private void btnPublicar_Click(object sender, RoutedEventArgs e)
         {
-
+                    
         }
     }
 }

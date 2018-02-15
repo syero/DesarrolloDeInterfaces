@@ -97,16 +97,17 @@ namespace SnakeUI.ViewModels
             int i = 1;
             if (String.IsNullOrWhiteSpace(nombreMapa))
             {
-                nombreMapa = "Mapa sin nombre";
+                mapaEnviar.NombreMapa = "Mapa sin nombre";
             }
             if (String.IsNullOrWhiteSpace(nombreAutor))
             {
-                nombreAutor = "Anónimo";
+                mapaEnviar.NombreUsuario = "Anónimo";
             }
+         
             await manejadoraBL.crearMapaBL(mapaEnviar);
-            //Page page = (Page)((Frame)Window.Current.Content).Content;
-            //Frame contentFrame = (Frame)page.FindName("ContentFrame");
-            //contentFrame.Navigate(typeof(Mapas),true);
+            Page page = (Page)((Frame)Window.Current.Content).Content;
+            Frame contentFrame = (Frame)page.FindName("ContentFrame");
+            contentFrame.Navigate(typeof(Mapas), false);
         }
 
         private ObservableCollection<ObservableCollection<bool>> traducirMapa()

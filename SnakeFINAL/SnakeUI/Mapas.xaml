@@ -29,8 +29,8 @@
             <!--Panel de Botones-->
             <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" Margin="3">
                 <Button Name="BotonJugar" Content="Jugar" Click="BotonJugar_Click" Margin="2" FontFamily="Assets/3Dumb.ttf#3Dumb" />
-                <Button Name="MapasTopCincuenta" Content="TopMapas" Click="BotonJugar_Click" Margin="2" FontFamily="Assets/3Dumb.ttf#3Dumb" />
-                <Button Name="TodosLosMapas" Content="Mapas Por Fecha" Margin="2" FontFamily="Assets/3Dumb.ttf#3Dumb" />
+                <Button Name="MapasPorValoracion" Content="TopMapas" Click="MapasPorValoracion_Click" Margin="2" FontFamily="Assets/3Dumb.ttf#3Dumb" />
+                <Button Name="MapasPorFecha" Content="Mapas Por Fecha" Click="MapasPorFecha_Click" Margin="2" FontFamily="Assets/3Dumb.ttf#3Dumb" />
             </StackPanel>
         </StackPanel>
 

@@ -35,11 +35,6 @@ namespace SnakeUI.Views
             Split.IsPaneOpen = !Split.IsPaneOpen;
         }
 
-        //public void SetContentFrame(Frame frame)
-        //{
-        //    ContentFrame.Content = frame;
-        ////}
-
         private void ListView_ItemClick(object sender, ItemClickEventArgs e)
         {
             StackPanel boton = (StackPanel)e.ClickedItem;

@@ -219,7 +219,6 @@ namespace Snake.ClasesDeDatos
             sourceList[cuerpo[1].x][cuerpo[1].y] = constantes.CUERPO_HOR;
             sourceList[cuerpo[2].x][cuerpo[2].y] = constantes.CULO_IZQ;
             vivo = true;
-            generarComida();
         }
 
         public void girarArriba()
@@ -250,7 +249,7 @@ namespace Snake.ClasesDeDatos
             }
         }
 
-        private void generarComida() {
+        public void generarComida() {
             Random random = new Random();
             int x;
             int y;

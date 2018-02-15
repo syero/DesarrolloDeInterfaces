@@ -1,4 +1,5 @@
 ﻿using SankeBL.Listados;
+using Snake.ClasesDeDatos;
 using SnakeEntidades;
 using System;
 using System.Collections.Generic;
@@ -14,8 +15,8 @@ namespace SnakeUI.ViewModels
     {
         private List<Mapa> _listaMapas;
         private Mapa _mapaSeleccionado;
-        private bool _ordenarPorValoracion=true;
-       
+        private bool _ordenarPorValoracion;
+        private ConstantesImageSource constantes;
 
         public ObservableCollection<ObservableCollection<String>> sourceList { get; set; }
 
@@ -25,6 +26,7 @@ namespace SnakeUI.ViewModels
 
         public MapasViewModel()
         {
+            constantes = new ConstantesImageSource();
             sourceList = new ObservableCollection<ObservableCollection<string>>();
             obtenerMapas();
             rellenarSourceListBlanco();  
@@ -38,7 +40,7 @@ namespace SnakeUI.ViewModels
                 sourceList.Add(new ObservableCollection<String>());
                 for (int j = 0; j < MAX_FILAS; j++)
                 {
-                    sourceList[i].Add("../Assets/transparente.png");
+                    sourceList[i].Add(constantes.FONDO);
                 }
             }
         }
@@ -63,7 +65,7 @@ namespace SnakeUI.ViewModels
             set { this._ordenarPorValoracion = value; NotifyPropertyChanged("OrdenarPorValoracion"); }
         }      
 
-        private async void obtenerMapas()
+        public async void obtenerMapas()
         {
             _listaMapas = await listadoMapasBL.getListadoBL(OrdenarPorValoracion);
             NotifyPropertyChanged("ListaMapas");
@@ -81,11 +83,11 @@ namespace SnakeUI.ViewModels
                 {
                     if (_mapaSeleccionado.Casillas[i][j])
                     {
-                        sourceList[i][j] = "../Assets/muro.png";
+                        sourceList[i][j] = constantes.MURO;
                     }
                     else
                     {
-                        sourceList[i][j] = "../Assets/transparente.png";
+                        sourceList[i][j] = constantes.FONDO;
                     }
 
                 }
@@ -97,7 +99,7 @@ namespace SnakeUI.ViewModels
         //    ListaMapas = await listadoMapasBL.getListadoBL(OrdenarPorValoracion);
         //    NotifyPropertyChanged("ListaMapas");
         //}
-      
+
 
 
     }

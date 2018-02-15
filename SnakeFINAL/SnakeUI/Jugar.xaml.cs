@@ -40,11 +40,20 @@ namespace Snake
         protected override void OnNavigatedTo(NavigationEventArgs e)
         {
             ObservableCollection<ObservableCollection<String>> mapa = new ObservableCollection<ObservableCollection<string>>();
-            
-            if (e.Parameter!=null && e.Parameter.GetType() == mapa.GetType()) {
+
+            if (e.Parameter != null && e.Parameter.GetType() == mapa.GetType()) {
                 mapa = (ObservableCollection<ObservableCollection<String>>)e.Parameter;
-                this.ViewModel.sourceList = mapa;
+
+
+                for (int i = 0; i < 20; i++)
+                {
+                    for (int j = 0; j < 11; j++)
+                    {
+                        this.ViewModel.sourceList[i][j] = mapa[i][j];
+                    }
+                }
             }
+            this.ViewModel.serpiente.generarComida();
         }
     }
 }

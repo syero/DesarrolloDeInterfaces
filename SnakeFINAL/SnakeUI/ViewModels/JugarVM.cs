@@ -1,5 +1,7 @@
 ﻿
+using SankeBL.Manejadoras;
 using Snake.ClasesDeDatos;
+using SnakeEntidades;
 using SnakeUI.ViewModels;
 using System;
 using System.Collections.ObjectModel;
@@ -12,7 +14,7 @@ namespace Snake.ViewModels
 {
     public class JugarVM : clsVMBase
     {
-        Serpiente serpiente;
+        public Serpiente serpiente { get; set; }
         private ObservableCollection<ObservableCollection<String>> _sourceList;
         private DispatcherTimer timer;
 
@@ -116,11 +118,24 @@ namespace Snake.ViewModels
             resultado = await popup.ShowAsync();
         }
 
-        private void enviarPuntuacion(ContentDialog sender, ContentDialogButtonClickEventArgs e){
+        private async void enviarPuntuacion(ContentDialog sender, ContentDialogButtonClickEventArgs e){
             StackPanel sp = (StackPanel)sender.Content;
             TextBox edit = (TextBox)sp.Children[1];
             String nombre = edit.Text;
+
+            if (String.IsNullOrEmpty(nombre))
+            {
+                nombre = "Anónimo";
+            }
+
             //Enviar puntación al server
+            PuntuacionManejadoraBL puntuacionManejadora = new PuntuacionManejadoraBL();
+            Puntuacion puntuacion = new Puntuacion(nombre, serpiente.puntuacion);
+            if(serpiente.puntuacion > 0)
+            {
+                await puntuacionManejadora.crearPuntuacionBL(puntuacion);
+            }
+            
             reiniciarJuego();
         }
 
