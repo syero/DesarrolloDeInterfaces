@@ -34,12 +34,12 @@
                         </StackPanel>
 
                         <StackPanel Name="stk_Mapas" Orientation="Horizontal" Margin="10">
-                            <Image Name="imgMapas" Source="..\Assets\Imagenes\cog.svg" Height="30" Width="30"/>
+                            <Image Name="imgMapas" Source="..\Assets\Imagenes\icono_mapa.svg" Height="30" Width="30"/>
                             <TextBlock Name="txtBoxMapas"  Margin="20,0" Text="Mapas" Foreground="Black" FontFamily="Assets/3Dumb.ttf#3Dumb"/>
                         </StackPanel>
                         
                         <StackPanel Name="stk_CrearMapa" Orientation="Horizontal" Margin="10">
-                            <Image Name="imgCrearMapa" Source="..\Assets\Imagenes\cog.svg" Height="30" Width="30"/>
+                            <Image Name="imgCrearMapa" Source="..\Assets\Imagenes\crear_mapa.svg" Height="30" Width="30"/>
                             <TextBlock Name="txtBoxCrearMapa"  Margin="20,0" Text="CrearMapa" Foreground="Black" FontFamily="Assets/3Dumb.ttf#3Dumb"/>
                         </StackPanel>
                         
