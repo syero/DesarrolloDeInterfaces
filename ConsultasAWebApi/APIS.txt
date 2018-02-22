@@ -1,6 +1,0 @@
-
-api 		https://jsonplaceholder.typicode.com/
-api             https://reqres.in/
-		https://code.tutsplus.com/es/tutorials/fake-rest-api-up-and-running-using-json-server--cms-27871
-		https://scotch.io/tutorials/json-server-as-a-fake-rest-api-in-frontend-development
-		https://swapi.co/
