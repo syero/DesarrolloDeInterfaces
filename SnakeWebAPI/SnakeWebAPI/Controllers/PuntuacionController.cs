@@ -28,9 +28,9 @@ namespace SnakeWebAPI.Controllers
         }
 
         // POST: api/Puntuacion
-        public void Post([FromBody]Puntuacion value)
+        public void Post(int idMapa, int valoracion,[FromBody]Puntuacion value)
         {
-            gestionadora.insertarPuntuacion(value);
+            gestionadora.insertarPuntuacion(idMapa, valoracion, value);
         }
 
         // PUT: api/Puntuacion/5

@@ -13,17 +13,27 @@ namespace SnakeWebAPI_BL.Manejadora
     {
         ManejadoraDAL gestionDAL = new ManejadoraDAL();
 
-        public void insertarPuntuacion(Puntuacion puntuacion)
+        /// <summary>
+        /// Llama a la capa DAL para insertar una puntuacion
+        /// </summary>
+        /// <param name="puntuacion"></param>
+        public void insertarPuntuacion(int idMapa, int valoracion,Puntuacion puntuacion)
         {
-            gestionDAL.insertarPuntuacion(puntuacion);
+            gestionDAL.insertarPuntuacion(idMapa,valoracion, puntuacion);
         }
 
+        /// <summary>
+        /// Llama a la capa DAL para insertar un nuevo mapa
+        /// </summary>
+        /// <param name="mapa"></param>
         public void insertarMapa(Mapa mapa)
         {
           //  mapa.Casillas = rellenacasillas();
             gestionDAL.insertarMapa(mapa);
 
         }
+
+
 
         public ObservableCollection<ObservableCollection<bool>> rellenacasillas()
         {

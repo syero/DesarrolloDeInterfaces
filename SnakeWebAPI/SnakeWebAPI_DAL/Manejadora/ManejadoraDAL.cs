@@ -19,10 +19,13 @@ namespace SnakeWebAPI_DAL.Manejadora
         /// <summary>
         /// Este metodo va a insertar un objeto de tipo Puntuacion
         /// </summary>
-        public void insertarPuntuacion(Puntuacion puntuacion)
+        public void insertarPuntuacion(int idMapa, int valoracion,Puntuacion puntuacion)
         {
             miComando.Parameters.Add("@NombreUsuario", System.Data.SqlDbType.NVarChar).Value = puntuacion.NombreUsuario;
             miComando.Parameters.Add("@Valor", System.Data.SqlDbType.Int).Value = puntuacion.Valor;
+
+            //Valorar un mapa
+            valorarMapa(idMapa, valoracion);
 
             try
             {
@@ -41,6 +44,28 @@ namespace SnakeWebAPI_DAL.Manejadora
 
         }//insertarPuntuacion
 
+
+        //Actualizar la valoracion de un mapa segun id
+        public void valorarMapa(int idMapa,int valoracion)
+        {
+
+            miComando.Parameters.Add("@valoracion", System.Data.SqlDbType.Int).Value = valoracion;
+            miComando.Parameters.Add("@idMapa", System.Data.SqlDbType.Int).Value = idMapa;
+
+            try
+            {
+                conexion = miConexion.getConnection();
+                //Insertamos los datos de la persona en la base de datos
+                miComando.CommandText = "Update SK_Mapas set ValoracionMapa=ValoracionMapa+@valoracion where IDMapa=@idMapa";
+
+                miComando.Connection = conexion;
+
+                //ejecutamos el comando de actualizar
+                miComando.ExecuteNonQuery();
+
+            }
+            catch (SqlException sql) { throw sql; }
+        }//valorarMapa
 
         /// <summary>
         /// este metodo va a insertar un objeto de tipo Mapa
@@ -64,8 +89,7 @@ namespace SnakeWebAPI_DAL.Manejadora
                 miComando.ExecuteNonQuery();
 
             } catch (SqlException sql) { throw sql; }
-        }//insertarMapa
-
+        }//insertarMapa 
 
     }
 }
