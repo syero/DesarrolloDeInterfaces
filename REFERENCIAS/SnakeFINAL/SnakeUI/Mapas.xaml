@@ -1,0 +1,345 @@
+﻿<Page
+    x:Class="SnakeUI.Mapas"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:SnakeUI"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:vm="using:SnakeUI.ViewModels"
+    mc:Ignorable="d">
+
+    <Page.DataContext>
+        <vm:MapasViewModel></vm:MapasViewModel>
+    </Page.DataContext>
+
+    <Grid Name="GridPrincipal" Background="#c5cae9">       
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="2*"/>
+        </Grid.ColumnDefinitions>
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="400" />
+        </Grid.RowDefinitions>
+
+        <!--Panel Superior de la vista-->
+        <StackPanel Name="PanelPrincipal" Grid.ColumnSpan="2" >
+            <TextBlock Name="NombreVista"  Text="Mapas" FontSize="50dp" Margin="20" TextAlignment="Center" FontFamily="Assets/3Dumb.ttf#3Dumb"></TextBlock>
+            <!--Panel de Botones-->
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" Margin="3">
+                <Button Name="BotonJugar" Content="Jugar" Click="BotonJugar_Click" Margin="2" FontFamily="Assets/3Dumb.ttf#3Dumb" />
+                <Button Name="MapasPorValoracion" Content="TopMapas" Click="MapasPorValoracion_Click" Margin="2" FontFamily="Assets/3Dumb.ttf#3Dumb" />
+                <Button Name="MapasPorFecha" Content="Mapas Por Fecha" Click="MapasPorFecha_Click" Margin="2" FontFamily="Assets/3Dumb.ttf#3Dumb" />
+            </StackPanel>
+        </StackPanel>
+
+
+        <!--Listado de mapas-->
+            <ListView Name="ListadoMapas" Grid.Column="1" Grid.Row="1"  Margin="5" Background="Transparent"  
+                      ItemsSource="{Binding ListaMapas}"  SelectedItem="{Binding MapaSeleccionado,Mode=TwoWay}"
+                      ScrollViewer.VerticalScrollBarVisibility="Auto">
+                <ListView.ItemTemplate>
+                    <DataTemplate >
+                        <!--Datos de Mapas-->
+                        <RelativePanel Padding="5" Margin="10" BorderBrush="Black" BorderThickness="3" MinWidth="400">
+                            <TextBlock Name="txtBlck_NombreMapa" Text="{Binding NombreMapa}" Margin="7" FontSize="20" />
+                            <TextBlock Name="txt_Autor " Text="Autor" RelativePanel.Below="txtBlck_NombreMapa" Margin="7"/>
+                            <TextBlock Name="txtBlck_CreadorMapa" Text="{Binding NombreUsuario}" Margin="7" RelativePanel.RightOf="txt_Autor " RelativePanel.Below="txtBlck_NombreMapa"/>
+                            <TextBlock Name="txt_Valoracion" Text="Valoracion" RelativePanel.RightOf="txtBlck_CreadorMapa" RelativePanel.Below="txtBlck_NombreMapa" Margin="12,7,0,0"/>
+                            <TextBlock Name="txtBlck_PuntuacionMapa" Text="{Binding ValoracionMapa}" Margin="12,7,0,0" RelativePanel.Below="txtBlck_NombreMapa" RelativePanel.RightOf="txt_Valoracion" />
+                        </RelativePanel>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+ 
+        
+        <!--Previsualizacion del mapa-->
+        <RelativePanel Name="relativeFondo" Margin="10" Grid.Column="0"  Height="325" Width="509"
+                       Grid.Row="1">
+            <RelativePanel.Background>
+                <ImageBrush ImageSource="Assets\fondo.png"/>
+            </RelativePanel.Background>
+           
+                <Grid Name="gridJuego" Margin="0,0,0,50">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="Auto"/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+
+                    <Image Name="cuadrado_0_0" Grid.Column="0" Grid.Row="0" Source="{Binding sourceList[0][0]}" Height="25" Width="{Binding ElementName=cuadrado_0_0, Path=Height}"/>
+                    <Image Name="cuadrado_0_1" Grid.Column="0" Grid.Row="1" Source="{Binding sourceList[0][1]}" Height="{Binding ElementName=cuadrado_0_0, Path=Height}" Width="{Binding ElementName=cuadrado_0_0, Path=Height}"/>
+                    <Image Name="cuadrado_0_2" Grid.Column="0" Grid.Row="2" Source="{Binding sourceList[0][2]}" Height="{Binding ElementName=cuadrado_0_0, Path=Height}" Width="{Binding ElementName=cuadrado_0_0, Path=Height}"/>
+                    <Image Name="cuadrado_0_3" Grid.Column="0" Grid.Row="3" Source="{Binding sourceList[0][3]}" Height="{Binding ElementName=cuadrado_0_0, Path=Height}" Width="{Binding ElementName=cuadrado_0_0, Path=Height}"/>
+                    <Image Name="cuadrado_0_4" Grid.Column="0" Grid.Row="4" Source="{Binding sourceList[0][4]}" Height="{Binding ElementName=cuadrado_0_0, Path=Height}" Width="{Binding ElementName=cuadrado_0_0, Path=Height}"/>
+                    <Image Name="cuadrado_0_5" Grid.Column="0" Grid.Row="5" Source="{Binding sourceList[0][5]}" Height="{Binding ElementName=cuadrado_0_0, Path=Height}" Width="{Binding ElementName=cuadrado_0_0, Path=Height}"/>
+                    <Image Name="cuadrado_0_6" Grid.Column="0" Grid.Row="6" Source="{Binding sourceList[0][6]}" Height="{Binding ElementName=cuadrado_0_0, Path=Height}" Width="{Binding ElementName=cuadrado_0_0, Path=Height}"/>
+                    <Image Name="cuadrado_0_7" Grid.Column="0" Grid.Row="7" Source="{Binding sourceList[0][7]}" Height="{Binding ElementName=cuadrado_0_0, Path=Height}" Width="{Binding ElementName=cuadrado_0_0, Path=Height}"/>
+                    <Image Name="cuadrado_0_8" Grid.Column="0" Grid.Row="8" Source="{Binding sourceList[0][8]}" Height="{Binding ElementName=cuadrado_0_0, Path=Height}" Width="{Binding ElementName=cuadrado_0_0, Path=Height}"/>
+                    <Image Name="cuadrado_0_9" Grid.Column="0" Grid.Row="9" Source="{Binding sourceList[0][9]}" Height="{Binding ElementName=cuadrado_0_0, Path=Height}" Width="{Binding ElementName=cuadrado_0_0, Path=Height}"/>
+                    <Image Name="cuadrado_0_10" Grid.Column="0" Grid.Row="10" Source="{Binding sourceList[0][10]}" Height="{Binding ElementName=cuadrado_0_0, Path=Height}" Width="{Binding ElementName=cuadrado_0_0, Path=Height}"/>
+
+                    <Image Name="cuadrado_1_0" Grid.Column="1" Grid.Row="0" Source="{Binding sourceList[1][0]}" Height="{Binding ElementName=cuadrado_0_0, Path=Height}" Width="{Binding ElementName=cuadrado_0_0, Path=Height}"/>
+                    <Image Name="cuadrado_1_1" Grid.Column="1" Grid.Row="1" Source="{Binding sourceList[1][1]}" Height="{Binding ElementName=cuadrado_0_0, Path=Height}" Width="{Binding ElementName=cuadrado_0_0, Path=Height}"/>
+                    <Image Name="cuadrado_1_2" Grid.Column="1" Grid.Row="2" Source="{Binding sourceList[1][2]}" Height="{Binding ElementName=cuadrado_0_0, Path=Height}" Width="{Binding ElementName=cuadrado_0_0, Path=Height}"/>
+                    <Image Name="cuadrado_1_3" Grid.Column="1" Grid.Row="3" Source="{Binding sourceList[1][3]}" Height="{Binding ElementName=cuadrado_0_0, Path=Height}" Width="{Binding ElementName=cuadrado_0_0, Path=Height}"/>
+                    <Image Name="cuadrado_1_4" Grid.Column="1" Grid.Row="4" Source="{Binding sourceList[1][4]}" Height="{Binding ElementName=cuadrado_0_0, Path=Height}" Width="{Binding ElementName=cuadrado_0_0, Path=Height}"/>
+                    <Image Name="cuadrado_1_5" Grid.Column="1" Grid.Row="5" Source="{Binding sourceList[1][5]}" Height="{Binding ElementName=cuadrado_0_0, Path=Height}" Width="{Binding ElementName=cuadrado_0_0, Path=Height}"/>
+                    <Image Name="cuadrado_1_6" Grid.Column="1" Grid.Row="6" Source="{Binding sourceList[1][6]}" Height="{Binding ElementName=cuadrado_0_0, Path=Height}" Width="{Binding ElementName=cuadrado_0_0, Path=Height}"/>
+                    <Image Name="cuadrado_1_7" Grid.Column="1" Grid.Row="7" Source="{Binding sourceList[1][7]}" Height="{Binding ElementName=cuadrado_0_0, Path=Height}" Width="{Binding ElementName=cuadrado_0_0, Path=Height}"/>
+                    <Image Name="cuadrado_1_8" Grid.Column="1" Grid.Row="8" Source="{Binding sourceList[1][8]}" Height="{Binding ElementName=cuadrado_0_0, Path=Height}" Width="{Binding ElementName=cuadrado_0_0, Path=Height}"/>
+                    <Image Name="cuadrado_1_9" Grid.Column="1" Grid.Row="9" Source="{Binding sourceList[1][9]}" Height="{Binding ElementName=cuadrado_0_0, Path=Height}" Width="{Binding ElementName=cuadrado_0_0, Path=Height}"/>
+                    <Image Name="cuadrado_1_10" Grid.Column="1" Grid.Row="10" Source="{Binding sourceList[1][10]}" Height="{Binding ElementName=cuadrado_0_0, Path=Height}" Width="{Binding ElementName=cuadrado_0_0, Path=Height}"/>
+
+                    <Image Name="cuadrado_2_0" Grid.Column="2" Grid.Row="0" Source="{Binding sourceList[2][0]}" Height="{Binding ElementName=cuadrado_0_0, Path=Height}" Width="{Binding ElementName=cuadrado_0_0, Path=Height}"/>
+                    <Image Name="cuadrado_2_1" Grid.Column="2" Grid.Row="1" Source="{Binding sourceList[2][1]}" Height="{Binding ElementName=cuadrado_0_0, Path=Height}" Width="{Binding ElementName=cuadrado_0_0, Path=Height}"/>
+                    <Image Name="cuadrado_2_2" Grid.Column="2" Grid.Row="2" Source="{Binding sourceList[2][2]}" Height="{Binding ElementName=cuadrado_0_0, Path=Height}" Width="{Binding ElementName=cuadrado_0_0, Path=Height}"/>
+                    <Image Name="cuadrado_2_3" Grid.Column="2" Grid.Row="3" Source="{Binding sourceList[2][3]}" Height="{Binding ElementName=cuadrado_0_0, Path=Height}" Width="{Binding ElementName=cuadrado_0_0, Path=Height}"/>
+                    <Image Name="cuadrado_2_4" Grid.Column="2" Grid.Row="4" Source="{Binding sourceList[2][4]}" Height="{Binding ElementName=cuadrado_0_0, Path=Height}" Width="{Binding ElementName=cuadrado_0_0, Path=Height}"/>
+                    <Image Name="cuadrado_2_5" Grid.Column="2" Grid.Row="5" Source="{Binding sourceList[2][5]}" Height="{Binding ElementName=cuadrado_0_0, Path=Height}" Width="{Binding ElementName=cuadrado_0_0, Path=Height}"/>
+                    <Image Name="cuadrado_2_6" Grid.Column="2" Grid.Row="6" Source="{Binding sourceList[2][6]}" Height="{Binding ElementName=cuadrado_0_0, Path=Height}" Width="{Binding ElementName=cuadrado_0_0, Path=Height}"/>
+                    <Image Name="cuadrado_2_7" Grid.Column="2" Grid.Row="7" Source="{Binding sourceList[2][7]}" Height="{Binding ElementName=cuadrado_0_0, Path=Height}" Width="{Binding ElementName=cuadrado_0_0, Path=Height}"/>
+                    <Image Name="cuadrado_2_8" Grid.Column="2" Grid.Row="8" Source="{Binding sourceList[2][8]}" Height="{Binding ElementName=cuadrado_0_0, Path=Height}" Width="{Binding ElementName=cuadrado_0_0, Path=Height}"/>
+                    <Image Name="cuadrado_2_9" Grid.Column="2" Grid.Row="9" Source="{Binding sourceList[2][9]}" Height="{Binding ElementName=cuadrado_0_0, Path=Height}" Width="{Binding ElementName=cuadrado_0_0, Path=Height}"/>
+                    <Image Name="cuadrado_2_10" Grid.Column="2" Grid.Row="10" Source="{Binding sourceList[2][10]}" Height="{Binding ElementName=cuadrado_0_0, Path=Height}" Width="{Binding ElementName=cuadrado_0_0, Path=Height}"/>
+
+                    <Image Name="cuadrado_3_0" Grid.Column="3" Grid.Row="0" Source="{Binding sourceList[3][0]}" Height="{Binding ElementName=cuadrado_0_0, Path=Height}" Width="{Binding ElementName=cuadrado_0_0, Path=Height}"/>
+                    <Image Name="cuadrado_3_1" Grid.Column="3" Grid.Row="1" Source="{Binding sourceList[3][1]}" Height="{Binding ElementName=cuadrado_0_0, Path=Height}" Width="{Binding ElementName=cuadrado_0_0, Path=Height}"/>
+                    <Image Name="cuadrado_3_2" Grid.Column="3" Grid.Row="2" Source="{Binding sourceList[3][2]}" Height="{Binding ElementName=cuadrado_0_0, Path=Height}" Width="{Binding ElementName=cuadrado_0_0, Path=Height}"/>
+                    <Image Name="cuadrado_3_3" Grid.Column="3" Grid.Row="3" Source="{Binding sourceList[3][3]}" Height="{Binding ElementName=cuadrado_0_0, Path=Height}" Width="{Binding ElementName=cuadrado_0_0, Path=Height}"/>
+                    <Image Name="cuadrado_3_4" Grid.Column="3" Grid.Row="4" Source="{Binding sourceList[3][4]}" Height="{Binding ElementName=cuadrado_0_0, Path=Height}" Width="{Binding ElementName=cuadrado_0_0, Path=Height}"/>
+                    <Image Name="cuadrado_3_5" Grid.Column="3" Grid.Row="5" Source="{Binding sourceList[3][5]}" Height="{Binding ElementName=cuadrado_0_0, Path=Height}" Width="{Binding ElementName=cuadrado_0_0, Path=Height}"/>
+                    <Image Name="cuadrado_3_6" Grid.Column="3" Grid.Row="6" Source="{Binding sourceList[3][6]}" Height="{Binding ElementName=cuadrado_0_0, Path=Height}" Width="{Binding ElementName=cuadrado_0_0, Path=Height}"/>
+                    <Image Name="cuadrado_3_7" Grid.Column="3" Grid.Row="7" Source="{Binding sourceList[3][7]}" Height="{Binding ElementName=cuadrado_0_0, Path=Height}" Width="{Binding ElementName=cuadrado_0_0, Path=Height}"/>
+                    <Image Name="cuadrado_3_8" Grid.Column="3" Grid.Row="8" Source="{Binding sourceList[3][8]}" Height="{Binding ElementName=cuadrado_0_0, Path=Height}" Width="{Binding ElementName=cuadrado_0_0, Path=Height}"/>
+                    <Image Name="cuadrado_3_9" Grid.Column="3" Grid.Row="9" Source="{Binding sourceList[3][9]}" Height="{Binding ElementName=cuadrado_0_0, Path=Height}" Width="{Binding ElementName=cuadrado_0_0, Path=Height}"/>
+                    <Image Name="cuadrado_3_10" Grid.Column="3" Grid.Row="10" Source="{Binding sourceList[3][10]}" Height="{Binding ElementName=cuadrado_0_0, Path=Height}" Width="{Binding ElementName=cuadrado_0_0, Path=Height}"/>
+
+                    <Image Name="cuadrado_4_0" Grid.Column="4" Grid.Row="0" Source="{Binding sourceList[4][0]}" Height="{Binding ElementName=cuadrado_0_0, Path=Height}" Width="{Binding ElementName=cuadrado_0_0, Path=Height}"/>
+                    <Image Name="cuadrado_4_1" Grid.Column="4" Grid.Row="1" Source="{Binding sourceList[4][1]}" Height="{Binding ElementName=cuadrado_0_0, Path=Height}" Width="{Binding ElementName=cuadrado_0_0, Path=Height}"/>
+                    <Image Name="cuadrado_4_2" Grid.Column="4" Grid.Row="2" Source="{Binding sourceList[4][2]}" Height="{Binding ElementName=cuadrado_0_0, Path=Height}" Width="{Binding ElementName=cuadrado_0_0, Path=Height}"/>
+                    <Image Name="cuadrado_4_3" Grid.Column="4" Grid.Row="3" Source="{Binding sourceList[4][3]}" Height="{Binding ElementName=cuadrado_0_0, Path=Height}" Width="{Binding ElementName=cuadrado_0_0, Path=Height}"/>
+                    <Image Name="cuadrado_4_4" Grid.Column="4" Grid.Row="4" Source="{Binding sourceList[4][4]}" Height="{Binding ElementName=cuadrado_0_0, Path=Height}" Width="{Binding ElementName=cuadrado_0_0, Path=Height}"/>
+                    <Image Name="cuadrado_4_5" Grid.Column="4" Grid.Row="5" Source="{Binding sourceList[4][5]}" Height="{Binding ElementName=cuadrado_0_0, Path=Height}" Width="{Binding ElementName=cuadrado_0_0, Path=Height}"/>
+                    <Image Name="cuadrado_4_6" Grid.Column="4" Grid.Row="6" Source="{Binding sourceList[4][6]}" Height="{Binding ElementName=cuadrado_0_0, Path=Height}" Width="{Binding ElementName=cuadrado_0_0, Path=Height}"/>
+                    <Image Name="cuadrado_4_7" Grid.Column="4" Grid.Row="7" Source="{Binding sourceList[4][7]}" Height="{Binding ElementName=cuadrado_0_0, Path=Height}" Width="{Binding ElementName=cuadrado_0_0, Path=Height}"/>
+                    <Image Name="cuadrado_4_8" Grid.Column="4" Grid.Row="8" Source="{Binding sourceList[4][8]}" Height="{Binding ElementName=cuadrado_0_0, Path=Height}" Width="{Binding ElementName=cuadrado_0_0, Path=Height}"/>
+                    <Image Name="cuadrado_4_9" Grid.Column="4" Grid.Row="9" Source="{Binding sourceList[4][9]}" Height="{Binding ElementName=cuadrado_0_0, Path=Height}" Width="{Binding ElementName=cuadrado_0_0, Path=Height}"/>
+                    <Image Name="cuadrado_4_10" Grid.Column="4" Grid.Row="10" Source="{Binding sourceList[4][10]}" Height="{Binding ElementName=cuadrado_0_0, Path=Height}" Width="{Binding ElementName=cuadrado_0_0, Path=Height}"/>
+
+                    <Image Name="cuadrado_5_0" Grid.Column="5" Grid.Row="0" Source="{Binding sourceList[5][0]}" Height="{Binding ElementName=cuadrado_0_0, Path=Height}" Width="{Binding ElementName=cuadrado_0_0, Path=Height}"/>
+                    <Image Name="cuadrado_5_1" Grid.Column="5" Grid.Row="1" Source="{Binding sourceList[5][1]}" Height="{Binding ElementName=cuadrado_0_0, Path=Height}" Width="{Binding ElementName=cuadrado_0_0, Path=Height}"/>
+                    <Image Name="cuadrado_5_2" Grid.Column="5" Grid.Row="2" Source="{Binding sourceList[5][2]}" Height="{Binding ElementName=cuadrado_0_0, Path=Height}" Width="{Binding ElementName=cuadrado_0_0, Path=Height}"/>
+                    <Image Name="cuadrado_5_3" Grid.Column="5" Grid.Row="3" Source="{Binding sourceList[5][3]}" Height="{Binding ElementName=cuadrado_0_0, Path=Height}" Width="{Binding ElementName=cuadrado_0_0, Path=Height}"/>
+                    <Image Name="cuadrado_5_4" Grid.Column="5" Grid.Row="4" Source="{Binding sourceList[5][4]}" Height="{Binding ElementName=cuadrado_0_0, Path=Height}" Width="{Binding ElementName=cuadrado_0_0, Path=Height}"/>
+                    <Image Name="cuadrado_5_5" Grid.Column="5" Grid.Row="5" Source="{Binding sourceList[5][5]}" Height="{Binding ElementName=cuadrado_0_0, Path=Height}" Width="{Binding ElementName=cuadrado_0_0, Path=Height}"/>
+                    <Image Name="cuadrado_5_6" Grid.Column="5" Grid.Row="6" Source="{Binding sourceList[5][6]}" Height="{Binding ElementName=cuadrado_0_0, Path=Height}" Width="{Binding ElementName=cuadrado_0_0, Path=Height}"/>
+                    <Image Name="cuadrado_5_7" Grid.Column="5" Grid.Row="7" Source="{Binding sourceList[5][7]}" Height="{Binding ElementName=cuadrado_0_0, Path=Height}" Width="{Binding ElementName=cuadrado_0_0, Path=Height}"/>
+                    <Image Name="cuadrado_5_8" Grid.Column="5" Grid.Row="8" Source="{Binding sourceList[5][8]}" Height="{Binding ElementName=cuadrado_0_0, Path=Height}" Width="{Binding ElementName=cuadrado_0_0, Path=Height}"/>
+                    <Image Name="cuadrado_5_9" Grid.Column="5" Grid.Row="9" Source="{Binding sourceList[5][9]}" Height="{Binding ElementName=cuadrado_0_0, Path=Height}" Width="{Binding ElementName=cuadrado_0_0, Path=Height}"/>
+                    <Image Name="cuadrado_5_10" Grid.Column="5" Grid.Row="10" Source="{Binding sourceList[5][10]}" Height="{Binding ElementName=cuadrado_0_0, Path=Height}" Width="{Binding ElementName=cuadrado_0_0, Path=Height}"/>
+
+                    <Image Name="cuadrado_6_0" Grid.Column="6" Grid.Row="0" Source="{Binding sourceList[6][0]}" Height="{Binding ElementName=cuadrado_0_0, Path=Height}" Width="{Binding ElementName=cuadrado_0_0, Path=Height}"/>
+                    <Image Name="cuadrado_6_1" Grid.Column="6" Grid.Row="1" Source="{Binding sourceList[6][1]}" Height="{Binding ElementName=cuadrado_0_0, Path=Height}" Width="{Binding ElementName=cuadrado_0_0, Path=Height}"/>
+                    <Image Name="cuadrado_6_2" Grid.Column="6" Grid.Row="2" Source="{Binding sourceList[6][2]}" Height="{Binding ElementName=cuadrado_0_0, Path=Height}" Width="{Binding ElementName=cuadrado_0_0, Path=Height}"/>
+                    <Image Name="cuadrado_6_3" Grid.Column="6" Grid.Row="3" Source="{Binding sourceList[6][3]}" Height="{Binding ElementName=cuadrado_0_0, Path=Height}" Width="{Binding ElementName=cuadrado_0_0, Path=Height}"/>
+                    <Image Name="cuadrado_6_4" Grid.Column="6" Grid.Row="4" Source="{Binding sourceList[6][4]}" Height="{Binding ElementName=cuadrado_0_0, Path=Height}" Width="{Binding ElementName=cuadrado_0_0, Path=Height}"/>
+                    <Image Name="cuadrado_6_5" Grid.Column="6" Grid.Row="5" Source="{Binding sourceList[6][5]}" Height="{Binding ElementName=cuadrado_0_0, Path=Height}" Width="{Binding ElementName=cuadrado_0_0, Path=Height}"/>
+                    <Image Name="cuadrado_6_6" Grid.Column="6" Grid.Row="6" Source="{Binding sourceList[6][6]}" Height="{Binding ElementName=cuadrado_0_0, Path=Height}" Width="{Binding ElementName=cuadrado_0_0, Path=Height}"/>
+                    <Image Name="cuadrado_6_7" Grid.Column="6" Grid.Row="7" Source="{Binding sourceList[6][7]}" Height="{Binding ElementName=cuadrado_0_0, Path=Height}" Width="{Binding ElementName=cuadrado_0_0, Path=Height}"/>
+                    <Image Name="cuadrado_6_8" Grid.Column="6" Grid.Row="8" Source="{Binding sourceList[6][8]}" Height="{Binding ElementName=cuadrado_0_0, Path=Height}" Width="{Binding ElementName=cuadrado_0_0, Path=Height}"/>
+                    <Image Name="cuadrado_6_9" Grid.Column="6" Grid.Row="9" Source="{Binding sourceList[6][9]}" Height="{Binding ElementName=cuadrado_0_0, Path=Height}" Width="{Binding ElementName=cuadrado_0_0, Path=Height}"/>
+                    <Image Name="cuadrado_6_10" Grid.Column="6" Grid.Row="10" Source="{Binding sourceList[6][10]}" Height="{Binding ElementName=cuadrado_0_0, Path=Height}" Width="{Binding ElementName=cuadrado_0_0, Path=Height}"/>
+
+                    <Image Name="cuadrado_7_0" Grid.Column="7" Grid.Row="0" Source="{Binding sourceList[7][0]}" Height="{Binding ElementName=cuadrado_0_0, Path=Height}" Width="{Binding ElementName=cuadrado_0_0, Path=Height}"/>
+                    <Image Name="cuadrado_7_1" Grid.Column="7" Grid.Row="1" Source="{Binding sourceList[7][1]}" Height="{Binding ElementName=cuadrado_0_0, Path=Height}" Width="{Binding ElementName=cuadrado_0_0, Path=Height}"/>
+                    <Image Name="cuadrado_7_2" Grid.Column="7" Grid.Row="2" Source="{Binding sourceList[7][2]}" Height="{Binding ElementName=cuadrado_0_0, Path=Height}" Width="{Binding ElementName=cuadrado_0_0, Path=Height}"/>
+                    <Image Name="cuadrado_7_3" Grid.Column="7" Grid.Row="3" Source="{Binding sourceList[7][3]}" Height="{Binding ElementName=cuadrado_0_0, Path=Height}" Width="{Binding ElementName=cuadrado_0_0, Path=Height}"/>
+                    <Image Name="cuadrado_7_4" Grid.Column="7" Grid.Row="4" Source="{Binding sourceList[7][4]}" Height="{Binding ElementName=cuadrado_0_0, Path=Height}" Width="{Binding ElementName=cuadrado_0_0, Path=Height}"/>
+                    <Image Name="cuadrado_7_5" Grid.Column="7" Grid.Row="5" Source="{Binding sourceList[7][5]}" Height="{Binding ElementName=cuadrado_0_0, Path=Height}" Width="{Binding ElementName=cuadrado_0_0, Path=Height}"/>
+                    <Image Name="cuadrado_7_6" Grid.Column="7" Grid.Row="6" Source="{Binding sourceList[7][6]}" Height="{Binding ElementName=cuadrado_0_0, Path=Height}" Width="{Binding ElementName=cuadrado_0_0, Path=Height}"/>
+                    <Image Name="cuadrado_7_7" Grid.Column="7" Grid.Row="7" Source="{Binding sourceList[7][7]}" Height="{Binding ElementName=cuadrado_0_0, Path=Height}" Width="{Binding ElementName=cuadrado_0_0, Path=Height}"/>
+                    <Image Name="cuadrado_7_8" Grid.Column="7" Grid.Row="8" Source="{Binding sourceList[7][8]}" Height="{Binding ElementName=cuadrado_0_0, Path=Height}" Width="{Binding ElementName=cuadrado_0_0, Path=Height}"/>
+                    <Image Name="cuadrado_7_9" Grid.Column="7" Grid.Row="9" Source="{Binding sourceList[7][9]}" Height="{Binding ElementName=cuadrado_0_0, Path=Height}" Width="{Binding ElementName=cuadrado_0_0, Path=Height}"/>
+                    <Image Name="cuadrado_7_10" Grid.Column="7" Grid.Row="10" Source="{Binding sourceList[7][10]}" Height="{Binding ElementName=cuadrado_0_0, Path=Height}" Width="{Binding ElementName=cuadrado_0_0, Path=Height}"/>
+
+                    <Image Name="cuadrado_8_0" Grid.Column="8" Grid.Row="0" Source="{Binding sourceList[8][0]}" Height="{Binding ElementName=cuadrado_0_0, Path=Height}" Width="{Binding ElementName=cuadrado_0_0, Path=Height}"/>
+                    <Image Name="cuadrado_8_1" Grid.Column="8" Grid.Row="1" Source="{Binding sourceList[8][1]}" Height="{Binding ElementName=cuadrado_0_0, Path=Height}" Width="{Binding ElementName=cuadrado_0_0, Path=Height}"/>
+                    <Image Name="cuadrado_8_2" Grid.Column="8" Grid.Row="2" Source="{Binding sourceList[8][2]}" Height="{Binding ElementName=cuadrado_0_0, Path=Height}" Width="{Binding ElementName=cuadrado_0_0, Path=Height}"/>
+                    <Image Name="cuadrado_8_3" Grid.Column="8" Grid.Row="3" Source="{Binding sourceList[8][3]}" Height="{Binding ElementName=cuadrado_0_0, Path=Height}" Width="{Binding ElementName=cuadrado_0_0, Path=Height}"/>
+                    <Image Name="cuadrado_8_4" Grid.Column="8" Grid.Row="4" Source="{Binding sourceList[8][4]}" Height="{Binding ElementName=cuadrado_0_0, Path=Height}" Width="{Binding ElementName=cuadrado_0_0, Path=Height}"/>
+                    <Image Name="cuadrado_8_5" Grid.Column="8" Grid.Row="5" Source="{Binding sourceList[8][5]}" Height="{Binding ElementName=cuadrado_0_0, Path=Height}" Width="{Binding ElementName=cuadrado_0_0, Path=Height}"/>
+                    <Image Name="cuadrado_8_6" Grid.Column="8" Grid.Row="6" Source="{Binding sourceList[8][6]}" Height="{Binding ElementName=cuadrado_0_0, Path=Height}" Width="{Binding ElementName=cuadrado_0_0, Path=Height}"/>
+                    <Image Name="cuadrado_8_7" Grid.Column="8" Grid.Row="7" Source="{Binding sourceList[8][7]}" Height="{Binding ElementName=cuadrado_0_0, Path=Height}" Width="{Binding ElementName=cuadrado_0_0, Path=Height}"/>
+                    <Image Name="cuadrado_8_8" Grid.Column="8" Grid.Row="8" Source="{Binding sourceList[8][8]}" Height="{Binding ElementName=cuadrado_0_0, Path=Height}" Width="{Binding ElementName=cuadrado_0_0, Path=Height}"/>
+                    <Image Name="cuadrado_8_9" Grid.Column="8" Grid.Row="9" Source="{Binding sourceList[8][9]}" Height="{Binding ElementName=cuadrado_0_0, Path=Height}" Width="{Binding ElementName=cuadrado_0_0, Path=Height}"/>
+                    <Image Name="cuadrado_8_10" Grid.Column="8" Grid.Row="10" Source="{Binding sourceList[8][10]}" Height="{Binding ElementName=cuadrado_0_0, Path=Height}" Width="{Binding ElementName=cuadrado_0_0, Path=Height}"/>
+
+                    <Image Name="cuadrado_9_0" Grid.Column="9" Grid.Row="0" Source="{Binding sourceList[9][0]}" Height="{Binding ElementName=cuadrado_0_0, Path=Height}" Width="{Binding ElementName=cuadrado_0_0, Path=Height}"/>
+                    <Image Name="cuadrado_9_1" Grid.Column="9" Grid.Row="1" Source="{Binding sourceList[9][1]}" Height="{Binding ElementName=cuadrado_0_0, Path=Height}" Width="{Binding ElementName=cuadrado_0_0, Path=Height}"/>
+                    <Image Name="cuadrado_9_2" Grid.Column="9" Grid.Row="2" Source="{Binding sourceList[9][2]}" Height="{Binding ElementName=cuadrado_0_0, Path=Height}" Width="{Binding ElementName=cuadrado_0_0, Path=Height}"/>
+                    <Image Name="cuadrado_9_3" Grid.Column="9" Grid.Row="3" Source="{Binding sourceList[9][3]}" Height="{Binding ElementName=cuadrado_0_0, Path=Height}" Width="{Binding ElementName=cuadrado_0_0, Path=Height}"/>
+                    <Image Name="cuadrado_9_4" Grid.Column="9" Grid.Row="4" Source="{Binding sourceList[9][4]}" Height="{Binding ElementName=cuadrado_0_0, Path=Height}" Width="{Binding ElementName=cuadrado_0_0, Path=Height}"/>
+                    <Image Name="cuadrado_9_5" Grid.Column="9" Grid.Row="5" Source="{Binding sourceList[9][5]}" Height="{Binding ElementName=cuadrado_0_0, Path=Height}" Width="{Binding ElementName=cuadrado_0_0, Path=Height}"/>
+                    <Image Name="cuadrado_9_6" Grid.Column="9" Grid.Row="6" Source="{Binding sourceList[9][6]}" Height="{Binding ElementName=cuadrado_0_0, Path=Height}" Width="{Binding ElementName=cuadrado_0_0, Path=Height}"/>
+                    <Image Name="cuadrado_9_7" Grid.Column="9" Grid.Row="7" Source="{Binding sourceList[9][7]}" Height="{Binding ElementName=cuadrado_0_0, Path=Height}" Width="{Binding ElementName=cuadrado_0_0, Path=Height}"/>
+                    <Image Name="cuadrado_9_8" Grid.Column="9" Grid.Row="8" Source="{Binding sourceList[9][8]}" Height="{Binding ElementName=cuadrado_0_0, Path=Height}" Width="{Binding ElementName=cuadrado_0_0, Path=Height}"/>
+                    <Image Name="cuadrado_9_9" Grid.Column="9" Grid.Row="9" Source="{Binding sourceList[9][9]}" Height="{Binding ElementName=cuadrado_0_0, Path=Height}" Width="{Binding ElementName=cuadrado_0_0, Path=Height}"/>
+                    <Image Name="cuadrado_9_10" Grid.Column="9" Grid.Row="10" Source="{Binding sourceList[9][10]}" Height="{Binding ElementName=cuadrado_0_0, Path=Height}" Width="{Binding ElementName=cuadrado_0_0, Path=Height}"/>
+
+                    <Image Name="cuadrado_10_0" Grid.Column="10" Grid.Row="0" Source="{Binding sourceList[10][0]}" Height="{Binding ElementName=cuadrado_0_0, Path=Height}" Width="{Binding ElementName=cuadrado_0_0, Path=Height}"/>
+                    <Image Name="cuadrado_10_1" Grid.Column="10" Grid.Row="1" Source="{Binding sourceList[10][1]}" Height="{Binding ElementName=cuadrado_0_0, Path=Height}" Width="{Binding ElementName=cuadrado_0_0, Path=Height}"/>
+                    <Image Name="cuadrado_10_2" Grid.Column="10" Grid.Row="2" Source="{Binding sourceList[10][2]}" Height="{Binding ElementName=cuadrado_0_0, Path=Height}" Width="{Binding ElementName=cuadrado_0_0, Path=Height}"/>
+                    <Image Name="cuadrado_10_3" Grid.Column="10" Grid.Row="3" Source="{Binding sourceList[10][3]}" Height="{Binding ElementName=cuadrado_0_0, Path=Height}" Width="{Binding ElementName=cuadrado_0_0, Path=Height}"/>
+                    <Image Name="cuadrado_10_4" Grid.Column="10" Grid.Row="4" Source="{Binding sourceList[10][4]}" Height="{Binding ElementName=cuadrado_0_0, Path=Height}" Width="{Binding ElementName=cuadrado_0_0, Path=Height}"/>
+                    <Image Name="cuadrado_10_5" Grid.Column="10" Grid.Row="5" Source="{Binding sourceList[10][5]}" Height="{Binding ElementName=cuadrado_0_0, Path=Height}" Width="{Binding ElementName=cuadrado_0_0, Path=Height}"/>
+                    <Image Name="cuadrado_10_6" Grid.Column="10" Grid.Row="6" Source="{Binding sourceList[10][6]}" Height="{Binding ElementName=cuadrado_0_0, Path=Height}" Width="{Binding ElementName=cuadrado_0_0, Path=Height}"/>
+                    <Image Name="cuadrado_10_7" Grid.Column="10" Grid.Row="7" Source="{Binding sourceList[10][7]}" Height="{Binding ElementName=cuadrado_0_0, Path=Height}" Width="{Binding ElementName=cuadrado_0_0, Path=Height}"/>
+                    <Image Name="cuadrado_10_8" Grid.Column="10" Grid.Row="8" Source="{Binding sourceList[10][8]}" Height="{Binding ElementName=cuadrado_0_0, Path=Height}" Width="{Binding ElementName=cuadrado_0_0, Path=Height}"/>
+                    <Image Name="cuadrado_10_9" Grid.Column="10" Grid.Row="9" Source="{Binding sourceList[10][9]}" Height="{Binding ElementName=cuadrado_0_0, Path=Height}" Width="{Binding ElementName=cuadrado_0_0, Path=Height}"/>
+                    <Image Name="cuadrado_10_10" Grid.Column="10" Grid.Row="10" Source="{Binding sourceList[10][10]}" Height="{Binding ElementName=cuadrado_0_0, Path=Height}" Width="{Binding ElementName=cuadrado_0_0, Path=Height}"/>
+
+                    <Image Name="cuadrado_11_0" Grid.Column="11" Grid.Row="0" Source="{Binding sourceList[11][0]}" Height="{Binding ElementName=cuadrado_0_0, Path=Height}" Width="{Binding ElementName=cuadrado_0_0, Path=Height}"/>
+                    <Image Name="cuadrado_11_1" Grid.Column="11" Grid.Row="1" Source="{Binding sourceList[11][1]}" Height="{Binding ElementName=cuadrado_0_0, Path=Height}" Width="{Binding ElementName=cuadrado_0_0, Path=Height}"/>
+                    <Image Name="cuadrado_11_2" Grid.Column="11" Grid.Row="2" Source="{Binding sourceList[11][2]}" Height="{Binding ElementName=cuadrado_0_0, Path=Height}" Width="{Binding ElementName=cuadrado_0_0, Path=Height}"/>
+                    <Image Name="cuadrado_11_3" Grid.Column="11" Grid.Row="3" Source="{Binding sourceList[11][3]}" Height="{Binding ElementName=cuadrado_0_0, Path=Height}" Width="{Binding ElementName=cuadrado_0_0, Path=Height}"/>
+                    <Image Name="cuadrado_11_4" Grid.Column="11" Grid.Row="4" Source="{Binding sourceList[11][4]}" Height="{Binding ElementName=cuadrado_0_0, Path=Height}" Width="{Binding ElementName=cuadrado_0_0, Path=Height}"/>
+                    <Image Name="cuadrado_11_5" Grid.Column="11" Grid.Row="5" Source="{Binding sourceList[11][5]}" Height="{Binding ElementName=cuadrado_0_0, Path=Height}" Width="{Binding ElementName=cuadrado_0_0, Path=Height}"/>
+                    <Image Name="cuadrado_11_6" Grid.Column="11" Grid.Row="6" Source="{Binding sourceList[11][6]}" Height="{Binding ElementName=cuadrado_0_0, Path=Height}" Width="{Binding ElementName=cuadrado_0_0, Path=Height}"/>
+                    <Image Name="cuadrado_11_7" Grid.Column="11" Grid.Row="7" Source="{Binding sourceList[11][7]}" Height="{Binding ElementName=cuadrado_0_0, Path=Height}" Width="{Binding ElementName=cuadrado_0_0, Path=Height}"/>
+                    <Image Name="cuadrado_11_8" Grid.Column="11" Grid.Row="8" Source="{Binding sourceList[11][8]}" Height="{Binding ElementName=cuadrado_0_0, Path=Height}" Width="{Binding ElementName=cuadrado_0_0, Path=Height}"/>
+                    <Image Name="cuadrado_11_9" Grid.Column="11" Grid.Row="9" Source="{Binding sourceList[11][9]}" Height="{Binding ElementName=cuadrado_0_0, Path=Height}" Width="{Binding ElementName=cuadrado_0_0, Path=Height}"/>
+                    <Image Name="cuadrado_11_10" Grid.Column="11" Grid.Row="10" Source="{Binding sourceList[11][10]}" Height="{Binding ElementName=cuadrado_0_0, Path=Height}" Width="{Binding ElementName=cuadrado_0_0, Path=Height}"/>
+
+                    <Image Name="cuadrado_12_0" Grid.Column="12" Grid.Row="0" Source="{Binding sourceList[12][0]}" Height="{Binding ElementName=cuadrado_0_0, Path=Height}" Width="{Binding ElementName=cuadrado_0_0, Path=Height}"/>
+                    <Image Name="cuadrado_12_1" Grid.Column="12" Grid.Row="1" Source="{Binding sourceList[12][1]}" Height="{Binding ElementName=cuadrado_0_0, Path=Height}" Width="{Binding ElementName=cuadrado_0_0, Path=Height}"/>
+                    <Image Name="cuadrado_12_2" Grid.Column="12" Grid.Row="2" Source="{Binding sourceList[12][2]}" Height="{Binding ElementName=cuadrado_0_0, Path=Height}" Width="{Binding ElementName=cuadrado_0_0, Path=Height}"/>
+                    <Image Name="cuadrado_12_3" Grid.Column="12" Grid.Row="3" Source="{Binding sourceList[12][3]}" Height="{Binding ElementName=cuadrado_0_0, Path=Height}" Width="{Binding ElementName=cuadrado_0_0, Path=Height}"/>
+                    <Image Name="cuadrado_12_4" Grid.Column="12" Grid.Row="4" Source="{Binding sourceList[12][4]}" Height="{Binding ElementName=cuadrado_0_0, Path=Height}" Width="{Binding ElementName=cuadrado_0_0, Path=Height}"/>
+                    <Image Name="cuadrado_12_5" Grid.Column="12" Grid.Row="5" Source="{Binding sourceList[12][5]}" Height="{Binding ElementName=cuadrado_0_0, Path=Height}" Width="{Binding ElementName=cuadrado_0_0, Path=Height}"/>
+                    <Image Name="cuadrado_12_6" Grid.Column="12" Grid.Row="6" Source="{Binding sourceList[12][6]}" Height="{Binding ElementName=cuadrado_0_0, Path=Height}" Width="{Binding ElementName=cuadrado_0_0, Path=Height}"/>
+                    <Image Name="cuadrado_12_7" Grid.Column="12" Grid.Row="7" Source="{Binding sourceList[12][7]}" Height="{Binding ElementName=cuadrado_0_0, Path=Height}" Width="{Binding ElementName=cuadrado_0_0, Path=Height}"/>
+                    <Image Name="cuadrado_12_8" Grid.Column="12" Grid.Row="8" Source="{Binding sourceList[12][8]}" Height="{Binding ElementName=cuadrado_0_0, Path=Height}" Width="{Binding ElementName=cuadrado_0_0, Path=Height}"/>
+                    <Image Name="cuadrado_12_9" Grid.Column="12" Grid.Row="9" Source="{Binding sourceList[12][9]}" Height="{Binding ElementName=cuadrado_0_0, Path=Height}" Width="{Binding ElementName=cuadrado_0_0, Path=Height}"/>
+                    <Image Name="cuadrado_12_10" Grid.Column="12" Grid.Row="10" Source="{Binding sourceList[12][10]}" Height="{Binding ElementName=cuadrado_0_0, Path=Height}" Width="{Binding ElementName=cuadrado_0_0, Path=Height}"/>
+
+                    <Image Name="cuadrado_13_0" Grid.Column="13" Grid.Row="0" Source="{Binding sourceList[13][0]}" Height="{Binding ElementName=cuadrado_0_0, Path=Height}" Width="{Binding ElementName=cuadrado_0_0, Path=Height}"/>
+                    <Image Name="cuadrado_13_1" Grid.Column="13" Grid.Row="1" Source="{Binding sourceList[13][1]}" Height="{Binding ElementName=cuadrado_0_0, Path=Height}" Width="{Binding ElementName=cuadrado_0_0, Path=Height}"/>
+                    <Image Name="cuadrado_13_2" Grid.Column="13" Grid.Row="2" Source="{Binding sourceList[13][2]}" Height="{Binding ElementName=cuadrado_0_0, Path=Height}" Width="{Binding ElementName=cuadrado_0_0, Path=Height}"/>
+                    <Image Name="cuadrado_13_3" Grid.Column="13" Grid.Row="3" Source="{Binding sourceList[13][3]}" Height="{Binding ElementName=cuadrado_0_0, Path=Height}" Width="{Binding ElementName=cuadrado_0_0, Path=Height}"/>
+                    <Image Name="cuadrado_13_4" Grid.Column="13" Grid.Row="4" Source="{Binding sourceList[13][4]}" Height="{Binding ElementName=cuadrado_0_0, Path=Height}" Width="{Binding ElementName=cuadrado_0_0, Path=Height}"/>
+                    <Image Name="cuadrado_13_5" Grid.Column="13" Grid.Row="5" Source="{Binding sourceList[13][5]}" Height="{Binding ElementName=cuadrado_0_0, Path=Height}" Width="{Binding ElementName=cuadrado_0_0, Path=Height}"/>
+                    <Image Name="cuadrado_13_6" Grid.Column="13" Grid.Row="6" Source="{Binding sourceList[13][6]}" Height="{Binding ElementName=cuadrado_0_0, Path=Height}" Width="{Binding ElementName=cuadrado_0_0, Path=Height}"/>
+                    <Image Name="cuadrado_13_7" Grid.Column="13" Grid.Row="7" Source="{Binding sourceList[13][7]}" Height="{Binding ElementName=cuadrado_0_0, Path=Height}" Width="{Binding ElementName=cuadrado_0_0, Path=Height}"/>
+                    <Image Name="cuadrado_13_8" Grid.Column="13" Grid.Row="8" Source="{Binding sourceList[13][8]}" Height="{Binding ElementName=cuadrado_0_0, Path=Height}" Width="{Binding ElementName=cuadrado_0_0, Path=Height}"/>
+                    <Image Name="cuadrado_13_9" Grid.Column="13" Grid.Row="9" Source="{Binding sourceList[13][9]}" Height="{Binding ElementName=cuadrado_0_0, Path=Height}" Width="{Binding ElementName=cuadrado_0_0, Path=Height}"/>
+                    <Image Name="cuadrado_13_10" Grid.Column="13" Grid.Row="10" Source="{Binding sourceList[13][10]}" Height="{Binding ElementName=cuadrado_0_0, Path=Height}" Width="{Binding ElementName=cuadrado_0_0, Path=Height}"/>
+
+                    <Image Name="cuadrado_14_0" Grid.Column="14" Grid.Row="0" Source="{Binding sourceList[14][0]}" Height="{Binding ElementName=cuadrado_0_0, Path=Height}" Width="{Binding ElementName=cuadrado_0_0, Path=Height}"/>
+                    <Image Name="cuadrado_14_1" Grid.Column="14" Grid.Row="1" Source="{Binding sourceList[14][1]}" Height="{Binding ElementName=cuadrado_0_0, Path=Height}" Width="{Binding ElementName=cuadrado_0_0, Path=Height}"/>
+                    <Image Name="cuadrado_14_2" Grid.Column="14" Grid.Row="2" Source="{Binding sourceList[14][2]}" Height="{Binding ElementName=cuadrado_0_0, Path=Height}" Width="{Binding ElementName=cuadrado_0_0, Path=Height}"/>
+                    <Image Name="cuadrado_14_3" Grid.Column="14" Grid.Row="3" Source="{Binding sourceList[14][3]}" Height="{Binding ElementName=cuadrado_0_0, Path=Height}" Width="{Binding ElementName=cuadrado_0_0, Path=Height}"/>
+                    <Image Name="cuadrado_14_4" Grid.Column="14" Grid.Row="4" Source="{Binding sourceList[14][4]}" Height="{Binding ElementName=cuadrado_0_0, Path=Height}" Width="{Binding ElementName=cuadrado_0_0, Path=Height}"/>
+                    <Image Name="cuadrado_14_5" Grid.Column="14" Grid.Row="5" Source="{Binding sourceList[14][5]}" Height="{Binding ElementName=cuadrado_0_0, Path=Height}" Width="{Binding ElementName=cuadrado_0_0, Path=Height}"/>
+                    <Image Name="cuadrado_14_6" Grid.Column="14" Grid.Row="6" Source="{Binding sourceList[14][6]}" Height="{Binding ElementName=cuadrado_0_0, Path=Height}" Width="{Binding ElementName=cuadrado_0_0, Path=Height}"/>
+                    <Image Name="cuadrado_14_7" Grid.Column="14" Grid.Row="7" Source="{Binding sourceList[14][7]}" Height="{Binding ElementName=cuadrado_0_0, Path=Height}" Width="{Binding ElementName=cuadrado_0_0, Path=Height}"/>
+                    <Image Name="cuadrado_14_8" Grid.Column="14" Grid.Row="8" Source="{Binding sourceList[14][8]}" Height="{Binding ElementName=cuadrado_0_0, Path=Height}" Width="{Binding ElementName=cuadrado_0_0, Path=Height}"/>
+                    <Image Name="cuadrado_14_9" Grid.Column="14" Grid.Row="9" Source="{Binding sourceList[14][9]}" Height="{Binding ElementName=cuadrado_0_0, Path=Height}" Width="{Binding ElementName=cuadrado_0_0, Path=Height}"/>
+                    <Image Name="cuadrado_14_10" Grid.Column="14" Grid.Row="10" Source="{Binding sourceList[14][10]}" Height="{Binding ElementName=cuadrado_0_0, Path=Height}" Width="{Binding ElementName=cuadrado_0_0, Path=Height}"/>
+
+                    <Image Name="cuadrado_15_0" Grid.Column="15" Grid.Row="0" Source="{Binding sourceList[15][0]}" Height="{Binding ElementName=cuadrado_0_0, Path=Height}" Width="{Binding ElementName=cuadrado_0_0, Path=Height}"/>
+                    <Image Name="cuadrado_15_1" Grid.Column="15" Grid.Row="1" Source="{Binding sourceList[15][1]}" Height="{Binding ElementName=cuadrado_0_0, Path=Height}" Width="{Binding ElementName=cuadrado_0_0, Path=Height}"/>
+                    <Image Name="cuadrado_15_2" Grid.Column="15" Grid.Row="2" Source="{Binding sourceList[15][2]}" Height="{Binding ElementName=cuadrado_0_0, Path=Height}" Width="{Binding ElementName=cuadrado_0_0, Path=Height}"/>
+                    <Image Name="cuadrado_15_3" Grid.Column="15" Grid.Row="3" Source="{Binding sourceList[15][3]}" Height="{Binding ElementName=cuadrado_0_0, Path=Height}" Width="{Binding ElementName=cuadrado_0_0, Path=Height}"/>
+                    <Image Name="cuadrado_15_4" Grid.Column="15" Grid.Row="4" Source="{Binding sourceList[15][4]}" Height="{Binding ElementName=cuadrado_0_0, Path=Height}" Width="{Binding ElementName=cuadrado_0_0, Path=Height}"/>
+                    <Image Name="cuadrado_15_5" Grid.Column="15" Grid.Row="5" Source="{Binding sourceList[15][5]}" Height="{Binding ElementName=cuadrado_0_0, Path=Height}" Width="{Binding ElementName=cuadrado_0_0, Path=Height}"/>
+                    <Image Name="cuadrado_15_6" Grid.Column="15" Grid.Row="6" Source="{Binding sourceList[15][6]}" Height="{Binding ElementName=cuadrado_0_0, Path=Height}" Width="{Binding ElementName=cuadrado_0_0, Path=Height}"/>
+                    <Image Name="cuadrado_15_7" Grid.Column="15" Grid.Row="7" Source="{Binding sourceList[15][7]}" Height="{Binding ElementName=cuadrado_0_0, Path=Height}" Width="{Binding ElementName=cuadrado_0_0, Path=Height}"/>
+                    <Image Name="cuadrado_15_8" Grid.Column="15" Grid.Row="8" Source="{Binding sourceList[15][8]}" Height="{Binding ElementName=cuadrado_0_0, Path=Height}" Width="{Binding ElementName=cuadrado_0_0, Path=Height}"/>
+                    <Image Name="cuadrado_15_9" Grid.Column="15" Grid.Row="9" Source="{Binding sourceList[15][9]}" Height="{Binding ElementName=cuadrado_0_0, Path=Height}" Width="{Binding ElementName=cuadrado_0_0, Path=Height}"/>
+                    <Image Name="cuadrado_15_10" Grid.Column="15" Grid.Row="10" Source="{Binding sourceList[15][10]}" Height="{Binding ElementName=cuadrado_0_0, Path=Height}" Width="{Binding ElementName=cuadrado_0_0, Path=Height}"/>
+
+                    <Image Name="cuadrado_16_0" Grid.Column="16" Grid.Row="0" Source="{Binding sourceList[16][0]}" Height="{Binding ElementName=cuadrado_0_0, Path=Height}" Width="{Binding ElementName=cuadrado_0_0, Path=Height}"/>
+                    <Image Name="cuadrado_16_1" Grid.Column="16" Grid.Row="1" Source="{Binding sourceList[16][1]}" Height="{Binding ElementName=cuadrado_0_0, Path=Height}" Width="{Binding ElementName=cuadrado_0_0, Path=Height}"/>
+                    <Image Name="cuadrado_16_2" Grid.Column="16" Grid.Row="2" Source="{Binding sourceList[16][2]}" Height="{Binding ElementName=cuadrado_0_0, Path=Height}" Width="{Binding ElementName=cuadrado_0_0, Path=Height}"/>
+                    <Image Name="cuadrado_16_3" Grid.Column="16" Grid.Row="3" Source="{Binding sourceList[16][3]}" Height="{Binding ElementName=cuadrado_0_0, Path=Height}" Width="{Binding ElementName=cuadrado_0_0, Path=Height}"/>
+                    <Image Name="cuadrado_16_4" Grid.Column="16" Grid.Row="4" Source="{Binding sourceList[16][4]}" Height="{Binding ElementName=cuadrado_0_0, Path=Height}" Width="{Binding ElementName=cuadrado_0_0, Path=Height}"/>
+                    <Image Name="cuadrado_16_5" Grid.Column="16" Grid.Row="5" Source="{Binding sourceList[16][5]}" Height="{Binding ElementName=cuadrado_0_0, Path=Height}" Width="{Binding ElementName=cuadrado_0_0, Path=Height}"/>
+                    <Image Name="cuadrado_16_6" Grid.Column="16" Grid.Row="6" Source="{Binding sourceList[16][6]}" Height="{Binding ElementName=cuadrado_0_0, Path=Height}" Width="{Binding ElementName=cuadrado_0_0, Path=Height}"/>
+                    <Image Name="cuadrado_16_7" Grid.Column="16" Grid.Row="7" Source="{Binding sourceList[16][7]}" Height="{Binding ElementName=cuadrado_0_0, Path=Height}" Width="{Binding ElementName=cuadrado_0_0, Path=Height}"/>
+                    <Image Name="cuadrado_16_8" Grid.Column="16" Grid.Row="8" Source="{Binding sourceList[16][8]}" Height="{Binding ElementName=cuadrado_0_0, Path=Height}" Width="{Binding ElementName=cuadrado_0_0, Path=Height}"/>
+                    <Image Name="cuadrado_16_9" Grid.Column="16" Grid.Row="9" Source="{Binding sourceList[16][9]}" Height="{Binding ElementName=cuadrado_0_0, Path=Height}" Width="{Binding ElementName=cuadrado_0_0, Path=Height}"/>
+                    <Image Name="cuadrado_16_10" Grid.Column="16" Grid.Row="10" Source="{Binding sourceList[16][10]}" Height="{Binding ElementName=cuadrado_0_0, Path=Height}" Width="{Binding ElementName=cuadrado_0_0, Path=Height}"/>
+
+                    <Image Name="cuadrado_17_0" Grid.Column="17" Grid.Row="0" Source="Assets/gato/cabeza-izq.png" Height="{Binding ElementName=cuadrado_0_0, Path=Height}" Width="{Binding ElementName=cuadrado_0_0, Path=Height}"/>
+                    <Image Name="cuadrado_17_1" Grid.Column="17" Grid.Row="1" Source="{Binding sourceList[17][1]}" Height="{Binding ElementName=cuadrado_0_0, Path=Height}" Width="{Binding ElementName=cuadrado_0_0, Path=Height}"/>
+                    <Image Name="cuadrado_17_2" Grid.Column="17" Grid.Row="2" Source="{Binding sourceList[17][2]}" Height="{Binding ElementName=cuadrado_0_0, Path=Height}" Width="{Binding ElementName=cuadrado_0_0, Path=Height}"/>
+                    <Image Name="cuadrado_17_3" Grid.Column="17" Grid.Row="3" Source="{Binding sourceList[17][3]}" Height="{Binding ElementName=cuadrado_0_0, Path=Height}" Width="{Binding ElementName=cuadrado_0_0, Path=Height}"/>
+                    <Image Name="cuadrado_17_4" Grid.Column="17" Grid.Row="4" Source="{Binding sourceList[17][4]}" Height="{Binding ElementName=cuadrado_0_0, Path=Height}" Width="{Binding ElementName=cuadrado_0_0, Path=Height}"/>
+                    <Image Name="cuadrado_17_5" Grid.Column="17" Grid.Row="5" Source="{Binding sourceList[17][5]}" Height="{Binding ElementName=cuadrado_0_0, Path=Height}" Width="{Binding ElementName=cuadrado_0_0, Path=Height}"/>
+                    <Image Name="cuadrado_17_6" Grid.Column="17" Grid.Row="6" Source="{Binding sourceList[17][6]}" Height="{Binding ElementName=cuadrado_0_0, Path=Height}" Width="{Binding ElementName=cuadrado_0_0, Path=Height}"/>
+                    <Image Name="cuadrado_17_7" Grid.Column="17" Grid.Row="7" Source="{Binding sourceList[17][7]}" Height="{Binding ElementName=cuadrado_0_0, Path=Height}" Width="{Binding ElementName=cuadrado_0_0, Path=Height}"/>
+                    <Image Name="cuadrado_17_8" Grid.Column="17" Grid.Row="8" Source="{Binding sourceList[17][8]}" Height="{Binding ElementName=cuadrado_0_0, Path=Height}" Width="{Binding ElementName=cuadrado_0_0, Path=Height}"/>
+                    <Image Name="cuadrado_17_9" Grid.Column="17" Grid.Row="9" Source="{Binding sourceList[17][9]}" Height="{Binding ElementName=cuadrado_0_0, Path=Height}" Width="{Binding ElementName=cuadrado_0_0, Path=Height}"/>
+                    <Image Name="cuadrado_17_10" Grid.Column="17" Grid.Row="10" Source="{Binding sourceList[17][10]}" Height="{Binding ElementName=cuadrado_0_0, Path=Height}" Width="{Binding ElementName=cuadrado_0_0, Path=Height}"/>
+
+                    <Image Name="cuadrado_18_0" Grid.Column="18" Grid.Row="0" Source="Assets/gato/cuerpo-hor.png" Height="{Binding ElementName=cuadrado_0_0, Path=Height}" Width="{Binding ElementName=cuadrado_0_0, Path=Height}"/>
+                    <Image Name="cuadrado_18_1" Grid.Column="18" Grid.Row="1" Source="{Binding sourceList[18][1]}" Height="{Binding ElementName=cuadrado_0_0, Path=Height}" Width="{Binding ElementName=cuadrado_0_0, Path=Height}"/>
+                    <Image Name="cuadrado_18_2" Grid.Column="18" Grid.Row="2" Source="{Binding sourceList[18][2]}" Height="{Binding ElementName=cuadrado_0_0, Path=Height}" Width="{Binding ElementName=cuadrado_0_0, Path=Height}"/>
+                    <Image Name="cuadrado_18_3" Grid.Column="18" Grid.Row="3" Source="{Binding sourceList[18][3]}" Height="{Binding ElementName=cuadrado_0_0, Path=Height}" Width="{Binding ElementName=cuadrado_0_0, Path=Height}"/>
+                    <Image Name="cuadrado_18_4" Grid.Column="18" Grid.Row="4" Source="{Binding sourceList[18][4]}" Height="{Binding ElementName=cuadrado_0_0, Path=Height}" Width="{Binding ElementName=cuadrado_0_0, Path=Height}"/>
+                    <Image Name="cuadrado_18_5" Grid.Column="18" Grid.Row="5" Source="{Binding sourceList[18][5]}" Height="{Binding ElementName=cuadrado_0_0, Path=Height}" Width="{Binding ElementName=cuadrado_0_0, Path=Height}"/>
+                    <Image Name="cuadrado_18_6" Grid.Column="18" Grid.Row="6" Source="{Binding sourceList[18][6]}" Height="{Binding ElementName=cuadrado_0_0, Path=Height}" Width="{Binding ElementName=cuadrado_0_0, Path=Height}"/>
+                    <Image Name="cuadrado_18_7" Grid.Column="18" Grid.Row="7" Source="{Binding sourceList[18][7]}" Height="{Binding ElementName=cuadrado_0_0, Path=Height}" Width="{Binding ElementName=cuadrado_0_0, Path=Height}"/>
+                    <Image Name="cuadrado_18_8" Grid.Column="18" Grid.Row="8" Source="{Binding sourceList[18][8]}" Height="{Binding ElementName=cuadrado_0_0, Path=Height}" Width="{Binding ElementName=cuadrado_0_0, Path=Height}"/>
+                    <Image Name="cuadrado_18_9" Grid.Column="18" Grid.Row="9" Source="{Binding sourceList[18][9]}" Height="{Binding ElementName=cuadrado_0_0, Path=Height}" Width="{Binding ElementName=cuadrado_0_0, Path=Height}"/>
+                    <Image Name="cuadrado_18_10" Grid.Column="18" Grid.Row="10" Source="{Binding sourceList[18][10]}" Height="{Binding ElementName=cuadrado_0_0, Path=Height}" Width="{Binding ElementName=cuadrado_0_0, Path=Height}"/>
+
+                    <Image Name="cuadrado_19_0" Grid.Column="19" Grid.Row="0" Source="Assets/gato/culo-izq.png" Height="{Binding ElementName=cuadrado_0_0, Path=Height}" Width="{Binding ElementName=cuadrado_0_0, Path=Height}"/>
+                    <Image Name="cuadrado_19_1" Grid.Column="19" Grid.Row="1" Source="{Binding sourceList[19][1]}" Height="{Binding ElementName=cuadrado_0_0, Path=Height}" Width="{Binding ElementName=cuadrado_0_0, Path=Height}"/>
+                    <Image Name="cuadrado_19_2" Grid.Column="19" Grid.Row="2" Source="{Binding sourceList[19][2]}" Height="{Binding ElementName=cuadrado_0_0, Path=Height}" Width="{Binding ElementName=cuadrado_0_0, Path=Height}"/>
+                    <Image Name="cuadrado_19_3" Grid.Column="19" Grid.Row="3" Source="{Binding sourceList[19][3]}" Height="{Binding ElementName=cuadrado_0_0, Path=Height}" Width="{Binding ElementName=cuadrado_0_0, Path=Height}"/>
+                    <Image Name="cuadrado_19_4" Grid.Column="19" Grid.Row="4" Source="{Binding sourceList[19][4]}" Height="{Binding ElementName=cuadrado_0_0, Path=Height}" Width="{Binding ElementName=cuadrado_0_0, Path=Height}"/>
+                    <Image Name="cuadrado_19_5" Grid.Column="19" Grid.Row="5" Source="{Binding sourceList[19][5]}" Height="{Binding ElementName=cuadrado_0_0, Path=Height}" Width="{Binding ElementName=cuadrado_0_0, Path=Height}"/>
+                    <Image Name="cuadrado_19_6" Grid.Column="19" Grid.Row="6" Source="{Binding sourceList[19][6]}" Height="{Binding ElementName=cuadrado_0_0, Path=Height}" Width="{Binding ElementName=cuadrado_0_0, Path=Height}"/>
+                    <Image Name="cuadrado_19_7" Grid.Column="19" Grid.Row="7" Source="{Binding sourceList[19][7]}" Height="{Binding ElementName=cuadrado_0_0, Path=Height}" Width="{Binding ElementName=cuadrado_0_0, Path=Height}"/>
+                    <Image Name="cuadrado_19_8" Grid.Column="19" Grid.Row="8" Source="{Binding sourceList[19][8]}" Height="{Binding ElementName=cuadrado_0_0, Path=Height}" Width="{Binding ElementName=cuadrado_0_0, Path=Height}"/>
+                    <Image Name="cuadrado_19_9" Grid.Column="19" Grid.Row="9" Source="{Binding sourceList[19][9]}" Height="{Binding ElementName=cuadrado_0_0, Path=Height}" Width="{Binding ElementName=cuadrado_0_0, Path=Height}"/>
+                    <Image Name="cuadrado_19_10" Grid.Column="19" Grid.Row="10" Source="{Binding sourceList[19][10]}" Height="{Binding ElementName=cuadrado_0_0, Path=Height}" Width="{Binding ElementName=cuadrado_0_0, Path=Height}"/>
+
+                </Grid>
+            </RelativePanel>
+     
+    </Grid>
+</Page>
