@@ -1,0 +1,74 @@
+﻿<Page
+    x:Class="SnakeUI.Views.Puntuaciones"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:SnakeUI.Views"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:modelo="using:SnakeUI.ViewModels"
+    mc:Ignorable="d"
+    Background="#c5cae9" >
+
+    <Page.DataContext>
+        <modelo:PuntuacionVM/>
+    </Page.DataContext>
+
+    <VisualStateManager.VisualStateGroups>
+
+    </VisualStateManager.VisualStateGroups>
+
+    <Grid>
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"></ColumnDefinition>
+            <ColumnDefinition Width="auto"></ColumnDefinition>
+            <ColumnDefinition Width="*"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="100"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
+        </Grid.RowDefinitions>
+
+        <TextBlock Name="puntuacionesTB" Grid.Column="1" Grid.Row="0" Text="Puntuaciones" TextAlignment="Center" FontSize="60" Foreground="#1c1057" FontFamily="Assets/3Dumb.ttf#3Dumb"></TextBlock>
+
+        <StackPanel Grid.Row="1" Grid.Column="1" Width="550" Height="595" >
+            <StackPanel.Background>
+                <ImageBrush ImageSource="Assets/fondovertical.png"/>
+            </StackPanel.Background>
+
+            <ListView Name="lista"  ItemsSource="{Binding puntuaciones}" Width="467" Margin="70,0,0,0"
+             ScrollViewer.VerticalScrollBarVisibility="Visible" Height="590">
+
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <Grid Width="{Binding ElementName=lista, Path=Width}">
+
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*"></ColumnDefinition>
+                                <ColumnDefinition Width="*"></ColumnDefinition>
+                            </Grid.ColumnDefinitions>
+
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="*"></RowDefinition>
+                            </Grid.RowDefinitions>
+
+                            <TextBlock FontSize="28" Grid.Column="0" Text="{Binding NombreUsuario}" Margin="7,0,0,0" Foreground="#1c1057" FontFamily="Assets/3Dumb.ttf#3Dumb"/>
+                            <TextBlock FontSize="28" Grid.Column="1" Text="{Binding Valor}" Margin="160,0,0,0" Foreground="#1c1057" FontFamily="Assets/3Dumb.ttf#3Dumb"/>
+
+                        </Grid>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+
+            </ListView>
+
+
+
+
+
+        </StackPanel>
+
+
+    </Grid>
+
+</Page>

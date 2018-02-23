@@ -50,3 +50,4 @@ C:\Users\syero\source\repos\DesarrolloDeInterfaces\CRUD_Personas_WindowsUniversa
 C:\Users\syero\source\repos\DesarrolloDeInterfaces\CRUD_Personas_WindowsUniversal\CRUD_Personas_Entidades\obj\Debug\qualifiers.txt.intermediate
 C:\Users\syero\source\repos\DesarrolloDeInterfaces\CRUD_Personas_WindowsUniversal\CRUD_Personas_Entidades\obj\Debug\MultipleQualifiersPerDimensionFound.txt
 C:\Users\syero\source\repos\DesarrolloDeInterfaces\CRUD_Personas_WindowsUniversal\CRUD_Personas_Entidades\obj\Debug\CRUD_Personas_Entidades.csprojResolveAssemblyReference.cache
+C:\Users\sandra\source\repos\DesarrolloDeInterfaces\CRUD_Personas_WindowsUniversal\CRUD_Personas_Entidades\obj\Debug\CRUD_Personas_Entidades.csprojResolveAssemblyReference.cache

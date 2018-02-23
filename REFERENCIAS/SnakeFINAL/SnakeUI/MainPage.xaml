@@ -1,0 +1,62 @@
+﻿<Page
+    x:Class="SnakeUI.Views.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:SnakeUI.Views"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:vm="using:SnakeUI.ViewModels"
+    mc:Ignorable="d">
+
+    <!--<Page.DataContext>
+        <vm:MainPageViewModel></vm:MainPageViewModel>
+    </Page.DataContext>-->
+    
+    <Grid>
+        <SplitView Name="Split" DisplayMode="CompactOverlay"  IsPaneOpen="False" Background="#c5cae9" 
+              CompactPaneLength="70" OpenPaneLength="200" RelativePanel.AlignLeftWithPanel="True"
+                   RelativePanel.AlignRightWithPanel="True" RelativePanel.AlignBottomWithPanel="True"
+                   RelativePanel.AlignTopWithPanel="True" RelativePanel.Below="stk_HamburgerButton" >
+            <!--Content="{Binding FrameActual, UpdateSourceTrigger=PropertyChanged,Mode=TwoWay}"-->
+
+            <SplitView.Pane>
+                <StackPanel Background="#836fa9">
+                    <StackPanel Name="stk_HamburgerButton" Orientation="Vertical" >
+                        <Button Name="HamburgerButton" FontFamily="Segoe MDL2 Assets" Content="&#xE700;"
+                            Width="70" Height="50" Background="Transparent" Click="HamburgerButton_Click" />
+                    </StackPanel>
+
+                    <ListView Background="#836fa9" IsItemClickEnabled="True" ItemClick="ListView_ItemClick">
+                       
+                        <StackPanel Name="stk_Jugar" Orientation="Horizontal" Margin="10" >
+                            <Image Name="imgJugar" Source="..\Assets\Imagenes\white-cat.svg" Height="30" Width="30"/>
+                            <TextBlock Name="txtBoxJugar"  Margin="20,0" Text="Jugar" Foreground="Black" FontFamily="Assets/3Dumb.ttf#3Dumb" />
+                        </StackPanel>
+
+                        <StackPanel Name="stk_Mapas" Orientation="Horizontal" Margin="10">
+                            <Image Name="imgMapas" Source="..\Assets\Imagenes\icono_mapa.svg" Height="30" Width="30"/>
+                            <TextBlock Name="txtBoxMapas"  Margin="20,0" Text="Mapas" Foreground="Black" FontFamily="Assets/3Dumb.ttf#3Dumb"/>
+                        </StackPanel>
+                        
+                        <StackPanel Name="stk_CrearMapa" Orientation="Horizontal" Margin="10">
+                            <Image Name="imgCrearMapa" Source="..\Assets\Imagenes\crear_mapa.svg" Height="30" Width="30"/>
+                            <TextBlock Name="txtBoxCrearMapa"  Margin="20,0" Text="CrearMapa" Foreground="Black" FontFamily="Assets/3Dumb.ttf#3Dumb"/>
+                        </StackPanel>
+                        
+                        <StackPanel Name="stk_Puntuaciones" Orientation="Horizontal" Margin="10">
+                            <Image Name="imgPuntuaciones" Source="..\Assets\Imagenes\stars-stack.svg" Height="30" Width="30"/>
+                            <TextBlock Name="txtBoxPuntuaciones"  Margin="20,0" Text="Puntuaciones" Foreground="Black" FontFamily="Assets/3Dumb.ttf#3Dumb" />
+                        </StackPanel>                                            
+
+                    </ListView>
+                </StackPanel>
+            </SplitView.Pane>
+
+            <!--Contenido :)-->
+            <SplitView.Content >                
+                <Frame x:Name="ContentFrame" />  
+            </SplitView.Content>
+
+        </SplitView>
+    </Grid>
+</Page>

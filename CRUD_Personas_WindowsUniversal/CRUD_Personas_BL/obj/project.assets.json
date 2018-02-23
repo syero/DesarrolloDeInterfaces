@@ -15062,20 +15062,20 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\syero\\.nuget\\packages\\": {}
+    "C:\\Users\\sandra\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\syero\\source\\repos\\DesarrolloDeInterfaces\\CRUD_Personas_WindowsUniversal\\CRUD_Personas_BL\\CRUD_Personas_BL.csproj",
+      "projectUniqueName": "C:\\Users\\sandra\\source\\repos\\DesarrolloDeInterfaces\\CRUD_Personas_WindowsUniversal\\CRUD_Personas_BL\\CRUD_Personas_BL.csproj",
       "projectName": "CRUD_Personas_BL",
-      "projectPath": "C:\\Users\\syero\\source\\repos\\DesarrolloDeInterfaces\\CRUD_Personas_WindowsUniversal\\CRUD_Personas_BL\\CRUD_Personas_BL.csproj",
-      "packagesPath": "C:\\Users\\syero\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\syero\\source\\repos\\DesarrolloDeInterfaces\\CRUD_Personas_WindowsUniversal\\CRUD_Personas_BL\\obj\\",
+      "projectPath": "C:\\Users\\sandra\\source\\repos\\DesarrolloDeInterfaces\\CRUD_Personas_WindowsUniversal\\CRUD_Personas_BL\\CRUD_Personas_BL.csproj",
+      "packagesPath": "C:\\Users\\sandra\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\sandra\\source\\repos\\DesarrolloDeInterfaces\\CRUD_Personas_WindowsUniversal\\CRUD_Personas_BL\\obj\\",
       "projectStyle": "PackageReference",
       "skipContentFileWrite": true,
       "configFilePaths": [
-        "C:\\Users\\syero\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\sandra\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -15083,16 +15083,17 @@
       ],
       "sources": {
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+        "http://packagesource": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
         "uap10.0.16299": {
           "projectReferences": {
-            "C:\\Users\\syero\\source\\repos\\DesarrolloDeInterfaces\\CRUD_Personas_WindowsUniversal\\CRUD_Personas_DAL\\CRUD_Personas_DAL.csproj": {
-              "projectPath": "C:\\Users\\syero\\source\\repos\\DesarrolloDeInterfaces\\CRUD_Personas_WindowsUniversal\\CRUD_Personas_DAL\\CRUD_Personas_DAL.csproj"
+            "C:\\Users\\sandra\\source\\repos\\DesarrolloDeInterfaces\\CRUD_Personas_WindowsUniversal\\CRUD_Personas_DAL\\CRUD_Personas_DAL.csproj": {
+              "projectPath": "C:\\Users\\sandra\\source\\repos\\DesarrolloDeInterfaces\\CRUD_Personas_WindowsUniversal\\CRUD_Personas_DAL\\CRUD_Personas_DAL.csproj"
             },
-            "C:\\Users\\syero\\source\\repos\\DesarrolloDeInterfaces\\CRUD_Personas_WindowsUniversal\\CRUD_Personas_Entidades\\CRUD_Personas_Entidades.csproj": {
-              "projectPath": "C:\\Users\\syero\\source\\repos\\DesarrolloDeInterfaces\\CRUD_Personas_WindowsUniversal\\CRUD_Personas_Entidades\\CRUD_Personas_Entidades.csproj"
+            "C:\\Users\\sandra\\source\\repos\\DesarrolloDeInterfaces\\CRUD_Personas_WindowsUniversal\\CRUD_Personas_Entidades\\CRUD_Personas_Entidades.csproj": {
+              "projectPath": "C:\\Users\\sandra\\source\\repos\\DesarrolloDeInterfaces\\CRUD_Personas_WindowsUniversal\\CRUD_Personas_Entidades\\CRUD_Personas_Entidades.csproj"
             }
           }
         }
