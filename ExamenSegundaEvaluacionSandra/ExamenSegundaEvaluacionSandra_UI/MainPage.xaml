@@ -1,0 +1,114 @@
+﻿<Page
+    x:Class="ExamenSegundaEvaluacionSandra_UI.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:ExamenSegundaEvaluacionSandra_UI"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:vm="using:ExamenSandra_UI.ViewModel"
+    mc:Ignorable="d">
+
+    <Page.DataContext>
+        <vm:MainPageVM></vm:MainPageVM>
+    </Page.DataContext>
+
+
+    <Grid Background="White" >
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="2*"/>
+            <ColumnDefinition Width="4*"/>
+        </Grid.ColumnDefinitions>
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <!---Listado de combates -->
+        <ScrollViewer Name="ScrollListaCombates" Grid.Column="0" Grid.Row="0" Margin="50" >
+            <ListView Name="listadoCombates"  ItemsSource="{Binding ListadoCombates}"   SelectedItem="{Binding Path=CombateSeleccionado,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}" >
+                <ListView.ItemTemplate>
+                    <DataTemplate >
+                        <StackPanel Orientation="Horizontal" Padding="5" Margin="5">
+                            <TextBlock Name="txtBlck_IdCombate" Text="{Binding Path=idCombate}" Margin="10,0,0,0" />
+                            <TextBlock Name="txtBx_FechaComabte" Text="{Binding Path=fechaCombate}" Margin="10,0,0,0"/>
+                        </StackPanel>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </ScrollViewer>
+
+        <!--Listado de Luchadores-->
+        <ScrollViewer Name="ScrollListaLuchadores" Grid.Column="0" Grid.Row="1" Margin="50">
+            <ListView Name="listadoLuchadores"  ItemsSource="{Binding ListadoLuchadores}"   SelectedItem="{Binding Path=LuchadorSeleccionado,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}" >
+                <ListView.ItemTemplate>
+                    <DataTemplate >
+                        <StackPanel Orientation="Horizontal" Padding="5" Margin="5">
+                            <TextBlock Name="txtBlck_IdCombate" Text="{Binding Path=idLuchador}" Margin="10,0,0,0" />
+                            <TextBlock Name="txtBx_FechaComabte" Text="{Binding Path=nombre}" Margin="10,0,0,0"/>
+                        </StackPanel>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </ScrollViewer>
+
+        <!--Luchador seleccionado-->
+        <Grid Name="grid_Luchador" Background="LightCoral" Grid.Column="1" Grid.Row="0"
+              DataContext="{Binding LuchadorSeleccionado,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}" >
+
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="Auto"/>
+            </Grid.ColumnDefinitions>
+
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+
+
+            <!--nombre de la Nombre Luchador Seleccionado-->
+            <TextBlock Name="txtBlck_Nombre" Text="{Binding nombre,Mode=TwoWay,UpdateSourceTrigger=Explicit}" Grid.Column="0" Grid.Row="0" Padding="5" Margin="10" />
+            <StackPanel Grid.Column="0" Grid.Row="1" Orientation="Horizontal" >
+
+                <!--Las imagenes no se cargan :(-->
+                <StackPanel Orientation="Vertical" Margin="20">
+                    <TextBlock Name="txtBlck_FotoLuchador" Text="Luchador"  />
+                    <Image Name="imgJugador" Source="{Binding fotoLuchador,Mode=TwoWay,UpdateSourceTrigger=Explicit}" Width="150" Height="150"  />
+                </StackPanel>
+
+                <StackPanel  Orientation="Vertical" Margin="20">
+                    <TextBlock Name="txtBlck_FotoCasaLuchador" Text="Casa"  />
+                    <Image Name="FotoCasaJugador"  Source="{Binding fotoCasaJugador,Mode=TwoWay,UpdateSourceTrigger=Explicit}" Width="150" Height="150"  />
+                </StackPanel>
+
+            </StackPanel>
+        </Grid>
+
+        <!--Listado de cartegorias -->
+        <StackPanel  Grid.Column="1" Grid.Row="2"  Orientation="Horizontal">
+            <ListView Name="listadoCategorias" Margin="12" ItemsSource="{Binding ListaCategoriasPremios}"   SelectedItem="{Binding Path=CategoriaPremioSeleccionada,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}" >
+                <ListView.ItemTemplate>
+                    <DataTemplate >
+                        <StackPanel Orientation="Horizontal" Padding="5" Margin="5">
+                            <TextBlock Name="txtBlck_IdCombate" Text="{Binding Path=idCategoria}" Margin="10,0,0,0" />
+                            <TextBlock Name="txtBx_FechaComabte" Text="{Binding Path=nombreCategoriaPremio}" Margin="10,0,0,0"/>
+                        </StackPanel>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+
+
+            <!--Fernando se guarda todo , lo unico malo no he validado nada y da error si no seleccionas un combate ,un jugador y una categoria
+            tampoco te avida que se ha guardado -->
+            <StackPanel DataContext="{Binding CategoriaPremioSeleccionada,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}" Orientation="Horizontal">
+                <TextBlock Name="txtBlk_FechaComabte" Text="{Binding Path=nombreCategoriaPremio}" Margin="10,0,0,0"/>
+                <TextBox Name="txtBox" Text="{Binding puntosDados,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}" />
+
+                <Button Name=" Guardar" Content="Guardar" Click="{x:Bind mainPageVM.guardarClasificacionCombate}" />
+            </StackPanel>
+        </StackPanel>
+
+    </Grid>
+</Page>
