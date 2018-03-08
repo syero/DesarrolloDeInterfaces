@@ -1,5 +1,9 @@
+<<<<<<< HEAD
 ﻿using ExamenSandra_UI.ViewModel;
 using System;
+=======
+﻿using System;
+>>>>>>> master
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -23,12 +27,18 @@ namespace ExamenSandra_UI
     /// </summary>
     public sealed partial class MainPage : Page
     {
+<<<<<<< HEAD
         public MainPageVM mainPageVM { get; set; }
 
         public MainPage()
         {
             this.InitializeComponent();
             mainPageVM = (MainPageVM)this.DataContext;
+=======
+        public MainPage()
+        {
+            this.InitializeComponent();
+>>>>>>> master
         }
     }
 }

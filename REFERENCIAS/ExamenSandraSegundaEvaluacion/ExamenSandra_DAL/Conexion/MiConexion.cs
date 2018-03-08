@@ -21,9 +21,15 @@ namespace ExamenSandra_DAL.Conexion
         public MiConexion()
         {
             //DB en local
+<<<<<<< HEAD
             this.server = "localhost";
             this.dataBase = "JuegoDeTronos";
             this.user = "prueba";
+=======
+            this.server = "DESKTOP-MG34IJD";
+            this.dataBase = "Bichos";
+            this.user = "sandra";
+>>>>>>> master
             this.pass = "123";
 
             //Azure

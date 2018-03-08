@@ -1,6 +1,10 @@
+<<<<<<< HEAD
 ﻿using ExamenSandra_DAL.Listado;
 using ExamenSandra_Entidades;
 using System;
+=======
+﻿using System;
+>>>>>>> master
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -10,6 +14,7 @@ namespace ExamenSandra_BL.Listado
 {
    public class ListadoBL
     {
+<<<<<<< HEAD
         ListadoDAL listadoDAl = new ListadoDAL();
 
         /// <summary>
@@ -63,6 +68,8 @@ namespace ExamenSandra_BL.Listado
 
         }
 
+=======
+>>>>>>> master
 
     }
 }

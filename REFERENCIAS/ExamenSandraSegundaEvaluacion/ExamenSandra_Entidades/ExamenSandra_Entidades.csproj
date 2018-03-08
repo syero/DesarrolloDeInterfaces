@@ -106,11 +106,14 @@
     <RestoreProjectStyle>PackageReference</RestoreProjectStyle>
   </PropertyGroup>
   <ItemGroup>
+<<<<<<< HEAD
     <Compile Include="Casa.cs" />
     <Compile Include="CategoriaPremio.cs" />
     <Compile Include="ClasificacionCombate.cs" />
     <Compile Include="Combate.cs" />
     <Compile Include="Luchador.cs" />
+=======
+>>>>>>> master
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Properties\ExamenSandra_Entidades.rd.xml" />
   </ItemGroup>

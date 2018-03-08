@@ -1,8 +1,13 @@
+<<<<<<< HEAD
 ﻿using ExamenSandra_DAL.Conexion;
 using ExamenSandra_Entidades;
 using System;
 using System.Collections.Generic;
 using System.Data.SqlClient;
+=======
+﻿using System;
+using System.Collections.Generic;
+>>>>>>> master
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -11,6 +16,7 @@ namespace ExamenSandra_DAL.Gestionadora
 {
    public class GestionadoraDAL
     {
+<<<<<<< HEAD
         //Creamos el objeto de tipo conexion de mi conexion
         MiConexion miConexion = new MiConexion();
         //Creamos la sql Connection
@@ -50,5 +56,7 @@ namespace ExamenSandra_DAL.Gestionadora
             return (resultado);
         }//fin guardarPersonaDAL
 
+=======
+>>>>>>> master
     }
 }
