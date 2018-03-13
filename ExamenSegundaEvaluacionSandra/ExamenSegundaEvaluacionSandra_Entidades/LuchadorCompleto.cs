@@ -48,13 +48,13 @@ namespace ExamenSandra_Entidades
             switch (idCasa)
             {
                 case 1:
-                    fotoCasaLuchador = "../Images/Casas/1.png";
+                    fotoCasaLuchador = "ms-appx:///Assets/Images/Casas/1.png";
                     break;
                 case 2:
-                    fotoCasaLuchador = "../Images/Casas/2.png";
+                    fotoCasaLuchador = "ms-appx:///Assets/Images/Casas/2.png";
                     break;
                 case 3:
-                    fotoCasaLuchador = "../Images/Casas/3.png";
+                    fotoCasaLuchador = "ms-appx:///Assets/Images/Casas/3.png";
                     break;
                 case 4:
                     fotoCasaLuchador = "//Assets/Images/Casas/4.png";
@@ -83,13 +83,13 @@ namespace ExamenSandra_Entidades
             switch (idLuchador)
             {
                 case 1:
-                    fotoLuchador = "/Assets/Images/Luchadores/1.jpg";
+                    fotoLuchador = "ms-appx:///Assets/Images/Luchadores/1.jpg";
                     break;
                 case 2:
-                    fotoLuchador = "/Assets/Images/Luchadores/2.jpg";
+                    fotoLuchador = "ms-appx:///Assets/Images/Luchadores/2.jpg";
                     break;
                 case 3:
-                    fotoLuchador = "/Assets/Images/Luchadores/3.jpg";
+                    fotoLuchador = "ms-appx:///Assets/Images/Luchadores/3.jpg";
                     break;
                 case 4:
                     fotoLuchador = "/Assets/Images/Luchadores/4.jpg";

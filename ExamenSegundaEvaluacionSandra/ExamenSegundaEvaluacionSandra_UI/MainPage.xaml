@@ -19,26 +19,13 @@
         </Grid.ColumnDefinitions>
 
         <Grid.RowDefinitions>
-            <RowDefinition Height="*"/>
-            <RowDefinition Height="*"/>
-        </Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>  
 
-        <!---Listado de combates -->
-        <ScrollViewer Name="ScrollListaCombates" Grid.Column="0" Grid.Row="0" Margin="50" >
-            <ListView Name="listadoCombates"  ItemsSource="{Binding ListadoCombates}"   SelectedItem="{Binding Path=CombateSeleccionado,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}" >
-                <ListView.ItemTemplate>
-                    <DataTemplate >
-                        <StackPanel Orientation="Horizontal" Padding="5" Margin="5">
-                            <TextBlock Name="txtBlck_IdCombate" Text="{Binding Path=idCombate}" Margin="10,0,0,0" />
-                            <TextBlock Name="txtBx_FechaComabte" Text="{Binding Path=fechaCombate}" Margin="10,0,0,0"/>
-                        </StackPanel>
-                    </DataTemplate>
-                </ListView.ItemTemplate>
-            </ListView>
-        </ScrollViewer>
 
         <!--Listado de Luchadores-->
-        <ScrollViewer Name="ScrollListaLuchadores" Grid.Column="0" Grid.Row="1" Margin="50">
+        <ScrollViewer Name="ScrollListaLuchadores" Grid.Column="0" Grid.RowSpan="2" Margin="20">
             <ListView Name="listadoLuchadores"  ItemsSource="{Binding ListadoLuchadores}"   SelectedItem="{Binding Path=LuchadorSeleccionado,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}" >
                 <ListView.ItemTemplate>
                     <DataTemplate >
@@ -51,8 +38,11 @@
             </ListView>
         </ScrollViewer>
 
+        <!--Combates -->
+        <ComboBox Name="listadoCombates" SelectionChanged="ComboBox_listadoCombates" Grid.Column="1" Grid.Row="0"  Width="100" 
+         ItemsSource="{Binding ListadoCombates}"  SelectedItem="{Binding Path=CombateSeleccionado,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}"/>
         
-        <StackPanel Orientation="Horizontal" Grid.Column="1" Grid.Row="0">
+        <StackPanel Orientation="Horizontal" Grid.Column="1" Grid.Row="1">
             
             <!--LuchadorUno -->
             <Grid Name="grid_LuchadorUno" Background="LightCoral" DataContext="{Binding LuchadorUno,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}" >
@@ -83,8 +73,18 @@
                 </StackPanel>
             </Grid>
 
-            <TextBlock Text="VS"  FontSize="70" />
+            <RelativePanel DataContext="{Binding LuchadorUno,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}">
+                <TextBlock Name="txtBlck_FotoLuchadorLuchadorUnoRP" Text="Luchador"  />
+                <Image Name="imgJugadorLuchadorUnoRP" Source="{Binding fotoLuchador,Mode=TwoWay,UpdateSourceTrigger=Explicit}" Width="150" Height="150"  />
+                <TextBlock Name="txtBlck_NombreLuchadorUnoRP" Text="{Binding nombre,Mode=TwoWay,UpdateSourceTrigger=Explicit}" Grid.Column="0" Grid.Row="0" Padding="5" Margin="10" />
+                <TextBlock Name="txtBlck_FotoCasaLuchadorUnoRP" Text="Casa"  />
+                <Image Name="FotoCasaLuchadorUnoRP"  Source="{Binding fotoCasaLuchador,Mode=TwoWay,UpdateSourceTrigger=Explicit}" Width="150" Height="150"  />
 
+
+            </RelativePanel>
+            
+            <Image Source="ms-appx:///Assets/Images/vs.png" Height="70" Margin="12"/>
+            
             <!--LuchadorDos -->
             <Grid Name="grid_LuchadorDos" Background="LightCoral" DataContext="{Binding LuchadorDos,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}" >
                 <Grid.ColumnDefinitions>
