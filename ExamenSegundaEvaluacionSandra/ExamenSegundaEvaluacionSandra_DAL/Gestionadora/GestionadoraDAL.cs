@@ -17,37 +17,51 @@ namespace ExamenSandra_DAL.Gestionadora
         SqlConnection conexion = new SqlConnection();
         SqlCommand miComando = new SqlCommand();
 
-
-
         /// <summary>
         /// Este metodo va a guardar en la base de datos las clasificaciones de los combates de cada jugador
         /// </summary>
         /// <param name="clasificacionCombate"></param>
         /// <returns></returns>
-        public int insertarClasificacionesCombatesDAL(ClasificacionCombate clasificacionCombate)
-        {
-            int resultado = 0;
+        public void insertarClasificacionesCombatesDAL(int idCombate, LuchadorCompleto luchadorUno, LuchadorCompleto luchadorDos)
+        {          
 
             // miComando.Parameters.Add("@id", System.Data.SqlDbType.Int).Value = persona.idPersona;
-            miComando.Parameters.Add("@IdCombate", System.Data.SqlDbType.Int).Value = clasificacionCombate.idCombate;
-            miComando.Parameters.Add("@Puntos", System.Data.SqlDbType.Int).Value = clasificacionCombate.punto;
-            miComando.Parameters.Add("@IdCategoriaPremio", System.Data.SqlDbType.Int).Value = clasificacionCombate.idCategoriaPremio;
-            miComando.Parameters.Add("@IdLuchador", System.Data.SqlDbType.Int).Value = clasificacionCombate.idLuchador;
+            miComando.Parameters.Add("@IdCombate", System.Data.SqlDbType.Int).Value = idCombate;
+
+            miComando.Parameters.Add("@PuntosCombateSangrientoLuchadorUno", System.Data.SqlDbType.Int).Value = luchadorUno.puntosCombateSangriento;
+            miComando.Parameters.Add("@PuntosCombateEspectacularLuchadorUno", System.Data.SqlDbType.Int).Value = luchadorUno.puntosCombateEspectacular;
+            miComando.Parameters.Add("@puntosCombateVirtuosoLuchadorUno", System.Data.SqlDbType.Int).Value = luchadorUno.puntosCombateVirtuoso;
+
+            miComando.Parameters.Add("@PuntosCombateSangrientoLuchadorDos", System.Data.SqlDbType.Int).Value = luchadorDos.puntosCombateSangriento;
+            miComando.Parameters.Add("@PuntosCombateEspectacularLuchadorDos", System.Data.SqlDbType.Int).Value = luchadorDos.puntosCombateEspectacular;
+            miComando.Parameters.Add("@PuntosCombateVirtuosoLuchadorDos", System.Data.SqlDbType.Int).Value = luchadorDos.puntosCombateVirtuoso;
+
+            miComando.Parameters.Add("@IdCategoriaPremioSangriento", System.Data.SqlDbType.Int).Value = 1;
+            miComando.Parameters.Add("@IdCategoriaPremioEspectacular", System.Data.SqlDbType.Int).Value = 2;
+            miComando.Parameters.Add("@IdCategoriaPremioVirtuoso", System.Data.SqlDbType.Int).Value = 3;
+
+            miComando.Parameters.Add("@IdLuchadorUno", System.Data.SqlDbType.Int).Value = luchadorUno.idLuchador;
+            miComando.Parameters.Add("@IdLuchadorDos", System.Data.SqlDbType.Int).Value = luchadorDos.idLuchador;
 
             try
             {
                 conexion = miConexion.getConnection();
                 //Insertamos los datos de la persona en la base de datos
                 miComando.CommandText = "insert into clasificacionComabate(idCombate,puntos,idCategoriaPremio,idLuchador) " +
-                                      " values(@IdCombate,@Puntos,@IdCategoriaPremio,@IdLuchador)";
+                                      " values(@IdCombate,@PuntosCombateSangrientoLuchadorUno,@IdCategoriaPremioSangriento,@IdLuchadorUno)" +                                           
+                                            ",(@IdCombate,@PuntosCombateEspectacularLuchadorUno,@IdCategoriaPremioEspectacular,@IdLuchadorUno)" +
+                                            ",(@IdCombate,@puntosCombateVirtuosoLuchadorUno,@IdCategoriaPremioSangriento,@IdLuchadorUno)" +
+                                            ",(@IdCombate,@PuntosCombateSangrientoLuchadorDos, @IdCategoriaPremioSangriento, @IdLuchadorDos)" +
+                                            ",(@IdCombate, @PuntosCombateEspectacularLuchadorDos, @IdCategoriaPremioEspectacular, @IdLuchadorDos)" +
+                                            ",(@IdCombate,@puntosCombateVirtuosoLuchadorDos,@IdCategoriaPremioSangriento,@IdLuchadorDos)";
+
                 miComando.Connection = conexion;
 
                 //ejecutamos el comando de actualizar
-                resultado = miComando.ExecuteNonQuery();
+                miComando.ExecuteNonQuery();
             }
             catch (SqlException sql) { throw sql; }
-
-            return (resultado);
+            
         }//fin guardarPersonaDAL
 
     }

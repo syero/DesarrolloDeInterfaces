@@ -13,7 +13,6 @@ namespace ExamenSandra_Entidades
         public String fotoLuchador { get; set; }
         public String fotoCasaLuchador { get; set; }
         public String nombreCasa { get; set; }
-        public int idCategoria { get; set; }
         public String nombreCategoriaPremio { get; set; }
         public int puntosCombateSangriento { get; set; }
         public int puntosCombateEspectacular { get; set; }
@@ -27,16 +26,17 @@ namespace ExamenSandra_Entidades
             this.nombreCasa = nombreCasa;
         }
 
-        public LuchadorCompleto(int idLuchador, string nombre, int idCasa, String nombreCasa, int idCategoria
-            , String nombreCategoriaPremio, int puntosCombateSangriento, int puntosCombateEspectacular, int puntosCombateVirtuoso) 
+        public LuchadorCompleto(int idLuchador, string nombre, int idCasa, String nombreCasa, String nombreCategoriaPremio
+            , int puntosCombateSangriento, int puntosCombateEspectacular, int puntosCombateVirtuoso) 
             : base(idLuchador, nombre, idCasa)
         {
             this.nombreCasa = nombreCasa;
-            this.idCategoria = idCategoria;
             this.nombreCategoriaPremio = nombreCategoriaPremio;
             this.puntosCombateSangriento = puntosCombateSangriento;
             this.puntosCombateEspectacular = puntosCombateEspectacular;
             this.puntosCombateVirtuoso = puntosCombateVirtuoso;
+            AsignarFotoCasaLuchador();
+            AsignarFotoLuchador();
         }
 
 

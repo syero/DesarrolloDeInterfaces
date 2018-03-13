@@ -122,43 +122,5 @@ namespace ExamenSandra_DAL.Listado
 
             return listaCategoriasPremios;
         }
-
-
-        ///// <summary>
-        ///// método que nos devuelve un listado de Casas
-        ///// </summary>
-        ///// <returns></returns>
-        //public List<Casa> getListadoCasas()
-        //{
-        //    List<Casa> listaCasas = new List<Casa>();
-        //    SqlDataReader miLector;
-        //    Casa casa;
-
-        //    try
-        //    {
-        //        conexion = miConexion.getConnection();
-        //        //Creamos comandos
-        //        miComando.CommandText = "select idCasa,nombreCasa from casas";
-
-        //        miComando.Connection = conexion;
-        //        miLector = miComando.ExecuteReader();
-
-        //        //Si hay lineas en el Lector
-        //        while (miLector.Read())
-        //        {
-        //            casa = new Casa();
-        //            casa.idCasa = (Int32)miLector["idCasa"];
-        //            casa.nombreCasa = (String)miLector["nombreCasa"];
-
-        //            listaCasas.Add(casa);
-        //        }//fin while
-        //    }
-        //    catch (SqlException sql) { throw sql; }
-
-
-        //    return listaCasas;
-        //}
-
-
     }
 }

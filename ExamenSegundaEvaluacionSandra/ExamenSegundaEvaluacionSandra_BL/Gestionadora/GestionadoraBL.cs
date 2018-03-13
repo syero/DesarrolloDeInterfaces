@@ -12,10 +12,9 @@ namespace ExamenSandra_BL.Gestionadora
     {
         GestionadoraDAL gestionadoraDAL = new GestionadoraDAL();
 
-        public int insertarClasificacionesCombatesBL(ClasificacionCombate clasificacionCombate)
+        public void insertarClasificacionesCombatesBL(int idCombate,LuchadorCompleto luchadorUno, LuchadorCompleto luchadorDos)
         {
-            int resultado = gestionadoraDAL.insertarClasificacionesCombatesDAL(clasificacionCombate);
-            return (resultado);
+             gestionadoraDAL.insertarClasificacionesCombatesDAL(idCombate,luchadorUno,luchadorDos);
         }
 
     }
