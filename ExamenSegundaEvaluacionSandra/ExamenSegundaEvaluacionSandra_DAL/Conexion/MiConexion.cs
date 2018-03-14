@@ -25,15 +25,8 @@ namespace ExamenSandra_DAL.Conexion
             this.dataBase = "JuegoDeTronos";
             this.user = "prueba";
             this.pass = "123";
-
-            //Azure
-            // this.server = "personasdbservers.database.windows.net";
-            // this.dataBase = "Persona";
-            // this.user = "syero";
-            // this.pass = "Galadriel123";
-            //  this.uri = new Uri("");
-
         }
+
         //Con parámetros por si quisiera cambiar las conexiones
         public MiConexion(String server, String database, String user, String pass)
         {

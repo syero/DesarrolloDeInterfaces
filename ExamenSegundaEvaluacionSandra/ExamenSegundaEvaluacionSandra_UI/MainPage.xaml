@@ -26,12 +26,13 @@
 
         <!--Listado de Luchadores-->
         <ScrollViewer Name="ScrollListaLuchadores" Grid.Column="0" Grid.RowSpan="2" Margin="20">
-            <ListView Name="listadoLuchadores"  ItemsSource="{Binding ListadoLuchadores}"   SelectedItem="{Binding Path=LuchadorSeleccionado,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}" >
+            <ListView Name="listadoLuchadores"  ItemsSource="{Binding ListadoLuchadores}" 
+                     SelectedItem="{Binding LuchadorSeleccionado,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}" >
                 <ListView.ItemTemplate>
                     <DataTemplate >
                         <StackPanel Orientation="Horizontal" Padding="5" Margin="5">
-                            <TextBlock Name="txtBlck_IdCombate" Text="{Binding Path=idLuchador}" Margin="10,0,0,0" />
-                            <TextBlock Name="txtBx_FechaComabte" Text="{Binding Path=nombre}" Margin="10,0,0,0"/>
+                            <TextBlock Name="txtBlck_IdLuchador" Text="{Binding Path=idLuchador}" Margin="10,0,0,0" />
+                            <TextBlock Name="txtBx_NombreLuchador" Text="{Binding Path=nombre}" Margin="10,0,0,0"/>
                         </StackPanel>
                     </DataTemplate>
                 </ListView.ItemTemplate>
@@ -39,9 +40,17 @@
         </ScrollViewer>
 
         <!--Combates -->
-        <ComboBox Name="listadoCombates" SelectionChanged="ComboBox_listadoCombates" Grid.Column="1" Grid.Row="0"  Width="100" 
-         ItemsSource="{Binding ListadoCombates}"  SelectedItem="{Binding Path=CombateSeleccionado,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}"/>
-        
+        <ComboBox x:Name="listadoCombates"  Grid.Column="1" Grid.Row="0"  Width="200" ItemsSource="{Binding ListadoCombates}" 
+                  SelectedItem="{Binding CombateSeleccionado,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}">
+            <ComboBox.ItemTemplate>
+                <DataTemplate >
+                    <StackPanel Orientation="Horizontal" Padding="5" Margin="5">
+                        <TextBlock Name="txtBlck_FechaCombate" Text="{Binding Path=fechaCombate}" Margin="7" />
+                    </StackPanel>
+                </DataTemplate>
+            </ComboBox.ItemTemplate>
+        </ComboBox>
+        <!--SelectionChanged="ComboBox_listadoCombates"-->
         <StackPanel Orientation="Horizontal" Grid.Column="1" Grid.Row="1">
             
             <!--LuchadorUno -->
@@ -54,34 +63,31 @@
                 <Grid.RowDefinitions>
                     <RowDefinition Height="Auto"/>
                     <RowDefinition Height="Auto"/>
-                    <RowDefinition Height="Auto"/>
                 </Grid.RowDefinitions>
                 
                 <StackPanel Grid.Column="0" Grid.Row="1" Orientation="Horizontal" >
 
                     <StackPanel Orientation="Vertical" Margin="20">
                         <TextBlock Name="txtBlck_FotoLuchadorLuchadorUno" Text="Luchador"  />
-                        <Image Name="imgJugadorLuchadorUno" Source="{Binding fotoLuchador,Mode=TwoWay,UpdateSourceTrigger=Explicit}" Width="150" Height="150"  />
+                        <Image Name="imgJugadorLuchadorUno" Source="{Binding fotoLuchador,Mode=TwoWay,UpdateSourceTrigger=Explicit}" Width="150" Height="90"  />
                         <TextBlock Name="txtBlck_NombreLuchadorUno" Text="{Binding nombre,Mode=TwoWay,UpdateSourceTrigger=Explicit}" Grid.Column="0" Grid.Row="0" Padding="5" Margin="10" />
                     </StackPanel>
 
                     <StackPanel  Orientation="Vertical" Margin="20">
                         <TextBlock Name="txtBlck_FotoCasaLuchadorUno" Text="Casa"  />
-                        <Image Name="FotoCasaLuchadorUno"  Source="{Binding fotoCasaLuchador,Mode=TwoWay,UpdateSourceTrigger=Explicit}" Width="150" Height="150"  />
+                        <Image Name="FotoCasaLuchadorUno"  Source="{Binding fotoCasaLuchador,Mode=TwoWay,UpdateSourceTrigger=Explicit}" Width="100" Height="100"  />
                     </StackPanel>
 
                 </StackPanel>
             </Grid>
 
-            <RelativePanel DataContext="{Binding LuchadorUno,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}">
+            <!--<RelativePanel DataContext="{Binding LuchadorSeleccionado,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}">
                 <TextBlock Name="txtBlck_FotoLuchadorLuchadorUnoRP" Text="Luchador"  />
                 <Image Name="imgJugadorLuchadorUnoRP" Source="{Binding fotoLuchador,Mode=TwoWay,UpdateSourceTrigger=Explicit}" Width="150" Height="150"  />
                 <TextBlock Name="txtBlck_NombreLuchadorUnoRP" Text="{Binding nombre,Mode=TwoWay,UpdateSourceTrigger=Explicit}" Grid.Column="0" Grid.Row="0" Padding="5" Margin="10" />
                 <TextBlock Name="txtBlck_FotoCasaLuchadorUnoRP" Text="Casa"  />
                 <Image Name="FotoCasaLuchadorUnoRP"  Source="{Binding fotoCasaLuchador,Mode=TwoWay,UpdateSourceTrigger=Explicit}" Width="150" Height="150"  />
-
-
-            </RelativePanel>
+            </RelativePanel>-->
             
             <Image Source="ms-appx:///Assets/Images/vs.png" Height="70" Margin="12"/>
             

@@ -18,6 +18,7 @@ namespace ExamenSandra_UI.ViewModel
         private ObservableCollection<LuchadorCompleto> _listaLuchadores;
       
         private Combate _combateSeleccionado;
+        private LuchadorCompleto _luchadorSeleccionado;
         private LuchadorCompleto _luchadorUno;
         private LuchadorCompleto _luchadorDos;
  
@@ -70,6 +71,17 @@ namespace ExamenSandra_UI.ViewModel
             }
         }
 
+        public LuchadorCompleto LuchadorSeleccionado
+        {
+            get { return (_luchadorSeleccionado); }
+            set
+            {
+                this._luchadorSeleccionado = value;
+                LuchadorUno = _luchadorSeleccionado;
+                NotifyPropertyChanged("LuchadorSeleccionado");
+                NotifyPropertyChanged("LuchadorUno");
+            }
+        }
         //LuchadorSeleccionado
         public LuchadorCompleto LuchadorUno
         {

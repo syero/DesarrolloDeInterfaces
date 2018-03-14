@@ -16,7 +16,7 @@ namespace ExamenSandra_DAL.Listado
         //Creamos la sql Connection
         SqlConnection conexion = new SqlConnection();
         SqlCommand miComando = new SqlCommand();
-
+        String fotoCasa, fotoLuchador;
 
         /// <summary>
         /// método que nos devuelve un listado de Combates
@@ -79,7 +79,13 @@ namespace ExamenSandra_DAL.Listado
                     luchador.idCasa=(Int32)miLector["idCasa"];
                     luchador.nombreCasa = (String)miLector["nombreCasa"];
 
-                    listaLuchadores.Add(luchador);
+                    AsignarFotoCasaLuchador(luchador.idCasa);
+                    luchador.fotoCasaLuchador = fotoCasa;
+
+                    obtenerFotoLuchador(luchador.idLuchador);
+                    luchador.fotoLuchador = fotoLuchador;
+
+                   listaLuchadores.Add(luchador);
                 }//fin while
             }
             catch (SqlException sql) { throw sql; }
@@ -87,6 +93,79 @@ namespace ExamenSandra_DAL.Listado
 
             return listaLuchadores;
         }
+
+
+
+        /// <summary>
+        /// Va a permitir mostra la fotos de la familia a la que pertenence ese luchador
+        /// </summary>
+        public void AsignarFotoCasaLuchador(int idCasa)
+        {
+            switch (idCasa)
+            {
+                case 1:
+                    fotoCasa = "ms-appx:///Assets/Images/Casas/1.png";
+                    break;
+                case 2:
+                    fotoCasa = "ms-appx:///Assets/Images/Casas/2.png";
+                    break;
+                case 3:
+                    fotoCasa = "ms-appx:///Assets/Images/Casas/3.png";
+                    break;
+                case 4:
+                    fotoCasa = "ms-appx:///Assets/Images/Casas/4.png";
+                    break;
+                case 5:
+                    fotoCasa = "ms-appx:///Assets/Images/Casas/5.png";
+                    break;
+                case 6:
+                    fotoCasa = "ms-appx:///Assets/Images/Casas/6.png";
+                    break;
+                case 7:
+                    fotoCasa = "ms-appx:///Assets/Images/Casas/7.png";
+                    break;
+                case 8:
+                    fotoCasa = "ms-appx:///Assets/Images/Casas/8.png";
+                    break;
+            }
+        }
+
+      
+
+        /// <summary>
+        /// Nos va a asignar a cada luchador la foto que le corresponde 
+        /// </summary>
+        public void obtenerFotoLuchador(int idLuchador)
+        {
+            switch (idLuchador)
+            {
+                case 1:
+                    fotoLuchador = "ms-appx:///Assets/Images/Luchadores/1.jpg";
+                    break;
+                case 2:
+                    fotoLuchador = "ms-appx:///Assets/Images/Luchadores/2.jpg";
+                    break;
+                case 3:
+                    fotoLuchador = "ms-appx:///Assets/Images/Luchadores/3.jpg";
+                    break;
+                case 4:
+                    fotoLuchador = "ms-appx:///Assets/Images/Luchadores/4.jpg";
+                    break;
+                case 5:
+                    fotoLuchador = "ms-appx:///Assets/Images/Luchadores/5.jpg";
+                    break;
+                case 6:
+                    fotoLuchador = "//Assets/Images/Luchadores/6.jpg";
+                    break;
+                case 7:
+                    fotoLuchador = "ms-appx:///Assets/Images/Luchadores/7.jpg";
+                    break;
+                case 8:
+                    fotoLuchador = "ms-appx://Assets/Images/Luchadores/8.jpg";
+                    break;
+            }
+        }
+
 
         /// <summary>
         /// método que nos devuelve un listado de Categorias premio
