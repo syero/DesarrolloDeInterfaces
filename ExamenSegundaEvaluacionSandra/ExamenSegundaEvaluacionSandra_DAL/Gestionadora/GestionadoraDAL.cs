@@ -50,10 +50,10 @@ namespace ExamenSandra_DAL.Gestionadora
                 miComando.CommandText = "insert into clasificacionComabate(idCombate,puntos,idCategoriaPremio,idLuchador) " +
                                       " values(@IdCombate,@PuntosCombateSangrientoLuchadorUno,@IdCategoriaPremioSangriento,@IdLuchadorUno)" +                                           
                                             ",(@IdCombate,@PuntosCombateEspectacularLuchadorUno,@IdCategoriaPremioEspectacular,@IdLuchadorUno)" +
-                                            ",(@IdCombate,@puntosCombateVirtuosoLuchadorUno,@IdCategoriaPremioSangriento,@IdLuchadorUno)" +
+                                            ",(@IdCombate,@puntosCombateVirtuosoLuchadorUno,@IdCategoriaPremioVirtuoso,@IdLuchadorUno)" +
                                             ",(@IdCombate,@PuntosCombateSangrientoLuchadorDos, @IdCategoriaPremioSangriento, @IdLuchadorDos)" +
                                             ",(@IdCombate, @PuntosCombateEspectacularLuchadorDos, @IdCategoriaPremioEspectacular, @IdLuchadorDos)" +
-                                            ",(@IdCombate,@puntosCombateVirtuosoLuchadorDos,@IdCategoriaPremioSangriento,@IdLuchadorDos)";
+                                            ",(@IdCombate,@puntosCombateVirtuosoLuchadorDos,@IdCategoriaPremioVirtuoso,@IdLuchadorDos)";
 
                 miComando.Connection = conexion;
 

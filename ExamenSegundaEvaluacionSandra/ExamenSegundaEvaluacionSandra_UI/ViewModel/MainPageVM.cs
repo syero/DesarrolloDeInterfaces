@@ -7,6 +7,7 @@ using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Windows.UI.Xaml.Controls;
 
 namespace ExamenSandra_UI.ViewModel
 {
@@ -18,12 +19,12 @@ namespace ExamenSandra_UI.ViewModel
         private ObservableCollection<LuchadorCompleto> _listaLuchadores;
       
         private Combate _combateSeleccionado;
-        private LuchadorCompleto _luchadorSeleccionado;
         private LuchadorCompleto _luchadorUno;
         private LuchadorCompleto _luchadorDos;
- 
-        ListadoBL listadoBL = new ListadoBL();
-        GestionadoraBL gestionadoraBL = new GestionadoraBL();
+
+        private ListadoBL listadoBL = new ListadoBL();
+        private GestionadoraBL gestionadoraBL = new GestionadoraBL();
+        public List<int> puntuacionesPermitidas = new List<int> { 5, 10 };
 
         #endregion
 
@@ -71,18 +72,7 @@ namespace ExamenSandra_UI.ViewModel
             }
         }
 
-        public LuchadorCompleto LuchadorSeleccionado
-        {
-            get { return (_luchadorSeleccionado); }
-            set
-            {
-                this._luchadorSeleccionado = value;
-                LuchadorUno = _luchadorSeleccionado;
-                NotifyPropertyChanged("LuchadorSeleccionado");
-                NotifyPropertyChanged("LuchadorUno");
-            }
-        }
-        //LuchadorSeleccionado
+     
         public LuchadorCompleto LuchadorUno
         {
             get { return (_luchadorUno);   }
@@ -101,18 +91,34 @@ namespace ExamenSandra_UI.ViewModel
                 this._luchadorDos = value;
                 NotifyPropertyChanged("LuchadorDos");
             }
-        }   
+        }
 
         #endregion
 
 
         #region"Metodos muy importantes "   
         /// <summary>
-        /// Este metodo va a pasar 
-        ///  el idCombate, el lucharoUno y el LuchadorDos
-        /// la capa BL que a su ves pasara a la DAL para insertar la clasificacion de combate 
+        /// este metodo me va a permitir seleccionar dos jugadores de la lista
         /// </summary>
-        public void guardarClasificacionCombate()
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        public void luchadoresSeleccionados(object sender, SelectionChangedEventArgs e)
+        {
+            LuchadorUno = (sender as ListView).SelectedItems.First() as LuchadorCompleto;
+            LuchadorDos = (sender as ListView).SelectedItems.Last() as LuchadorCompleto;
+
+            NotifyPropertyChanged("LuchadorUno");
+            NotifyPropertyChanged("LuchadorDos");          
+            
+        }
+
+
+    /// <summary>
+    /// Este metodo va a pasar 
+    ///  el idCombate, el lucharoUno y el LuchadorDos
+    /// la capa BL que a su ves pasara a la DAL para insertar la clasificacion de combate 
+    /// </summary>
+    public void guardarClasificacionCombate()
         { 
             gestionadoraBL.insertarClasificacionesCombatesBL(_combateSeleccionado.idCombate, _luchadorUno, _luchadorDos);
         }
