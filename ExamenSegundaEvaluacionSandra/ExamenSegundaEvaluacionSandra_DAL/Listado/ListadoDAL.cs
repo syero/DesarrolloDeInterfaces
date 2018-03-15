@@ -155,13 +155,13 @@ namespace ExamenSandra_DAL.Listado
                     fotoLuchador = "ms-appx:///Assets/Images/Luchadores/5.jpg";
                     break;
                 case 6:
-                    fotoLuchador = "//Assets/Images/Luchadores/6.jpg";
+                    fotoLuchador = "ms-appx:///Assets/Images/Luchadores/6.jpg";
                     break;
                 case 7:
                     fotoLuchador = "ms-appx:///Assets/Images/Luchadores/7.jpg";
                     break;
                 case 8:
-                    fotoLuchador = "ms-appx://Assets/Images/Luchadores/8.jpg";
+                    fotoLuchador = "ms-appx:///Assets/Images/Luchadores/8.jpg";
                     break;
             }
         }

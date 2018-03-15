@@ -1,0 +1,3 @@
+cosanostra.database.windows.net
+prueba
+Cosanostra123

@@ -12,7 +12,11 @@
         <vm:MainPageVM></vm:MainPageVM>
     </Page.DataContext>
 
-    <Grid Background="White" >
+    <Grid>
+        <Grid.Background>
+            <ImageBrush Stretch="Fill" ImageSource="ms-appx:///Assets/Images/fondo.jpg"/>
+        </Grid.Background>
+        
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="*"/>
             <ColumnDefinition Width="4*"/>
@@ -21,30 +25,21 @@
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
         </Grid.RowDefinitions>  
 
 
         <!--Listado de Luchadores-->
         <ScrollViewer Name="ScrollListaLuchadores" Grid.Column="0" Grid.RowSpan="2" Margin="20">
-            <ListView Name="listadoLuchadores"  ItemsSource="{Binding ListadoLuchadores}" SelectionMode="Multiple"  IsItemClickEnabled="True" 
-                      SelectionChanged="{x:Bind mainPageVM.luchadoresSeleccionados}">
-
-                <ListView.ItemContainerStyle>
-                    <Style TargetType="ListViewItem">
-                        <Setter Property="IsHitTestVisible" Value="True"/>
-                        <Setter Property="Margin" Value="-32 0 0 0"/>
-                    </Style>
-                </ListView.ItemContainerStyle>
-
+            <ListView Name="listadoLuchadores"  ItemsSource="{Binding ListadoLuchadores}" SelectedItem="{Binding LuchadorSeleccionado,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}" >
                 <ListView.ItemTemplate>
                     <DataTemplate >
                         <StackPanel Orientation="Horizontal" Padding="5" Margin="5">
-                            <TextBlock Name="txtBlck_IdLuchador" Text="{Binding Path=idLuchador}" Margin="10,0,0,0" />
+                            <TextBlock Name="txtBlck_IdLuchador" Text="{Binding Path=idLuchador}" Margin="10,0,0,0" IsColorFontEnabled="True" />
                             <TextBlock Name="txtBx_NombreLuchador" Text="{Binding Path=nombre}" Margin="10,0,0,0"/>
                         </StackPanel>
                     </DataTemplate>
                 </ListView.ItemTemplate>
-
             </ListView>
         </ScrollViewer>
 
@@ -59,9 +54,8 @@
                 </DataTemplate>
             </ComboBox.ItemTemplate>
         </ComboBox>
-        <!--SelectionChanged="ComboBox_listadoCombates"-->
-        <StackPanel Orientation="Horizontal" Grid.Column="1" Grid.Row="1">
-            
+        
+        <StackPanel Orientation="Horizontal" Grid.Column="1" Grid.Row="1">            
             <!--LuchadorUno -->
             <Grid Name="grid_LuchadorUno" Background="LightCoral" DataContext="{Binding LuchadorUno,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}" >
                 <Grid.ColumnDefinitions>
@@ -76,33 +70,41 @@
                 
                 <StackPanel Grid.Column="0" Grid.Row="0" Orientation="Horizontal" >
 
-                    <StackPanel Orientation="Vertical" Margin="20">
+                    <StackPanel Orientation="Vertical" Margin="10">
                         <TextBlock Name="txtBlck_FotoLuchadorLuchadorUno" Text="Luchador"  />
-                        <TextBlock Name="txtBlck_NombreLuchadorUno" Text="{Binding nombre,Mode=TwoWay,UpdateSourceTrigger=Explicit}" Grid.Column="0" Grid.Row="0" Padding="5" Margin="10" />
-                        <Image Name="imgJugadorLuchadorUno" Source="{Binding fotoLuchador,Mode=TwoWay,UpdateSourceTrigger=Explicit}" Width="150" Height="150"  />                       
+                        <TextBlock Name="txtBlck_NombreLuchadorUno" Text="{Binding nombre,Mode=TwoWay,UpdateSourceTrigger=Explicit}" 
+                                   Grid.Column="0" Grid.Row="0" Padding="5" Margin="2" />
+                        <Image Name="imgJugadorLuchadorUno" Source="{Binding fotoLuchador,Mode=TwoWay,UpdateSourceTrigger=Explicit}"
+                                    Width="200" Height="150"  />                       
                     </StackPanel>
 
-                    <StackPanel  Orientation="Vertical" Margin="20">
+                    <StackPanel  Orientation="Vertical" Margin="15">
                         <TextBlock Name="txtBlck_FotoCasaLuchadorUno" Text="Casa"  />
-                        <Image Name="FotoCasaLuchadorUno"  Source="{Binding fotoCasaLuchador,Mode=TwoWay,UpdateSourceTrigger=Explicit}" Width="100" Height="100"  />
+                        <Image Name="FotoCasaLuchadorUno"  Source="{Binding fotoCasaLuchador,Mode=TwoWay,UpdateSourceTrigger=Explicit}"
+                               Width="150" Height="100"  />
                     </StackPanel>
-
                 </StackPanel >
-
-                <RelativePanel Grid.Column="0" Grid.Row="1" Height="200">
-                    <TextBlock Name="txtBlck_Puntos" Text="Puntuacion de combate" />
-                    
-                    <TextBlock Name="txtBlck_PuntosSangriento" Text="Sangriento:"  RelativePanel.Below="txtBlck_Puntos"  Margin="12"/>
-                    <ComboBox RelativePanel.RightOf="txtBlck_PuntosSangriento" RelativePanel.Below="txtBlck_Puntos" ItemsSource="{x:Bind mainPageVM.puntuacionesPermitidas}"  SelectedItem="{Binding LuchadorUno.puntosCombateSangriento,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}"/>
-
-                    <TextBlock Name="txtBlck_puntosEspectacular" Text="Espectacular:"  RelativePanel.Below="txtBlck_PuntosSangriento"  Margin="12"/>
-                    <ComboBox RelativePanel.RightOf="txtBlck_PuntosSangriento" RelativePanel.Below="txtBlck_PuntosSangriento" ItemsSource="{x:Bind mainPageVM.puntuacionesPermitidas}"  SelectedItem="{Binding LuchadorUno.puntosCombateEspectacular,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}"/>
-
-                    <TextBlock Name="txtBlck_puntosVirtuoso" Text="Virtuoso:"  RelativePanel.Below="txtBlck_puntosEspectacular"  Margin="12"/>
-                    <ComboBox RelativePanel.RightOf="txtBlck_PuntosSangriento" RelativePanel.Below="txtBlck_puntosEspectacular" ItemsSource="{x:Bind mainPageVM.puntuacionesPermitidas}"  SelectedItem="{Binding LuchadorUno.puntosCombateVirtuoso,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}"/>
-                    
-                </RelativePanel>
                 
+                <!--Puntuaciones LuchadorUno-->
+                <RelativePanel Grid.Column="0" Grid.Row="1" Height="150" Margin="9">
+                    <TextBlock Name="txtBlck_PuntosLuchadorUno" Text="Puntuacion de combate" />
+                    
+                    <TextBlock Name="txtBlck_PuntosSangrientoLuchadorUno" Text="Sangriento:"  RelativePanel.Below="txtBlck_PuntosLuchadorUno"  Margin="12"/>
+                    <ComboBox RelativePanel.RightOf="txtBlck_PuntosSangrientoLuchadorUno" RelativePanel.Below="txtBlck_PuntosLuchadorUno" 
+                              ItemsSource="{x:Bind mainPageVM.puntuacionesPermitidas}"  
+                              SelectedItem="{Binding puntosCombateSangriento,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}"/>
+
+                    <TextBlock Name="txtBlck_puntosEspectacularLuchadorUno" Text="Espectacular:"  RelativePanel.Below="txtBlck_PuntosSangrientoLuchadorUno"  Margin="12"/>
+                    <ComboBox RelativePanel.RightOf="txtBlck_puntosEspectacularLuchadorUno" RelativePanel.Below="txtBlck_PuntosSangrientoLuchadorUno" 
+                              ItemsSource="{x:Bind mainPageVM.puntuacionesPermitidas}"  
+                              SelectedItem="{Binding puntosCombateEspectacular,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}"/>
+
+                    <TextBlock Name="txtBlck_puntosVirtuosoLuchadorUno" Text="Virtuoso:"  RelativePanel.Below="txtBlck_puntosEspectacularLuchadorUno"  Margin="12"/>
+                    <ComboBox RelativePanel.RightOf="txtBlck_puntosVirtuosoLuchadorUno" RelativePanel.Below="txtBlck_puntosEspectacularLuchadorUno" 
+                              ItemsSource="{x:Bind mainPageVM.puntuacionesPermitidas}"  
+                              SelectedItem="{Binding puntosCombateVirtuoso,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}"/>
+                    
+                </RelativePanel>                
             </Grid>
             
             <Image Source="ms-appx:///Assets/Images/vs.png" Height="70" Margin="12"/>
@@ -119,25 +121,46 @@
                     <RowDefinition Height="Auto"/>
                     <RowDefinition Height="Auto"/>
                 </Grid.RowDefinitions>
-
-                <TextBlock Name="txtBlck_NombreLuchadorDos" Text="{Binding nombre,Mode=TwoWay,UpdateSourceTrigger=Explicit}" Grid.Column="0" Grid.Row="0" Padding="5" Margin="10" />
-                <StackPanel Grid.Column="0" Grid.Row="1" Orientation="Horizontal" >
-
+               
+                <StackPanel Grid.Column="0" Grid.Row="0" Orientation="Horizontal" >          
+                   
                     <StackPanel Orientation="Vertical" Margin="20">
                         <TextBlock Name="txtBlck_FotoLuchadorDos" Text="Luchador"  />
-                        <Image Name="imgLuchadorDos" Source="{Binding fotoLuchador,Mode=TwoWay,UpdateSourceTrigger=Explicit}" Width="150" Height="150"  />
+                        <TextBlock Name="txtBlck_NombreLuchadorDos" Text="{Binding nombre,Mode=TwoWay,UpdateSourceTrigger=Explicit}" 
+                                   Grid.Column="0" Grid.Row="0" Padding="5" Margin="2"  />
+                        <Image Name="imgLuchadorDos" Source="{Binding fotoLuchador,Mode=TwoWay,UpdateSourceTrigger=Explicit}"
+                               Width="200" Height="150"  />
                     </StackPanel>
 
-                    <StackPanel  Orientation="Vertical" Margin="20">
+                    <StackPanel  Orientation="Vertical" Margin="15">
                         <TextBlock Name="txtBlck_FotoCasaLuchadorDos" Text="Casa"  />
-                        <Image Name="FotoCasaLuchadorDos"  Source="{Binding fotoCasaLuchador,Mode=TwoWay,UpdateSourceTrigger=Explicit}" Width="150" Height="150"  />
+                        <Image Name="FotoCasaLuchadorDos"  Source="{Binding fotoCasaLuchador,Mode=TwoWay,UpdateSourceTrigger=Explicit}"
+                               Width="150" Height="100"   />
                     </StackPanel>
 
-                </StackPanel>                
-            </Grid>
+                </StackPanel>
+                <!--Puntuaciones LuchadorDos-->
+                <RelativePanel Grid.Column="0" Grid.Row="1"  Height="150" Margin="9">
+                    <TextBlock Name="txtBlck_PuntosLuchadorDos" Text="Puntuacion de combate" />
 
-            <Button Name="btnGuardar" Click="{x:Bind mainPageVM.guardarClasificacionCombate}" Content="Guardar" />
+                    <TextBlock Name="txtBlck_PuntosSangrientoLuchadorDos" Text="Sangriento:"  RelativePanel.Below="txtBlck_PuntosLuchadorDos"  Margin="12"/>
+                    <ComboBox RelativePanel.RightOf="txtBlck_PuntosSangrientoLuchadorDos" RelativePanel.Below="txtBlck_PuntosLuchadorDos" 
+                              ItemsSource="{x:Bind mainPageVM.puntuacionesPermitidas}"  
+                              SelectedItem="{Binding puntosCombateSangriento,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}"/>
 
+                    <TextBlock Name="txtBlck_puntosEspectacularLuchadorDos" Text="Espectacular:"  RelativePanel.Below="txtBlck_PuntosSangrientoLuchadorDos"  Margin="12"/>
+                    <ComboBox RelativePanel.RightOf="txtBlck_puntosEspectacularLuchadorDos" RelativePanel.Below="txtBlck_PuntosSangrientoLuchadorDos" 
+                              ItemsSource="{x:Bind mainPageVM.puntuacionesPermitidas}"  
+                              SelectedItem="{Binding puntosCombateEspectacular,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}"/>
+
+                    <TextBlock Name="txtBlck_puntosVirtuosoLuchadorDos" Text="Virtuoso:"  RelativePanel.Below="txtBlck_puntosEspectacularLuchadorDos"  Margin="12"/>
+                    <ComboBox RelativePanel.RightOf="txtBlck_puntosVirtuosoLuchadorDos" RelativePanel.Below="txtBlck_puntosEspectacularLuchadorDos" 
+                              ItemsSource="{x:Bind mainPageVM.puntuacionesPermitidas}"  
+                              SelectedItem="{Binding puntosCombateVirtuoso,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}"/>
+
+                </RelativePanel>
+            </Grid>  
         </StackPanel>
+        <Button Name="btnGuardar"  Grid.Column="1" Grid.Row="2" Click="{x:Bind mainPageVM.guardarClasificacionCombate}" Content="Guardar" Margin="400,50,0,0" />
     </Grid>
 </Page>

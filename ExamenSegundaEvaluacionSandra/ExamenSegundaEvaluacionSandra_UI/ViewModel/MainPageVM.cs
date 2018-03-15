@@ -21,11 +21,14 @@ namespace ExamenSandra_UI.ViewModel
         private Combate _combateSeleccionado;
         private LuchadorCompleto _luchadorUno;
         private LuchadorCompleto _luchadorDos;
+        private LuchadorCompleto _luchadorSeleccionado;
 
         private ListadoBL listadoBL = new ListadoBL();
         private GestionadoraBL gestionadoraBL = new GestionadoraBL();
-        public List<int> puntuacionesPermitidas = new List<int> { 5, 10 };
 
+        public List<int> puntuacionesPermitidas;
+        public static String nombreGanador;
+        public static String nombrePerdedor;
         #endregion
 
 
@@ -33,7 +36,7 @@ namespace ExamenSandra_UI.ViewModel
         {
             _listaCombates = new ObservableCollection<Combate>(listadoBL.getCombates());
             _listaLuchadores=new ObservableCollection<LuchadorCompleto>(listadoBL.getLuchadores());
-          
+            puntuacionesPermitidas = new List<int> { 5, 10 };
         }
 
 
@@ -72,7 +75,32 @@ namespace ExamenSandra_UI.ViewModel
             }
         }
 
-     
+
+        public LuchadorCompleto LuchadorSeleccionado
+        {
+            get { return (_luchadorSeleccionado); }
+            set
+            {
+                this._luchadorSeleccionado = value;
+                //asigamos el luchadorSeleccionado al luchador que esté a null 
+                if (LuchadorUno == null )
+                {
+                    LuchadorUno = _luchadorSeleccionado;              
+                }
+                else
+                {
+                    if (LuchadorUno != _luchadorSeleccionado && LuchadorDos!=LuchadorUno )
+                    {
+                        LuchadorDos = LuchadorUno;
+                        LuchadorUno= _luchadorSeleccionado;
+                    }                                   
+                }
+                NotifyPropertyChanged("LuchadorUno");
+                NotifyPropertyChanged("LuchadorDos");
+                NotifyPropertyChanged("LuchadorSeleccionado");
+            }
+        }
+
         public LuchadorCompleto LuchadorUno
         {
             get { return (_luchadorUno);   }
@@ -92,37 +120,84 @@ namespace ExamenSandra_UI.ViewModel
                 NotifyPropertyChanged("LuchadorDos");
             }
         }
-
         #endregion
 
 
-        #region"Metodos muy importantes "   
+        #region"Metodos muy importantes "  
+
         /// <summary>
-        /// este metodo me va a permitir seleccionar dos jugadores de la lista
+        /// Este metodo va a pasar 
+        ///  el idCombate, el lucharoUno y el LuchadorDos
+        /// la capa BL que a su ves pasara a la DAL para insertar la clasificacion de combate 
         /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        public void luchadoresSeleccionados(object sender, SelectionChangedEventArgs e)
+        public void guardarClasificacionCombate()
         {
-            LuchadorUno = (sender as ListView).SelectedItems.First() as LuchadorCompleto;
-            LuchadorDos = (sender as ListView).SelectedItems.Last() as LuchadorCompleto;
 
-            NotifyPropertyChanged("LuchadorUno");
-            NotifyPropertyChanged("LuchadorDos");          
-            
+            if (LuchadorUno.puntosCombateSangriento != LuchadorDos.puntosCombateSangriento
+                && LuchadorUno.puntosCombateEspectacular != LuchadorDos.puntosCombateEspectacular
+                && LuchadorUno.puntosCombateVirtuoso != LuchadorDos.puntosCombateVirtuoso)
+            {
+                gestionadoraBL.insertarClasificacionesCombatesBL(CombateSeleccionado.idCombate, LuchadorUno, LuchadorDos);
+                resultadoBatalla(); //comprobar resultados de batalla
+                CombateSeleccionado.idCombate = 0;
+                LuchadorUno = null;
+                LuchadorDos = null;
+            }
+            else {
+                DisplayScoreDialog();                
+            }
         }
 
-
-    /// <summary>
-    /// Este metodo va a pasar 
-    ///  el idCombate, el lucharoUno y el LuchadorDos
-    /// la capa BL que a su ves pasara a la DAL para insertar la clasificacion de combate 
-    /// </summary>
-    public void guardarClasificacionCombate()
-        { 
-            gestionadoraBL.insertarClasificacionesCombatesBL(_combateSeleccionado.idCombate, _luchadorUno, _luchadorDos);
+        /// <summary>
+        /// Este metodo solo sirve para mostrar los nombre del 
+        /// ganador y el perdedor del la batalla
+        /// </summary>
+        public void resultadoBatalla()
+        {
+            if (LuchadorUno.puntosCombateSangriento > LuchadorDos.puntosCombateSangriento
+                && LuchadorUno.puntosCombateEspectacular > LuchadorDos.puntosCombateEspectacular
+                && LuchadorUno.puntosCombateVirtuoso > LuchadorDos.puntosCombateVirtuoso)
+            {
+                nombreGanador = LuchadorUno.nombre;
+                nombrePerdedor = LuchadorDos.nombre;
+            }
+            else {
+                nombreGanador = LuchadorDos.nombre;
+                nombrePerdedor = LuchadorUno.nombre;
+            }
+            ResultadosDialog(); //dialogo de resultados
         }
 
+        /// <summary>
+        /// Este es el dialogo que aparecera cuando demos a los luchadores putuaciones
+        /// iguales en la misma catagoria.
+        /// Bajo ningun concepto los luchadores deben empatar,puesto que el que pierda debe morir
+        /// </summary>
+        public async void DisplayScoreDialog()
+        {
+            ContentDialog puntosIncorrectosDialog = new ContentDialog
+            {
+                Title = "Puntos Incorrectos",
+                Content = "Los luchadores deben tener puntuaciones diferentes en cada categoria",
+                CloseButtonText = "Ok"
+            };
+            ContentDialogResult result = await puntosIncorrectosDialog.ShowAsync();
+        }
+
+        /// <summary>
+        /// Este dialogo va a mostrar los resulados de la batalla
+        /// o sea quien gana y quien muere
+        /// </summary>
+        public async void ResultadosDialog()
+        {
+            ContentDialog resultadosDialog = new ContentDialog
+            {
+                Title = "Resultados de Batalla ",
+                Content = " El luchador ganador es " + nombreGanador + " , muere " + nombrePerdedor + " ",
+                CloseButtonText = "Ok"
+            };
+            ContentDialogResult result = await resultadosDialog.ShowAsync();
+        }
         #endregion
     }
 }

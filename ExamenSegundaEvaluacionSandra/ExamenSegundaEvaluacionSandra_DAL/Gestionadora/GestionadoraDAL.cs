@@ -52,7 +52,7 @@ namespace ExamenSandra_DAL.Gestionadora
                                             ",(@IdCombate,@PuntosCombateEspectacularLuchadorUno,@IdCategoriaPremioEspectacular,@IdLuchadorUno)" +
                                             ",(@IdCombate,@puntosCombateVirtuosoLuchadorUno,@IdCategoriaPremioVirtuoso,@IdLuchadorUno)" +
                                             ",(@IdCombate,@PuntosCombateSangrientoLuchadorDos, @IdCategoriaPremioSangriento, @IdLuchadorDos)" +
-                                            ",(@IdCombate, @PuntosCombateEspectacularLuchadorDos, @IdCategoriaPremioEspectacular, @IdLuchadorDos)" +
+                                            ",(@IdCombate,@PuntosCombateEspectacularLuchadorDos, @IdCategoriaPremioEspectacular, @IdLuchadorDos)" +
                                             ",(@IdCombate,@puntosCombateVirtuosoLuchadorDos,@IdCategoriaPremioVirtuoso,@IdLuchadorDos)";
 
                 miComando.Connection = conexion;
