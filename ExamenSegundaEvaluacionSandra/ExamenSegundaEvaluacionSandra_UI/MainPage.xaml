@@ -12,6 +12,33 @@
         <vm:MainPageVM></vm:MainPageVM>
     </Page.DataContext>
 
+    <Page.Resources>
+        <!--Estilo botones-->
+        <Style TargetType="Button">
+            <Setter Property="BorderThickness" Value="5" />
+            <Setter Property="Background" Value="DarkRed"/>
+            <Setter Property="Foreground" Value="White" />
+            <Setter Property="FontFamily" Value="Assets/Fuente/Game of Thrones.ttf#Game of Thrones"/>
+            
+            <Setter Property="BorderBrush" >
+                <Setter.Value>
+                    <LinearGradientBrush StartPoint="0.5,0" EndPoint="0.5,1">
+                        <GradientStop Color="Red" Offset="0.0" />
+                        <GradientStop Color="White" Offset="0.25" />
+                        <GradientStop Color="White" Offset="0.75" />
+                        <GradientStop Color="Red" Offset="1.0" />
+                    </LinearGradientBrush>
+                </Setter.Value>
+            </Setter>
+        </Style>
+
+        <!--estilo letra-->
+        <Style TargetType="TextBlock">
+            <Setter Property="Foreground" Value="White" />
+            <Setter Property="FontFamily" Value="Assets/Fuente/Game of Thrones.ttf#Game of Thrones"/>
+        </Style>
+    </Page.Resources>
+
     <Grid>
         <Grid.Background>
             <ImageBrush Stretch="Fill" ImageSource="ms-appx:///Assets/Images/fondo.jpg"/>
@@ -31,12 +58,12 @@
 
         <!--Listado de Luchadores-->
         <ScrollViewer Name="ScrollListaLuchadores" Grid.Column="0" Grid.RowSpan="2" Margin="20">
-            <ListView Name="listadoLuchadores"  ItemsSource="{Binding ListadoLuchadores}" SelectedItem="{Binding LuchadorSeleccionado,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}" >
+            <ListView Name="listadoLuchadores"  ItemsSource="{Binding ListadoLuchadores}" SelectedItem="{Binding LuchadorSeleccionado,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}"  >
                 <ListView.ItemTemplate>
                     <DataTemplate >
                         <StackPanel Orientation="Horizontal" Padding="5" Margin="5">
-                            <TextBlock Name="txtBlck_IdLuchador" Text="{Binding Path=idLuchador}" Margin="10,0,0,0" IsColorFontEnabled="True" />
-                            <TextBlock Name="txtBx_NombreLuchador" Text="{Binding Path=nombre}" Margin="10,0,0,0"/>
+                            <TextBlock Name="txtBlck_IdLuchador" Text="{Binding Path=idLuchador}" Margin="10,0,0,0" IsColorFontEnabled="True" Foreground="White" FontFamily="Assets/Fuente/Game of Thrones.ttf#Game of Thrones" />
+                            <TextBlock Name="txtBx_NombreLuchador" Text="{Binding Path=nombre}" Margin="10,0,0,0"  Foreground="White" FontFamily="Assets/Fuente/Game of Thrones.ttf#Game of Thrones"/>
                         </StackPanel>
                     </DataTemplate>
                 </ListView.ItemTemplate>
@@ -57,7 +84,7 @@
         
         <StackPanel Orientation="Horizontal" Grid.Column="1" Grid.Row="1">            
             <!--LuchadorUno -->
-            <Grid Name="grid_LuchadorUno" Background="LightCoral" DataContext="{Binding LuchadorUno,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}" >
+            <Grid Name="grid_LuchadorUno" Background="Transparent" DataContext="{Binding LuchadorUno,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}" >
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="Auto"/>
                     <ColumnDefinition Width="Auto"/>
@@ -81,7 +108,7 @@
                     <StackPanel  Orientation="Vertical" Margin="15">
                         <TextBlock Name="txtBlck_FotoCasaLuchadorUno" Text="Casa"  />
                         <Image Name="FotoCasaLuchadorUno"  Source="{Binding fotoCasaLuchador,Mode=TwoWay,UpdateSourceTrigger=Explicit}"
-                               Width="150" Height="100"  />
+                               Width="150" Height="100" />
                     </StackPanel>
                 </StackPanel >
                 
@@ -110,7 +137,7 @@
             <Image Source="ms-appx:///Assets/Images/vs.png" Height="70" Margin="12"/>
             
             <!--LuchadorDos -->
-            <Grid Name="grid_LuchadorDos" Background="LightCoral" DataContext="{Binding LuchadorDos,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}" >
+            <Grid Name="grid_LuchadorDos" Background="Transparent" DataContext="{Binding LuchadorDos,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}" >
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="Auto"/>
                     <ColumnDefinition Width="Auto"/>
@@ -157,10 +184,10 @@
                     <ComboBox RelativePanel.RightOf="txtBlck_puntosVirtuosoLuchadorDos" RelativePanel.Below="txtBlck_puntosEspectacularLuchadorDos" 
                               ItemsSource="{x:Bind mainPageVM.puntuacionesPermitidas}"  
                               SelectedItem="{Binding puntosCombateVirtuoso,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}"/>
-
                 </RelativePanel>
             </Grid>  
         </StackPanel>
-        <Button Name="btnGuardar"  Grid.Column="1" Grid.Row="2" Click="{x:Bind mainPageVM.guardarClasificacionCombate}" Content="Guardar" Margin="400,50,0,0" />
+        
+        <Button Name="btnGuardar"  Grid.Column="1" Grid.Row="2" Click="{x:Bind mainPageVM.guardarClasificacionCombate}" Content="Guardar" Margin="400,50,0,0"  />
     </Grid>
 </Page>
