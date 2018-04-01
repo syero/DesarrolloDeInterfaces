@@ -24,6 +24,7 @@ namespace CosaNostra_DAL.Conexion
             this.pass = "Cosanostra123";
         }
 
+      
         //Con parámetros por si quisiera cambiar las conexiones
         public MiConexion(String server, String database, String user, String pass)
         {

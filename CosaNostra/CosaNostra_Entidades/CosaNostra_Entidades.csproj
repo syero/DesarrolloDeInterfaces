@@ -107,6 +107,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="Mafioso.cs" />
+    <Compile Include="MafiosoOriginal.cs" />
     <Compile Include="Mision.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Properties\CosaNostra_Entidades.rd.xml" />

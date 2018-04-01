@@ -5,9 +5,45 @@
     xmlns:local="using:CosaNostra_UI"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:vm="using:CosaNostra_UI.ViewModels"
     mc:Ignorable="d">
 
-    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
-    </Grid>
+    <Page.DataContext>
+        <vm:ViewModelLogin></vm:ViewModelLogin>
+    </Page.DataContext>
+  
+
+    <RelativePanel>
+    <RelativePanel.Background>
+            <ImageBrush Stretch="Fill" ImageSource="ms-appx:///Assets/imagenes/fondo.jpg"/>
+        </RelativePanel.Background>
+        
+        <!--Responsive Designe-->
+        <VisualStateManager.VisualStateGroups>
+            <VisualStateGroup>
+                <VisualState x:Name="Pc">
+
+                    <VisualState.StateTriggers>
+                       <AdaptiveTrigger MinWindowWidth="900" MinWindowHeight="900" />
+                    </VisualState.StateTriggers>
+
+                    <VisualState.Setters>
+                        <Setter Target="stck_Login.Margin" Value="500,0,0,0"/>
+                        <Setter Target="btn_Login.Margin" Value="800,20,0,0"/>
+                    </VisualState.Setters>
+                </VisualState>
+
+            </VisualStateGroup>
+        </VisualStateManager.VisualStateGroups>
+
+        <StackPanel Name="stck_Login" RelativePanel.AlignVerticalCenterWithPanel="True" Orientation="Horizontal" Margin="100,0,0,0">
+            <TextBlock Name="NickMafioso" Text="Nick"  FontSize="70" Foreground="White" FontFamily="Assets/Fuente/Cash Currency.ttf#Cash Currency" />
+            <TextBox  Name="txtBox_nickMafioso" Width="400" Height="70" Text="{Binding Nick,Mode=TwoWay}" TextAlignment="Center" FontSize="40"  Foreground="White" Margin="30,0,0,0" FontFamily="Assets/Fuente/Cash Currency.ttf#Cash Currency"/>
+        </StackPanel>
+        
+        <Button Name="btn_Login" Content="Login" BorderBrush="White" BorderThickness="2" RelativePanel.Below="stck_Login" FontSize="20" Margin="500,20,0,0"
+                Click="{x:Bind loginViewModel.validarNick}" FontFamily="Assets/Fuente/Cash Currency.ttf#Cash Currency" Background="#870505" Foreground="White"
+                PointerMoved="btn_Login_PointerMoved" PointerExited="btn_Login_PointerExited"  /> 
+    </RelativePanel>
 </Page>

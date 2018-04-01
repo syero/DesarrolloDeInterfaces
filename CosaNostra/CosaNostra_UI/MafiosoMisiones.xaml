@@ -1,0 +1,194 @@
+﻿<Page
+    x:Class="CosaNostra_UI.MafiosoMisiones"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:CosaNostra_UI"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:vm="using:CosaNostra_UI.ViewModels"
+    mc:Ignorable="d">
+
+    <Page.DataContext>
+        <vm:ViewModelMafiosoMisiones></vm:ViewModelMafiosoMisiones>
+    </Page.DataContext>
+    
+    <Page.Resources>
+        <!--estilo letra-->
+        <Style  TargetType="TextBlock">
+            <Setter Property="Foreground" Value="White" />
+            <Setter Property="FontSize"  Value="15"/>
+            <Setter Property="FontFamily" Value="Assets/Fuente/Cash Currency.ttf#Cash Currency"/>
+        </Style>
+        
+        <!--estilo botones-->
+        <Style TargetType="Button">
+            <Setter Property="Width" Value="200" />
+            <Setter Property="Margin" Value="20,0,0,0" />
+            <Setter Property="Foreground" Value="White"/>
+            <Setter Property="FontSize" Value="12" />
+            <Setter Property="BorderBrush" Value="White"/> 
+            <Setter Property="Background" Value="#870505"/>
+            <Setter Property="Padding" Value="12"/>
+            <Setter Property="FontFamily" Value="Assets/Fuente/Cash Currency.ttf#Cash Currency"/>
+        </Style>      
+    </Page.Resources>
+
+    
+    <Grid>
+        <Grid.Background>
+            <ImageBrush Stretch="Fill" ImageSource="ms-appx:///Assets/imagenes/fondo.jpg"/>
+        </Grid.Background>
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <!--Responsive Designe for pc-->
+        <VisualStateManager.VisualStateGroups>
+            <VisualStateGroup>
+                <VisualState x:Name="Pc">
+
+                    <VisualState.StateTriggers>
+                        <AdaptiveTrigger MinWindowWidth="800" MinWindowHeight="800" />
+                    </VisualState.StateTriggers>
+
+                    <VisualState.Setters>
+                        <!--Titulo app -->
+                        <Setter Target="Title.FontSize"            Value="70"/> 
+                        <Setter Target="Title.(Grid.Row)"          Value="0"/>
+                        <Setter Target="Title.(Grid.ColumnSpan)"   Value="2"/>
+                        
+                        <!--Foto y nick mafioso -->
+                        <Setter Target="imgMafioso.Height"            Value="170"/>
+                        <Setter Target="imgMafioso.Width"             Value="100"/>
+                        <Setter Target="txtBlck_NickMafioso.FontSize" Value="15"/>
+
+                        <!--Lista Misions-->
+                        <Setter Target="RTPListadoMisiones.(Grid.Column)"   Value="0"/> 
+                        <Setter Target="RTPListadoMisiones.(Grid.Row)"      Value="2"/>
+                        <Setter Target="RTPListadoMisiones.(Grid.RowSpan)"  Value="2"/>
+
+                        <!--Mision seleccionda-->
+                        <Setter Target="MisionSeleccionada.(Grid.Column)"   Value="1"/>
+                        <Setter Target="MisionSeleccionada.(Grid.Row)"      Value="2"/>
+                        <Setter Target="MisionSeleccionada.(Grid.RowSpan)"  Value="2"/>
+                        
+                        <!--Dentro del grid de Mision seleccionda-->
+                        <!--Tamanio Textos-->
+                        <Setter Target="txtblkTituloMision.FontSize" Value="15"/>
+                        <Setter Target="txtblkReservada.FontSize" Value="15"/>
+                        <Setter Target="txtBlkCodigoMafioso.FontSize" Value="15"/>
+                        <Setter Target="txtObservaciones.FontSize" Value="15"/>
+                        <Setter Target="txtblkDescripcionMision.FontSize" Value="15"/>
+
+                        <!-- Observaciones de la mision -->
+                        <Setter Target="PTPObservaciones.(Grid.Column)"   Value="0"/>
+                        <Setter Target="PTPObservaciones.(Grid.Row)"      Value="3"/>
+                        <Setter Target="txtObservaciones.MinWidth"        Value="700"/> 
+
+                        <!-- Descripcion de la mision --> 
+                        <Setter Target="RTPDescripcion.(Grid.Column)"   Value="0"/>
+                        <Setter Target="RTPDescripcion.(Grid.Row)"      Value="4"/>
+                        <Setter Target="RTPDescripcion.MinWidth"        Value="460"/>
+
+
+                    </VisualState.Setters>
+                </VisualState>
+            </VisualStateGroup>
+        </VisualStateManager.VisualStateGroups>
+
+
+        <!--Titulo app -->
+        <TextBlock Name="Title" Text="Cosa Nostra" Grid.ColumnSpan="2" Grid.Row="0" HorizontalAlignment="Center" Margin="12" FontSize="50" />
+
+        <!--Foto y nick mafioso -->
+        <RelativePanel Name="RP_Mafioso" Grid.Column="0" Grid.Row="1" Background="Transparent" DataContext="{Binding Mafioso,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}"  >           
+            <Image Name="imgMafioso" Source="{Binding fotoMafioso,Mode=TwoWay,UpdateSourceTrigger=Explicit}" Margin="20,10,0,0" Height="100" Width="100"  />
+            <TextBlock Name="txtBlck_NickMafioso" Text="{Binding nickMafioso,Mode=TwoWay,UpdateSourceTrigger=Explicit}"  Margin="40,10,0,0" RelativePanel.Below="imgMafioso"/>          
+        </RelativePanel>
+
+        <!--Listado de misiones-->
+        <RelativePanel Name="RTPListadoMisiones"  Grid.Column="1" Grid.Row="1"  Margin="20,20,0,0">
+            <TextBlock  Name="textBlock_Misiones" Text="Misiones" Padding="12" />
+            <ListView Name="listadoMisiones" ScrollViewer.VerticalScrollBarVisibility="Auto" RelativePanel.Below="textBlock_Misiones" ItemsSource="{Binding Misiones}" SelectedItem="{Binding MisionSeleccionada,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}"  >
+                <ListView.ItemTemplate>
+                    <DataTemplate >
+                        <StackPanel Orientation="Horizontal" Padding="5" Margin="5">
+                            <TextBlock Name="txtBlck_CondigoMision" Text="{Binding Path=CondigoMision}" Margin="10,0,0,0"  Foreground="White" FontFamily="Assets/Fuente/Cash Currency.ttf#Cash Currency" />
+                            <TextBlock Name="txtBx_TituloMision" Text="{Binding Path=TituloMision}" Margin="10,0,0,0"  Foreground="White" FontFamily="Assets/Fuente/Cash Currency.ttf#Cash Currency"/>
+                        </StackPanel>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </RelativePanel>
+
+        <!--Mision seleccionda-->
+        <Grid  Name="MisionSeleccionada"  Grid.ColumnSpan="2"  Grid.Row="3"  Grid.RowSpan="2" DataContext="{Binding MisionSeleccionada,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}" Margin="20" >
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+
+            <!--Titulo de la Mision-->
+            <StackPanel Grid.Column="0" Grid.Row="0"  Grid.ColumnSpan="2"  Padding="8" Margin="12,0,0,0" Orientation="Horizontal" >
+                <TextBlock Text="Titulo Mision: "/>
+                <TextBlock Name="txtblkTituloMision" Text="{Binding TituloMision}" Padding="8" Margin="12,0,0,0" />
+            </StackPanel>
+
+            <!-- Reservar mision -->
+            <StackPanel Grid.Column="0" Grid.Row="1" Padding="8" Margin="12,0,0,0" Orientation="Horizontal">
+                <TextBlock Text="Mision Reservada: "/>
+                <TextBlock  Name="txtblkReservada" Text="{Binding Reservada,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}" Margin="12,0,0,0"/>
+            </StackPanel>
+
+            <!-- Codigo del mafioso que ha reservado la mision -->
+            <StackPanel Grid.Column="1" Grid.Row="1"  Padding="8" Margin="12,0,0,0" Orientation="Horizontal"  >
+                <TextBlock Text="Codigo Mafioso: " />
+                <TextBlock Name="txtBlkCodigoMafioso" Text="{Binding CodigoMafioso}" Margin="12,0,0,0"/>
+            </StackPanel>
+
+            <!-- Fecha en que fue cumplida la mision -->
+            <RelativePanel Name="stk_Fecha" Grid.Column="0" Grid.Row="2"  Padding="8" Margin="12,0,0,0"  >
+                <TextBlock  Name="txtblock_Fecha" Text="Fecha Cumplida : "/>
+                <DatePicker DateChanged="{x:Bind viewModel.asignarFechaMisionCumplida,UpdateSourceTrigger=PropertyChanged}" RelativePanel.Below="txtblock_Fecha" />
+            </RelativePanel>
+
+            <!-- Observaciones de la mision -->
+            <RelativePanel Name="PTPObservaciones" Grid.Column="0" Grid.Row="3" Grid.ColumnSpan="2"  Padding="8" Margin="12,0,0,0"  >
+                <TextBlock Name="TxtObservacionesMison" Text="Mision Observaciones: "/>
+                <TextBox Name="txtObservaciones" Text="{Binding Observaciones,Mode=TwoWay}" Margin="12,0,0,0" AcceptsReturn="True"  ScrollViewer.VerticalScrollMode="Auto"  TextWrapping="Wrap"
+                         Foreground="White" FontFamily="Assets/Fuente/Cash Currency.ttf#Cash Currency" RelativePanel.Below="TxtObservacionesMison" MaxWidth="650" MinWidth="400"  MinHeight="100"/>                          
+            </RelativePanel>
+
+            <!-- Descripcion de la mision -->
+            <RelativePanel  Name="RTPDescripcion" Grid.Column="0" Grid.Row="4" Grid.ColumnSpan="2"  Padding="8" Margin="12,0,0,0" >
+                <TextBlock Name="textDescripcionMision" Text="Mision Descripcion: "/>
+                <TextBlock  Name="txtblkDescripcionMision" Text="{Binding DescripcionMision}"  Margin="12,0,0,0"  TextWrapping="Wrap"  MaxWidth="650" MinWidth="400"  ScrollViewer.VerticalScrollMode="Auto" RelativePanel.Below="textDescripcionMision"/>
+            </RelativePanel>
+
+            <!-- Botones  -->
+            <RelativePanel Grid.Column="0" Grid.Row="5"  Grid.ColumnSpan="2" Padding="12"  >
+                <Button Name="btn_Reservar" Content="Reservar" Click="{x:Bind viewModel.reservarMision}"  RelativePanel.AlignHorizontalCenterWithPanel="True"   PointerMoved="btn_Reservar_PointerMoved" PointerExited="btn_Reservar_PointerExited" />
+                <Button Name="btn_Completar" Content="MisionCumplida" Click="{x:Bind viewModel.completarMision}"  RelativePanel.RightOf="btn_Reservar"  PointerMoved="btn_Completar_PointerMoved" PointerExited="btn_Completar_PointerExited" />
+            </RelativePanel>  
+            
+        </Grid>       
+    </Grid>
+</Page>

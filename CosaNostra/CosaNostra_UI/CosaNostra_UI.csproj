@@ -95,19 +95,37 @@
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
+    <Compile Include="MafiosoMisiones.xaml.cs">
+      <DependentUpon>MafiosoMisiones.xaml</DependentUpon>
+    </Compile>
     <Compile Include="MainPage.xaml.cs">
       <DependentUpon>MainPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="ViewModels\ViewModelMafiosoMissiones.cs" />
+    <Compile Include="ViewModels\Base.cs" />
+    <Compile Include="ViewModels\DelegateCommand.cs" />
+    <Compile Include="ViewModels\ViewModelLogin.cs" />
+    <Compile Include="ViewModels\ViewModelMafiosoMisiones.cs" />
   </ItemGroup>
   <ItemGroup>
     <AppxManifest Include="Package.appxmanifest">
       <SubType>Designer</SubType>
     </AppxManifest>
+    <Content Include="Assets\Fuente\Another day in Paradise.ttf" />
+    <Content Include="Assets\Fuente\MATADOR_.TTF" />
+    <Content Include="Assets\Fuente\Cash Currency.ttf" />
     <None Include="CosaNostra_UI_TemporaryKey.pfx" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Assets\fotosMafiosos\1.jpg" />
+    <Content Include="Assets\fotosMafiosos\2.jpg" />
+    <Content Include="Assets\fotosMafiosos\3.jpg" />
+    <Content Include="Assets\fotosMafiosos\4.jpg" />
+    <Content Include="Assets\fotosMafiosos\5.jpg" />
+    <Content Include="Assets\fotosMafiosos\6.jpg" />
+    <Content Include="Assets\imagenes\Banner.jpg" />
+    <Content Include="Assets\imagenes\fondo.jpg" />
+    <Content Include="Assets\imagenes\fondoinicio.jpg" />
     <Content Include="Properties\Default.rd.xml" />
     <Content Include="Assets\LockScreenLogo.scale-200.png" />
     <Content Include="Assets\SplashScreen.scale-200.png" />
@@ -122,6 +140,10 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Page Include="MafiosoMisiones.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
     <Page Include="MainPage.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>

@@ -17,6 +17,8 @@ namespace CosaNostra_Entidades
         public String Observaciones { get; set; }
         public String DescripcionMision { get; set; }
 
+       // private DateTime FechaCumplimiento;
+
         public Mision() { }
 
         public Mision(int condigoMision,String tituloMision, bool reservada, int codigoMafioso,bool cumplida
@@ -32,5 +34,14 @@ namespace CosaNostra_Entidades
             this.DescripcionMision = descripcionMision;
         }
 
+        public Mision(int condigoMision, String tituloMision, bool reservada, bool cumplida, String observaciones, String descripcionMision)
+        {
+            this.CondigoMision = condigoMision;
+            this.TituloMision = tituloMision;
+            this.Reservada = reservada;
+            this.Cumplida = cumplida;
+            this.Observaciones = observaciones;
+            this.DescripcionMision = descripcionMision;
+        }
     }
 }

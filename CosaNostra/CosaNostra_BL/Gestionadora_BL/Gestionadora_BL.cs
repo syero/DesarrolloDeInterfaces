@@ -39,6 +39,24 @@ namespace CosaNostra_BL.Gestionadora_BL
             return misiones;
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="condigoMision"></param>
+        /// <param name="codigoMafioso"></param>
+        public void reservarMisionBL(int condigoMision, int codigoMafioso)
+        {
+            gestion.reservarMisionDAL(condigoMision, codigoMafioso);
+        }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="condigoMision"></param>
+        /// <param name="fechaMisionCumplida"></param>
+        public void misionCumplidaBL(int condigoMision,DateTime fechaMisionCumplida, String Observaciones)
+        {
+            gestion.misionCumplidaDAL(condigoMision, fechaMisionCumplida, Observaciones);
+        }
     }
 }

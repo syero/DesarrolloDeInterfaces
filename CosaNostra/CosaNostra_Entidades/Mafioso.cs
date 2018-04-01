@@ -6,32 +6,18 @@ using System.Threading.Tasks;
 
 namespace CosaNostra_Entidades
 {
-   public class Mafioso
+   public class Mafioso : MafiosoOriginal
     {       
-        public String fotoMafioso { get; set; }
-        public int codigoMafioso { get; set; }
-        public String nickMafioso { get; set; }
-        public String nombreApellidosMafioso { get; set; }
+        public String fotoMafioso { get; set; }      
 
 
         public Mafioso(String fotoMafioso, int codigoMafioso, String nickMafioso,String nombreApellidosMafioso)
+            :base(codigoMafioso, nickMafioso, nombreApellidosMafioso)
         {
             this.fotoMafioso = fotoMafioso;
-            this.codigoMafioso = codigoMafioso;
-            this.nickMafioso = nickMafioso;
-            this.nombreApellidosMafioso = nombreApellidosMafioso;
         }
 
+        public Mafioso():base() { }
 
-        public Mafioso(int codigoMafioso,String nickMafioso,String nombreApellidosMafioso)
-        {
-            this.codigoMafioso = codigoMafioso;
-            this.nickMafioso = nickMafioso;
-            this.nombreApellidosMafioso = nombreApellidosMafioso;
-        }
-
-        public Mafioso()
-        {
-        }
     }
 }

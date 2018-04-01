@@ -1,0 +1,5 @@
+
+CREATE LOGIN sandra with password='123'
+USE Bichos
+CREATE USER sandra FOR LOGIN sandra
+GRANT EXECUTE, INSERT, UPDATE, DELETE, SELECT TO sandra

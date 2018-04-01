@@ -22,13 +22,13 @@
                     Width="400" BorderBrush="Black" Margin="20"
                     Background="{StaticResource buttonBackgroundMainPage}"/>
             
-            <Button Name="DiccionarioRecursos" Content="Diccionario de Recursos"  
+            <!--<Button Name="DiccionarioRecursos" Content="Diccionario de Recursos"  
                     Height="50" Width="400"  BorderBrush="Black" Margin="20"
                     Background="{StaticResource buttonBackgroundDiccionario}"/>
 
             <Button Name="DiccionarioDeRecursosApp" Content="DiccionarioDeRecursosApp" 
                     Height="50" Width="400"  BorderBrush="Black" Margin="20"
-                    Background="{StaticResource buttonBackgroundDictionaryApp}"/>
+                    Background="{StaticResource buttonBackgroundDictionaryApp}"/>-->
         </StackPanel>
         
     </RelativePanel>

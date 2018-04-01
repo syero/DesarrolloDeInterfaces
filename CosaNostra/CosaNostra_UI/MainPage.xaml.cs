@@ -1,4 +1,6 @@
 ﻿using System;
+using CosaNostra_UI.ViewModels;
+using Windows.UI.Xaml.Controls;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -6,12 +8,12 @@ using System.Runtime.InteropServices.WindowsRuntime;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
 using Windows.UI.Xaml;
-using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Controls.Primitives;
 using Windows.UI.Xaml.Data;
 using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
+using CosaNostra_Entidades;
 
 // La plantilla de elemento Página en blanco está documentada en https://go.microsoft.com/fwlink/?LinkId=402352&clcid=0xc0a
 
@@ -22,9 +24,25 @@ namespace CosaNostra_UI
     /// </summary>
     public sealed partial class MainPage : Page
     {
+        public ViewModelLogin loginViewModel{get;set;}
+       
         public MainPage()
-        {
+        {           
             this.InitializeComponent();
+            loginViewModel = (ViewModelLogin)this.DataContext;
+        }
+
+
+        private void btn_Login_PointerMoved(object sender, PointerRoutedEventArgs e)
+        {
+            btn_Login.Background = new SolidColorBrush(Windows.UI.Color.FromArgb(255, 255, 255, 255));
+            btn_Login.Foreground = new SolidColorBrush(Windows.UI.Color.FromArgb(255, 145, 8, 8));
+        }
+       
+        private void btn_Login_PointerExited(object sender, PointerRoutedEventArgs e)
+        {
+            btn_Login.Background = new SolidColorBrush(Windows.UI.Color.FromArgb(255,145, 8, 8));
+            btn_Login.Foreground = new SolidColorBrush(Windows.UI.Color.FromArgb(255, 255, 255, 255));
         }
     }
 }
