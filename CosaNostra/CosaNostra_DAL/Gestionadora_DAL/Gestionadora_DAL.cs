@@ -100,7 +100,7 @@ namespace CosaNostra_DAL.Gestionadora_DAL
                     //esto es por que la Fecha de Cumplimiento puede ser null
                     if (miLector["FechaCumplimiento"] == System.DBNull.Value)
                     {
-                        mision.FechaCumplimiento=DateTime.Now;
+                        mision.FechaCumplimiento=DateTime.Now ;
                     }
                     else
                     {
@@ -172,19 +172,20 @@ namespace CosaNostra_DAL.Gestionadora_DAL
         public void reservarMisionDAL(int condigoMision,int codigoMafioso)
         {
             miComando.Parameters.Add("@condigoMision", System.Data.SqlDbType.Int).Value = condigoMision;
-           // miComando.Parameters.Add("@codigoMafioso", System.Data.SqlDbType.Int).Value = codigoMafioso;
+            miComando.Parameters.Add("@codigoMafioso", System.Data.SqlDbType.Int).Value = codigoMafioso;
             try
             {
                 conexion = miConexion.getConnection();
                 //Insertamos los datos de la persona en la base de datos
-                miComando.CommandText = " update misiones set reservada = 1 , codigoMafioso=" +codigoMafioso+ " where codigoMision = @condigoMision";
+                miComando.CommandText = " update misiones set reservada = 1 , codigoMafioso=@codigoMafioso where codigoMision = @condigoMision";
 
                 miComando.Connection = conexion;
 
                 //ejecutamos el comando de actualizar
                 miComando.ExecuteNonQuery();
-
-            }catch (SqlException sql) { throw sql; }
+                miComando.Parameters.Clear();
+            }
+            catch (SqlException sql) { throw sql; }
         }
 
         /// <summary>

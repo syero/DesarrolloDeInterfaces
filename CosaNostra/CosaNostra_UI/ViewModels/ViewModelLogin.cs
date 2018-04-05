@@ -40,26 +40,44 @@ namespace CosaNostra_UI.ViewModels
         /// <returns></returns>
         public void validarNick()
         {
-            Frame rootFrame = Window.Current.Content as Frame;
-            if (_nick != null)
+            try
             {
-                _mafioso = gestionadora.validarMafiosoBL(_nick);
-                if (_mafioso.nickMafioso != null)
+                Frame rootFrame = Window.Current.Content as Frame;
+                if (_nick != null)
                 {
-                    rootFrame.Navigate(typeof(MafiosoMisiones), _mafioso);
+                    _mafioso = gestionadora.validarMafiosoBL(_nick);
+                    if (_mafioso.nickMafioso != null)
+                    {
+                        rootFrame.Navigate(typeof(MafiosoMisiones), _mafioso);
+                    }
+                    else
+                    {
+                        DisplayDialog();
+                        _nick = null;
+                        NotifyPropertyChanged("Mafioso");
+                    }
                 }
                 else
                 {
-                    DisplayDialog();
-                    _nick = null;
-                    NotifyPropertyChanged("Mafioso");
+                    DisplayDialogNickNull();
                 }
             }
-            else
-            {
-                DisplayDialogNickNull();
-            }
+            catch (Exception e) { DisplayDialogError(e); }
         }
+
+
+
+        public async void DisplayDialogError(Exception e)
+        {
+            ContentDialog Dialog = new ContentDialog
+            {
+                Title = "Mision Reservada",
+                Content = "" + e.Message,
+                CloseButtonText = "Ok"
+            };
+            ContentDialogResult result = await Dialog.ShowAsync();
+        }
+
 
         /// <summary>
         /// Este es el dialogo que aparecera cuando el nick del mafioso no sea

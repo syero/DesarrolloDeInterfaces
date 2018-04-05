@@ -19,8 +19,8 @@ namespace CosaNostra_UI.ViewModels
 
         private ObservableCollection<Mision> _misiones;
         private Mision _misionSeleccionada;
-        public DateTime fechaMisionCumplida;
-        
+        private Visibility _visibilidad;
+
         Gestionadora_BL gestionadora = new Gestionadora_BL();
 
         public ViewModelMafiosoMisiones() { }
@@ -49,10 +49,28 @@ namespace CosaNostra_UI.ViewModels
             get { return (_misionSeleccionada); }
             set {
                 this._misionSeleccionada = value;
+                //if (_misionSeleccionada.Reservada == true)
+                //{
+                //    VisibilidadBotonReservar = Visibility.Collapsed;
+                //}
+                //else
+                //{
+                //    VisibilidadBotonReservar = Visibility.Visible;
+                //}
+
                 NotifyPropertyChanged("MisionSeleccionada");
             }
         }
         
+        public Visibility VisibilidadBotonReservar
+        {
+            get { return (_visibilidad); }
+            set {
+
+                this._visibilidad = value;               
+                NotifyPropertyChanged("VisibilidadBotonReservar");
+            }
+        }
         #endregion
 
 
@@ -60,7 +78,8 @@ namespace CosaNostra_UI.ViewModels
 
         public void obtenerMisiones()
         {
-            _misiones = new ObservableCollection<Mision>(gestionadora.obtenerMisionesNoReservadasNiCumplidasBL(_mafioso.codigoMafioso));    
+            _misiones = new ObservableCollection<Mision>(gestionadora.obtenerMisionesNoReservadasNiCumplidasBL(_mafioso.codigoMafioso));
+            NotifyPropertyChanged("Misiones");
         }
 
         /// <summary>
@@ -76,7 +95,7 @@ namespace CosaNostra_UI.ViewModels
              var mes = date.Month;
              var anio = date.Year;
             _misionSeleccionada.FechaCumplimiento = new DateTime(anio, mes, dia);
-            NotifyPropertyChanged("MisionSeleccionada");
+           NotifyPropertyChanged("MisionSeleccionada");
         }
 
         /// <summary>
@@ -88,14 +107,19 @@ namespace CosaNostra_UI.ViewModels
         /// <param name="e"></param>
        public void reservarMision()
        {
-            if (_misionSeleccionada.Reservada != true)
+            try
             {
-                gestionadora.reservarMisionBL(_misionSeleccionada.CondigoMision, _mafioso.codigoMafioso);
-            }else {
-                DisplayDialogMisionYaReservada();
-            }             
-            NotifyPropertyChanged("MisionSeleccionada");
-            NotifyPropertyChanged("Misiones");
+                if (_misionSeleccionada.Reservada != true)
+                {
+                    gestionadora.reservarMisionBL(_misionSeleccionada.CondigoMision, _mafioso.codigoMafioso);                  
+                }else
+                {
+                    DisplayDialogMisionYaReservada();
+                }
+               obtenerMisiones();
+            }
+            catch (Exception e){ DisplayDialogError(e); }
+
         }
 
         /// <summary>
@@ -109,15 +133,16 @@ namespace CosaNostra_UI.ViewModels
         /// <param name="e"></param>
         public void completarMision()
         {
-            if (_misionSeleccionada.Reservada == true && _misionSeleccionada.FechaCumplimiento >= DateTime.Now) 
+            DateTime fA = DateTime.Now;
+            DateTime fecha =new DateTime(fA.Year, fA.Month, fA.Day-1, fA.Hour , fA.Minute, 0);
+            if (_misionSeleccionada.Reservada == true && _misionSeleccionada.FechaCumplimiento > fecha) 
             {
                 gestionadora.misionCumplidaBL(_misionSeleccionada.CondigoMision, _misionSeleccionada.FechaCumplimiento, _misionSeleccionada.Observaciones);
             }
             else
             {
                 DisplayDialogErrorCompletarMision();
-            }           
-            NotifyPropertyChanged("MisionSeleccionada");
+            }
             NotifyPropertyChanged("Misiones");
         }
 
@@ -135,6 +160,17 @@ namespace CosaNostra_UI.ViewModels
             ContentDialogResult result = await Dialog.ShowAsync();
         }
 
+
+        public async void DisplayDialogError(Exception e)
+        {
+            ContentDialog Dialog = new ContentDialog
+            {
+                Title = "Mision Reservada",
+                Content = ""+e.Message,
+                CloseButtonText = "Ok"
+            };
+            ContentDialogResult result = await Dialog.ShowAsync();
+        }
         /// <summary>
         /// Dialogo de error para cuando el mafioso 
         /// quiere completar una mision sin antes reservala 
