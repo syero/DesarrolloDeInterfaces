@@ -1,0 +1,3 @@
+starwarsdeint.database.windows.net
+prueba
+123Starwarsdeint

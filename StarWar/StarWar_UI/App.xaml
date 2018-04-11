@@ -1,0 +1,8 @@
+﻿<Application
+    x:Class="StarWar_UI.App"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:StarWar_UI"
+    RequestedTheme="Light">
+
+</Application>
