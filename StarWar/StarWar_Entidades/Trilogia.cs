@@ -11,6 +11,8 @@ namespace StarWar_Entidades
         public int IdTrilogia { get; set; }
         public string NombreTrilogia { get; set; }
 
+        public Trilogia(){}
+
         public Trilogia(int idTrilogia,string nombreTrilogia)
         {
             this.IdTrilogia = idTrilogia;

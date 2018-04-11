@@ -106,6 +106,9 @@
     <RestoreProjectStyle>PackageReference</RestoreProjectStyle>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="Conexion\MiConexion.cs" />
+    <Compile Include="Gestionadora_DAL\GestionadoraDAL.cs" />
+    <Compile Include="Listados_DAL\ListadoDAL.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Properties\StarWar_DAL.rd.xml" />
   </ItemGroup>
@@ -120,6 +123,7 @@
       <Name>StarWar_Entidades</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup />
   <PropertyGroup Condition=" '$(VisualStudioVersion)' == '' or '$(VisualStudioVersion)' &lt; '14.0' ">
     <VisualStudioVersion>14.0</VisualStudioVersion>
   </PropertyGroup>

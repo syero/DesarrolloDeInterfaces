@@ -4,12 +4,6 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-/**
-https://stackoverflow.com/questions/35111635/how-can-i-convert-a-image-into-a-byte-array-in-uwp-platform
-    este enlace es para convertir un array de byts en una imagen 
-     me va a ahacer falta para poder mostra la imagen del personaje
-     hare la conversion en la entidad PersonajeCompleto que extenderea de personaje
-*/
 
 namespace StarWar_Entidades
 {
@@ -41,6 +35,15 @@ namespace StarWar_Entidades
             this.Raza = raza;
             this.Equipamiento = equipamiento;
             this.Foto = foto;
+        }
+
+
+        public Personaje(String nombre, String titulo, String raza, String equipamiento)
+        {
+            this.Nombre = nombre;
+            this.Titulo = titulo;
+            this.Raza = raza;
+            this.Equipamiento = equipamiento;
         }
 
     }

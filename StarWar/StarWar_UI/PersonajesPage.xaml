@@ -1,5 +1,5 @@
 ﻿<Page
-    x:Class="StarWar_UI.MainPage"
+    x:Class="StarWar_UI.PersonajesPage"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:local="using:StarWar_UI"
@@ -9,7 +9,7 @@
     mc:Ignorable="d">
 
     <Page.DataContext>
-        <vm:ViewModelTrilogia></vm:ViewModelTrilogia>
+        <vm:ViewModelPersonajes></vm:ViewModelPersonajes>
     </Page.DataContext>
 
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">

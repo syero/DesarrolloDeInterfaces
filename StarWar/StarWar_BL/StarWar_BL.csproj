@@ -106,6 +106,8 @@
     <RestoreProjectStyle>PackageReference</RestoreProjectStyle>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="Gestionadora_BL\GestionadoraBL.cs" />
+    <Compile Include="Listados_BL\ListadosBL.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Properties\StarWar_BL.rd.xml" />
   </ItemGroup>

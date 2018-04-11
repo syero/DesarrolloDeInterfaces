@@ -21,15 +21,14 @@ namespace StarWar_UI
     /// <summary>
     /// Página vacía que se puede usar de forma independiente o a la que se puede navegar dentro de un objeto Frame.
     /// </summary>
-    public sealed partial class MainPage : Page
+    public sealed partial class PersonajesPage : Page
     {
-        public ViewModelTrilogia viewModelTrilogia { get; set; }
+        public ViewModelPersonajes viewModelPersonajes { get; set; }
 
-
-        public MainPage()
+        public PersonajesPage()
         {
             this.InitializeComponent();
-            viewModelTrilogia = (ViewModelTrilogia)this.DataContext;
+            viewModelPersonajes=(ViewModelPersonajes)this.DataContext;
         }
     }
 }

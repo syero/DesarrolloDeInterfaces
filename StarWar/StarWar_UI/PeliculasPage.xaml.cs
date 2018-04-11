@@ -21,15 +21,28 @@ namespace StarWar_UI
     /// <summary>
     /// Página vacía que se puede usar de forma independiente o a la que se puede navegar dentro de un objeto Frame.
     /// </summary>
-    public sealed partial class MainPage : Page
+    public sealed partial class PeliculasPage : Page
     {
-        public ViewModelTrilogia viewModelTrilogia { get; set; }
+        public ViewModelPeliculas viewModelPeliculas { get; set; }
 
-
-        public MainPage()
+        public PeliculasPage()
         {
             this.InitializeComponent();
-            viewModelTrilogia = (ViewModelTrilogia)this.DataContext;
+            viewModelPeliculas = (ViewModelPeliculas)this.DataContext;
         }
+
+        /// <summary>
+        /// Aqui recibo el id de la trilogia que el usuario ha escogido
+        /// </summary>
+        /// <param name="e"></param>
+        protected override void OnNavigatedTo(NavigationEventArgs e)
+        {
+            base.OnNavigatedTo(e);
+            if (e.Parameter != null)
+            {
+                viewModelPeliculas.idTrilogia = (Int32)e.Parameter;
+            }
+        }
+
     }
 }

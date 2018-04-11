@@ -7,14 +7,16 @@ using System.Threading.Tasks;
 namespace StarWar_Entidades
 { 
 
-   public class PeliculaConNombreTrilogia
+   public class PeliculaConNombreTrilogia:Pelicula
     {
         public String NombreTrilogia { get; set; }
 
-        public PeliculaConNombreTrilogia(int idPelicula, int idTrilogia, String nombrePelicula,String NombreTrilogia)
+        public PeliculaConNombreTrilogia(): base(){}
+
+        public PeliculaConNombreTrilogia(int idPelicula, int idTrilogia, String nombrePelicula,String nombreTrilogia)
             :base(idPelicula,idTrilogia, nombrePelicula)
         {
-
+            this.NombreTrilogia = nombrePelicula;
         }
 
     }
