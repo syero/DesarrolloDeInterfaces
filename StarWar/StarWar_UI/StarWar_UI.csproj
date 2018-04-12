@@ -107,6 +107,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ViewModels\Base.cs" />
     <Compile Include="ViewModels\DelegateCommand.cs" />
+    <Compile Include="ViewModels\ViewModelDetalles.cs" />
     <Compile Include="ViewModels\ViewModelPeliculas.cs" />
     <Compile Include="ViewModels\ViewModelPersonajes.cs" />
     <Compile Include="ViewModels\ViewModelTrilogia.cs" />
@@ -115,9 +116,15 @@
     <AppxManifest Include="Package.appxmanifest">
       <SubType>Designer</SubType>
     </AppxManifest>
+    <Content Include="Assets\fuentes\SF Distant Galaxy Outline.ttf" />
     <None Include="StarWar_UI_TemporaryKey.pfx" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Assets\imagenes\fondo.jpg" />
+    <Content Include="Assets\imagenes\fondoDark.jpg" />
+    <Content Include="Assets\imagenes\fondoNave.jpg" />
+    <Content Include="Assets\imagenes\fondoStarWar.jpg" />
+    <Content Include="Assets\imagenes\fondoWay.png" />
     <Content Include="Properties\Default.rd.xml" />
     <Content Include="Assets\LockScreenLogo.scale-200.png" />
     <Content Include="Assets\SplashScreen.scale-200.png" />

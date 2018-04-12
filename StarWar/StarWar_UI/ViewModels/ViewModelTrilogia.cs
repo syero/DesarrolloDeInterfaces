@@ -20,13 +20,13 @@ namespace StarWar_UI.ViewModels
 
        public ViewModelTrilogia()
         {
-            Listadetrilogias= new ObservableCollection<Trilogia>(listadoBL.obtenerTrilogiaBL());
+            ListadeTrilogias= new ObservableCollection<Trilogia>(listadoBL.obtenerTrilogiaBL());
         }
 
         #endregion
 
         #region "Gets y Sets"
-        public ObservableCollection<Trilogia> Listadetrilogias
+        public ObservableCollection<Trilogia> ListadeTrilogias
         {
             get{return (_listadetrilogias);}
             set { this._listadetrilogias = value; NotifyPropertyChanged("Listadetrilogias"); }
@@ -36,7 +36,9 @@ namespace StarWar_UI.ViewModels
         public Trilogia TrilogiaSeleccionada
         {
             get { return (_trilogiaSeleccionada); }
-            set { this._trilogiaSeleccionada = value; NotifyPropertyChanged("TrilogiaSeleccionada"); }
+            set { this._trilogiaSeleccionada = value;
+                pasarAPeliculasIdTrilogia();
+                NotifyPropertyChanged("TrilogiaSeleccionada"); }
         }
 
 
@@ -50,7 +52,11 @@ namespace StarWar_UI.ViewModels
             try
             {
                 Frame rootFrame = Window.Current.Content as Frame;
-                 rootFrame.Navigate(typeof(Int32), TrilogiaSeleccionada.IdTrilogia);                  
+                if (TrilogiaSeleccionada.IdTrilogia>=0)
+                {
+                    rootFrame.Navigate(typeof(PeliculasPage), TrilogiaSeleccionada.IdTrilogia);
+                }
+                                
             }catch (Exception e) { DisplayDialogError(e); }
         }
 

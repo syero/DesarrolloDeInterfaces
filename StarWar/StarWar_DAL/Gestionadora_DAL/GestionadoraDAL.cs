@@ -16,10 +16,7 @@ namespace StarWar_DAL.Gestionadora_DAL
         MiConexion miConexion = new MiConexion();
         SqlConnection conexion = new SqlConnection();
         SqlCommand miComando = new SqlCommand();
-        SqlDataReader miLector;
-
-        Byte[] imagenBinaria;
-        BitmapImage imagen;
+        SqlDataReader miLector;       
 
         public List<PeliculaConNombreTrilogia> obtenerPeliculasConNombreDeTrilogiaDAL(int idTrilogia)
         {
@@ -75,7 +72,6 @@ namespace StarWar_DAL.Gestionadora_DAL
 
                 while (miLector.Read())
                 {
-                   // int idPersonaje, String nombre, String titulo, String raza, String equipamiento, byte[] foto, String nombreTrilogia, String nombrePelicula
                     personajecompleto = new PersonajeCompleto();
                     personajecompleto.IdPersonaje= (Int32)miLector["idPersonaje"];
                     personajecompleto.Nombre= (String)miLector["nombrePersonaje"];
@@ -83,10 +79,14 @@ namespace StarWar_DAL.Gestionadora_DAL
                     personajecompleto.Raza= (String)miLector["razaPersonaje"];
                     personajecompleto.Equipamiento = (String)miLector["equipamientoPersonaje"];
 
-                    imagenBinaria=(Byte[])miLector["fotoPersonaje"];
-                    convertirUnArrayDeBytsAUnaImagenAsync();
-                    personajecompleto.FotoBitMap = imagen;
-
+                    if (miLector["fotoPersonaje"] == System.DBNull.Value)
+                    {
+                        personajecompleto.Foto =new Byte[0];
+                    }
+                    else
+                    {
+                        personajecompleto.Foto = (Byte[])miLector["fotoPersonaje"];
+                    }                   
                     personajecompleto.NombrePelicula = (String)miLector["nombrePelicula"];
                     personajecompleto.NombreTrilogia = (String)miLector["nombreTrilogia"];
 
@@ -96,28 +96,7 @@ namespace StarWar_DAL.Gestionadora_DAL
             }
             catch (SqlException sql) { throw sql; }
             return personajes;
-        }//fin obtenerPersonajeConNombreDePeliculaYTrilogia
-
-
-        /// <summary>
-        /// este metodo sirve para convertir un array de bytes en una imagen
-        /// </summary>
-        /// <returns></returns>
-        public async Task<BitmapImage> convertirUnArrayDeBytsAUnaImagenAsync()
-        {
-            using (InMemoryRandomAccessStream stream = new InMemoryRandomAccessStream())
-            {
-                using (DataWriter writer = new DataWriter(stream.GetOutputStreamAt(0)))
-                {
-                    writer.WriteBytes(this.imagenBinaria);
-                    await writer.StoreAsync();
-                }
-                imagen = new BitmapImage();
-                await imagen.SetSourceAsync(stream);
-                return imagen;
-            }
-        }
-        
+        }//fin obtenerPersonajeConNombreDePeliculaYTrilogia     
 
 
     }

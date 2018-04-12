@@ -23,7 +23,7 @@ namespace StarWar_DAL.Listados_DAL
         /// <returns></returns>
         public List<Trilogia> obtenerTrilogiaDAL()
         {
-            Trilogia trilogia = new Trilogia();
+            Trilogia trilogia;
             List<Trilogia> listaTrilogias = new List<Trilogia>();        
 
             try
@@ -33,15 +33,15 @@ namespace StarWar_DAL.Listados_DAL
                 miComando.Connection = conexion;
                 miLector = miComando.ExecuteReader();
 
-                while (miLector.HasRows)
+                while (miLector.Read())
                 {
-                    miLector.Read();
-                    trilogia.IdTrilogia = (Int32)miLector["codigoMafioso"];
-                    trilogia.NombreTrilogia = (String)miLector["nickMafioso"];
+                    trilogia = new Trilogia();
+                    trilogia.IdTrilogia = (Int32)miLector["idTrilogia"];
+                    trilogia.NombreTrilogia = (String)miLector["nombreTrilogia"];
 
                     listaTrilogias.Add(trilogia);
                 }   
-                miComando.Parameters.Clear();
+              //  miComando.Parameters.Clear();
             }
             catch (SqlException sql) { throw sql; }
 

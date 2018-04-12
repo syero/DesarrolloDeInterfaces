@@ -18,10 +18,10 @@ namespace StarWar_DAL.Conexion
         //Constructores
         public MiConexion()
         {
-            this.server = "cosanostra.database.windows.net";
-            this.dataBase = "cosanostra";
+            this.server = "starwarsdeint.database.windows.net";
+            this.dataBase = "starwars";
             this.user = "prueba";
-            this.pass = "Cosanostra123";
+            this.pass = "123Starwarsdeint";
         }
 
 

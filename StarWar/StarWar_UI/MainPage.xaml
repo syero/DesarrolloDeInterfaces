@@ -12,7 +12,27 @@
         <vm:ViewModelTrilogia></vm:ViewModelTrilogia>
     </Page.DataContext>
 
-    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+    <RelativePanel>
+        <RelativePanel.Background>
+            <ImageBrush Stretch="Fill" ImageSource="ms-appx:///Assets/imagenes/fondoWay.png"/>
+        </RelativePanel.Background>
+        
+        <RelativePanel Name="RTListadoTrilogias"  Margin="20,40,0,0" RelativePanel.AlignHorizontalCenterWithPanel="True">
 
-    </Grid>
+            <TextBlock  Name="textBlock_Trilogia" Text="Seleccione una Trilogía" Foreground="White" FontFamily="Assets/fuente/SF Distant Galaxy Outline.ttf#SF Distant Galaxy Outline" Padding="12" FontSize="40" />
+           
+            <ListView Name="ListadoTrilogia" ScrollViewer.VerticalScrollBarVisibility="Auto"  RelativePanel.Below="textBlock_Trilogia"
+                      ItemsSource="{Binding ListadeTrilogias}" SelectedItem="{Binding TrilogiaSeleccionada,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}">
+                <ListView.ItemTemplate>
+                    <DataTemplate >
+                        <StackPanel Orientation="Horizontal" Padding="5" Margin="5">
+                            <TextBlock Name="txtBlck_IdTrilogia" Text="{Binding Path=IdTrilogia}" Margin="10,0,0,0" FontSize="30" Foreground="White" FontFamily="SF Distant Galaxy Outline.ttf#SF Distant Galaxy Outline" />
+                            <TextBlock Name="txtBx_NombreTrilogia" Text="{Binding Path=NombreTrilogia}" Margin="10,0,0,0" FontSize="30"  Foreground="White" FontFamily="SF Distant Galaxy Outline.ttf#SF Distant Galaxy Outline"/>
+                        </StackPanel>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </RelativePanel>
+
+    </RelativePanel>
 </Page>

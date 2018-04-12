@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace StarWar_Entidades
-{ 
+{    
 
    public class PeliculaConNombreTrilogia:Pelicula
     {
