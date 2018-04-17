@@ -15,8 +15,8 @@
     <RelativePanel>
         <RelativePanel.Background>
             <ImageBrush Stretch="Fill" ImageSource="ms-appx:///Assets/imagenes/fondoWay.png"/>
-        </RelativePanel.Background>
-        
+        </RelativePanel.Background>        
+       
         <RelativePanel Name="RTListadoTrilogias"  Margin="20,40,0,0" RelativePanel.AlignHorizontalCenterWithPanel="True">
 
             <TextBlock  Name="textBlock_Trilogia" Text="Seleccione una Trilogía" Foreground="White" FontFamily="Assets/fuente/SF Distant Galaxy Outline.ttf#SF Distant Galaxy Outline" Padding="12" FontSize="40" />

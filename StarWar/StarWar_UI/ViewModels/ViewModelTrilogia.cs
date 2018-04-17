@@ -6,6 +6,8 @@ using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Windows.Media.Core;
+using Windows.Media.Playback;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
 
@@ -17,10 +19,10 @@ namespace StarWar_UI.ViewModels
         private ObservableCollection<Trilogia> _listadetrilogias;
         private Trilogia _trilogiaSeleccionada;
         ListadosBL listadoBL = new ListadosBL();
-
-       public ViewModelTrilogia()
-        {
-            ListadeTrilogias= new ObservableCollection<Trilogia>(listadoBL.obtenerTrilogiaBL());
+       
+        public ViewModelTrilogia()
+        {          
+            ListadeTrilogias = new ObservableCollection<Trilogia>(listadoBL.obtenerTrilogiaBL());
         }
 
         #endregion

@@ -98,6 +98,9 @@
     <Compile Include="PeliculasPage.xaml.cs">
       <DependentUpon>PeliculasPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="DetallesPage.xaml.cs">
+      <DependentUpon>DetallesPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="PersonajesPage.xaml.cs">
       <DependentUpon>PersonajesPage.xaml</DependentUpon>
     </Compile>
@@ -116,6 +119,9 @@
     <AppxManifest Include="Package.appxmanifest">
       <SubType>Designer</SubType>
     </AppxManifest>
+    <Content Include="Assets\audio\Star Wars Music Theme.mp3" />
+    <Content Include="Assets\audio\Star Wars- The Imperial March _Darth Vaders Theme_.mp3" />
+    <Content Include="Assets\audio\Star Wars_ Revenge Of The Sith - Battle Of The Heroes - John Williams .mp3" />
     <Content Include="Assets\fuentes\SF Distant Galaxy Outline.ttf" />
     <None Include="StarWar_UI_TemporaryKey.pfx" />
   </ItemGroup>
@@ -123,8 +129,10 @@
     <Content Include="Assets\imagenes\fondo.jpg" />
     <Content Include="Assets\imagenes\fondoDark.jpg" />
     <Content Include="Assets\imagenes\fondoNave.jpg" />
-    <Content Include="Assets\imagenes\fondoStarWar.jpg" />
     <Content Include="Assets\imagenes\fondoWay.png" />
+    <Content Include="Assets\imagenes\otrofondo.jpg" />
+    <Content Include="Assets\imagenes\starpintado.jpg" />
+    <Content Include="Assets\imagenes\starwarss.jpg" />
     <Content Include="Properties\Default.rd.xml" />
     <Content Include="Assets\LockScreenLogo.scale-200.png" />
     <Content Include="Assets\SplashScreen.scale-200.png" />
@@ -140,6 +148,10 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Page Include="PeliculasPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="DetallesPage.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>

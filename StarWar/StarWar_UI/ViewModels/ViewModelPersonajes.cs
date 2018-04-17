@@ -17,7 +17,7 @@ namespace StarWar_UI.ViewModels
         private ObservableCollection<PersonajeCompleto> _listadoPersonajes;
         private PersonajeCompleto _personajeSeleccionado;
         private GestionadoraBL gestoraBL = new GestionadoraBL();
-        public Pelicula peliculaSeleccionada;
+        public PeliculaConNombreTrilogia peliculaSeleccionada;
 
         public ViewModelPersonajes() { }
 
@@ -37,13 +37,31 @@ namespace StarWar_UI.ViewModels
         public PersonajeCompleto PersonajeSeleccionado
         {
             get { return (_personajeSeleccionado); }
-            set { this._personajeSeleccionado = value; NotifyPropertyChanged("PersonajeSeleccionado"); }
+            set { this._personajeSeleccionado = value;
+                pasarADetallesDePersonaje();
+                NotifyPropertyChanged("PersonajeSeleccionado"); }
         }
 
 
         #endregion
 
-        #region "Metodos"    
+        #region "Metodos" 
+
+        public void pasarADetallesDePersonaje()
+        {
+            try
+            {
+                Frame rootFrame = Window.Current.Content as Frame;
+                if (_personajeSeleccionado!=null)
+                {
+                    rootFrame.Navigate(typeof(DetallesPage), PersonajeSeleccionado);
+                }
+
+            }
+            catch (Exception e) { }
+        }
+
+
         #endregion
 
     }

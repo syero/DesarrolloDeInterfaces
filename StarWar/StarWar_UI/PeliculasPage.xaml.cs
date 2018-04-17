@@ -67,12 +67,17 @@ namespace StarWar_UI
         private void OnBackRequested(object sender, BackRequestedEventArgs e)
         {
             Frame rootFrame = Window.Current.Content as Frame;
+
             if (rootFrame.CanGoBack)
             {
-                rootFrame.GoBack();
-                e.Handled = true;
+                var backstack = rootFrame.BackStack;
+                if (backstack.Count > 0)
+                {
+                    rootFrame.GoBack();
+                    e.Handled = true;
+                }
+
             }
         }
-
     }
 }

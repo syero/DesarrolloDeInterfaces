@@ -7,6 +7,7 @@ using System.Linq;
 using System.Runtime.InteropServices.WindowsRuntime;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
+using Windows.System;
 using Windows.UI.Core;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
@@ -52,21 +53,27 @@ namespace StarWar_UI
         {
             Frame rootFrame = Window.Current.Content as Frame;
             var currentView = SystemNavigationManager.GetForCurrentView();
-            currentView.AppViewBackButtonVisibility = AppViewBackButtonVisibility.Visible;
 
+            currentView.AppViewBackButtonVisibility = AppViewBackButtonVisibility.Visible;           
+            
             currentView.BackRequested += OnBackRequested;
         }
 
         private void OnBackRequested(object sender, BackRequestedEventArgs e)
-        {
+        {            
             Frame rootFrame = Window.Current.Content as Frame;
             if (rootFrame.CanGoBack)
             {
-                rootFrame.GoBack();
-                e.Handled = true;
+                var backstack = rootFrame.BackStack;
+                if (backstack.Count > 1)
+                {
+                    rootFrame.GoBack();
+                    e.Handled = true;
+                }
+
             }
         }
 
-
+      
     }
 }
