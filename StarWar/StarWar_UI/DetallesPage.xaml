@@ -12,22 +12,13 @@
         <vm:ViewModelDetalles></vm:ViewModelDetalles>
     </Page.DataContext>
 
-    <!--<TextBlock.Effect>
-        <DropShadowEffect
-      ShadowDepth="6"
-      Direction="135"
-      Color="Maroon"
-      Opacity="0.35"
-      BlurRadius="0.0" />
-    </TextBlock.Effect>-->
-
     <Grid >
         <Grid.Background>
-            <ImageBrush Stretch="Fill" ImageSource="ms-appx:///Assets/imagenes/fondo.jpg"/>
+            <ImageBrush Stretch="Fill" ImageSource="{x:Bind viewModelDetalles.fondo}"/>
         </Grid.Background>
 
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="Auto"/>
             <ColumnDefinition Width="*"/>
         </Grid.ColumnDefinitions>
 
@@ -35,30 +26,48 @@
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="Auto"/>
-            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
         </Grid.RowDefinitions>
 
         <MediaPlayerElement Name="miMediaPlayer" Source="{x:Bind viewModelDetalles.miMediaPlayer.Source}" AreTransportControlsEnabled="False" HorizontalAlignment="Stretch"  Grid.Row="0"/>
 
-        <TextBlock Text="PERSONAJE" Foreground="White" HorizontalAlignment="Center" Grid.Column="0" Grid.ColumnSpan="2" Grid.Row="0" FontSize="40"/>
+        <TextBlock Text="PERSONAJE" Foreground="White" HorizontalAlignment="Center" Margin="30" Grid.Column="0" Grid.ColumnSpan="2" Grid.Row="0" FontSize="40"   FontFamily="Assets/fuentes/SF Distant Galaxy Outline.ttf#SF Distant Galaxy Outline" />
 
-        <StackPanel Grid.Column="0" Grid.Row="1" Orientation="Horizontal" Margin="20">
-            <TextBlock Text="Nombre Trilogia: " Foreground="White" FontSize="15"/>
-            <TextBlock Text="{x:Bind viewModelDetalles.DetallesPersonaje.NombreTrilogia}"  Foreground="White" FontSize="15"/>
+        <Image Height="200" Width="200"  Grid.Column="1" Grid.Row="1" Source="{x:Bind viewModelDetalles.fotoPersonaje}"/>
+        
+        <StackPanel Grid.Column="0" Grid.Row="1" Orientation="Horizontal" Margin="20,10,10,10">          
+            <TextBlock Text=" Personaje : " Foreground="White" FontSize="25"  FontFamily="Assets/fuentes/SF Distant Galaxy Outline.ttf#SF Distant Galaxy Outline"/>
+            <TextBlock Text="{x:Bind viewModelDetalles.DetallesPersonaje.Nombre}"  Foreground="White" FontSize="25"  FontFamily="Assets/fuentes/SF Distant Galaxy Outline.ttf#SF Distant Galaxy Outline"/>
+        </StackPanel>
+        
+        <StackPanel Grid.Column="0" Grid.Row="2" Orientation="Horizontal" Margin="20,10,10,10">
+            <TextBlock Text=" Nombre Trilogia : " Foreground="White" FontSize="25"  FontFamily="Assets/fuentes/SF Distant Galaxy Outline.ttf#SF Distant Galaxy Outline"/>
+            <TextBlock Text="{x:Bind viewModelDetalles.DetallesPersonaje.NombreTrilogia}"  Foreground="White" FontSize="25"  FontFamily="Assets/fuentes/SF Distant Galaxy Outline.ttf#SF Distant Galaxy Outline"/>
         </StackPanel>
 
-        <StackPanel Grid.Column="1" Grid.Row="1" Orientation="Horizontal" Margin="20">
-            <TextBlock Text="Nombre Pelicula: " Foreground="White" FontSize="15"/>
-            <TextBlock Text="{x:Bind viewModelDetalles.DetallesPersonaje.NombreTrilogia}"  Foreground="White" FontSize="15"/>
+        <StackPanel Grid.Column="0" Grid.Row="3" Orientation="Horizontal" Margin="20,10,10,10">
+            <TextBlock Text=" Nombre Pelicula : " Foreground="White" FontSize="25"  FontFamily="Assets/fuentes/SF Distant Galaxy Outline.ttf#SF Distant Galaxy Outline"/>
+            <TextBlock Text="{x:Bind viewModelDetalles.DetallesPersonaje.NombrePelicula}"  Foreground="White" FontSize="25"  FontFamily="Assets/fuentes/SF Distant Galaxy Outline.ttf#SF Distant Galaxy Outline"/>
+        </StackPanel>  
+
+        <StackPanel Grid.Column="0" Grid.Row="4" Orientation="Horizontal" Margin="20,10,10,10">
+            <TextBlock Text=" Título : " Foreground="White" FontSize="25"  FontFamily="Assets/fuentes/SF Distant Galaxy Outline.ttf#SF Distant Galaxy Outline"/>
+            <TextBlock Text="{x:Bind viewModelDetalles.DetallesPersonaje.Titulo}"  Foreground="White" FontSize="25"  FontFamily="Assets/fuentes/SF Distant Galaxy Outline.ttf#SF Distant Galaxy Outline"/>
         </StackPanel>
 
-        <Image Grid.Column="1" Grid.Row="2" Height="200" Width="200">
-            <Image.Source>
-                <BitmapImage UriSource="{Binding FotoPersonaje}"   DecodePixelWidth="300" DecodePixelHeight="200"/>
-            </Image.Source>
-        </Image>
+        <StackPanel Grid.Column="0" Grid.Row="5" Orientation="Horizontal" Margin="20,10,10,10">
+            <TextBlock Text=" Raza : " Foreground="White" FontSize="25"  FontFamily="Assets/fuentes/SF Distant Galaxy Outline.ttf#SF Distant Galaxy Outline" />
+            <TextBlock Text="{x:Bind viewModelDetalles.DetallesPersonaje.Raza}"  Foreground="White" FontSize="25"  FontFamily="Assets/fuentes/SF Distant Galaxy Outline.ttf#SF Distant Galaxy Outline"/>
+        </StackPanel>
 
-
+        <StackPanel Grid.Column="0" Grid.Row="6" Orientation="Horizontal" Margin="20,10,10,10">
+            <TextBlock Text=" Equipamiento : " Foreground="White" FontSize="25"  FontFamily="Assets/fuentes/SF Distant Galaxy Outline.ttf#SF Distant Galaxy Outline"/>
+            <TextBlock Text="{x:Bind viewModelDetalles.DetallesPersonaje.Equipamiento}"  Foreground="White" FontSize="25"  FontFamily="Assets/fuentes/SF Distant Galaxy Outline.ttf#SF Distant Galaxy Outline"/>
+        </StackPanel>
+     
 
     </Grid>
 

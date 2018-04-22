@@ -14,12 +14,12 @@
 
     <RelativePanel >
         <RelativePanel.Background>
-            <ImageBrush Stretch="Fill" ImageSource="ms-appx:///Assets/imagenes/starpintado.jpg"/>
+            <ImageBrush Stretch="Fill" ImageSource="ms-appx:///Assets/imagenes/fondoPeliculas.jpg"/>
         </RelativePanel.Background>
 
-        <RelativePanel Name="RTListadoPeliculas"  Margin="40,40,0,0" RelativePanel.AlignLeftWithPanel="True">
+        <RelativePanel Name="RTListadoPeliculas"  Margin="90,50,0,0" RelativePanel.AlignLeftWithPanel="True">
 
-            <TextBlock  Name="textBlock_Peliculas" Text="Seleccione una Pelicula" Foreground="White" FontFamily="Assets/fuente/SF Distant Galaxy Outline.ttf#SF Distant Galaxy Outline" Padding="12" FontSize="25" />
+            <TextBlock  Name="textBlock_Peliculas" Text="Seleccione una Pelicula" Foreground="White" FontFamily="Assets/fuentes/SF Distant Galaxy Outline.ttf#SF Distant Galaxy Outline" Padding="12" FontSize="30" />
 
             <ListView Name="ListadoPeliculas" ScrollViewer.VerticalScrollBarVisibility="Auto"  RelativePanel.Below="textBlock_Peliculas"
                       ItemsSource="{Binding ListadoPeliculas}" SelectedItem="{Binding PeliculaSeleccionada,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}"  >
@@ -27,8 +27,8 @@
                     <DataTemplate >
                         <StackPanel Orientation="Horizontal" Padding="5" Margin="5">
                             <!--<TextBlock Name="txtBlck_NombreTrilogia" Text="{Binding Path=NombreTrilogia}" Margin="10,0,0,0" FontSize="15" Foreground="White" FontFamily="SF Distant Galaxy Outline.ttf#SF Distant Galaxy Outline" />-->
-                            <TextBlock Name="txtBlck_IdPelicula" Text="{Binding Path=IdPelicula }" Margin="10,0,0,0" FontSize="20" Foreground="White" FontFamily="SF Distant Galaxy Outline.ttf#SF Distant Galaxy Outline"/>
-                            <TextBlock Name="txtBx_NombrePelicula" Text="{Binding Path=NombrePelicula}" Margin="10,0,0,0" FontSize="20"  Foreground="White" FontFamily="SF Distant Galaxy Outline.ttf#SF Distant Galaxy Outline"/>
+                            <TextBlock Name="txtBlck_IdPelicula" Text="{Binding Path=IdPelicula }" Margin="10,0,0,0" FontSize="25" Foreground="White"  FontFamily="Assets/fuentes/SF Distant Galaxy Outline.ttf#SF Distant Galaxy Outline"/>
+                            <TextBlock Name="txtBx_NombrePelicula" Text="{Binding Path=NombrePelicula}" Margin="10,0,0,0" FontSize="25"  Foreground="White"  FontFamily="Assets/fuentes/SF Distant Galaxy Outline.ttf#SF Distant Galaxy Outline"/>
                         </StackPanel>
                     </DataTemplate>
                 </ListView.ItemTemplate>

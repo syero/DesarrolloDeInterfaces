@@ -70,7 +70,6 @@ namespace StarWar_UI
                     rootFrame.GoBack();
                     e.Handled = true;
                 }
-
             }
         }
 
