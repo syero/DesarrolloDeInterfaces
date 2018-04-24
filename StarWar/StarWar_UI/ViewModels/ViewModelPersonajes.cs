@@ -17,7 +17,7 @@ namespace StarWar_UI.ViewModels
         private ObservableCollection<PersonajeCompleto> _listadoPersonajes;
         private PersonajeCompleto _personajeSeleccionado;
         private GestionadoraBL gestoraBL = new GestionadoraBL();
-        public PeliculaConNombreTrilogia peliculaSeleccionada;
+        private PeliculaConNombreTrilogia _peliculaSeleccionada;
 
         public ViewModelPersonajes() { }
 
@@ -40,6 +40,16 @@ namespace StarWar_UI.ViewModels
             set { this._personajeSeleccionado = value;
                 pasarADetallesDePersonaje();
                 NotifyPropertyChanged("PersonajeSeleccionado"); }
+        }
+
+        public PeliculaConNombreTrilogia peliculaSeleccionada
+        {
+            get { return (_peliculaSeleccionada); }
+            set
+            {
+                this._peliculaSeleccionada = value;                
+                NotifyPropertyChanged("peliculaSeleccionada");
+            }
         }
 
 

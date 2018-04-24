@@ -17,10 +17,11 @@ namespace StarWar_UI.ViewModels
 {
     public class ViewModelDetalles : Base
     {
-        private static PersonajeCompleto _detallesPersonaje;
+        private PersonajeCompleto _detallesPersonaje;
         public MediaPlayer miMediaPlayer;
         public Uri musica;
         public BitmapImage fotoPersonaje;
+        private ImageSource _fotoConvertida;
         private ImageSource _fondo;
 
         public ViewModelDetalles()
@@ -31,20 +32,26 @@ namespace StarWar_UI.ViewModels
 
         public PersonajeCompleto DetallesPersonaje
         {
-            get {
-                reproductor();               
+            get { return (_detallesPersonaje); }
+            set { _detallesPersonaje = value;
+                reproductor();
+                fondosPersonalizados();
                 llamarMetodoConvertirImagen();
-                return (_detallesPersonaje); }
-            set { _detallesPersonaje = value; NotifyPropertyChanged("DetallesPersonaje"); }
+                NotifyPropertyChanged("DetallesPersonaje"); }
         }
-
 
         public ImageSource fondo
         {
-            get {
-                fondosPersonalizados();
-                return (_fondo);}
-            set { _fondo = value; NotifyPropertyChanged("fondo"); }
+            get {return (_fondo);}
+            set { _fondo = value;               
+                NotifyPropertyChanged("fondo"); }
+        }
+
+        public ImageSource FotoConvertida
+        {
+            get
+            {return (_fotoConvertida);}
+            set { _fotoConvertida = value; NotifyPropertyChanged("FotoConvertida"); }
         }
 
         public void reproductor()
@@ -73,8 +80,7 @@ namespace StarWar_UI.ViewModels
 
         public void llamarMetodoConvertirImagen()
         {
-            convertirUnArrayDeBytsAUnaImagenAsync();
-            NotifyPropertyChanged("FotoPersonaje");
+            var algo=convertirUnArrayDeBytsAUnaImagenAsync();         
         }
 
 
@@ -83,7 +89,7 @@ namespace StarWar_UI.ViewModels
         /// este metodo sirve para convertir un array de bytes en una imagen
         /// </summary>
         /// <returns></returns>
-        public async Task<ImageSource> convertirUnArrayDeBytsAUnaImagenAsync()
+        private async Task convertirUnArrayDeBytsAUnaImagenAsync()
         {
             using (InMemoryRandomAccessStream stream = new InMemoryRandomAccessStream())
             {
@@ -94,7 +100,7 @@ namespace StarWar_UI.ViewModels
                 }
                 fotoPersonaje = new BitmapImage();
                 await fotoPersonaje.SetSourceAsync(stream);
-                return fotoPersonaje;
+                FotoConvertida = fotoPersonaje;
             }
         }
 

@@ -32,7 +32,7 @@ namespace StarWar_UI
         {
             this.InitializeComponent();
             viewModelPersonajes=(ViewModelPersonajes)this.DataContext;
-            atras();
+        
         }
 
         protected override void OnNavigatedTo(NavigationEventArgs e)
@@ -42,37 +42,7 @@ namespace StarWar_UI
             {
                 viewModelPersonajes.peliculaSeleccionada = (PeliculaConNombreTrilogia)e.Parameter;
             }
-        }
-
-        /// <summary>
-        /// Metodo para mostrar el boton de atras que aparece en el titleBar.
-        /// Este metodo va a llamar al metodo que me permite volver a atras 
-        /// OnBackRequested
-        /// </summary>
-        public void atras()
-        {
-            Frame rootFrame = Window.Current.Content as Frame;
-            var currentView = SystemNavigationManager.GetForCurrentView();
-
-            currentView.AppViewBackButtonVisibility = AppViewBackButtonVisibility.Visible;           
-            
-            currentView.BackRequested += OnBackRequested;
-        }
-
-        private void OnBackRequested(object sender, BackRequestedEventArgs e)
-        {            
-            Frame rootFrame = Window.Current.Content as Frame;
-            if (rootFrame.CanGoBack)
-            {
-                var backstack = rootFrame.BackStack;
-                if (backstack.Count > 1)
-                {
-                    rootFrame.GoBack();
-                    e.Handled = true;
-                }
-            }
-        }
-
+        }       
       
     }
 }
