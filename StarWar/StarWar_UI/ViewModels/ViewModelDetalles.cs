@@ -18,7 +18,7 @@ namespace StarWar_UI.ViewModels
     public class ViewModelDetalles : Base
     {
         private PersonajeCompleto _detallesPersonaje;
-        public MediaPlayer miMediaPlayer;
+        public static MediaPlayer miMediaPlayer; //necesito que sea static para poder detener la musica en el App cuando navego para atras
         public Uri musica;
         public BitmapImage fotoPersonaje;
         private ImageSource _fotoConvertida;
@@ -26,8 +26,7 @@ namespace StarWar_UI.ViewModels
 
         public ViewModelDetalles()
         {
-            musica = new Uri("ms-appx:///Assets/audio/Star Wars_ Revenge Of The Sith - Battle Of The Heroes - John Williams .mp3");
-            fondo =  new BitmapImage(new Uri("ms-appx:///Assets/imagenes/fondopordefecto.jpg")); 
+            fondo =  new BitmapImage(new Uri("ms-appx:///Assets/imagenes/fondopordefecto.jpg")); //fondo por defeto por que no le he puesto imagen de fondo personalida a todos los personajes
         }
 
         public PersonajeCompleto DetallesPersonaje
@@ -67,17 +66,19 @@ namespace StarWar_UI.ViewModels
         { 
             switch (_detallesPersonaje.IdPersonaje)
             {
-                case 1: case 5: case 6: case 9:
+                case 1: case 5: case 6: case 9:  case 10: case 12: case 14: case 15: case 16: case 17:
                     musica = new Uri("ms-appx:///Assets/audio/Star Wars- The Imperial March _Darth Vaders Theme_.mp3");
                 break;
 
-                case 2: case 3: case 7:
+                case 2: case 3: case 4: case 7: case 8: case 11: case 13: 
                     musica = new Uri("ms-appx:///Assets/audio/Star Wars Music Theme.mp3");
                     break;
             }
         }
 
-
+        /// <summary>
+        /// Este metodo llama al metodo asincrono que convierte un array de bytes en un ImageSource
+        /// </summary>
         public void llamarMetodoConvertirImagen()
         {
             var algo=convertirUnArrayDeBytsAUnaImagenAsync();         
@@ -86,7 +87,7 @@ namespace StarWar_UI.ViewModels
 
 
         /// <summary>
-        /// este metodo sirve para convertir un array de bytes en una imagen
+        /// este metodo sirve para convertir un array de bytes en un ImageSource
         /// </summary>
         /// <returns></returns>
         private async Task convertirUnArrayDeBytsAUnaImagenAsync()
@@ -104,6 +105,10 @@ namespace StarWar_UI.ViewModels
             }
         }
 
+
+        /// <summary>
+        /// Este metodo es para ponerle un fonso personalizado a cada personajes
+        /// </summary>
         public void fondosPersonalizados()
         {
             switch (_detallesPersonaje.IdPersonaje)
@@ -129,7 +134,6 @@ namespace StarWar_UI.ViewModels
                 case 7:
                     fondo = new BitmapImage(new Uri("ms-appx:///Assets/imagenes/chewbacca.jpg"));
                     break;
-
 
             }
 
