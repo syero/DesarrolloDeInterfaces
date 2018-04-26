@@ -48,7 +48,9 @@ namespace StarWar_UI.ViewModels
 
         #region "Metodos"
 
-
+        /// <summary>
+        /// Este metodo me permite pasar la id de la trilogia seleccionada a la Pagina de las Peliculas
+        /// </summary>
         public void pasarAPeliculasIdTrilogia()
         {
             try
@@ -62,7 +64,10 @@ namespace StarWar_UI.ViewModels
             }catch (Exception e) { DisplayDialogError(e); }
         }
 
-        
+        /// <summary>
+        /// Mensaje de error generico 
+        /// </summary>
+        /// <param name="e"></param>
         public async void DisplayDialogError(Exception e)
         {
             ContentDialog Dialog = new ContentDialog

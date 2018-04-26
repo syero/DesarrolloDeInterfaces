@@ -43,6 +43,9 @@ namespace StarWar_UI.ViewModels
         #endregion
 
         #region "Metodos"
+        /// <summary>
+        /// Este metodo me permite pasar la pelicula seleccionada a la Pagina de las Personajes
+        /// </summary>
         public void pasarAPersonajesIdTrilogiaYPelicula()
         {
             try

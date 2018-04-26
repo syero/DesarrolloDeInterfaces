@@ -18,6 +18,11 @@ namespace StarWar_DAL.Gestionadora_DAL
         SqlCommand miComando = new SqlCommand();
         SqlDataReader miLector;       
 
+        /// <summary>
+        /// Este metodo me permite obtener las peliculas con nombre de trilogia
+        /// </summary>
+        /// <param name="idTrilogia"></param>
+        /// <returns></returns>
         public List<PeliculaConNombreTrilogia> obtenerPeliculasConNombreDeTrilogiaDAL(int idTrilogia)
         {
             List<PeliculaConNombreTrilogia> peliculas = new List<PeliculaConNombreTrilogia>();
@@ -50,6 +55,14 @@ namespace StarWar_DAL.Gestionadora_DAL
             return peliculas;
         }//fin obtenerPeliculasConNombreDeTrilogia
 
+        /// <summary>
+        /// Este metodo me permite obtener los personajes de con nombre de peliculas y nombre de trilogia
+        /// segun la id de la pelicula de la id de la trilogia.
+        /// Si el base de datos devuelve algun valor null , le pongo uno por defecto
+        /// </summary>
+        /// <param name="idTrilogia"></param>
+        /// <param name="idPelicula"></param>
+        /// <returns></returns>
         public List<PersonajeCompleto> obtenerPersonajeConNombreDePeliculaYTrilogiaDAL(int idTrilogia, int idPelicula)
         {
             List<PersonajeCompleto> personajes = new List<PersonajeCompleto>();

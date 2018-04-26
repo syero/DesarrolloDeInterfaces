@@ -130,8 +130,8 @@ namespace StarWar_UI
                 {
                     ViewModelDetalles.miMediaPlayer.Pause();
                 }
-                    e.Handled = true;
-                rootFrame.GoBack();
+                 e.Handled = true;
+                 rootFrame.GoBack();
                
             }
         }

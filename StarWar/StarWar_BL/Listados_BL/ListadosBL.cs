@@ -13,6 +13,10 @@ namespace StarWar_BL.Listados_BL
     {
         ListadoDAL listadoDAL = new ListadoDAL();
 
+        /// <summary>
+        /// Este metodo llama al metodo de la DAL que obtiene la lista de las trilogias
+        /// </summary>
+        /// <returns></returns>
         public List<Trilogia> obtenerTrilogiaBL()
         {
             List<Trilogia> trilogias = listadoDAL.obtenerTrilogiaDAL();

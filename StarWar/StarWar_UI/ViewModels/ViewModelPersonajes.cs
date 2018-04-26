@@ -56,7 +56,9 @@ namespace StarWar_UI.ViewModels
         #endregion
 
         #region "Metodos" 
-
+        /// <summary>
+        /// Este metodo me permite pasar el personaje seleccionado a la Pagina de Detalles
+        /// </summary>
         public void pasarADetallesDePersonaje()
         {
             try

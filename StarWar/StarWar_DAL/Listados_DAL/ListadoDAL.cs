@@ -18,7 +18,7 @@ namespace StarWar_DAL.Listados_DAL
         SqlDataReader miLector;
 
         /// <summary>
-        /// 
+        /// Este metodo me permite obtener un listado de las trilagias 
         /// </summary>
         /// <returns></returns>
         public List<Trilogia> obtenerTrilogiaDAL()

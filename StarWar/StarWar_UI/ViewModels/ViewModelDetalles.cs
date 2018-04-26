@@ -53,6 +53,9 @@ namespace StarWar_UI.ViewModels
             set { _fotoConvertida = value; NotifyPropertyChanged("FotoConvertida"); }
         }
 
+        /// <summary>
+        /// Este metodo es para gestionar el reproductor de la musica del personaje
+        /// </summary>
         public void reproductor()
         {
             miMediaPlayer = new MediaPlayer();
@@ -62,6 +65,9 @@ namespace StarWar_UI.ViewModels
             miMediaPlayer.Play();
         }
 
+        /// <summary>
+        /// Este metodo me permite asiganr un audio personalizado a los personajes buenos y malos
+        /// </summary>
         public void asignarAudio()
         { 
             switch (_detallesPersonaje.IdPersonaje)
@@ -81,7 +87,7 @@ namespace StarWar_UI.ViewModels
         /// </summary>
         public void llamarMetodoConvertirImagen()
         {
-            var algo=convertirUnArrayDeBytsAUnaImagenAsync();         
+            convertirUnArrayDeBytsAUnaImagenAsync();         
         }
 
 
