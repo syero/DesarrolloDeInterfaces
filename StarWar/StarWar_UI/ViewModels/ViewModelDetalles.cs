@@ -140,9 +140,22 @@ namespace StarWar_UI.ViewModels
                 case 7:
                     fondo = new BitmapImage(new Uri("ms-appx:///Assets/imagenes/chewbacca.jpg"));
                     break;
+            }   
+        }
 
-            }
-
+        /// <summary>
+        /// para mostrar un mensaje de error 
+        /// </summary>
+        /// <param name="e"></param>
+        public async void DisplayDialogError(Exception e)
+        {
+            ContentDialog Dialog = new ContentDialog
+            {
+                Title = "Ha ocurrido un error",
+                Content = "" + e.Message,
+                CloseButtonText = "Ok"
+            };
+            ContentDialogResult result = await Dialog.ShowAsync();
         }
 
     }
