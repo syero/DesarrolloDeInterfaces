@@ -28,6 +28,7 @@ namespace EjemploAltoAlLapiz_UI.Views
         public Juego()
         {
             this.InitializeComponent();
+            juegoViewModel = (JuegoViewModel)this.DataContext;
         }
 
         protected override void OnNavigatedTo(NavigationEventArgs e)
