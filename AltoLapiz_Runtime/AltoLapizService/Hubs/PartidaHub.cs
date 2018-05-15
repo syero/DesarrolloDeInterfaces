@@ -9,16 +9,8 @@ using System.Web;
 
 namespace AltoLapizService.Hubs
 {
-    //public class ChatHub : Hub
-    //{
-    //    public void Send(ChatMessage message)
-    //    {
-    //        Clients.All.broadcastMessage(message);
-    //    }
-    //}
-
-    [HubName("ChatHub")]
-    public class ChatHub : Hub
+    [HubName("PartidaHub")]
+    public class PartidaHub:Hub
     {
         /// <summary>
         /// add connection to group
@@ -47,12 +39,14 @@ namespace AltoLapizService.Hubs
         /// <param name="userName"></param>
         /// <param name="message"></param>
         /// <param name="sendTime"></param>
-        public void SendToGroup(clsMensajeChat group)
+        public void SendToGroup(clsGrupo group)
         {
-            Clients.Group(group.nombreGrupo).ReceiveMessage(group.nick, group.mensaje);
+            Clients.Group(group.nombrePartida).ReceiveMessage(group.nick, group.mensaje);
         }
 
+        public void SendGroups(clsGrupo group)
+        {
+            Clients.Groups(group.nombrePartida).ReceiveMessage(group.nick, group.mensaje);
+        }
     }
-
-
 }

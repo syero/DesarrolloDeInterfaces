@@ -153,10 +153,15 @@
     <Compile Include="App_Start\Startup.MobileApp.cs" />
     <Compile Include="Controllers\TodoItemController.cs" />
     <Compile Include="Controllers\ValuesController.cs" />
-    <Compile Include="DataObjects\ChatMessage.cs" />
-    <Compile Include="DataObjects\Group.cs" />
+    <Compile Include="DataObjects\clsCategoria.cs" />
+    <Compile Include="DataObjects\clsGrupo.cs" />
+    <Compile Include="DataObjects\clsMensajeChat.cs" />
+    <Compile Include="DataObjects\clsPalabra.cs" />
+    <Compile Include="DataObjects\clsUsuario.cs" />
+    <Compile Include="DataObjects\clsPartida.cs" />
     <Compile Include="DataObjects\TodoItem.cs" />
     <Compile Include="Hubs\ChatHub.cs" />
+    <Compile Include="Hubs\PartidaHub.cs" />
     <Compile Include="Models\AltoLapizContext.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Startup.cs" />
