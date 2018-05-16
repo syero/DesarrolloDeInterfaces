@@ -1,0 +1,21 @@
+﻿<Page
+    x:Class="AltoElLapiz_UI.ValidarRespuestas"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:AltoElLapiz_UI"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <RelativePanel Background="#2B9CF5">
+        <TextBlock x:Name="nombreUsuario" Text="{Binding nombreUsuario}" RelativePanel.AlignLeftWithPanel="True"></TextBlock>
+        <TextBlock x:Name="palabraHeader" x:Uid="ValidarRespuestasPalabra"></TextBlock>
+        <TextBlock x:Name="categoriaHeader" x:Uid="ValidarRespuestasCategoria"></TextBlock>
+        <!--Los checkboxes se generarán de forma dinámica, falta incluir chat-->
+        
+        <!--Contenedor Chat-->
+        <!--<Frame x:Name="contenedorChat" RelativePanel.AlignTopWithPanel="True" RelativePanel.AlignBottomWithPanel="True" RelativePanel.AlignRightWithPanel="True">
+            
+        </Frame>-->
+    </RelativePanel>
+</Page>

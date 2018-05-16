@@ -1,0 +1,22 @@
+﻿<Page
+    x:Class="AltoElLapiz_UI.UnirsePage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:AltoElLapiz_UI"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <RelativePanel Background="#2B9CF5">
+        <TextBox x:Name="txtBuscar" Text="{Binding textoBusqueda, Mode=TwoWay}" Width="1000" Height="50" RelativePanel.AlignHorizontalCenterWithPanel="True"></TextBox>
+        <AppBarButton x:Name="iconoBuscar" Icon="Zoom" RelativePanel.AlignHorizontalCenterWithPanel="True" RelativePanel.RightOf="txtBuscar"></AppBarButton>
+        <ListView x:Name="listViewPartidas" ItemsSource="{Binding listViewPartidas}"></ListView>
+        <Popup VerticalOffset="50" HorizontalOffset="200" x:Name="PopupSalaEspera" IsOpen="{Binding visibilidadPopUp}">
+            <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
+                <TextBlock x:Uid="UnirseNombre" HorizontalAlignment="Center"/>
+                <TextBox x:Name="nombre" Text="{Binding nombre}"></TextBox>
+                <Button x:Name="btnJugar" x:Uid="UnirseBotonJugar"></Button>
+            </StackPanel>
+        </Popup>
+    </RelativePanel>
+</Page>
